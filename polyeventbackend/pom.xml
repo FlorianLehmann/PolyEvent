@@ -6,28 +6,8 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>../polyeventbackenddemandeevenement</module>
+        <module>polyeventbackenddemandeevenement</module>
     </modules>
-    <name>polyevent-backend Maven Webapp</name>
-    <url>http://maven.apache.org</url>
 
-    <build>
-        <finalName>polyevent-backend</finalName>
-    </build>
 
-    <properties>
-
-        <!-- J2E 7.x technological stack -->
-        <versions.javaee>7.0-1</versions.javaee>
-
-    </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.apache.tomee</groupId>
-            <artifactId>javaee-api</artifactId>
-            <version>${versions.javaee}</version>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
 </project>
