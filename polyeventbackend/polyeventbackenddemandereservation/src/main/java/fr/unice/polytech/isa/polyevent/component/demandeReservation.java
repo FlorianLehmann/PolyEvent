@@ -1,4 +1,4 @@
-package fr.unice.polytech.isa.polyevent.components;
+package fr.unice.polytech.isa.polyevent.component;
 
 import fr.unice.polytech.isa.polyevent.demanderReservation;
 import fr.unice.polytech.isa.polyevent.validerReservation;
