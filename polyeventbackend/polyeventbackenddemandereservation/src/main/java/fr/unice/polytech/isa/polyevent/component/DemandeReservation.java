@@ -9,7 +9,7 @@ import javax.ejb.Stateless;
 import java.util.List;
 
 @Stateless
-public class demandeReservation implements demanderReservation, validerReservation {
+public class DemandeReservation implements demanderReservation, validerReservation {
 
     public boolean accepterReservation(){
         return true;

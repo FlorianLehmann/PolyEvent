@@ -1,9 +1,10 @@
 package arquilian;
 
-import fr.unice.polytech.isa.polyevent.entities.DemandeReservationSalle;
-import fr.unice.polytech.isa.polyevent.entities.Evenement;
+import fr.unice.polytech.isa.polyevent.component.DemandeReservation;
+import fr.unice.polytech.isa.polyevent.demanderReservation;
 import fr.unice.polytech.isa.polyevent.entities.Organisateur;
 import fr.unice.polytech.isa.polyevent.utils.Database;
+import fr.unice.polytech.isa.polyevent.validerReservation;
 import fr.unice.polytech.isa.polyevent.webservice.DemandeEvenement;
 import fr.unice.polytech.isa.polyevent.webservice.DemanderEvenement;
 import org.jboss.arquillian.container.test.api.Deployment;
@@ -12,7 +13,6 @@ import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -33,16 +33,24 @@ public class DemandeEvenementTest {
                 .addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml")
                 // Business Objects
                 .addPackage(Database.class.getPackage())
-                .addPackage(Organisateur.class.getPackage())
-                .addPackage(DemandeReservationSalle.class.getPackage())
-                .addPackage(Evenement.class.getPackage())
+//                .addPackage(Organisateur.class.getPackage())
+                .addPackage(demanderReservation.class.getPackage())
+                .addPackage(validerReservation.class.getPackage())
+                .addPackage(DemandeReservation.class.getPackage())
+
+//                .addPackage(Evenement.class.getPackage())
                 // Components interfaces
+                //
+
                 .addPackage(DemanderEvenement.class.getPackage())
+
                 // Component implementation
                 .addPackage(DemandeEvenement.class.getPackage());
     }
 
-    @EJB private DemandeEvenement demandeEvenement;
+    @EJB private demanderReservation demandeReservation;
+
+    @EJB private DemanderEvenement demanderEvenement;
     @EJB private Database memory;
 
     @Before public void flushDatabase() { memory.flush(); }
@@ -51,10 +59,9 @@ public class DemandeEvenementTest {
         assertEquals(0, memory.getEvenements().size());
     }
 
-    @Ignore
     @Test public void shouldCreateAnEvent() {
         Organisateur organisateur = new Organisateur("jean");
-        demandeEvenement.demanderCreationEvenement(organisateur, "hashcode", new Date(), new Date(), new ArrayList<>());
+        demanderEvenement.demanderCreationEvenement(organisateur, "hashcode", new Date(), new Date(), new ArrayList<>());
         assertEquals(1, memory.getEvenements().size());
     }
 
