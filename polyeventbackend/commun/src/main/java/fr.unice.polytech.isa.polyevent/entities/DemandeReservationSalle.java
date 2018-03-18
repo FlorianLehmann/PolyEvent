@@ -16,4 +16,19 @@ public class DemandeReservationSalle {
         this.nom = nom;
     }
 
+    public Date getDateDebut() {
+        return dateDebut;
+    }
+
+    public Date getDateFin() {
+        return dateFin;
+    }
+
+    public TypeSalle getTypeSalle() {
+        return typeSalle;
+    }
+
+    public String getNom() {
+        return nom;
+    }
 }
