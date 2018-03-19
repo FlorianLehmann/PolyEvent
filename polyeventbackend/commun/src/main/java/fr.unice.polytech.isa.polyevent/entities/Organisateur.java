@@ -1,9 +1,6 @@
 package fr.unice.polytech.isa.polyevent.entities;
 
-import javax.persistence.Embeddable;
-import javax.persistence.Entity;
 
-@Embeddable
 public class Organisateur {
 
     private String mail;
