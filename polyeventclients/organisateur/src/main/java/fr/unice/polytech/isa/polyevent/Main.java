@@ -1,11 +1,17 @@
 package fr.unice.polytech.isa.polyevent;
 
 import fr.unice.polytech.isa.polyevent.api.PolyEventAPI;
+import fr.unice.polytech.isa.polyevent.cli.commands.Bye;
+import fr.unice.polytech.isa.polyevent.cli.commands.Help;
+import fr.unice.polytech.isa.polyevent.cli.commands.SubmitEvent;
+import fr.unice.polytech.isa.polyevent.cli.framework.Shell;
 import net.sourceforge.argparse4j.ArgumentParsers;
-import net.sourceforge.argparse4j.inf.*;
+import net.sourceforge.argparse4j.inf.ArgumentParser;
+import net.sourceforge.argparse4j.inf.ArgumentParserException;
+import net.sourceforge.argparse4j.inf.Namespace;
 
+import java.io.InputStream;
 import java.io.PrintStream;
-import java.util.logging.Logger;
 
 public class Main
 {
@@ -22,7 +28,7 @@ public class Main
         try
         {
             Namespace ns = parser.parseArgs(args);
-            runCLI(ns, System.out);
+            runCLI(ns, System.in, System.out);
         }
         catch (ArgumentParserException e)
         {
@@ -30,7 +36,7 @@ public class Main
         }
     }
 
-    private static void runCLI(Namespace namespace, PrintStream out)
+    private static void runCLI(Namespace namespace, InputStream in, PrintStream out)
     {
         String host = namespace.getString("hostname");
         String port = namespace.getString("port");
@@ -39,8 +45,15 @@ public class Main
         out.println("   - Remote server: " + host);
         out.println("   - Port number: " + port);
 
-        PolyEventAPI polyEventAPI = new PolyEventAPI(host, port);
-        polyEventAPI.run();
-        out.println("Exiting Poly'Event by Team H\n\n");
+        PolyEventAPI api = new PolyEventAPI(host, port);
+        Shell shell = new Shell();
+        shell.register(
+                new Help.Builder(shell, out),
+                new Bye.Builder(out),
+                new SubmitEvent.Builder(api.demandeEvenement)
+        );
+
+        shell.run(in, out);
+        out.println("Exiting Poly'Event by Team H");
     }
 }
