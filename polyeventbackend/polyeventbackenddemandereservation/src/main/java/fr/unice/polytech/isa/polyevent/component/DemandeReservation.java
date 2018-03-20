@@ -2,21 +2,24 @@ package fr.unice.polytech.isa.polyevent.component;
 
 
 
-import fr.unice.polytech.isa.polyevent.demanderReservation;
+import fr.unice.polytech.isa.polyevent.DemanderReservation;
+import fr.unice.polytech.isa.polyevent.HyperPlanningAPI;
 import fr.unice.polytech.isa.polyevent.entities.DemandeReservationSalle;
 import fr.unice.polytech.isa.polyevent.entities.*;
 import fr.unice.polytech.isa.polyevent.utils.Database;
-import fr.unice.polytech.isa.polyevent.validerReservation;
+import fr.unice.polytech.isa.polyevent.ValiderReservation;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import java.util.List;
 
 @Stateless
-public class DemandeReservation implements demanderReservation, validerReservation {
+public class DemandeReservation implements DemanderReservation, ValiderReservation {
 
     @EJB
     private Database memoire;
+
+    private HyperPlanningAPI hyperPlanningAPI = new HyperPlanningAPI();
 
     @Override
     public void demanderReservationSalle(Evenement evenement, List<DemandeReservationSalle> demandeReservationSalles) {
@@ -35,6 +38,7 @@ public class DemandeReservation implements demanderReservation, validerReservati
                 r.setSalle(salle);
                 r.setStatut(Statut.VALIDE);
                 salle.getReservations().add(r);
+                hyperPlanningAPI.reserverSalle(r);
             }
         }
     }

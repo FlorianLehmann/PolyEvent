@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>fr.unice.polytech.isa.polyevent</groupId>
     <artifactId>polyevent-backend-demande-reservation</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>polyevent-backend-demande-reservation</name>
     <version>1.0-SNAPSHOT</version>
     <url>http://maven.apache.org</url>
@@ -14,9 +14,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <versions.maven.compiler>3.6.1</versions.maven.compiler>
         <versions.java>1.8</versions.java>
-
+        <versions.json>20180130</versions.json>
         <!-- J2E 7.x technological stack -->
         <versions.javaee>7.0-1</versions.javaee>
+        <versions.openejb>7.0.2</versions.openejb>
+        <versions.tomee>7.0.2</versions.tomee>
+        <versions.openjpa>2.4.1</versions.openjpa>
+        <versions.myface>2.2.10</versions.myface>
     </properties>
 
     <build>
@@ -48,6 +52,7 @@
     </build>
 
     <dependencies>
+
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
             <artifactId>commun</artifactId>
@@ -73,6 +78,27 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>${versions.json}</version>
+        </dependency>
+
+        <!-- Dependency to integrate REST clients (order matters for CXF) (provided) -->
+        <dependency>
+            <groupId>org.apache.tomee</groupId>
+            <artifactId>openejb-cxf</artifactId>
+            <version>${versions.openejb}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomee</groupId>
+            <artifactId>openejb-cxf-rs</artifactId>
+            <version>${versions.openejb}</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
 </project>

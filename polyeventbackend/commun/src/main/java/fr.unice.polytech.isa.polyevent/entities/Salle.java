@@ -21,5 +21,7 @@ public class Salle {
         return typeSalle;
     }
 
-
+    public String getNom() {
+        return nom;
+    }
 }

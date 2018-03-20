@@ -6,7 +6,7 @@ import fr.unice.polytech.isa.polyevent.entities.Salle;
 import javax.ejb.Local;
 
 @Local
-public interface validerReservation {
+public interface ValiderReservation {
 
     void accepterReservation(Reservation reservation, Salle salle);
     void refuserReservation(Reservation reservation, String raison);
