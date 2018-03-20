@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.polytech.unice.fr/si/4a/isa/polyevent/demandeEvenement" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="DemandeEvenementService" targetNamespace="http://www.polytech.unice.fr/si/4a/isa/polyevent/demandeEvenement">
+
+    <wsdl:types>
+
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.polytech.unice.fr/si/4a/isa/polyevent/demandeEvenement" elementFormDefault="unqualified" targetNamespace="http://www.polytech.unice.fr/si/4a/isa/polyevent/demandeEvenement" version="1.0">
+
+            <xs:element name="demanderCreationEvenement" type="tns:demanderCreationEvenement"/>
+
+            <xs:element name="demanderCreationEvenementResponse" type="tns:demanderCreationEvenementResponse"/>
+
+            <xs:complexType name="demanderCreationEvenement">
+
+                <xs:sequence>
+
+                    <xs:element minOccurs="0" name="organisateur" type="tns:organisateur"/>
+
+                    <xs:element minOccurs="0" name="nom" type="xs:string"/>
+
+                    <xs:element minOccurs="0" name="date_debut" type="xs:dateTime"/>
+
+                    <xs:element minOccurs="0" name="date_fin" type="xs:dateTime"/>
+
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="demande_reservations" type="tns:demandeReservationSalle"/>
+
+                </xs:sequence>
+
+            </xs:complexType>
+
+            <xs:complexType name="organisateur">
+
+                <xs:sequence>
+
+                    <xs:element minOccurs="0" name="mail" type="tns:mail"/>
+
+                </xs:sequence>
+
+            </xs:complexType>
+
+            <xs:complexType name="mail">
+
+                <xs:sequence>
+
+                    <xs:element minOccurs="0" name="mail" type="xs:string"/>
+
+                </xs:sequence>
+
+            </xs:complexType>
+
+            <xs:complexType name="demandeReservationSalle">
+
+                <xs:sequence>
+
+                    <xs:element minOccurs="0" name="dateDebut" type="xs:dateTime"/>
+
+                    <xs:element minOccurs="0" name="dateFin" type="xs:dateTime"/>
+
+                    <xs:element minOccurs="0" name="nom" type="xs:string"/>
+
+                    <xs:element minOccurs="0" name="typeSalle" type="tns:typeSalle"/>
+
+                </xs:sequence>
+
+            </xs:complexType>
+
+            <xs:complexType name="demanderCreationEvenementResponse">
+
+                <xs:sequence/>
+
+            </xs:complexType>
+
+            <xs:simpleType name="typeSalle">
+
+                <xs:restriction base="xs:string">
+
+                    <xs:enumeration value="SALLE"/>
+
+                    <xs:enumeration value="AMPHI"/>
+
+                </xs:restriction>
+
+            </xs:simpleType>
+
+        </xs:schema>
+
+    </wsdl:types>
+
+    <wsdl:message name="demanderCreationEvenement">
+
+        <wsdl:part element="tns:demanderCreationEvenement" name="parameters">
+
+        </wsdl:part>
+
+    </wsdl:message>
+
+    <wsdl:message name="demanderCreationEvenementResponse">
+
+        <wsdl:part element="tns:demanderCreationEvenementResponse" name="parameters">
+
+        </wsdl:part>
+
+    </wsdl:message>
+
+    <wsdl:portType name="DemanderEvenement">
+
+        <wsdl:operation name="demanderCreationEvenement">
+
+            <wsdl:input message="tns:demanderCreationEvenement" name="demanderCreationEvenement">
+
+            </wsdl:input>
+
+            <wsdl:output message="tns:demanderCreationEvenementResponse" name="demanderCreationEvenementResponse">
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+    </wsdl:portType>
+
+    <wsdl:binding name="DemandeEvenementServiceSoapBinding" type="tns:DemanderEvenement">
+
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+        <wsdl:operation name="demanderCreationEvenement">
+
+            <soap:operation soapAction="" style="document"/>
+
+            <wsdl:input name="demanderCreationEvenement">
+
+                <soap:body use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="demanderCreationEvenementResponse">
+
+                <soap:body use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+    </wsdl:binding>
+
+    <wsdl:service name="DemandeEvenementService">
+
+        <wsdl:port binding="tns:DemandeEvenementServiceSoapBinding" name="DemandeEvenementPort">
+
+            <soap:address location="http://localhost:8080/polyevent-backend-demande-evenement/webservices/DemandeEvenementWS"/>
+
+        </wsdl:port>
+
+    </wsdl:service>
+
+</wsdl:definitions>
