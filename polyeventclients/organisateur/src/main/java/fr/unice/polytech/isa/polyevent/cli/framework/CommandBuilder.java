@@ -10,5 +10,11 @@ public interface CommandBuilder<T extends Command>
     }
 
     String describe();
+
+    default String help()
+    {
+        return describe();
+    }
+
     public T build();
 }
