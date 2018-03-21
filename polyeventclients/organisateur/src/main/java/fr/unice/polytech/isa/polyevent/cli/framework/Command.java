@@ -1,12 +1,22 @@
 package fr.unice.polytech.isa.polyevent.cli.framework;
 
+import java.util.List;
+
 public interface Command
 {
-    void load(String... args) throws Exception;
-    void execute() throws Exception;
-    boolean shouldContinue();
+    default void load(List<String> args) throws Exception
+    {
 
-    default boolean process(String... args) throws Exception
+    }
+
+    void execute() throws Exception;
+
+    default boolean shouldContinue()
+    {
+        return true;
+    }
+
+    default boolean process(List<String> args) throws Exception
     {
         load(args);
         execute();

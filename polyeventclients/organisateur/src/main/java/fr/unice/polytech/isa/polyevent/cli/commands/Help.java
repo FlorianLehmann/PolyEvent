@@ -21,12 +21,6 @@ public class Help implements Command
     }
 
     @Override
-    public void load(String... args)
-    {
-        // No argument is expected
-    }
-
-    @Override
     public void execute() throws Exception
     {
         out.println("Available commands:");
@@ -34,12 +28,6 @@ public class Help implements Command
         {
             out.format("  - %-20s%s%n", commandBuilder.identifier(), commandBuilder.describe());
         }
-    }
-
-    @Override
-    public boolean shouldContinue()
-    {
-        return true;
     }
 
     public static class Builder implements CommandBuilder<Help>

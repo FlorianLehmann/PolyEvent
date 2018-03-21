@@ -25,26 +25,34 @@ public class SubmitEvent implements Command
     }
 
     @Override
-    public void load(String... args) throws Exception
+    public void load(List<String> args) throws Exception
     {
-        if (args.length < 5)
+        if (args.size() < 5)
         {
             String message = String.format("%s expect at least 5 arguments: %s organisateur nom debut fin [reservations+]", IDENTIFIER, IDENTIFIER);
             throw new IllegalArgumentException(message);
         }
         organisateur = new Organisateur();
         Mail mail = new Mail();
-        mail.setMail(args[0]);
+        mail.setMail(args.get(0));
         organisateur.setMail(mail);
-        nom = args[1];
-        dateDebut = DatatypeFactory.newInstance().newXMLGregorianCalendar(args[2]);
-        dateFin = DatatypeFactory.newInstance().newXMLGregorianCalendar(args[3]);
+        nom = args.get(1);
+
+        try
+        {
+            dateDebut = DatatypeFactory.newInstance().newXMLGregorianCalendar(args.get(2));
+            dateFin = DatatypeFactory.newInstance().newXMLGregorianCalendar(args.get(3));
+        }
+        catch (IllegalArgumentException e)
+        {
+            throw new IllegalArgumentException(String.format("Illegal date format: %s", e.getMessage()));
+        }
 
         demandeReservations = new ArrayList<>();
-        for (int i = 4; i < args.length; i++)
+        for (int i = 4; i < args.size(); i++)
         {
             DemandeReservationSalle reservation = new DemandeReservationSalle();
-            reservation.setTypeSalle(TypeSalle.valueOf(args[i]));
+            reservation.setTypeSalle(TypeSalle.valueOf(args.get(i)));
             demandeReservations.add(reservation);
         }
     }
@@ -53,12 +61,6 @@ public class SubmitEvent implements Command
     public void execute() throws Exception
     {
         demandeEvenement.demanderCreationEvenement(organisateur, nom, dateDebut, dateFin, demandeReservations);
-    }
-
-    @Override
-    public boolean shouldContinue()
-    {
-        return true;
     }
 
     public static class Builder implements CommandBuilder<SubmitEvent>

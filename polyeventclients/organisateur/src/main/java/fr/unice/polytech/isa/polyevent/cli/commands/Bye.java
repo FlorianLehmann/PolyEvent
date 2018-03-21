@@ -2,7 +2,6 @@ package fr.unice.polytech.isa.polyevent.cli.commands;
 
 import fr.unice.polytech.isa.polyevent.cli.framework.Command;
 import fr.unice.polytech.isa.polyevent.cli.framework.CommandBuilder;
-import fr.unice.polytech.isa.polyevent.cli.framework.Shell;
 
 import java.io.PrintStream;
 
@@ -14,12 +13,6 @@ public class Bye implements Command
     private Bye(PrintStream out)
     {
         this.out = out;
-    }
-
-    @Override
-    public void load(String... args)
-    {
-        // No argument is expected
     }
 
     @Override

@@ -8,7 +8,8 @@ import java.util.regex.Pattern;
 
 public class Shell
 {
-    private static final Pattern PATTERN = Pattern.compile("^\\s*(\\S+)((?:\\s+[\\S]+)*)\\s*$");
+    private static final Pattern COMMAND = Pattern.compile("^\\s*(\\S+)((?:\\s+[\\S]+)*)\\s*$");
+    private static final Pattern ARGUMENTS = Pattern.compile("\"([^\"]*)\"|(\\S+)");
     private final List<CommandBuilder> builders = new ArrayList<>();
 
     public void register(CommandBuilder... builders)
@@ -24,15 +25,17 @@ public class Shell
         while (shouldContinue && scanner.hasNextLine())
         {
             String command = scanner.nextLine();
-            Matcher matcher = PATTERN.matcher(command);
+            Matcher matcher = COMMAND.matcher(command);
+
             if (!matcher.matches())
             {
                 out.println("The command is empty");
                 continue;
             }
 
-            String keyword = matcher.group(1);
-            String[] arguments = matcher.group(2).trim().split("\\s+");
+            String keyword = parseKeyword(matcher);
+            List<String> arguments = parseArguments(matcher);
+
             try
             {
                 shouldContinue = processCommand(keyword, arguments);
@@ -43,9 +46,25 @@ public class Shell
             }
             catch (Exception e)
             {
-                out.format("Exception caught while processing command:%n%10s", e.getMessage());
+                out.format("Exception caught while processing command:%n%-10s%n", e.getMessage());
             }
         }
+    }
+
+    private String parseKeyword(Matcher matcher)
+    {
+        return matcher.group(1);
+    }
+
+    private List<String> parseArguments(Matcher matcher)
+    {
+        Matcher args = ARGUMENTS.matcher(matcher.group(2));
+        List<String> arguments = new ArrayList<>();
+        while (args.find())
+        {
+            arguments.add(args.group(1) != null ? args.group(1): args.group(2));
+        }
+        return arguments;
     }
 
     private CommandBuilder findBuilder(String keyword)
@@ -56,7 +75,7 @@ public class Shell
                 .orElseThrow(() -> new IllegalArgumentException("Unknown Command"));
     }
 
-    private boolean processCommand(String keyword, String[] arguments) throws Exception
+    private boolean processCommand(String keyword, List<String> arguments) throws Exception
     {
         CommandBuilder builder = findBuilder(keyword);
         Command command = builder.build();
