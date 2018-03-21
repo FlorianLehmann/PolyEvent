@@ -69,4 +69,10 @@ public class Reservation {
     public void setStatut(Statut statut) {
         this.statut = statut;
     }
+
+    public Salle getSalle() { return salle; }
+
+    public Evenement getEvenement() {
+        return evenement;
+    }
 }

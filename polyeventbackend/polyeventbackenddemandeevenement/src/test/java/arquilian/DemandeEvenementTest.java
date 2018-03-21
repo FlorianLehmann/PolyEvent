@@ -1,10 +1,10 @@
 package arquilian;
 
 import fr.unice.polytech.isa.polyevent.component.DemandeReservation;
-import fr.unice.polytech.isa.polyevent.demanderReservation;
+import fr.unice.polytech.isa.polyevent.DemanderReservation;
 import fr.unice.polytech.isa.polyevent.entities.Organisateur;
 import fr.unice.polytech.isa.polyevent.utils.Database;
-import fr.unice.polytech.isa.polyevent.validerReservation;
+import fr.unice.polytech.isa.polyevent.ValiderReservation;
 import fr.unice.polytech.isa.polyevent.webservice.DemandeEvenement;
 import fr.unice.polytech.isa.polyevent.webservice.DemanderEvenement;
 import org.jboss.arquillian.container.test.api.Deployment;
@@ -34,8 +34,8 @@ public class DemandeEvenementTest {
                 // Business Objects
                 .addPackage(Database.class.getPackage())
 //                .addPackage(Organisateur.class.getPackage())
-                .addPackage(demanderReservation.class.getPackage())
-                .addPackage(validerReservation.class.getPackage())
+                .addPackage(DemanderReservation.class.getPackage())
+                .addPackage(ValiderReservation.class.getPackage())
                 .addPackage(DemandeReservation.class.getPackage())
 
 //                .addPackage(Evenement.class.getPackage())
@@ -48,7 +48,7 @@ public class DemandeEvenementTest {
                 .addPackage(DemandeEvenement.class.getPackage());
     }
 
-    @EJB private demanderReservation demandeReservation;
+    @EJB private DemanderReservation demandeReservation;
 
     @EJB private DemanderEvenement demanderEvenement;
     @EJB private Database memory;

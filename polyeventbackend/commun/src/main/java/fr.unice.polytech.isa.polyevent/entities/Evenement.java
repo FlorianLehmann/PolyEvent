@@ -20,4 +20,8 @@ public class Evenement {
         this.reservations = reservations;
         this.statusHistorique = statusHistorique;
     }
+
+    public String getNom() {
+        return nom;
+    }
 }

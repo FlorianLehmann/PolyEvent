@@ -1,6 +1,6 @@
 package fr.unice.polytech.isa.polyevent.webservice;
 
-import fr.unice.polytech.isa.polyevent.demanderReservation;
+import fr.unice.polytech.isa.polyevent.DemanderReservation;
 import fr.unice.polytech.isa.polyevent.entities.DemandeReservationSalle;
 import fr.unice.polytech.isa.polyevent.entities.Evenement;
 import fr.unice.polytech.isa.polyevent.entities.Organisateur;
@@ -17,7 +17,7 @@ import java.util.List;
 @Stateless(name = "DemandeEvenementWS")
 public class DemandeEvenement implements DemanderEvenement {
 
-    @EJB private demanderReservation demandeReservation;
+    @EJB private DemanderReservation demandeReservation;
     @EJB private Database memoire;
 
     @Override

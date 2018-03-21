@@ -15,7 +15,8 @@ public class Database {
 
     private List<Evenement> evenements = new ArrayList<>();
     private List<Reservation> reservations = new ArrayList<>();
-    private List<Salle> salles = null;
+    private List<Salle> salles = Arrays.asList(new Salle(TypeSalle.SALLE, new ArrayList<>(), "O+310"),
+            new Salle(TypeSalle.SALLE, new ArrayList<>(), "O+311"),new Salle(TypeSalle.AMPHI, new ArrayList<>(), "O+228"));
 
     public List<Salle> getSalles() { return salles; }
     public List<Reservation> getReservations() { return reservations; }

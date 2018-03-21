@@ -7,7 +7,7 @@ import javax.ejb.Local;
 import java.util.List;
 
 @Local
-public interface demanderReservation {
+public interface DemanderReservation {
 
     void demanderReservationSalle(Evenement evenement, List<DemandeReservationSalle> demandeReservationSalles);
 }
