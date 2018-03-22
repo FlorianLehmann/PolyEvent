@@ -23,7 +23,7 @@ public class Help implements Command
     }
 
     @Override
-    public void load(List<String> args) throws Exception
+    public void load(List<String> args)
     {
         if (args.size() == 1)
         {
@@ -33,7 +33,7 @@ public class Help implements Command
     }
 
     @Override
-    public void execute() throws Exception
+    public void execute()
     {
         if (builder == null)
         {

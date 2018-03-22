@@ -18,7 +18,7 @@ public class Shell
         this(1);
     }
 
-    public Shell(int indent)
+    private Shell(int indent)
     {
         this.indent = indent;
     }
@@ -37,36 +37,46 @@ public class Shell
         {
             out.format(String.format("%%%ds ", 3 * indent), ">>>");
             out.flush();
-            if (!scanner.hasNextLine())
-            {
-                break;
-            }
-
-            String command = scanner.nextLine();
-            Matcher matcher = COMMAND.matcher(command);
-
-            if (!matcher.matches())
-            {
-                out.println("The command is empty");
-                continue;
-            }
-
-            String keyword = parseKeyword(matcher);
-            List<String> arguments = parseArguments(matcher);
-
-            try
-            {
-                shouldContinue = processCommand(keyword, arguments);
-            }
-            catch (IllegalArgumentException e)
-            {
-                out.println(e.getMessage());
-            }
-            catch (Exception e)
-            {
-                out.format("Exception caught while processing command:%n%-10s%n", e.getMessage());
-            }
+            shouldContinue = processScanner(scanner, out);
         }
+    }
+
+    private boolean processScanner(Scanner scanner, PrintStream out)
+    {
+        if (!scanner.hasNextLine())
+        {
+            return false;
+        }
+
+        String command = scanner.nextLine();
+        Matcher matcher = COMMAND.matcher(command);
+
+        if (!matcher.matches())
+        {
+            out.println("The command is empty");
+            return true;
+        }
+        return processInput(matcher, out);
+    }
+
+    private boolean processInput(Matcher matcher, PrintStream out)
+    {
+        String keyword = parseKeyword(matcher);
+        List<String> arguments = parseArguments(matcher);
+
+        try
+        {
+            return processCommand(keyword, arguments);
+        }
+        catch (IllegalArgumentException e)
+        {
+            out.println(e.getMessage());
+        }
+        catch (Exception e)
+        {
+            out.format("Exception caught while processing command:%n%-10s%n", e.getMessage());
+        }
+        return true;
     }
 
     private String parseKeyword(Matcher matcher)
@@ -103,5 +113,10 @@ public class Shell
     public List<CommandBuilder> getBuilders()
     {
         return new ArrayList<>(builders);
+    }
+
+    public Shell subShell()
+    {
+        return new Shell(indent + 1);
     }
 }

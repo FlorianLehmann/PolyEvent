@@ -7,7 +7,9 @@ import fr.unice.polytech.isa.polyevent.stubs.TypeSalle;
 
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class AddReservation implements Command
 {
@@ -22,6 +24,11 @@ public class AddReservation implements Command
         this.demandeReservations = demandeReservations;
     }
 
+    private static String availableRoomType()
+    {
+        return Arrays.stream(TypeSalle.values()).map(Enum::name).collect(Collectors.joining(", "));
+    }
+
     @Override
     public void load(List<String> args) throws Exception
     {
@@ -30,7 +37,16 @@ public class AddReservation implements Command
             String message = String.format("%s expects 3 arguments: %s TYPE_ROOM START_DATE END_DATE", IDENTIFIER, IDENTIFIER);
             throw new IllegalArgumentException(message);
         }
-        typeSalle = TypeSalle.valueOf(args.get(0));
+        try
+        {
+            typeSalle = TypeSalle.valueOf(args.get(0));
+        }
+        catch (IllegalArgumentException e)
+        {
+            throw new IllegalArgumentException(String.format("The room type \"%s\" does not exist.%n" +
+                            "Choose one type from the following list: %s.%nType help %s for more details.",
+                    args.get(0), availableRoomType(), IDENTIFIER));
+        }
         try
         {
             dateDebut = DatatypeFactory.newInstance().newXMLGregorianCalendar(args.get(1));
@@ -43,7 +59,7 @@ public class AddReservation implements Command
     }
 
     @Override
-    public void execute() throws Exception
+    public void execute()
     {
         DemandeReservationSalle demandeReservationSalle = new DemandeReservationSalle();
         demandeReservationSalle.setTypeSalle(typeSalle);
@@ -56,7 +72,7 @@ public class AddReservation implements Command
     {
         private final List<DemandeReservationSalle> demandeReservations;
 
-        public Builder(List<DemandeReservationSalle> demandeReservations)
+        Builder(List<DemandeReservationSalle> demandeReservations)
         {
             this.demandeReservations = demandeReservations;
         }
@@ -77,7 +93,9 @@ public class AddReservation implements Command
         public String help()
         {
             return String.format("Usage: %s TYPE_ROOM START_DATE END_DATE%n" +
-                    "Example: %s AMPHI 2018-12-03T16:00:00 2018-12-03T18:00:00", IDENTIFIER, IDENTIFIER);
+                            "Select a type room from the following list: %s%n" +
+                            "Example: %s AMPHI 2018-12-03T16:00:00 2018-12-03T18:00:00",
+                    IDENTIFIER, availableRoomType(), IDENTIFIER);
         }
 
         @Override

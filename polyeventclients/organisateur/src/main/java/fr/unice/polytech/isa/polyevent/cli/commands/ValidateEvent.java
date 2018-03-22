@@ -1,6 +1,5 @@
 package fr.unice.polytech.isa.polyevent.cli.commands;
 
-import com.sun.xml.internal.ws.client.ClientTransportException;
 import fr.unice.polytech.isa.polyevent.cli.framework.Command;
 import fr.unice.polytech.isa.polyevent.cli.framework.CommandBuilder;
 import fr.unice.polytech.isa.polyevent.stubs.DemandeReservationSalle;
@@ -8,6 +7,7 @@ import fr.unice.polytech.isa.polyevent.stubs.DemanderEvenement;
 import fr.unice.polytech.isa.polyevent.stubs.Organisateur;
 
 import javax.xml.datatype.XMLGregorianCalendar;
+import javax.xml.ws.WebServiceException;
 import java.io.PrintStream;
 import java.net.ConnectException;
 import java.util.List;
@@ -23,9 +23,9 @@ public class ValidateEvent implements Command
     private final List<DemandeReservationSalle> demandeReservations;
     private final PrintStream out;
 
-    public ValidateEvent(DemanderEvenement demandeEvenement, Organisateur organisateur, String nom,
-                         XMLGregorianCalendar dateDebut, XMLGregorianCalendar dateFin,
-                         List<DemandeReservationSalle> demandeReservations, PrintStream out)
+    private ValidateEvent(DemanderEvenement demandeEvenement, Organisateur organisateur, String nom,
+                          XMLGregorianCalendar dateDebut, XMLGregorianCalendar dateFin,
+                          List<DemandeReservationSalle> demandeReservations, PrintStream out)
     {
         this.demandeEvenement = demandeEvenement;
         this.organisateur = organisateur;
@@ -51,7 +51,7 @@ public class ValidateEvent implements Command
         {
             demandeEvenement.demanderCreationEvenement(organisateur, nom, dateDebut, dateFin, demandeReservations);
         }
-        catch (ClientTransportException e)
+        catch (WebServiceException e)
         {
             throw new ConnectException("Could not connect to the server. Check your internet connection and retry");
         }
@@ -73,9 +73,9 @@ public class ValidateEvent implements Command
         private final List<DemandeReservationSalle> demandeReservations;
         private final PrintStream out;
 
-        public Builder(DemanderEvenement demandeEvenement, Organisateur organisateur, String nom,
-                       XMLGregorianCalendar dateDebut, XMLGregorianCalendar dateFin,
-                       List<DemandeReservationSalle> demandeReservations, PrintStream out)
+        Builder(DemanderEvenement demandeEvenement, Organisateur organisateur, String nom,
+                XMLGregorianCalendar dateDebut, XMLGregorianCalendar dateFin,
+                List<DemandeReservationSalle> demandeReservations, PrintStream out)
         {
             this.demandeEvenement = demandeEvenement;
             this.organisateur = organisateur;

@@ -50,7 +50,7 @@ public class Main
         shell.register(
                 new Help.Builder(shell, out),
                 new Bye.Builder(out),
-                new SubmitEvent.Builder(in, out, api.demandeEvenement)
+                new SubmitEvent.Builder(shell, in, out, api.demandeEvenement)
         );
 
         out.println("Submit your event. Type ? for help.");

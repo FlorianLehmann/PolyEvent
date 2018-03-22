@@ -15,6 +15,7 @@ import java.util.List;
 public class SubmitEvent implements Command
 {
     private static final String IDENTIFIER = "event";
+    private final Shell shell;
     private final InputStream in;
     private final PrintStream out;
     private final DemanderEvenement demandeEvenement;
@@ -24,8 +25,9 @@ public class SubmitEvent implements Command
     private XMLGregorianCalendar dateFin;
     private List<DemandeReservationSalle> demandeReservations;
 
-    private SubmitEvent(InputStream in, PrintStream out, DemanderEvenement demandeEvenement)
+    private SubmitEvent(Shell shell, InputStream in, PrintStream out, DemanderEvenement demandeEvenement)
     {
+        this.shell = shell;
         this.in = in;
         this.out = out;
         this.demandeEvenement = demandeEvenement;
@@ -47,8 +49,9 @@ public class SubmitEvent implements Command
 
         try
         {
-            dateDebut = DatatypeFactory.newInstance().newXMLGregorianCalendar(args.get(2));
-            dateFin = DatatypeFactory.newInstance().newXMLGregorianCalendar(args.get(3));
+            DatatypeFactory datatypeFactory = DatatypeFactory.newInstance();
+            dateDebut = datatypeFactory.newXMLGregorianCalendar(args.get(2));
+            dateFin = datatypeFactory.newXMLGregorianCalendar(args.get(3));
         }
         catch (IllegalArgumentException e)
         {
@@ -65,27 +68,29 @@ public class SubmitEvent implements Command
     }
 
     @Override
-    public void execute() throws Exception
+    public void execute()
     {
-        Shell shell = new Shell(2);
-        shell.register(
-                new Help.Builder(shell, out),
+        Shell subShell = shell.subShell();
+        subShell.register(
+                new Help.Builder(subShell, out),
                 new AddReservation.Builder(demandeReservations),
                 new ValidateEvent.Builder(demandeEvenement, organisateur, nom, dateDebut, dateFin, demandeReservations, out),
                 new CancelEvent.Builder()
         );
         out.format("Add reservations to the event \"%s\". Type ? for help.%n", nom);
-        shell.run(in, out);
+        subShell.run(in, out);
     }
 
     public static class Builder implements CommandBuilder<SubmitEvent>
     {
+        private final Shell shell;
         private final InputStream in;
         private final PrintStream out;
         private final DemanderEvenement demandeEvenement;
 
-        public Builder(InputStream in, PrintStream out, DemanderEvenement demandeEvenement)
+        public Builder(Shell shell, InputStream in, PrintStream out, DemanderEvenement demandeEvenement)
         {
+            this.shell = shell;
             this.in = in;
             this.out = out;
             this.demandeEvenement = demandeEvenement;
@@ -107,14 +112,14 @@ public class SubmitEvent implements Command
         public String help()
         {
             return String.format("Usage: %s MAIL NOM START_DATE END_DATE%n" +
-                    "Example: %s marcel@etu.unice.com \"La nuit de l'info\" 2018-12-03T16:00:00 2018-12-04T08:00:00",
+                            "Example: %s marcel@etu.unice.com \"La nuit de l'info\" 2018-12-03T16:00:00 2018-12-04T08:00:00",
                     IDENTIFIER, IDENTIFIER);
         }
 
         @Override
         public SubmitEvent build()
         {
-            return new SubmitEvent(in, out, demandeEvenement);
+            return new SubmitEvent(shell, in, out, demandeEvenement);
         }
     }
 }
