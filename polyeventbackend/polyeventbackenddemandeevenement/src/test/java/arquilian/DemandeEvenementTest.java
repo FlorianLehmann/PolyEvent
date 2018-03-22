@@ -3,6 +3,7 @@ package arquilian;
 import fr.unice.polytech.isa.polyevent.component.DemandeReservation;
 import fr.unice.polytech.isa.polyevent.DemanderReservation;
 import fr.unice.polytech.isa.polyevent.entities.Organisateur;
+import fr.unice.polytech.isa.polyevent.entities.outils.Mail;
 import fr.unice.polytech.isa.polyevent.utils.Database;
 import fr.unice.polytech.isa.polyevent.ValiderReservation;
 import fr.unice.polytech.isa.polyevent.webservice.DemandeEvenement;
@@ -60,9 +61,10 @@ public class DemandeEvenementTest {
     }
 
     @Test public void shouldCreateAnEvent() {
-        Organisateur organisateur = new Organisateur("jean");
+        final String mail = "jean@f.com";
+        Organisateur organisateur = new Organisateur(mail);
         demanderEvenement.demanderCreationEvenement(organisateur, "hashcode", new Date(), new Date(), new ArrayList<>());
-        assertEquals(1, memory.getEvenements().size());
+        assertEquals(new Mail(mail), memory.getEvenements().get(0).getOrganisateur().getMail());
     }
 
 }

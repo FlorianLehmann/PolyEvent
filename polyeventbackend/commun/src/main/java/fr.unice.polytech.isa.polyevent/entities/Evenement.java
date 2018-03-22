@@ -21,6 +21,10 @@ public class Evenement {
         this.statusHistorique = statusHistorique;
     }
 
+    public Organisateur getOrganisateur() {
+        return organisateur;
+    }
+
     public String getNom() {
         return nom;
     }
