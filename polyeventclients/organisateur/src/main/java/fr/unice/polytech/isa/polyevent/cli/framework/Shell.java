@@ -11,6 +11,17 @@ public class Shell
     private static final Pattern COMMAND = Pattern.compile("^\\s*(\\S+)((?:\\s+[\\S]+)*)\\s*$");
     private static final Pattern ARGUMENTS = Pattern.compile("\"([^\"]*)\"|(\\S+)");
     private final List<CommandBuilder> builders = new ArrayList<>();
+    private final int indent;
+
+    public Shell()
+    {
+        this(1);
+    }
+
+    public Shell(int indent)
+    {
+        this.indent = indent;
+    }
 
     public void register(CommandBuilder... builders)
     {
@@ -22,8 +33,15 @@ public class Shell
         Scanner scanner = new Scanner(in);
         boolean shouldContinue = true;
 
-        while (shouldContinue && scanner.hasNextLine())
+        while (shouldContinue)
         {
+            out.format(String.format("%%%ds ", 3 * indent), ">>>");
+            out.flush();
+            if (!scanner.hasNextLine())
+            {
+                break;
+            }
+
             String command = scanner.nextLine();
             Matcher matcher = COMMAND.matcher(command);
 
@@ -67,7 +85,7 @@ public class Shell
         return arguments;
     }
 
-    private CommandBuilder findBuilder(String keyword)
+    public CommandBuilder findBuilder(String keyword)
     {
         return builders.stream()
                 .filter(builder -> builder.match(keyword))

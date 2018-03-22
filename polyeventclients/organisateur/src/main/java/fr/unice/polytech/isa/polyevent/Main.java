@@ -50,9 +50,10 @@ public class Main
         shell.register(
                 new Help.Builder(shell, out),
                 new Bye.Builder(out),
-                new SubmitEvent.Builder(api.demandeEvenement)
+                new SubmitEvent.Builder(in, out, api.demandeEvenement)
         );
 
+        out.println("Submit your event. Type ? for help.");
         shell.run(in, out);
         out.println("Exiting Poly'Event by Team H");
     }

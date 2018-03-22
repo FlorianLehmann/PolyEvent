@@ -2,16 +2,21 @@ package fr.unice.polytech.isa.polyevent.cli.commands;
 
 import fr.unice.polytech.isa.polyevent.cli.framework.Command;
 import fr.unice.polytech.isa.polyevent.cli.framework.CommandBuilder;
+import fr.unice.polytech.isa.polyevent.cli.framework.Shell;
 import fr.unice.polytech.isa.polyevent.stubs.*;
 
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
+import java.io.InputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SubmitEvent implements Command
 {
     private static final String IDENTIFIER = "event";
+    private final InputStream in;
+    private final PrintStream out;
     private final DemanderEvenement demandeEvenement;
     private Organisateur organisateur;
     private String nom;
@@ -19,17 +24,19 @@ public class SubmitEvent implements Command
     private XMLGregorianCalendar dateFin;
     private List<DemandeReservationSalle> demandeReservations;
 
-    private SubmitEvent(DemanderEvenement demandeEvenement)
+    private SubmitEvent(InputStream in, PrintStream out, DemanderEvenement demandeEvenement)
     {
+        this.in = in;
+        this.out = out;
         this.demandeEvenement = demandeEvenement;
     }
 
     @Override
     public void load(List<String> args) throws Exception
     {
-        if (args.size() < 5)
+        if (args.size() < 4)
         {
-            String message = String.format("%s expect at least 5 arguments: %s organisateur nom debut fin [reservations+]", IDENTIFIER, IDENTIFIER);
+            String message = String.format("%s expects 4 arguments: %s MAIL NOM START_DATE END_DATE", IDENTIFIER, IDENTIFIER);
             throw new IllegalArgumentException(message);
         }
         organisateur = new Organisateur();
@@ -60,15 +67,27 @@ public class SubmitEvent implements Command
     @Override
     public void execute() throws Exception
     {
-        demandeEvenement.demanderCreationEvenement(organisateur, nom, dateDebut, dateFin, demandeReservations);
+        Shell shell = new Shell(2);
+        shell.register(
+                new Help.Builder(shell, out),
+                new AddReservation.Builder(demandeReservations),
+                new ValidateEvent.Builder(demandeEvenement, organisateur, nom, dateDebut, dateFin, demandeReservations, out),
+                new CancelEvent.Builder()
+        );
+        out.format("Add reservations to the event \"%s\". Type ? for help.%n", nom);
+        shell.run(in, out);
     }
 
     public static class Builder implements CommandBuilder<SubmitEvent>
     {
+        private final InputStream in;
+        private final PrintStream out;
         private final DemanderEvenement demandeEvenement;
 
-        public Builder(DemanderEvenement demandeEvenement)
+        public Builder(InputStream in, PrintStream out, DemanderEvenement demandeEvenement)
         {
+            this.in = in;
+            this.out = out;
             this.demandeEvenement = demandeEvenement;
         }
 
@@ -85,9 +104,17 @@ public class SubmitEvent implements Command
         }
 
         @Override
+        public String help()
+        {
+            return String.format("Usage: %s MAIL NOM START_DATE END_DATE%n" +
+                    "Example: %s marcel@etu.unice.com \"La nuit de l'info\" 2018-12-03T16:00:00 2018-12-04T08:00:00",
+                    IDENTIFIER, IDENTIFIER);
+        }
+
+        @Override
         public SubmitEvent build()
         {
-            return new SubmitEvent(demandeEvenement);
+            return new SubmitEvent(in, out, demandeEvenement);
         }
     }
 }
