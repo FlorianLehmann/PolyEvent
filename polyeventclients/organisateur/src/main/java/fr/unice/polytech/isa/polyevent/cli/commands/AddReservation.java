@@ -37,20 +37,22 @@ public class AddReservation implements Command
             String message = String.format("%s expects 3 arguments: %s TYPE_ROOM START_DATE END_DATE", IDENTIFIER, IDENTIFIER);
             throw new IllegalArgumentException(message);
         }
+        String value = args.get(0);
         try
         {
-            typeSalle = TypeSalle.valueOf(args.get(0));
+            typeSalle = TypeSalle.valueOf(value);
         }
         catch (IllegalArgumentException e)
         {
             throw new IllegalArgumentException(String.format("The room type \"%s\" does not exist.%n" +
                             "Choose one type from the following list: %s.%nType help %s for more details.",
-                    args.get(0), availableRoomType(), IDENTIFIER));
+                    value, availableRoomType(), IDENTIFIER));
         }
         try
         {
-            dateDebut = DatatypeFactory.newInstance().newXMLGregorianCalendar(args.get(1));
-            dateFin = DatatypeFactory.newInstance().newXMLGregorianCalendar(args.get(2));
+            DatatypeFactory datatypeFactory = DatatypeFactory.newInstance();
+            dateDebut = datatypeFactory.newXMLGregorianCalendar(args.get(1));
+            dateFin = datatypeFactory.newXMLGregorianCalendar(args.get(2));
         }
         catch (IllegalArgumentException e)
         {
