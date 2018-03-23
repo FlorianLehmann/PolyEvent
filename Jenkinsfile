@@ -9,12 +9,6 @@ pipeline {
             steps {
                 sh 'cd commun'
             }
-            post {
-                success {
-
-
-                }
-            }
         }
     }
 }
