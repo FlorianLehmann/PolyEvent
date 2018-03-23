@@ -9,6 +9,7 @@ pipeline {
             steps {
                 sh 'pwd'
                 sh 'ls -la'
+                sh 'cd polyeventbackend/commun'
             }
         }
     }
