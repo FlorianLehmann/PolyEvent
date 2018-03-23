@@ -7,7 +7,8 @@ pipeline {
     stages {
         stage ('Build') {
             steps {
-                sh 'cd ./commun'
+                sh 'pwd'
+                sh 'ls -la'
             }
         }
     }
