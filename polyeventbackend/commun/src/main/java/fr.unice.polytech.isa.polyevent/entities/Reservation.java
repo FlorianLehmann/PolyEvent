@@ -11,6 +11,9 @@ public class Reservation {
     private Evenement evenement;
     private Statut statut;
 
+    public Reservation() {
+    }
+
     public Reservation(Date dateDebut, Date dateFin, TypeSalle typeSalle, Salle salle, Evenement evenement, Statut statut ){
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;

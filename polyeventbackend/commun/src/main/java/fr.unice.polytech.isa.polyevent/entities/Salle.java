@@ -7,6 +7,10 @@ public class Salle {
     private List<Reservation> reservations;
     private String nom;
 
+    public Salle() {
+
+    }
+
     public Salle(TypeSalle typeSalle, List<Reservation> reservations, String nom) {
         this.typeSalle = typeSalle;
         this.reservations = reservations;

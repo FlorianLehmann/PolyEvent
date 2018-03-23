@@ -12,6 +12,12 @@ public class Evenement {
     private List<Reservation> reservations;
     private StatusHistorique statusHistorique;
 
+
+    public Evenement() {
+
+    }
+
+
     public Evenement(String nom, Date debut, Date fin, Organisateur organisateur, List<Reservation> reservations, StatusHistorique statusHistorique) {
         this.nom = nom;
         this.debut = debut;
