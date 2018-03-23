@@ -5,7 +5,7 @@ import fr.unice.polytech.isa.polyevent.stubs.DemandeReservationSalle;
 import fr.unice.polytech.isa.polyevent.stubs.DemanderEvenement;
 import fr.unice.polytech.isa.polyevent.stubs.Mail;
 import fr.unice.polytech.isa.polyevent.stubs.Organisateur;
-import jdk.internal.util.xml.impl.Input;
+
 import org.junit.Before;
 import org.junit.Test;
 
