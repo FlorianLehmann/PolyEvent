@@ -25,6 +25,8 @@ public class Database {
     public void flush() {
         evenements = new ArrayList<>();
         reservations = new ArrayList<>();
+        salles = Arrays.asList(new Salle(TypeSalle.SALLE, new ArrayList<>(), "O+310"),
+                new Salle(TypeSalle.SALLE, new ArrayList<>(), "O+311"),new Salle(TypeSalle.AMPHI, new ArrayList<>(), "O+228"));
     }
 
 }

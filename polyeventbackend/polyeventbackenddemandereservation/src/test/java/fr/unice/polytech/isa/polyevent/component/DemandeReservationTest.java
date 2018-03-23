@@ -59,6 +59,21 @@ public class DemandeReservationTest {
     }
 
     @Test
+    public void pasAssezAmphie(){
+        DemandeReservationSalle demandeReservationAmphi1 = new DemandeReservationSalle(new Date(2018, 4, 1, 10, 0), new Date(2018, 4, 2, 12, 0),
+                TypeSalle.AMPHI );
+        DemandeReservationSalle demandeReservationAmphi2 = new DemandeReservationSalle(new Date(2018, 4, 1, 10, 0), new Date(2018, 4, 2, 12, 0),
+                TypeSalle.AMPHI );
+        demandeReservationSalles.add(demandeReservationAmphi1);
+        demandeReservationSalles.add(demandeReservationAmphi2);
+
+        demanderReservation.demanderReservationSalle(evenement,demandeReservationSalles);
+        assertTrue(memory.getReservations().size()==2);
+        assertTrue(memory.getReservations().get(0).getStatut().equals(Statut.VALIDE));
+        assertTrue(memory.getReservations().get(1).getStatut().equals(Statut.REFUSE));
+    }
+
+    @Test
     public void reserverPlusieursSalleMemeHoraire(){
         DemandeReservationSalle demandeReservationSalle1 = new DemandeReservationSalle(new Date(2018, 4, 1, 10, 0), new Date(2018, 4, 2, 12, 0),
                 TypeSalle.SALLE );

@@ -81,6 +81,10 @@ public class DemandeReservation implements DemanderReservation, ValiderReservati
                     }
             }
 
+            if(!salle.getTypeSalle().equals(reservation.getTypeSalle())) {
+                dispnible = false;
+            }
+
             if(dispnible){
                 accepterReservation(reservation, salle);
                 return;
