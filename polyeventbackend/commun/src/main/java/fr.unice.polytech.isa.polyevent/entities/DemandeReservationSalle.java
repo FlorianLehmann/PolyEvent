@@ -7,16 +7,14 @@ public class DemandeReservationSalle {
     private Date dateDebut;
     private Date dateFin;
     private TypeSalle typeSalle;
-    private String nom;
 
     public DemandeReservationSalle() {
     }
 
-    public DemandeReservationSalle(Date dateDebut, Date dateFin, TypeSalle typeSalle, String nom) {
+    public DemandeReservationSalle(Date dateDebut, Date dateFin, TypeSalle typeSalle) {
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
         this.typeSalle = typeSalle;
-        this.nom = nom;
     }
 
     public void setDateDebut(Date dateDebut) {
@@ -31,10 +29,6 @@ public class DemandeReservationSalle {
         this.typeSalle = typeSalle;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
     public Date getDateDebut() {
         return dateDebut;
     }
@@ -47,7 +41,4 @@ public class DemandeReservationSalle {
         return typeSalle;
     }
 
-    public String getNom() {
-        return nom;
-    }
 }

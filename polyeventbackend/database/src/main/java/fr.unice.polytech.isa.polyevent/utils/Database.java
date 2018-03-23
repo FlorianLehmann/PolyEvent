@@ -22,6 +22,9 @@ public class Database {
     public List<Reservation> getReservations() { return reservations; }
     public List<Evenement> getEvenements() { return evenements; }
 
-    public void flush() { evenements = new ArrayList<>(); }
+    public void flush() {
+        evenements = new ArrayList<>();
+        reservations = new ArrayList<>();
+    }
 
 }

@@ -10,4 +10,6 @@ import java.util.List;
 public interface DemanderReservation {
 
     void demanderReservationSalle(Evenement evenement, List<DemandeReservationSalle> demandeReservationSalles);
+
+    void setHyperPlanningAPI(HyperPlanningAPI mocked);
 }

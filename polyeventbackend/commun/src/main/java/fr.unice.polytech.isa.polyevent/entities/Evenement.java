@@ -28,4 +28,12 @@ public class Evenement {
     public String getNom() {
         return nom;
     }
+
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
+    }
 }

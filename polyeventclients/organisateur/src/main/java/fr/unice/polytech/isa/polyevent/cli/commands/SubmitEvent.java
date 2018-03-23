@@ -25,7 +25,7 @@ public class SubmitEvent implements Command
     private XMLGregorianCalendar dateFin;
     private List<DemandeReservationSalle> demandeReservations;
 
-    private SubmitEvent(Shell shell, InputStream in, PrintStream out, DemanderEvenement demandeEvenement)
+    SubmitEvent(Shell shell, InputStream in, PrintStream out, DemanderEvenement demandeEvenement)
     {
         this.shell = shell;
         this.in = in;
@@ -59,12 +59,6 @@ public class SubmitEvent implements Command
         }
 
         demandeReservations = new ArrayList<>();
-        for (int i = 4; i < args.size(); i++)
-        {
-            DemandeReservationSalle reservation = new DemandeReservationSalle();
-            reservation.setTypeSalle(TypeSalle.valueOf(args.get(i)));
-            demandeReservations.add(reservation);
-        }
     }
 
     @Override
