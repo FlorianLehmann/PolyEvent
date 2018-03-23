@@ -14,22 +14,22 @@ import javax.xml.datatype.XMLGregorianCalendar;
 /**
  * <p>Classe Java pour demanderCreationEvenement complex type.
  * 
- * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schÃ©ma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
- * &lt;complexType name="demanderCreationEvenement">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="organisateur" type="{http://www.polytech.unice.fr/si/4a/isa/polyevent/demandeEvenement}organisateur" minOccurs="0"/>
- *         &lt;element name="nom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="date_debut" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="date_fin" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="demande_reservations" type="{http://www.polytech.unice.fr/si/4a/isa/polyevent/demandeEvenement}demandeReservationSalle" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="demanderCreationEvenement"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="organisateur" type="{http://www.polytech.unice.fr/si/4a/isa/polyevent/demandeEvenement}organisateur" minOccurs="0"/&gt;
+ *         &lt;element name="nom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="date_debut" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
+ *         &lt;element name="date_fin" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
+ *         &lt;element name="demande_reservations" type="{http://www.polytech.unice.fr/si/4a/isa/polyevent/demandeEvenement}demandeReservationSalle" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -56,7 +56,7 @@ public class DemanderCreationEvenement {
     protected List<DemandeReservationSalle> demandeReservations;
 
     /**
-     * Obtient la valeur de la propriété organisateur.
+     * Obtient la valeur de la propriÃ©tÃ© organisateur.
      * 
      * @return
      *     possible object is
@@ -68,7 +68,7 @@ public class DemanderCreationEvenement {
     }
 
     /**
-     * Définit la valeur de la propriété organisateur.
+     * DÃ©finit la valeur de la propriÃ©tÃ© organisateur.
      * 
      * @param value
      *     allowed object is
@@ -80,7 +80,7 @@ public class DemanderCreationEvenement {
     }
 
     /**
-     * Obtient la valeur de la propriété nom.
+     * Obtient la valeur de la propriÃ©tÃ© nom.
      * 
      * @return
      *     possible object is
@@ -92,7 +92,7 @@ public class DemanderCreationEvenement {
     }
 
     /**
-     * Définit la valeur de la propriété nom.
+     * DÃ©finit la valeur de la propriÃ©tÃ© nom.
      * 
      * @param value
      *     allowed object is
@@ -104,7 +104,7 @@ public class DemanderCreationEvenement {
     }
 
     /**
-     * Obtient la valeur de la propriété dateDebut.
+     * Obtient la valeur de la propriÃ©tÃ© dateDebut.
      * 
      * @return
      *     possible object is
@@ -116,7 +116,7 @@ public class DemanderCreationEvenement {
     }
 
     /**
-     * Définit la valeur de la propriété dateDebut.
+     * DÃ©finit la valeur de la propriÃ©tÃ© dateDebut.
      * 
      * @param value
      *     allowed object is
@@ -128,7 +128,7 @@ public class DemanderCreationEvenement {
     }
 
     /**
-     * Obtient la valeur de la propriété dateFin.
+     * Obtient la valeur de la propriÃ©tÃ© dateFin.
      * 
      * @return
      *     possible object is
@@ -140,7 +140,7 @@ public class DemanderCreationEvenement {
     }
 
     /**
-     * Définit la valeur de la propriété dateFin.
+     * DÃ©finit la valeur de la propriÃ©tÃ© dateFin.
      * 
      * @param value
      *     allowed object is

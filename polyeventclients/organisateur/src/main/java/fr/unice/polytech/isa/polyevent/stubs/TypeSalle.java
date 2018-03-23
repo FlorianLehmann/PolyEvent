@@ -8,15 +8,15 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * <p>Classe Java pour typeSalle.
  * 
- * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schÃ©ma suivant indique le contenu attendu figurant dans cette classe.
  * <p>
  * <pre>
- * &lt;simpleType name="typeSalle">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="SALLE"/>
- *     &lt;enumeration value="AMPHI"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="typeSalle"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="SALLE"/&gt;
+ *     &lt;enumeration value="AMPHI"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

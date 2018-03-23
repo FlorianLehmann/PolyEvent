@@ -51,19 +51,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Mail }
-     * 
-     */
-    public Mail createMail() {
-        return new Mail();
-    }
-
-    /**
      * Create an instance of {@link Organisateur }
      * 
      */
     public Organisateur createOrganisateur() {
         return new Organisateur();
+    }
+
+    /**
+     * Create an instance of {@link Mail }
+     * 
+     */
+    public Mail createMail() {
+        return new Mail();
     }
 
     /**

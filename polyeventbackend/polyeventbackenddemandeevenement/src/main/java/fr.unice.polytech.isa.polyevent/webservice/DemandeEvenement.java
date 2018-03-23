@@ -22,11 +22,11 @@ public class DemandeEvenement implements DemanderEvenement {
 
     @Override
     public void demanderCreationEvenement(Organisateur organisateur, String nom, Date dateDebut, Date dateFin, List<DemandeReservationSalle> demandeReservationSalles) {
-        Evenement evenement = new Evenement(nom, dateDebut, dateFin, organisateur, null, new StatusHistorique());
+        /*Evenement evenement = new Evenement(nom, dateDebut, dateFin, organisateur, null, new StatusHistorique());
 
         demandeReservation.demanderReservationSalle(evenement, demandeReservationSalles);
 
-        memoire.getEvenements().add(evenement);
+        memoire.getEvenements().add(evenement);*/
 
     }
 

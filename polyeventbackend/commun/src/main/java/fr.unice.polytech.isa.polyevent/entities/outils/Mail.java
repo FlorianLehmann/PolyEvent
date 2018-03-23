@@ -9,6 +9,10 @@ public class Mail {
 
     private String mail;
 
+    public Mail() {
+
+    }
+
     public Mail(String mail) {
         if (!estValide(mail))
             throw new MailInvalideException();

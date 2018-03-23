@@ -11,21 +11,21 @@ import javax.xml.datatype.XMLGregorianCalendar;
 /**
  * <p>Classe Java pour demandeReservationSalle complex type.
  * 
- * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schÃ©ma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
- * &lt;complexType name="demandeReservationSalle">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="dateDebut" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="dateFin" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="nom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="typeSalle" type="{http://www.polytech.unice.fr/si/4a/isa/polyevent/demandeEvenement}typeSalle" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="demandeReservationSalle"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="dateDebut" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
+ *         &lt;element name="dateFin" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
+ *         &lt;element name="nom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="typeSalle" type="{http://www.polytech.unice.fr/si/4a/isa/polyevent/demandeEvenement}typeSalle" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -48,7 +48,7 @@ public class DemandeReservationSalle {
     protected TypeSalle typeSalle;
 
     /**
-     * Obtient la valeur de la propriété dateDebut.
+     * Obtient la valeur de la propriÃ©tÃ© dateDebut.
      * 
      * @return
      *     possible object is
@@ -60,7 +60,7 @@ public class DemandeReservationSalle {
     }
 
     /**
-     * Définit la valeur de la propriété dateDebut.
+     * DÃ©finit la valeur de la propriÃ©tÃ© dateDebut.
      * 
      * @param value
      *     allowed object is
@@ -72,7 +72,7 @@ public class DemandeReservationSalle {
     }
 
     /**
-     * Obtient la valeur de la propriété dateFin.
+     * Obtient la valeur de la propriÃ©tÃ© dateFin.
      * 
      * @return
      *     possible object is
@@ -84,7 +84,7 @@ public class DemandeReservationSalle {
     }
 
     /**
-     * Définit la valeur de la propriété dateFin.
+     * DÃ©finit la valeur de la propriÃ©tÃ© dateFin.
      * 
      * @param value
      *     allowed object is
@@ -96,7 +96,7 @@ public class DemandeReservationSalle {
     }
 
     /**
-     * Obtient la valeur de la propriété nom.
+     * Obtient la valeur de la propriÃ©tÃ© nom.
      * 
      * @return
      *     possible object is
@@ -108,7 +108,7 @@ public class DemandeReservationSalle {
     }
 
     /**
-     * Définit la valeur de la propriété nom.
+     * DÃ©finit la valeur de la propriÃ©tÃ© nom.
      * 
      * @param value
      *     allowed object is
@@ -120,7 +120,7 @@ public class DemandeReservationSalle {
     }
 
     /**
-     * Obtient la valeur de la propriété typeSalle.
+     * Obtient la valeur de la propriÃ©tÃ© typeSalle.
      * 
      * @return
      *     possible object is
@@ -132,7 +132,7 @@ public class DemandeReservationSalle {
     }
 
     /**
-     * Définit la valeur de la propriété typeSalle.
+     * DÃ©finit la valeur de la propriÃ©tÃ© typeSalle.
      * 
      * @param value
      *     allowed object is
