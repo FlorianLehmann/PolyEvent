@@ -10,6 +10,7 @@ pipeline {
                 sh 'pwd'
                 sh 'ls -la'
                 sh 'cd polyeventbackend/commun'
+                sh 'mvn clean install'
             }
         }
     }
