@@ -11,6 +11,7 @@ import fr.unice.polytech.isa.polyevent.ValiderReservation;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import java.util.ArrayList;
 import java.util.List;
 
 @Stateless
@@ -20,6 +21,7 @@ public class DemandeReservation implements DemanderReservation, ValiderReservati
     private Database memoire;
 
     private HyperPlanningAPI hyperPlanningAPI = new HyperPlanningAPI();
+
 
     @Override
     public void demanderReservationSalle(Evenement evenement, List<DemandeReservationSalle> demandeReservationSalles) {
@@ -35,10 +37,18 @@ public class DemandeReservation implements DemanderReservation, ValiderReservati
     public void accepterReservation(Reservation reservation, Salle salle) {
         for (Reservation r: memoire.getReservations()) {
             if(r.equals(reservation)){
-                r.setSalle(salle);
-                r.setStatut(Statut.VALIDE);
-                salle.getReservations().add(r);
-                hyperPlanningAPI.reserverSalle(r);
+                boolean succes = hyperPlanningAPI.reserverSalle(r, salle);
+                if (succes) {
+                    r.setSalle(salle);
+                    r.setStatut(Statut.VALIDE);
+                    salle.getReservations().add(r);
+                    if (reservation.getEvenement().getReservations() == null){
+                        reservation.getEvenement().setReservations(new ArrayList<>());
+                    }
+                    reservation.getEvenement().getReservations().add(r);
+
+                    return;
+                }
             }
         }
     }
@@ -48,6 +58,10 @@ public class DemandeReservation implements DemanderReservation, ValiderReservati
         for (Reservation r: memoire.getReservations()) {
             if(r.equals(reservation)){
                 r.setStatut(Statut.REFUSE);
+                if (reservation.getEvenement().getReservations() == null){
+                    reservation.getEvenement().setReservations(new ArrayList<>());
+                }
+                reservation.getEvenement().getReservations().add(r);
             }
         }
     }
@@ -59,9 +73,9 @@ public class DemandeReservation implements DemanderReservation, ValiderReservati
             boolean dispnible = true;
             if(salle.getTypeSalle().equals(reservation.getTypeSalle())){
                 for (Reservation r: salle.getReservations()) {
-                        if((r.getDateDebut().compareTo(reservation.getDateDebut())<0 && r.getDateFin().compareTo(reservation.getDateFin())>0)
-                          || (r.getDateDebut().compareTo(reservation.getDateDebut())>0 && r.getDateDebut().compareTo(reservation.getDateFin())<0)
-                          || (r.getDateFin().compareTo(reservation.getDateDebut())>0 && r.getDateFin().compareTo(reservation.getDateFin())<0)  ){
+                        if((r.getDateDebut().compareTo(reservation.getDateDebut())<=0 && r.getDateFin().compareTo(reservation.getDateFin())>=0)
+                          || (r.getDateDebut().compareTo(reservation.getDateDebut())>=0 && r.getDateDebut().compareTo(reservation.getDateFin())<=0)
+                          || (r.getDateFin().compareTo(reservation.getDateDebut())>=0 && r.getDateFin().compareTo(reservation.getDateFin())<=0)  ){
                             dispnible = false;
                         }
                     }
@@ -74,5 +88,9 @@ public class DemandeReservation implements DemanderReservation, ValiderReservati
 
         }
         refuserReservation(reservation, "pas de salle disponible");
+    }
+
+    public void setHyperPlanningAPI(HyperPlanningAPI hyperPlanningAPI) {
+        this.hyperPlanningAPI = hyperPlanningAPI;
     }
 }
