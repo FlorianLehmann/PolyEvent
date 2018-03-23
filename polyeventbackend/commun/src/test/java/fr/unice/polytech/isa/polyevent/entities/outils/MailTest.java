@@ -10,11 +10,11 @@ import static org.junit.Assert.*;
 public class MailTest {
 
     @Test(expected = MailInvalideException.class) public void shouldNotHaveNullMail() {
-        Organisateur organisateur = new Organisateur(null);
+        Mail mail = new Mail(null);
     }
 
     @Test(expected = MailInvalideException.class) public void shouldNotHaveEmptyMail() {
-        new Organisateur("");
+        new Mail("");
     }
 
     @Test public void shouldNotBeAValidMail() {
