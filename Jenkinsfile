@@ -7,11 +7,12 @@ pipeline {
     stages {
         stage ('Build') {
             steps {
-                sh './compilation-all.sh'
+                sh 'cd commun'
             }
             post {
                 success {
-                    junit 'target/surefire-reports/**/*.xml'
+
+
                 }
             }
         }
