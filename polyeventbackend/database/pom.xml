@@ -18,13 +18,13 @@
     </distributionManagement>
 
     <repositories>
-    <repository>
-        <id>snapshots</id>
-        <url>http://172.19.250.182:8081/artifactory/libs-snapshot-local</url>
-        <snapshots>
-            <enabled>false</enabled>
-        </snapshots>
-    </repository>
+        <repository>
+            <id>snapshots</id>
+            <url>http://172.19.250.182:8081/artifactory/libs-snapshot-local</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
     </repositories>
 
     <properties>
@@ -40,9 +40,10 @@
     <dependencies>
 
         <dependency>
-            <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>commun</artifactId>
-            <version>1.2-SNAPSHOT</version>
+            <groupId>fr.unice.polytech.isa</groupId>
+            <artifactId>polyevent</artifactId>
+            <version>commun</version>
+            <type>l</type>
         </dependency>
 
         <dependency>
