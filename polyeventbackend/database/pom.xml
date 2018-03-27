@@ -17,6 +17,16 @@
         </snapshotRepository>
     </distributionManagement>
 
+    <repositories>
+    <repository>
+        <id>snapshots</id>
+        <url>http://172.19.250.182:8081/artifactory/libs-snapshot-local</url>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+    </repository>
+    </repositories>
+
     <properties>
         <!-- General Properties -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
