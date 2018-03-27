@@ -8,6 +8,40 @@
     <name>commun</name>
     <url>http://maven.apache.org</url>
 
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>http://172.19.250.182:8081/artifactory/libs-snapshot-local</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>snapshots</id>
+            <url>http://172.19.250.182:8081/artifactory/libs-snapshot-local</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>central</id>
+            <url>http://172.19.250.182:8081/artifactory/libs-snapshot-local</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>snapshots</id>
+            <url>http://172.19.250.182:8081/artifactory/libs-snapshot-local</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
+
+
     <distributionManagement>
         <snapshotRepository>
             <id>snapshots</id>

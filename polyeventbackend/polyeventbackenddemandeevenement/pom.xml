@@ -10,6 +10,48 @@
     <version>1.0-SNAPSHOT</version>
     <url>http://maven.apache.org</url>
 
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>http://172.19.250.182:8081/artifactory/libs-snapshot-local</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>snapshots</id>
+            <url>http://172.19.250.182:8081/artifactory/libs-snapshot-local</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>central</id>
+            <url>http://172.19.250.182:8081/artifactory/libs-snapshot-local</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>snapshots</id>
+            <url>http://172.19.250.182:8081/artifactory/libs-snapshot-local</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
+
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>e7cfad09a804-snapshots</name>
+            <url>http://172.19.250.182:8081/artifactory/libs-snapshot-local</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <properties>
         <!-- General Properties -->
         <dir.agent>agent</dir.agent>
@@ -42,13 +84,13 @@
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
             <artifactId>polyevent-backend-demande-reservation</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>LATEST</version>
 
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
             <artifactId>commun</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>LATEST</version>
         </dependency>
 
         <dependency>
