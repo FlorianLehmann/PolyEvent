@@ -8,6 +8,7 @@
     <name>database</name>
     <url>http://maven.apache.org</url>
 
+
     <repositories>
         <repository>
             <id>central</id>
@@ -41,6 +42,7 @@
         </pluginRepository>
     </pluginRepositories>
 
+
     <distributionManagement>
         <snapshotRepository>
             <id>snapshots</id>
@@ -62,10 +64,9 @@
     <dependencies>
 
         <dependency>
-            <groupId>fr.unice.polytech.isa</groupId>
-            <artifactId>polyevent</artifactId>
-            <version>commun</version>
-            <type>l</type>
+            <groupId>fr.unice.polytech.isa.polyevent</groupId>
+            <artifactId>commun</artifactId>
+            <version>1.2-SNAPSHOT</version>
         </dependency>
 
         <dependency>
