@@ -6,6 +6,7 @@ import fr.unice.polytech.isa.polyevent.stubs.*;
 
 import java.io.PrintStream;
 import java.util.List;
+import java.util.Scanner;
 
 public class ListEvent implements Command
 {
@@ -79,12 +80,10 @@ public class ListEvent implements Command
 
     public static class Builder implements CommandBuilder<ListEvent>
     {
-        private final PrintStream out;
         private final DemanderEvenement demandeEvenement;
 
-        public Builder(PrintStream out, DemanderEvenement demandeEvenement)
+        public Builder(DemanderEvenement demandeEvenement)
         {
-            this.out = out;
             this.demandeEvenement = demandeEvenement;
         }
 
@@ -107,7 +106,7 @@ public class ListEvent implements Command
         }
 
         @Override
-        public ListEvent build()
+        public ListEvent build(Scanner scanner, PrintStream out, boolean echo)
         {
             return new ListEvent(out, demandeEvenement);
         }

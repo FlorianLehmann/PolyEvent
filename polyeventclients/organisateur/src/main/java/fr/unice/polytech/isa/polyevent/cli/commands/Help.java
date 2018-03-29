@@ -6,6 +6,7 @@ import fr.unice.polytech.isa.polyevent.cli.framework.Shell;
 
 import java.io.PrintStream;
 import java.util.List;
+import java.util.Scanner;
 
 public class Help implements Command
 {
@@ -63,12 +64,10 @@ public class Help implements Command
     public static class Builder implements CommandBuilder<Help>
     {
         private final Shell shell;
-        private final PrintStream out;
 
-        public Builder(Shell shell, PrintStream out)
+        public Builder(Shell shell)
         {
             this.shell = shell;
-            this.out = out;
         }
 
         @Override
@@ -90,7 +89,7 @@ public class Help implements Command
         }
 
         @Override
-        public Help build()
+        public Help build(Scanner scanner, PrintStream out, boolean echo)
         {
             return new Help(shell, out);
         }

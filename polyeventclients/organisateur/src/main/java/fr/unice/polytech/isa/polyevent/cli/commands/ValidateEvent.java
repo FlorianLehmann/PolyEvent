@@ -11,6 +11,7 @@ import javax.xml.ws.WebServiceException;
 import java.io.PrintStream;
 import java.net.ConnectException;
 import java.util.List;
+import java.util.Scanner;
 
 public class ValidateEvent implements Command
 {
@@ -71,11 +72,10 @@ public class ValidateEvent implements Command
         private final XMLGregorianCalendar dateDebut;
         private final XMLGregorianCalendar dateFin;
         private final List<DemandeReservationSalle> demandeReservations;
-        private final PrintStream out;
 
         Builder(DemanderEvenement demandeEvenement, Organisateur organisateur, String nom,
                 XMLGregorianCalendar dateDebut, XMLGregorianCalendar dateFin,
-                List<DemandeReservationSalle> demandeReservations, PrintStream out)
+                List<DemandeReservationSalle> demandeReservations)
         {
             this.demandeEvenement = demandeEvenement;
             this.organisateur = organisateur;
@@ -83,7 +83,6 @@ public class ValidateEvent implements Command
             this.dateDebut = dateDebut;
             this.dateFin = dateFin;
             this.demandeReservations = demandeReservations;
-            this.out = out;
         }
 
         @Override
@@ -99,7 +98,7 @@ public class ValidateEvent implements Command
         }
 
         @Override
-        public ValidateEvent build()
+        public ValidateEvent build(Scanner scanner, PrintStream out, boolean echo)
         {
             return new ValidateEvent(demandeEvenement, organisateur, nom, dateDebut, dateFin, demandeReservations, out);
         }

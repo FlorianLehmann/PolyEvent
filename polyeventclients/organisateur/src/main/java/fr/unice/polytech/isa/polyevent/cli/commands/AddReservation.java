@@ -7,8 +7,10 @@ import fr.unice.polytech.isa.polyevent.stubs.TypeSalle;
 
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
+import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class AddReservation implements Command
@@ -101,7 +103,7 @@ public class AddReservation implements Command
         }
 
         @Override
-        public AddReservation build()
+        public AddReservation build(Scanner scanner, PrintStream out, boolean echo)
         {
             return new AddReservation(demandeReservations);
         }

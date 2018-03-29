@@ -4,6 +4,7 @@ import fr.unice.polytech.isa.polyevent.cli.framework.Command;
 import fr.unice.polytech.isa.polyevent.cli.framework.CommandBuilder;
 
 import java.io.PrintStream;
+import java.util.Scanner;
 
 public class Bye implements Command
 {
@@ -29,13 +30,6 @@ public class Bye implements Command
 
     public static class Builder implements CommandBuilder<Bye>
     {
-        private final PrintStream out;
-
-        public Builder(PrintStream out)
-        {
-            this.out = out;
-        }
-
         @Override
         public String identifier()
         {
@@ -49,7 +43,7 @@ public class Bye implements Command
         }
 
         @Override
-        public Bye build()
+        public Bye build(Scanner scanner, PrintStream out, boolean echo)
         {
             return new Bye(out);
         }

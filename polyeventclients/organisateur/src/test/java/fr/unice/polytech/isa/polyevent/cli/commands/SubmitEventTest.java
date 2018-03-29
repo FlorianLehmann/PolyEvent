@@ -9,11 +9,7 @@ import org.junit.Test;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.io.*;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.GregorianCalendar;
-import java.util.List;
+import java.util.*;
 
 import static org.junit.Assert.*;
 
@@ -47,7 +43,7 @@ public class SubmitEventTest
     @Test
     public void emptyArrayIsNotNull() throws Exception
     {
-        SubmitEvent submitEvent = new SubmitEvent(shell, inputStream, printStream, new DemanderEvenement()
+        SubmitEvent submitEvent = new SubmitEvent(shell, new Scanner(inputStream), printStream, false, new DemanderEvenement()
         {
             @Override
             public List<Evenement> getEvenements(Organisateur organisateur)

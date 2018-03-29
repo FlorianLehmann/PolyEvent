@@ -10,17 +10,18 @@ import fr.unice.polytech.isa.polyevent.stubs.Organisateur;
 
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
-import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class SubmitEvent implements Command
 {
     private static final Identifier IDENTIFIER = Identifier.SUBMIT_EVENT;
     private final Shell shell;
-    private final InputStream in;
+    private final Scanner scanner;
     private final PrintStream out;
+    private final boolean echo;
     private final DemanderEvenement demandeEvenement;
     private Organisateur organisateur;
     private String nom;
@@ -28,11 +29,12 @@ public class SubmitEvent implements Command
     private XMLGregorianCalendar dateFin;
     private List<DemandeReservationSalle> demandeReservations;
 
-    SubmitEvent(Shell shell, InputStream in, PrintStream out, DemanderEvenement demandeEvenement)
+    SubmitEvent(Shell shell, Scanner scanner, PrintStream out, boolean echo, DemanderEvenement demandeEvenement)
     {
         this.shell = shell;
-        this.in = in;
+        this.scanner = scanner;
         this.out = out;
+        this.echo = echo;
         this.demandeEvenement = demandeEvenement;
     }
 
@@ -69,27 +71,23 @@ public class SubmitEvent implements Command
     {
         Shell subShell = shell.subShell();
         subShell.register(
-                new Help.Builder(subShell, out),
+                new Help.Builder(subShell),
                 new AddReservation.Builder(demandeReservations),
-                new ValidateEvent.Builder(demandeEvenement, organisateur, nom, dateDebut, dateFin, demandeReservations, out),
+                new ValidateEvent.Builder(demandeEvenement, organisateur, nom, dateDebut, dateFin, demandeReservations),
                 new CancelEvent.Builder()
         );
         out.format("Add reservations to the event \"%s\". Type ? for help.%n", nom);
-        subShell.run(in, out);
+        subShell.run(scanner, out, echo);
     }
 
     public static class Builder implements CommandBuilder<SubmitEvent>
     {
         private final Shell shell;
-        private final InputStream in;
-        private final PrintStream out;
         private final DemanderEvenement demandeEvenement;
 
-        public Builder(Shell shell, InputStream in, PrintStream out, DemanderEvenement demandeEvenement)
+        public Builder(Shell shell, DemanderEvenement demandeEvenement)
         {
             this.shell = shell;
-            this.in = in;
-            this.out = out;
             this.demandeEvenement = demandeEvenement;
         }
 
@@ -114,9 +112,9 @@ public class SubmitEvent implements Command
         }
 
         @Override
-        public SubmitEvent build()
+        public SubmitEvent build(Scanner scanner, PrintStream out, boolean echo)
         {
-            return new SubmitEvent(shell, in, out, demandeEvenement);
+            return new SubmitEvent(shell, scanner, out, echo, demandeEvenement);
         }
     }
 }

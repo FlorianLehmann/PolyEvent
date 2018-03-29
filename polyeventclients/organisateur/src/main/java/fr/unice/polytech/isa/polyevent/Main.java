@@ -1,10 +1,7 @@
 package fr.unice.polytech.isa.polyevent;
 
 import fr.unice.polytech.isa.polyevent.api.PolyEventAPI;
-import fr.unice.polytech.isa.polyevent.cli.commands.Bye;
-import fr.unice.polytech.isa.polyevent.cli.commands.Help;
-import fr.unice.polytech.isa.polyevent.cli.commands.ListEvent;
-import fr.unice.polytech.isa.polyevent.cli.commands.SubmitEvent;
+import fr.unice.polytech.isa.polyevent.cli.commands.*;
 import fr.unice.polytech.isa.polyevent.cli.framework.Shell;
 import net.sourceforge.argparse4j.ArgumentParsers;
 import net.sourceforge.argparse4j.inf.ArgumentParser;
@@ -13,6 +10,7 @@ import net.sourceforge.argparse4j.inf.Namespace;
 
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.util.Scanner;
 
 public class Main
 {
@@ -49,14 +47,15 @@ public class Main
         PolyEventAPI api = new PolyEventAPI(host, port);
         Shell shell = new Shell();
         shell.register(
-                new Help.Builder(shell, out),
-                new Bye.Builder(out),
-                new SubmitEvent.Builder(shell, in, out, api.demandeEvenement),
-                new ListEvent.Builder(out, api.demandeEvenement)
+                new Help.Builder(shell),
+                new Bye.Builder(),
+                new SubmitEvent.Builder(shell, api.demandeEvenement),
+                new ListEvent.Builder(api.demandeEvenement),
+                new Play.Builder(shell)
         );
 
         out.println("Submit your event. Type ? for help.");
-        shell.run(in, out);
+        shell.run(new Scanner(in), out);
         out.println("Exiting Poly'Event by Team H");
     }
 }
