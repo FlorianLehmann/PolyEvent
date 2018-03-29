@@ -1,5 +1,6 @@
 package fr.unice.polytech.isa.polyevent.entities;
 
+import javax.xml.bind.annotation.XmlTransient;
 import java.util.Date;
 
 public class Reservation {
@@ -75,6 +76,7 @@ public class Reservation {
 
     public Salle getSalle() { return salle; }
 
+    @XmlTransient
     public Evenement getEvenement() {
         return evenement;
     }

@@ -3,6 +3,7 @@ package fr.unice.polytech.isa.polyevent;
 import fr.unice.polytech.isa.polyevent.api.PolyEventAPI;
 import fr.unice.polytech.isa.polyevent.cli.commands.Bye;
 import fr.unice.polytech.isa.polyevent.cli.commands.Help;
+import fr.unice.polytech.isa.polyevent.cli.commands.ListEvent;
 import fr.unice.polytech.isa.polyevent.cli.commands.SubmitEvent;
 import fr.unice.polytech.isa.polyevent.cli.framework.Shell;
 import net.sourceforge.argparse4j.ArgumentParsers;
@@ -50,7 +51,8 @@ public class Main
         shell.register(
                 new Help.Builder(shell, out),
                 new Bye.Builder(out),
-                new SubmitEvent.Builder(shell, in, out, api.demandeEvenement)
+                new SubmitEvent.Builder(shell, in, out, api.demandeEvenement),
+                new ListEvent.Builder(out, api.demandeEvenement)
         );
 
         out.println("Submit your event. Type ? for help.");

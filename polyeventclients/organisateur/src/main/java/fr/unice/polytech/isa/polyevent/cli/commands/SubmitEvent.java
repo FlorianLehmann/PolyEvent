@@ -3,7 +3,10 @@ package fr.unice.polytech.isa.polyevent.cli.commands;
 import fr.unice.polytech.isa.polyevent.cli.framework.Command;
 import fr.unice.polytech.isa.polyevent.cli.framework.CommandBuilder;
 import fr.unice.polytech.isa.polyevent.cli.framework.Shell;
-import fr.unice.polytech.isa.polyevent.stubs.*;
+import fr.unice.polytech.isa.polyevent.stubs.DemandeReservationSalle;
+import fr.unice.polytech.isa.polyevent.stubs.DemanderEvenement;
+import fr.unice.polytech.isa.polyevent.stubs.Mail;
+import fr.unice.polytech.isa.polyevent.stubs.Organisateur;
 
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -14,7 +17,7 @@ import java.util.List;
 
 public class SubmitEvent implements Command
 {
-    private static final String IDENTIFIER = "event";
+    private static final Identifier IDENTIFIER = Identifier.SUBMIT_EVENT;
     private final Shell shell;
     private final InputStream in;
     private final PrintStream out;
@@ -93,13 +96,13 @@ public class SubmitEvent implements Command
         @Override
         public String identifier()
         {
-            return IDENTIFIER;
+            return IDENTIFIER.keyword;
         }
 
         @Override
         public String describe()
         {
-            return "Submit an event to the system";
+            return IDENTIFIER.description;
         }
 
         @Override

@@ -1,10 +1,7 @@
 package fr.unice.polytech.isa.polyevent.cli.commands;
 
 import fr.unice.polytech.isa.polyevent.cli.framework.Shell;
-import fr.unice.polytech.isa.polyevent.stubs.DemandeReservationSalle;
-import fr.unice.polytech.isa.polyevent.stubs.DemanderEvenement;
-import fr.unice.polytech.isa.polyevent.stubs.Mail;
-import fr.unice.polytech.isa.polyevent.stubs.Organisateur;
+import fr.unice.polytech.isa.polyevent.stubs.*;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -52,6 +49,12 @@ public class SubmitEventTest
     {
         SubmitEvent submitEvent = new SubmitEvent(shell, inputStream, printStream, new DemanderEvenement()
         {
+            @Override
+            public List<Evenement> getEvenements(Organisateur organisateur)
+            {
+                return null;
+            }
+
             @Override
             public void demanderCreationEvenement(Organisateur organisateur, String nom, XMLGregorianCalendar dateDebut, XMLGregorianCalendar dateFin, List<DemandeReservationSalle> demandeReservations)
             {

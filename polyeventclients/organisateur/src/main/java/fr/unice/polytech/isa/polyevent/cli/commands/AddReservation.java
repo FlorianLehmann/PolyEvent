@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 public class AddReservation implements Command
 {
-    private static final String IDENTIFIER = "reservation";
+    private static final Identifier IDENTIFIER = Identifier.ADD_RESERVATION;
     private final List<DemandeReservationSalle> demandeReservations;
     private TypeSalle typeSalle;
     private XMLGregorianCalendar dateDebut;
@@ -82,13 +82,13 @@ public class AddReservation implements Command
         @Override
         public String identifier()
         {
-            return IDENTIFIER;
+            return IDENTIFIER.keyword;
         }
 
         @Override
         public String describe()
         {
-            return "Add a reservation to the event";
+            return IDENTIFIER.description;
         }
 
         @Override

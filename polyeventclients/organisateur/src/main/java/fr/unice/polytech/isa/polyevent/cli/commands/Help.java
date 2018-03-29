@@ -9,9 +9,9 @@ import java.util.List;
 
 public class Help implements Command
 {
-    private static final String FULL_IDENTIFIER = "help";
+    private static final Identifier IDENTIFIER = Identifier.HELP;
     private static final String SHORTCUT = "?";
-    private static final String IDENTIFIER = String.format("%s or %s", FULL_IDENTIFIER, SHORTCUT);
+    private static final String FULL_IDENTIFIER = String.format("%s or %s", IDENTIFIER.keyword, SHORTCUT);
     private final Shell shell;
     private final PrintStream out;
     private CommandBuilder builder;
@@ -74,19 +74,19 @@ public class Help implements Command
         @Override
         public String identifier()
         {
-            return IDENTIFIER;
+            return FULL_IDENTIFIER;
         }
 
         @Override
         public boolean match(String keyword)
         {
-            return FULL_IDENTIFIER.equals(keyword) || SHORTCUT.equals(keyword);
+            return IDENTIFIER.keyword.equals(keyword) || SHORTCUT.equals(keyword);
         }
 
         @Override
         public String describe()
         {
-            return "Print the help";
+            return IDENTIFIER.description;
         }
 
         @Override

@@ -1,5 +1,6 @@
 package fr.unice.polytech.isa.polyevent.entities;
 
+import javax.xml.bind.annotation.XmlTransient;
 import java.util.List;
 
 public class Salle {
@@ -17,6 +18,7 @@ public class Salle {
         this.nom = nom;
     }
 
+    @XmlTransient
     public List<Reservation> getReservations() {
         return reservations;
     }

@@ -5,7 +5,7 @@ import fr.unice.polytech.isa.polyevent.cli.framework.CommandBuilder;
 
 public class CancelEvent implements Command
 {
-    private static final String IDENTIFIER = "cancel";
+    private static final Identifier IDENTIFIER = Identifier.CANCEL;
 
     @Override
     public void execute() throws Exception
@@ -24,13 +24,13 @@ public class CancelEvent implements Command
         @Override
         public String identifier()
         {
-            return IDENTIFIER;
+            return IDENTIFIER.keyword;
         }
 
         @Override
         public String describe()
         {
-            return "Exit the reservation shell and cancel the current event creation";
+            return IDENTIFIER.description;
         }
 
         @Override

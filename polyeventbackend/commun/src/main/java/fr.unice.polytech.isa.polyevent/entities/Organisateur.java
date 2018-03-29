@@ -2,6 +2,7 @@ package fr.unice.polytech.isa.polyevent.entities;
 
 import fr.unice.polytech.isa.polyevent.entities.outils.Mail;
 
+import javax.xml.bind.annotation.XmlTransient;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -26,6 +27,7 @@ public class Organisateur {
         this.mail = mail;
     }
 
+    @XmlTransient
     public List<Evenement> getEvenements() {
         return evenements;
     }

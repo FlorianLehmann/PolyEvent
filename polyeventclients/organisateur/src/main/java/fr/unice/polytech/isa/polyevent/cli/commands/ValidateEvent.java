@@ -14,7 +14,7 @@ import java.util.List;
 
 public class ValidateEvent implements Command
 {
-    private static final String IDENTIFIER = "validate";
+    private static final Identifier IDENTIFIER = Identifier.VALIDATE;
     private final DemanderEvenement demandeEvenement;
     private final Organisateur organisateur;
     private final String nom;
@@ -89,13 +89,13 @@ public class ValidateEvent implements Command
         @Override
         public String identifier()
         {
-            return IDENTIFIER;
+            return IDENTIFIER.keyword;
         }
 
         @Override
         public String describe()
         {
-            return "validate the event submission";
+            return IDENTIFIER.description;
         }
 
         @Override

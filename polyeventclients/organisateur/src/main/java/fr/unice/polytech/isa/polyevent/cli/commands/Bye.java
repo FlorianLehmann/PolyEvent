@@ -7,7 +7,7 @@ import java.io.PrintStream;
 
 public class Bye implements Command
 {
-    private static final String IDENTIFIER = "bye";
+    private static final Identifier IDENTIFIER = Identifier.BYE;
     private final PrintStream out;
 
     private Bye(PrintStream out)
@@ -39,13 +39,13 @@ public class Bye implements Command
         @Override
         public String identifier()
         {
-            return IDENTIFIER;
+            return IDENTIFIER.keyword;
         }
 
         @Override
         public String describe()
         {
-            return "Exit Poly'Event";
+            return IDENTIFIER.description;
         }
 
         @Override
