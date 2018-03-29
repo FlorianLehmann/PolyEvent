@@ -8,7 +8,7 @@ import javax.ejb.Local;
 @Local
 public interface ValiderReservation {
 
-    void accepterReservation(Reservation reservation, Salle salle);
+    boolean accepterReservation(Reservation reservation, Salle salle);
     void refuserReservation(Reservation reservation, String raison);
 
 }
