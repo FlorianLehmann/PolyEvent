@@ -42,4 +42,36 @@ public class Evenement {
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public Date getDebut() {
+        return debut;
+    }
+
+    public void setDebut(Date debut) {
+        this.debut = debut;
+    }
+
+    public Date getFin() {
+        return fin;
+    }
+
+    public void setFin(Date fin) {
+        this.fin = fin;
+    }
+
+    public void setOrganisateur(Organisateur organisateur) {
+        this.organisateur = organisateur;
+    }
+
+    public StatusHistorique getStatusHistorique() {
+        return statusHistorique;
+    }
+
+    public void setStatusHistorique(StatusHistorique statusHistorique) {
+        this.statusHistorique = statusHistorique;
+    }
 }
