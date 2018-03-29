@@ -36,7 +36,14 @@ public class DemandeEvenement implements DemanderEvenement {
 
     @Override
     public List<Evenement> getEvenements(Organisateur organisateur) {
-        return organisateur.getEvenements();
+        List<Evenement> evenements = new ArrayList<>();
+        for (Evenement evenement :
+                memoire.getEvenements()) {
+            if (evenement.getOrganisateur().equals(organisateur)) {
+                evenements.add(evenement);
+            }
+        }
+        return evenements;
     }
 
 }

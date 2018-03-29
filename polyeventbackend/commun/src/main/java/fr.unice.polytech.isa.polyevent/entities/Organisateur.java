@@ -4,6 +4,7 @@ import fr.unice.polytech.isa.polyevent.entities.outils.Mail;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Organisateur {
 
@@ -31,5 +32,19 @@ public class Organisateur {
 
     public void setEvenements(List<Evenement> evenements) {
         this.evenements = evenements;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Organisateur that = (Organisateur) o;
+        return mail.getMail().equals(that.mail.getMail());
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(mail, evenements);
     }
 }

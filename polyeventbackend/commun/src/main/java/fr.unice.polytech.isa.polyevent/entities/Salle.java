@@ -29,4 +29,15 @@ public class Salle {
         return nom;
     }
 
+    public void setTypeSalle(TypeSalle typeSalle) {
+        this.typeSalle = typeSalle;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
 }
