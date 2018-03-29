@@ -5,5 +5,4 @@ public class MailInvalideException extends RuntimeException {
     public MailInvalideException() {
         super("L adresse mail n'est pas valide");
     }
-
 }

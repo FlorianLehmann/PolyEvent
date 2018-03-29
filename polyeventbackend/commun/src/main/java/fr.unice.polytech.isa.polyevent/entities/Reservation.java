@@ -78,4 +78,20 @@ public class Reservation {
     public Evenement getEvenement() {
         return evenement;
     }
+
+    public void setDateDebut(Date dateDebut) {
+        this.dateDebut = dateDebut;
+    }
+
+    public void setDateFin(Date dateFin) {
+        this.dateFin = dateFin;
+    }
+
+    public void setTypeSalle(TypeSalle typeSalle) {
+        this.typeSalle = typeSalle;
+    }
+
+    public void setEvenement(Evenement evenement) {
+        this.evenement = evenement;
+    }
 }
