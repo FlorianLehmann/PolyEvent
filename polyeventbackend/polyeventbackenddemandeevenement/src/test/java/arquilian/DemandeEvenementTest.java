@@ -61,12 +61,19 @@ public class DemandeEvenementTest {
         assertEquals(0, memory.getEvenements().size());
     }
 
-    @Ignore
     @Test public void shouldCreateAnEvent() {
         final String mail = "jean@f.com";
         Organisateur organisateur = new Organisateur(mail);
         demanderEvenement.demanderCreationEvenement(organisateur, "hashcode", new Date(), new Date(), new ArrayList<>());
         assertEquals(new Mail(mail), memory.getEvenements().get(0).getOrganisateur().getMail());
+    }
+
+    @Test public void shouldGetEventsFromOrganisateur() {
+        final String mail = "jean@f.com";
+        Organisateur organisateur = new Organisateur(mail);
+        demanderEvenement.demanderCreationEvenement(organisateur, "hashcode", new Date(), new Date(), new ArrayList<>());
+        assertEquals(demanderEvenement.getEvenements(organisateur).get(0), memory.getEvenements().get(0));
+
     }
 
 }
