@@ -34,7 +34,7 @@ public class DemandeReservation implements DemanderReservation, ValiderReservati
     }
 
     @Override
-    public void accepterReservation(Reservation reservation, Salle salle) {
+    public boolean accepterReservation(Reservation reservation, Salle salle) {
         for (Reservation r: memoire.getReservations()) {
             if(r.equals(reservation)){
                 boolean succes = hyperPlanningAPI.reserverSalle(r, salle);
@@ -47,10 +47,12 @@ public class DemandeReservation implements DemanderReservation, ValiderReservati
                     }
                     reservation.getEvenement().getReservations().add(r);
 
-                    return;
+                    return true;
                 }
             }
         }
+        return false;
+
     }
 
     @Override

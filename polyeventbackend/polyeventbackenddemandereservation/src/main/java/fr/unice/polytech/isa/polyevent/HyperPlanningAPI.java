@@ -22,10 +22,6 @@ public class HyperPlanningAPI {
         JSONObject requete = new JSONObject().put("dateDebut", reservation.getDateDebut()).put("dateFin", reservation.getDateFin())
                 .put("emplacement", salle.getNom()).put("nomEvenement", reservation.getEvenement().getNom());
 
-//        String str = WebClient.create(url).path("/mailbox")
-//                .accept(MediaType.APPLICATION_JSON_TYPE).header("Content-Type", MediaType.APPLICATION_JSON)
-//                .post(request.toString(), String.class);
-
         try {
            int status =  WebClient.create(url).accept(MediaType.APPLICATION_JSON_TYPE)
                    .header("Content-Type", MediaType.APPLICATION_JSON).post(requete.toString()).getStatus();
@@ -34,7 +30,7 @@ public class HyperPlanningAPI {
                succes = false;
            }
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println("La connexion à hyperplanning a échoué");
             succes = false;
         }
 
