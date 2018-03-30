@@ -57,8 +57,9 @@ public class DemandeEvenementTest {
 
     @Before public void flushDatabase() { memory.flush(); }
 
+
     @Test public void noEvenementByDefault() {
-        assertEquals(1, memory.getEvenements().size());
+        assertEquals(0, memory.getEvenements().size());
     }
 
     @Ignore
