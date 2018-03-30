@@ -59,7 +59,7 @@ public class DemandeEvenementTest {
 
 
     @Test public void noEvenementByDefault() {
-        assertEquals(1, memory.getEvenements().size());
+        assertEquals(0, memory.getEvenements().size());
     }
 
     @Ignore
