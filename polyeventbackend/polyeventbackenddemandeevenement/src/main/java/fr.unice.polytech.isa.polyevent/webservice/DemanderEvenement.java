@@ -1,5 +1,6 @@
 package fr.unice.polytech.isa.polyevent.webservice;
 
+import fr.unice.polytech.isa.polyevent.DemanderReservation;
 import fr.unice.polytech.isa.polyevent.entities.DemandeReservationSalle;
 import fr.unice.polytech.isa.polyevent.entities.Evenement;
 import fr.unice.polytech.isa.polyevent.entities.Organisateur;
@@ -14,6 +15,8 @@ import java.util.List;
 
 @WebService(targetNamespace = "http://www.polytech.unice.fr/si/4a/isa/polyevent/demandeEvenement")
 public interface DemanderEvenement {
+
+    void setDemandeReservation(DemanderReservation demandeReservation);
 
     @WebMethod
     void demanderCreationEvenement(@WebParam(name = "organisateur") Organisateur organisateur,

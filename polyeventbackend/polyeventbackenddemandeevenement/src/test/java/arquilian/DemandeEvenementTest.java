@@ -1,8 +1,11 @@
 package arquilian;
 
+import fr.unice.polytech.isa.polyevent.HyperPlanningAPI;
 import fr.unice.polytech.isa.polyevent.component.DemandeReservation;
 import fr.unice.polytech.isa.polyevent.DemanderReservation;
+import fr.unice.polytech.isa.polyevent.entities.DemandeReservationSalle;
 import fr.unice.polytech.isa.polyevent.entities.Organisateur;
+import fr.unice.polytech.isa.polyevent.entities.TypeSalle;
 import fr.unice.polytech.isa.polyevent.entities.outils.Mail;
 import fr.unice.polytech.isa.polyevent.utils.Database;
 import fr.unice.polytech.isa.polyevent.ValiderReservation;
@@ -22,8 +25,11 @@ import javax.ejb.EJB;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.*;
 
 @RunWith(Arquillian.class)
 public class DemandeEvenementTest {
@@ -74,6 +80,19 @@ public class DemandeEvenementTest {
         demanderEvenement.demanderCreationEvenement(organisateur, "hashcode", new Date(), new Date(), new ArrayList<>());
         assertEquals(demanderEvenement.getEvenements(organisateur).get(0), memory.getEvenements().get(0));
 
+    }
+
+    @Test public void testDEmandeReservation() {
+        final String mail = "jean@f.com";
+        Organisateur organisateur = new Organisateur(mail);
+        HyperPlanningAPI mocked = mock(HyperPlanningAPI.class);
+        demandeReservation.setHyperPlanningAPI(mocked);
+        when(mocked.reserverSalle(any(), any())).thenReturn(true);
+        demanderEvenement.setDemandeReservation(demandeReservation);
+        List<DemandeReservationSalle> list = new ArrayList<>();
+        list.add(new DemandeReservationSalle(new Date(), new Date(), TypeSalle.AMPHI));
+        demanderEvenement.demanderCreationEvenement(organisateur, "hashcode", new Date(), new Date(),list);
+        assertEquals(memory.getReservations().size(), 1);
     }
 
 }
