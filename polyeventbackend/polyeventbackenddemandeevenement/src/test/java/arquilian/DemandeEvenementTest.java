@@ -54,6 +54,7 @@ public class DemandeEvenementTest {
     }
 
     @EJB private DemanderReservation demandeReservation;
+
     @EJB private DemanderEvenement demanderEvenement;
     @EJB private Database memory;
 
@@ -77,17 +78,17 @@ public class DemandeEvenementTest {
         assertEquals(demanderEvenement.getEvenements(organisateur).get(0), memory.getEvenements().get(0));
 
     }
-
     @Test public void testDEmandeReservation() {
-       final String mail = "jean@f.com";
+        final String mail = "jean@f.com";
         Organisateur organisateur = new Organisateur(mail);
         HyperPlanningAPI mocked = mock(HyperPlanningAPI.class);
         demandeReservation.setHyperPlanningAPI(mocked);
-        when(mocked.reserverSalle(any(), any())).thenReturn(true);
+        when(mocked.reserverSalle(any(), any())).thenReturn("Succès");
         List<DemandeReservationSalle> list = new ArrayList<>();
         list.add(new DemandeReservationSalle(new Date(), new Date(), TypeSalle.AMPHI));
         demanderEvenement.demanderCreationEvenement(organisateur, "hashcode", new Date(), new Date(),list);
         assertEquals(memory.getReservations().size(), 1);
     }
+
 
 }
