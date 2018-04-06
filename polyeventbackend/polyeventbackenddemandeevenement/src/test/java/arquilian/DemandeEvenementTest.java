@@ -26,9 +26,7 @@ import java.util.Date;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @RunWith(Arquillian.class)
 public class DemandeEvenementTest {
@@ -44,7 +42,6 @@ public class DemandeEvenementTest {
                 .addPackage(DemanderReservation.class.getPackage())
                 .addPackage(ValiderReservation.class.getPackage())
                 .addPackage(DemandeReservation.class.getPackage())
-                .addPackage(DemandeEvenementTest.class.getPackage())
 
 //                .addPackage(Evenement.class.getPackage())
                 // Components interfaces
@@ -60,10 +57,7 @@ public class DemandeEvenementTest {
     @EJB private DemanderEvenement demanderEvenement;
     @EJB private Database memory;
 
-    @Before public void flushDatabase() {
-        memory.flush();
-
-    }
+    @Before public void flushDatabase() { memory.flush(); }
 
     @Test public void noEvenementByDefault() {
         assertEquals(0, memory.getEvenements().size());
@@ -84,14 +78,13 @@ public class DemandeEvenementTest {
 
     }
 
-
     @Test public void testDEmandeReservation() {
        final String mail = "jean@f.com";
         Organisateur organisateur = new Organisateur(mail);
-        List<DemandeReservationSalle> list = new ArrayList<>();
         HyperPlanningAPI mocked = mock(HyperPlanningAPI.class);
         demandeReservation.setHyperPlanningAPI(mocked);
         when(mocked.reserverSalle(any(), any())).thenReturn(true);
+        List<DemandeReservationSalle> list = new ArrayList<>();
         list.add(new DemandeReservationSalle(new Date(), new Date(), TypeSalle.AMPHI));
         demanderEvenement.demanderCreationEvenement(organisateur, "hashcode", new Date(), new Date(),list);
         assertEquals(memory.getReservations().size(), 1);

@@ -37,8 +37,8 @@ public class DemandeReservation implements DemanderReservation, ValiderReservati
     public boolean accepterReservation(Reservation reservation, Salle salle) {
         for (Reservation r: memoire.getReservations()) {
             if(r.equals(reservation)){
-                boolean succes = hyperPlanningAPI.reserverSalle(r, salle);
-                if (succes) {
+                String reponse = hyperPlanningAPI.reserverSalle(r, salle);
+                if (reponse.equals("Succès")) {
                     r.setSalle(salle);
                     r.setStatut(Statut.VALIDE);
                     salle.getReservations().add(r);

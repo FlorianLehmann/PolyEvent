@@ -95,7 +95,7 @@ public class DemandeReservationTest {
     private void iniMock(){
         HyperPlanningAPI mocked = mock(HyperPlanningAPI.class);
         demanderReservation.setHyperPlanningAPI(mocked);
-        when(mocked.reserverSalle(any(), any())).thenReturn(true);
+        when(mocked.reserverSalle(any(), any())).thenReturn("Succès");
     }
 
 }

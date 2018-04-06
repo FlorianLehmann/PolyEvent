@@ -15,9 +15,9 @@ public class HyperPlanningAPI {
         this.url = "http://localhost:9090/salle";
     }
 
-    public boolean reserverSalle(Reservation reservation, Salle salle){
+    public String reserverSalle(Reservation reservation, Salle salle){
 
-        boolean succes = true;
+        String reponse;
 
         JSONObject requete = new JSONObject().put("dateDebut", reservation.getDateDebut()).put("dateFin", reservation.getDateFin())
                 .put("emplacement", salle.getNom()).put("nomEvenement", reservation.getEvenement().getNom());
@@ -27,13 +27,15 @@ public class HyperPlanningAPI {
                    .header("Content-Type", MediaType.APPLICATION_JSON).post(requete.toString()).getStatus();
             System.out.println(status);
            if(status !=200){
-               succes = false;
+               reponse = "Erreur lors de la réservation de la salle";
+               return reponse;
            }
         } catch (Exception e) {
-            System.out.println("La connexion à hyperplanning a échoué");
-            succes = false;
+            reponse = "La connexion à hyperplanning a échoué";
+            return reponse;
         }
 
-        return succes;
+        reponse = "Succès";
+        return reponse;
     }
 }
