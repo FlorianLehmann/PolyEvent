@@ -1,14 +1,14 @@
 package arquilian;
 
-import fr.unice.polytech.isa.polyevent.HyperPlanningAPI;
-import fr.unice.polytech.isa.polyevent.component.DemandeReservation;
 import fr.unice.polytech.isa.polyevent.DemanderReservation;
+import fr.unice.polytech.isa.polyevent.HyperPlanningAPI;
+import fr.unice.polytech.isa.polyevent.ValiderReservation;
+import fr.unice.polytech.isa.polyevent.component.DemandeReservation;
 import fr.unice.polytech.isa.polyevent.entities.DemandeReservationSalle;
 import fr.unice.polytech.isa.polyevent.entities.Organisateur;
 import fr.unice.polytech.isa.polyevent.entities.TypeSalle;
 import fr.unice.polytech.isa.polyevent.entities.outils.Mail;
 import fr.unice.polytech.isa.polyevent.utils.Database;
-import fr.unice.polytech.isa.polyevent.ValiderReservation;
 import fr.unice.polytech.isa.polyevent.webservice.DemandeEvenement;
 import fr.unice.polytech.isa.polyevent.webservice.DemanderEvenement;
 import org.jboss.arquillian.container.test.api.Deployment;
@@ -17,19 +17,18 @@ import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import javax.ejb.EJB;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.*;
+import static org.mockito.Matchers.any;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 @RunWith(Arquillian.class)
 public class DemandeEvenementTest {
@@ -45,6 +44,7 @@ public class DemandeEvenementTest {
                 .addPackage(DemanderReservation.class.getPackage())
                 .addPackage(ValiderReservation.class.getPackage())
                 .addPackage(DemandeReservation.class.getPackage())
+                .addPackage(DemandeEvenementTest.class.getPackage())
 
 //                .addPackage(Evenement.class.getPackage())
                 // Components interfaces
@@ -57,11 +57,13 @@ public class DemandeEvenementTest {
     }
 
     @EJB private DemanderReservation demandeReservation;
-
     @EJB private DemanderEvenement demanderEvenement;
     @EJB private Database memory;
 
-    @Before public void flushDatabase() { memory.flush(); }
+    @Before public void flushDatabase() {
+        memory.flush();
+
+    }
 
     @Test public void noEvenementByDefault() {
         assertEquals(0, memory.getEvenements().size());
@@ -82,14 +84,14 @@ public class DemandeEvenementTest {
 
     }
 
+
     @Test public void testDEmandeReservation() {
-        final String mail = "jean@f.com";
+       final String mail = "jean@f.com";
         Organisateur organisateur = new Organisateur(mail);
+        List<DemandeReservationSalle> list = new ArrayList<>();
         HyperPlanningAPI mocked = mock(HyperPlanningAPI.class);
         demandeReservation.setHyperPlanningAPI(mocked);
         when(mocked.reserverSalle(any(), any())).thenReturn(true);
-        demanderEvenement.setDemandeReservation(demandeReservation);
-        List<DemandeReservationSalle> list = new ArrayList<>();
         list.add(new DemandeReservationSalle(new Date(), new Date(), TypeSalle.AMPHI));
         demanderEvenement.demanderCreationEvenement(organisateur, "hashcode", new Date(), new Date(),list);
         assertEquals(memory.getReservations().size(), 1);

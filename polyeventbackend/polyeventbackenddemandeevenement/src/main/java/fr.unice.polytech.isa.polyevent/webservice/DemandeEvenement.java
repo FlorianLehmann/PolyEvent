@@ -45,8 +45,4 @@ public class DemandeEvenement implements DemanderEvenement {
         }
         return evenements;
     }
-
-    public void setDemandeReservation(DemanderReservation demandeReservation) {
-        this.demandeReservation = demandeReservation;
-    }
 }
