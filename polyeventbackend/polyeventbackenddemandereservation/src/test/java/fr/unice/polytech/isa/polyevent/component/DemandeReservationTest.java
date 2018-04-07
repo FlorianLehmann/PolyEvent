@@ -17,6 +17,7 @@ import javax.ejb.EJB;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -92,10 +93,17 @@ public class DemandeReservationTest {
                 organisateur, null, new StatusHistorique() );
     }
 
-    private void iniMock(){
+    private void iniMock() {
         HyperPlanningAPI mocked = mock(HyperPlanningAPI.class);
         demanderReservation.setHyperPlanningAPI(mocked);
+        List<String> strings = new LinkedList<>();
+        strings.add("0+300");
         when(mocked.reserverSalle(any(), any())).thenReturn("Succès");
+        try {
+            when(mocked.DemandeSallesDisponible(any())).thenReturn(strings);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
 }

@@ -12,6 +12,7 @@ import fr.unice.polytech.isa.polyevent.ValiderReservation;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 @Stateless
@@ -41,7 +42,6 @@ public class DemandeReservation implements DemanderReservation, ValiderReservati
                 if (reponse.equals("Succès")) {
                     r.setSalle(salle);
                     r.setStatut(Statut.VALIDE);
-                    salle.getReservations().add(r);
                     if (reservation.getEvenement().getReservations() == null){
                         reservation.getEvenement().setReservations(new ArrayList<>());
                     }
@@ -71,27 +71,18 @@ public class DemandeReservation implements DemanderReservation, ValiderReservati
 
 
     private void validationAutomatique(Reservation reservation){
-        for (Salle salle: memoire.getSalles() ){
-            boolean dispnible = true;
-            if(salle.getTypeSalle().equals(reservation.getTypeSalle())){
-                for (Reservation r: salle.getReservations()) {
-                        if((r.getDateDebut().compareTo(reservation.getDateDebut())<=0 && r.getDateFin().compareTo(reservation.getDateFin())>=0)
-                          || (r.getDateDebut().compareTo(reservation.getDateDebut())>=0 && r.getDateDebut().compareTo(reservation.getDateFin())<=0)
-                          || (r.getDateFin().compareTo(reservation.getDateDebut())>=0 && r.getDateFin().compareTo(reservation.getDateFin())<=0)  ){
-                            dispnible = false;
-                        }
-                    }
-            }
-
-            if(!salle.getTypeSalle().equals(reservation.getTypeSalle())) {
-                dispnible = false;
-            }
-
-            if(dispnible){
-                accepterReservation(reservation, salle);
-                return;
-            }
-
+        List<Reservation> reservations = new LinkedList<>();
+        reservations.add(reservation);
+        List<String> strings = new LinkedList<>();
+        try {
+            strings =  hyperPlanningAPI.DemandeSallesDisponible(reservations);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            refuserReservation(reservation, "pas de salle disponible");
+        }
+        if(!strings.isEmpty()){
+            accepterReservation(reservation, new Salle(strings.get(0)));
+            return;
         }
         refuserReservation(reservation, "pas de salle disponible");
     }
