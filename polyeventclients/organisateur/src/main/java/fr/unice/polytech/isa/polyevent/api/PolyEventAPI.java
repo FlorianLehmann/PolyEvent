@@ -25,7 +25,7 @@ public class PolyEventAPI
         URL wsdlLocation = PolyEventAPI.class.getResource("/DemandeEvenement.wsdl");
         DemandeEvenementService factory = new DemandeEvenementService(wsdlLocation);
         DemanderEvenement submitEvent = factory.getDemandeEvenementPort();
-        String address = String.format("http://%s:%s/polyevent-backend-demande-evenement/webservices/DemandeEvenementWS", host, port);
+        String address = String.format("http://%s:%s/polyeventbackend-war/webservices/DemandeEvenementWS", host, port);
         ((BindingProvider) submitEvent).getRequestContext().put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, address);
         return submitEvent;
     }
