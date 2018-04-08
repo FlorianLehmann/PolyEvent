@@ -1,177 +1,30 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
+    <parent>
+        <artifactId>polyevent-backend</artifactId>
+        <groupId>fr.unice.polytech.isa.polyevent</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>fr.unice.polytech.isa.polyevent</groupId>
     <artifactId>polyevent-backend-demande-reservation</artifactId>
     <packaging>jar</packaging>
     <name>polyevent-backend-demande-reservation</name>
     <version>1.0-SNAPSHOT</version>
     <url>http://maven.apache.org</url>
 
-    <properties>
-        <!-- General Properties -->
-        <dir.agent>agent</dir.agent>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <versions.maven.compiler>3.6.1</versions.maven.compiler>
-        <versions.java>1.8</versions.java>
-        <versions.json>20180130</versions.json>
-        <!-- J2E 7.x technological stack -->
-        <versions.javaee>7.0-1</versions.javaee>
-        <versions.maven.surefire>2.19.1</versions.maven.surefire>
-        <versions.openejb>7.0.2</versions.openejb>
-        <versions.tomee>7.0.2</versions.tomee>
-        <versions.openjpa>2.4.1</versions.openjpa>
-        <versions.myface>2.2.10</versions.myface>
-
-        <versions.mockito>1.10.19</versions.mockito>
-        <versions.arquillian.junit>1.1.12.Final</versions.arquillian.junit>
-        <versions.arquilian.jta>1.0.3.Final</versions.arquilian.jta>
-        <versions.cukespace>1.6.5</versions.cukespace>
-        <versions.shrinkwrap>2.2.6</versions.shrinkwrap>
-    </properties>
-
-    <build>
-        <finalName>polyevent-backend-demande-reservation</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>make-a-war</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>war</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${versions.maven.compiler}</version>
-                <configuration>
-                    <source>${versions.java}</source>
-                    <target>${versions.java}</target>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>copy</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>org.apache.openejb</groupId>
-                                    <artifactId>openejb-javaagent</artifactId>
-                                    <version>4.7.4</version>
-                                    <outputDirectory>${dir.agent}</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
-
     <dependencies>
-
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
             <artifactId>commun</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
             <artifactId>database</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.8.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.tomee</groupId>
-            <artifactId>javaee-api</artifactId>
-            <version>${versions.javaee}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-            <version>${versions.json}</version>
-        </dependency>
-
-        <!-- Dependency to integrate REST clients (order matters for CXF) (provided) -->
-        <dependency>
-            <groupId>org.apache.tomee</groupId>
-            <artifactId>openejb-cxf</artifactId>
-            <version>${versions.openejb}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.tomee</groupId>
-            <artifactId>openejb-cxf-rs</artifactId>
-            <version>${versions.openejb}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>${versions.mockito}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.jboss.arquillian.junit</groupId>
-            <artifactId>arquillian-junit-container</artifactId>
-            <version>${versions.arquillian.junit}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.github.cukespace</groupId>
-            <artifactId>cukespace-core</artifactId>
-            <version>${versions.cukespace}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.jboss.shrinkwrap.resolver</groupId>
-            <artifactId>shrinkwrap-resolver-depchain</artifactId>
-            <version>${versions.shrinkwrap}</version>
-            <type>pom</type>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.tomee</groupId>
-            <artifactId>arquillian-tomee-embedded</artifactId>
-            <version>${versions.tomee}</version>
-            <scope>test</scope>
-        </dependency>
-
     </dependencies>
 
 </project>
