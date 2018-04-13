@@ -15,6 +15,7 @@ import javax.ejb.EJB;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
@@ -43,7 +44,10 @@ public class DemandePrestationTest {
         Evenement evenement = new Evenement("Evenement", new Date(2018, 4, 1), new Date(2018, 4, 2),
                 organisateur, null, new StatusHistorique() );
         TypeService typeService = new TypeService("café");
-        demanderPrestation.ajouterService(evenement, typeService, new Date(), new Date());
+        DemandePrestataire demandePrestataire = new DemandePrestataire(typeService, new Date(), new Date());
+        List<DemandePrestataire> demandePrestataires = new ArrayList<DemandePrestataire>();
+        demandePrestataires.add(demandePrestataire);
+        demanderPrestation.ajouterService(evenement, demandePrestataires);
         assertEquals(memory.getPrestations().size(),1);
 
     }
