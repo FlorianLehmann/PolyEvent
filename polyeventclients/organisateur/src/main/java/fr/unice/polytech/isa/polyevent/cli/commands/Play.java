@@ -2,6 +2,7 @@ package fr.unice.polytech.isa.polyevent.cli.commands;
 
 import fr.unice.polytech.isa.polyevent.cli.framework.Command;
 import fr.unice.polytech.isa.polyevent.cli.framework.CommandBuilder;
+import fr.unice.polytech.isa.polyevent.cli.framework.Context;
 import fr.unice.polytech.isa.polyevent.cli.framework.Shell;
 
 import java.io.File;
@@ -38,7 +39,7 @@ public class Play implements Command
     public void execute() throws Exception
     {
         InputStream in = new FileInputStream(new File(filename));
-        shell.run(new Scanner(in), out, true);
+        shell.run(new Context(new Scanner(in), out, true));
     }
 
     public static class Builder implements CommandBuilder<Play>
@@ -63,9 +64,9 @@ public class Play implements Command
         }
 
         @Override
-        public Play build(Scanner scanner, PrintStream out, boolean echo)
+        public Play build(Context context)
         {
-            return new Play(shell, out);
+            return new Play(shell, context.out);
         }
     }
 }

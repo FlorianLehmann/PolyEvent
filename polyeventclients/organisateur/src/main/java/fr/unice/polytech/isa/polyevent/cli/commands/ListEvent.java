@@ -2,11 +2,11 @@ package fr.unice.polytech.isa.polyevent.cli.commands;
 
 import fr.unice.polytech.isa.polyevent.cli.framework.Command;
 import fr.unice.polytech.isa.polyevent.cli.framework.CommandBuilder;
+import fr.unice.polytech.isa.polyevent.cli.framework.Context;
 import fr.unice.polytech.isa.polyevent.stubs.*;
 
 import java.io.PrintStream;
 import java.util.List;
-import java.util.Scanner;
 
 public class ListEvent implements Command
 {
@@ -106,9 +106,9 @@ public class ListEvent implements Command
         }
 
         @Override
-        public ListEvent build(Scanner scanner, PrintStream out, boolean echo)
+        public ListEvent build(Context context)
         {
-            return new ListEvent(out, demandeEvenement);
+            return new ListEvent(context.out, demandeEvenement);
         }
     }
 }

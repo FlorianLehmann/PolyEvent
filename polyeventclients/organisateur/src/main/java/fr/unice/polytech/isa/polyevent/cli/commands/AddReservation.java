@@ -2,15 +2,14 @@ package fr.unice.polytech.isa.polyevent.cli.commands;
 
 import fr.unice.polytech.isa.polyevent.cli.framework.Command;
 import fr.unice.polytech.isa.polyevent.cli.framework.CommandBuilder;
+import fr.unice.polytech.isa.polyevent.cli.framework.Context;
 import fr.unice.polytech.isa.polyevent.stubs.DemandeReservationSalle;
 import fr.unice.polytech.isa.polyevent.stubs.TypeSalle;
 
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
-import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class AddReservation implements Command
@@ -103,7 +102,7 @@ public class AddReservation implements Command
         }
 
         @Override
-        public AddReservation build(Scanner scanner, PrintStream out, boolean echo)
+        public AddReservation build(Context context)
         {
             return new AddReservation(demandeReservations);
         }

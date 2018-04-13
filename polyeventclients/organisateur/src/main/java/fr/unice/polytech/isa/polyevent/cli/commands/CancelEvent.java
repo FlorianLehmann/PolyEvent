@@ -2,9 +2,7 @@ package fr.unice.polytech.isa.polyevent.cli.commands;
 
 import fr.unice.polytech.isa.polyevent.cli.framework.Command;
 import fr.unice.polytech.isa.polyevent.cli.framework.CommandBuilder;
-
-import java.io.PrintStream;
-import java.util.Scanner;
+import fr.unice.polytech.isa.polyevent.cli.framework.Context;
 
 public class CancelEvent implements Command
 {
@@ -37,7 +35,7 @@ public class CancelEvent implements Command
         }
 
         @Override
-        public Command build(Scanner scanner, PrintStream out, boolean echo)
+        public Command build(Context context)
         {
             return new CancelEvent();
         }
