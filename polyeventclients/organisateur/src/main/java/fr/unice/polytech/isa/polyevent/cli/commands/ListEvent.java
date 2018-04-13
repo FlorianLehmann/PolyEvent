@@ -60,7 +60,7 @@ public class ListEvent implements Command
         {
             case VALIDE:
                 out.format("      - Reserved room \"%s\" for %s between %tc and %tc%n",
-                        reservation.getSalle().getNom(), reservation.getSalle().getTypeSalle(),
+                        reservation.getSalle().getNom(), reservation.getTypeSalle(),
                         reservation.getDateDebut().toGregorianCalendar(),
                         reservation.getDateFin().toGregorianCalendar());
                 break;

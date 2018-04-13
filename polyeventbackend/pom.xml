@@ -13,6 +13,7 @@
         <module>envoiemailprestataire</module>
         <module>demandeprestation</module>
         <module>polyeventbackendwar</module>
+        <module>caissier</module>
     </modules>
 
     <properties>

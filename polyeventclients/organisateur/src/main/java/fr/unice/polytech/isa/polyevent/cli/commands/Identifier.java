@@ -9,6 +9,7 @@ public enum Identifier
     VALIDATE("validate", "validate the event submission (validate)"),
     CANCEL("cancel", "Exit the reservation shell and cancel the current event creation (cancel)"),
     LIST_EVENT("list", "List the event of the user (list MAIL)"),
+    PAY("pay", "Pay an event (? pay for more info"),
     PLAY("play", "Play commands stored in given file (play FILENAME)");
 
     public final String keyword;

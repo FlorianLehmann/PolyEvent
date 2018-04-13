@@ -11,8 +11,10 @@ import fr.unice.polytech.isa.polyevent.stubs.Organisateur;
 
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class SubmitEvent implements Command
 {
@@ -36,7 +38,7 @@ public class SubmitEvent implements Command
     @Override
     public void load(List<String> args) throws Exception
     {
-        if (args.size() < 4)
+        if (args.size() != 4)
         {
             String message = String.format("%s expects 4 arguments: %s MAIL NOM START_DATE END_DATE", IDENTIFIER, IDENTIFIER);
             throw new IllegalArgumentException(message);
