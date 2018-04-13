@@ -2,9 +2,9 @@ package fr.unice.polytech.isa.polyevent.cli.commands;
 
 import fr.unice.polytech.isa.polyevent.cli.framework.Command;
 import fr.unice.polytech.isa.polyevent.cli.framework.CommandBuilder;
+import fr.unice.polytech.isa.polyevent.cli.framework.Context;
 
 import java.io.PrintStream;
-import java.util.Scanner;
 
 public class Bye implements Command
 {
@@ -43,9 +43,9 @@ public class Bye implements Command
         }
 
         @Override
-        public Bye build(Scanner scanner, PrintStream out, boolean echo)
+        public Bye build(Context context)
         {
-            return new Bye(out);
+            return new Bye(context.out);
         }
     }
 }

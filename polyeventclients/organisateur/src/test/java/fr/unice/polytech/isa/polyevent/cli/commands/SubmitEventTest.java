@@ -1,17 +1,22 @@
 package fr.unice.polytech.isa.polyevent.cli.commands;
 
+import fr.unice.polytech.isa.polyevent.cli.framework.Context;
 import fr.unice.polytech.isa.polyevent.cli.framework.Shell;
 import fr.unice.polytech.isa.polyevent.stubs.*;
-
 import org.junit.Before;
 import org.junit.Test;
 
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
-import java.io.*;
-import java.util.*;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class SubmitEventTest
 {
@@ -43,7 +48,8 @@ public class SubmitEventTest
     @Test
     public void emptyArrayIsNotNull() throws Exception
     {
-        SubmitEvent submitEvent = new SubmitEvent(shell, new Scanner(inputStream), printStream, false, new DemanderEvenement()
+        Context context = new Context(new Scanner(inputStream), printStream, false);
+        SubmitEvent submitEvent = new SubmitEvent(shell, context, new DemanderEvenement()
         {
             @Override
             public List<Evenement> getEvenements(Organisateur organisateur)

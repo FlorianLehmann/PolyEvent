@@ -2,6 +2,7 @@ package fr.unice.polytech.isa.polyevent.cli.commands;
 
 import fr.unice.polytech.isa.polyevent.cli.framework.Command;
 import fr.unice.polytech.isa.polyevent.cli.framework.CommandBuilder;
+import fr.unice.polytech.isa.polyevent.cli.framework.Context;
 import fr.unice.polytech.isa.polyevent.cli.framework.Shell;
 import fr.unice.polytech.isa.polyevent.stubs.DemandeReservationSalle;
 import fr.unice.polytech.isa.polyevent.stubs.DemanderEvenement;
@@ -10,18 +11,14 @@ import fr.unice.polytech.isa.polyevent.stubs.Organisateur;
 
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
-import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class SubmitEvent implements Command
 {
     private static final Identifier IDENTIFIER = Identifier.SUBMIT_EVENT;
     private final Shell shell;
-    private final Scanner scanner;
-    private final PrintStream out;
-    private final boolean echo;
+    private final Context context;
     private final DemanderEvenement demandeEvenement;
     private Organisateur organisateur;
     private String nom;
@@ -29,12 +26,10 @@ public class SubmitEvent implements Command
     private XMLGregorianCalendar dateFin;
     private List<DemandeReservationSalle> demandeReservations;
 
-    SubmitEvent(Shell shell, Scanner scanner, PrintStream out, boolean echo, DemanderEvenement demandeEvenement)
+    public SubmitEvent(Shell shell, Context context, DemanderEvenement demandeEvenement)
     {
         this.shell = shell;
-        this.scanner = scanner;
-        this.out = out;
-        this.echo = echo;
+        this.context = context;
         this.demandeEvenement = demandeEvenement;
     }
 
@@ -76,8 +71,8 @@ public class SubmitEvent implements Command
                 new ValidateEvent.Builder(demandeEvenement, organisateur, nom, dateDebut, dateFin, demandeReservations),
                 new CancelEvent.Builder()
         );
-        out.format("Add reservations to the event \"%s\". Type ? for help.%n", nom);
-        subShell.run(scanner, out, echo);
+        context.out.format("Add reservations to the event \"%s\". Type ? for help.%n", nom);
+        subShell.run(context);
     }
 
     public static class Builder implements CommandBuilder<SubmitEvent>
@@ -112,9 +107,9 @@ public class SubmitEvent implements Command
         }
 
         @Override
-        public SubmitEvent build(Scanner scanner, PrintStream out, boolean echo)
+        public SubmitEvent build(Context context)
         {
-            return new SubmitEvent(shell, scanner, out, echo, demandeEvenement);
+            return new SubmitEvent(shell, context, demandeEvenement);
         }
     }
 }

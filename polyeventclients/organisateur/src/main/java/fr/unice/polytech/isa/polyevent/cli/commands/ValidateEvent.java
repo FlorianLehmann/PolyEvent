@@ -2,6 +2,7 @@ package fr.unice.polytech.isa.polyevent.cli.commands;
 
 import fr.unice.polytech.isa.polyevent.cli.framework.Command;
 import fr.unice.polytech.isa.polyevent.cli.framework.CommandBuilder;
+import fr.unice.polytech.isa.polyevent.cli.framework.Context;
 import fr.unice.polytech.isa.polyevent.stubs.DemandeReservationSalle;
 import fr.unice.polytech.isa.polyevent.stubs.DemanderEvenement;
 import fr.unice.polytech.isa.polyevent.stubs.Organisateur;
@@ -11,7 +12,6 @@ import javax.xml.ws.WebServiceException;
 import java.io.PrintStream;
 import java.net.ConnectException;
 import java.util.List;
-import java.util.Scanner;
 
 public class ValidateEvent implements Command
 {
@@ -24,9 +24,9 @@ public class ValidateEvent implements Command
     private final List<DemandeReservationSalle> demandeReservations;
     private final PrintStream out;
 
-    private ValidateEvent(DemanderEvenement demandeEvenement, Organisateur organisateur, String nom,
-                          XMLGregorianCalendar dateDebut, XMLGregorianCalendar dateFin,
-                          List<DemandeReservationSalle> demandeReservations, PrintStream out)
+    public ValidateEvent(DemanderEvenement demandeEvenement, Organisateur organisateur, String nom,
+                         XMLGregorianCalendar dateDebut, XMLGregorianCalendar dateFin,
+                         List<DemandeReservationSalle> demandeReservations, PrintStream out)
     {
         this.demandeEvenement = demandeEvenement;
         this.organisateur = organisateur;
@@ -98,9 +98,9 @@ public class ValidateEvent implements Command
         }
 
         @Override
-        public ValidateEvent build(Scanner scanner, PrintStream out, boolean echo)
+        public ValidateEvent build(Context context)
         {
-            return new ValidateEvent(demandeEvenement, organisateur, nom, dateDebut, dateFin, demandeReservations, out);
+            return new ValidateEvent(demandeEvenement, organisateur, nom, dateDebut, dateFin, demandeReservations, context.out);
         }
     }
 }

@@ -19,5 +19,5 @@ public interface CommandBuilder<T extends Command>
         return describe();
     }
 
-    T build(Scanner scanner, PrintStream out, boolean echo);
+    T build(Context context);
 }

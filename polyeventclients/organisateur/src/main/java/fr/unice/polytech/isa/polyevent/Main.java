@@ -2,6 +2,7 @@ package fr.unice.polytech.isa.polyevent;
 
 import fr.unice.polytech.isa.polyevent.api.PolyEventAPI;
 import fr.unice.polytech.isa.polyevent.cli.commands.*;
+import fr.unice.polytech.isa.polyevent.cli.framework.Context;
 import fr.unice.polytech.isa.polyevent.cli.framework.Shell;
 import net.sourceforge.argparse4j.ArgumentParsers;
 import net.sourceforge.argparse4j.inf.ArgumentParser;
@@ -27,7 +28,7 @@ public class Main
         try
         {
             Namespace ns = parser.parseArgs(args);
-            runCLI(ns, System.in, System.out);
+            runCLI(ns.getString("hostname"), ns.getString("port"), System.in, System.out);
         }
         catch (ArgumentParserException e)
         {
@@ -35,11 +36,8 @@ public class Main
         }
     }
 
-    private static void runCLI(Namespace namespace, InputStream in, PrintStream out)
+    public static void runCLI(String host, String port, InputStream in, PrintStream out)
     {
-        String host = namespace.getString("hostname");
-        String port = namespace.getString("port");
-
         out.println("Starting Poly'Event by Team H");
         out.println("   - Remote server: " + host);
         out.println("   - Port number: " + port);
@@ -53,9 +51,10 @@ public class Main
                 new ListEvent.Builder(api.demandeEvenement),
                 new Play.Builder(shell)
         );
+        Context context = new Context(new Scanner(in), out, false);
 
         out.println("Submit your event. Type ? for help.");
-        shell.run(new Scanner(in), out);
+        shell.run(context);
         out.println("Exiting Poly'Event by Team H");
     }
 }
