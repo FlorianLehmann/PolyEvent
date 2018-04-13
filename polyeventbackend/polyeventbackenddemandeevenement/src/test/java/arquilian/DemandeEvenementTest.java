@@ -1,5 +1,6 @@
 package arquilian;
 
+import fr.unice.polytech.isa.polyevent.DemanderPrestation;
 import fr.unice.polytech.isa.polyevent.DemanderReservation;
 import fr.unice.polytech.isa.polyevent.HyperPlanningAPI;
 import fr.unice.polytech.isa.polyevent.ValiderReservation;
@@ -50,7 +51,8 @@ public class DemandeEvenementTest {
                 .addPackage(DemanderEvenement.class.getPackage())
 
                 // Component implementation
-                .addPackage(DemandeEvenement.class.getPackage());
+                .addPackage(DemandeEvenement.class.getPackage())
+                .addPackage(DemanderPrestation.class.getPackage());
     }
 
     @EJB private DemanderReservation demandeReservation;
@@ -67,14 +69,14 @@ public class DemandeEvenementTest {
     @Test public void shouldCreateAnEvent() {
         final String mail = "jean@f.com";
         Organisateur organisateur = new Organisateur(mail);
-        demanderEvenement.demanderCreationEvenement(organisateur, "hashcode", new Date(), new Date(), new ArrayList<>());
+        demanderEvenement.demanderCreationEvenement(organisateur, "hashcode", new Date(), new Date(), new ArrayList<>(), null);
         assertEquals(new Mail(mail), memory.getEvenements().get(0).getOrganisateur().getMail());
     }
 
     @Test public void shouldGetEventsFromOrganisateur() {
         final String mail = "jean@f.com";
         Organisateur organisateur = new Organisateur(mail);
-        demanderEvenement.demanderCreationEvenement(organisateur, "hashcode", new Date(), new Date(), new ArrayList<>());
+        demanderEvenement.demanderCreationEvenement(organisateur, "hashcode", new Date(), new Date(), new ArrayList<>(), null);
         assertEquals(demanderEvenement.getEvenements(organisateur).get(0), memory.getEvenements().get(0));
 
     }
@@ -86,7 +88,7 @@ public class DemandeEvenementTest {
         when(mocked.reserverSalle(any(), any())).thenReturn("Succès");
         List<DemandeReservationSalle> list = new ArrayList<>();
         list.add(new DemandeReservationSalle(new Date(), new Date(), TypeSalle.AMPHI));
-        demanderEvenement.demanderCreationEvenement(organisateur, "hashcode", new Date(), new Date(),list);
+        demanderEvenement.demanderCreationEvenement(organisateur, "hashcode", new Date(), new Date(),list, null);
         assertEquals(memory.getReservations().size(), 1);
     }
 

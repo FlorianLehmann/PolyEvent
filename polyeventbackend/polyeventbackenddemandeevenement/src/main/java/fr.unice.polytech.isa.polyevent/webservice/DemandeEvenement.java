@@ -1,10 +1,8 @@
 package fr.unice.polytech.isa.polyevent.webservice;
 
+import fr.unice.polytech.isa.polyevent.DemanderPrestation;
 import fr.unice.polytech.isa.polyevent.DemanderReservation;
-import fr.unice.polytech.isa.polyevent.entities.DemandeReservationSalle;
-import fr.unice.polytech.isa.polyevent.entities.Evenement;
-import fr.unice.polytech.isa.polyevent.entities.Organisateur;
-import fr.unice.polytech.isa.polyevent.entities.StatusHistorique;
+import fr.unice.polytech.isa.polyevent.entities.*;
 import fr.unice.polytech.isa.polyevent.utils.Database;
 
 import javax.ejb.EJB;
@@ -20,15 +18,22 @@ public class DemandeEvenement implements DemanderEvenement {
 
     @EJB private DemanderReservation demandeReservation;
     @EJB private Database memoire;
+    @EJB private DemanderPrestation demanderPrestation;
 
     @Override
-    public void demanderCreationEvenement(Organisateur organisateur, String nom, Date dateDebut, Date dateFin, List<DemandeReservationSalle> demandeReservationSalles) {
+    public void demanderCreationEvenement(Organisateur organisateur, String nom, Date dateDebut, Date dateFin, List<DemandeReservationSalle> demandeReservationSalles, List<DemandePrestataire> demandePrestataires) {
         Evenement evenement = new Evenement(nom, dateDebut, dateFin, organisateur, null, new StatusHistorique());
         organisateur.getEvenements().add(evenement);
         if (demandeReservationSalles == null)
             demandeReservationSalles = new ArrayList<>();
 
         demandeReservation.demanderReservationSalle(evenement, demandeReservationSalles);
+
+        if(demandePrestataires ==null){
+            demandePrestataires = new ArrayList<>();
+        }
+
+        demanderPrestation.ajouterService(evenement, demandePrestataires);
 
         memoire.getEvenements().add(evenement);
 

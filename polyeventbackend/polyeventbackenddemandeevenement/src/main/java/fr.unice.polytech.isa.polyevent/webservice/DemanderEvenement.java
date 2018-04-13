@@ -1,5 +1,6 @@
 package fr.unice.polytech.isa.polyevent.webservice;
 
+import fr.unice.polytech.isa.polyevent.entities.DemandePrestataire;
 import fr.unice.polytech.isa.polyevent.entities.DemandeReservationSalle;
 import fr.unice.polytech.isa.polyevent.entities.Evenement;
 import fr.unice.polytech.isa.polyevent.entities.Organisateur;
@@ -21,7 +22,8 @@ public interface DemanderEvenement {
                                    @WebParam(name = "nom") String nom,
                                    @WebParam(name = "date_debut") Date dateDebut,
                                    @WebParam(name = "date_fin") Date dateFin,
-                                   @WebParam(name = "demande_reservations") List<DemandeReservationSalle> demandeReservationSalles);
+                                   @WebParam(name = "demande_reservations") List<DemandeReservationSalle> demandeReservationSalles,
+                                   @WebParam(name = "demande_prestataire") List<DemandePrestataire> demandePrestataires);
 
     @WebMethod
     @WebResult(name = "evenements")
