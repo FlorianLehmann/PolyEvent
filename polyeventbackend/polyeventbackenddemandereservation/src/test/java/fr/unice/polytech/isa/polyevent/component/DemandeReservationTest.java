@@ -10,6 +10,7 @@ import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -57,31 +58,6 @@ public class DemandeReservationTest {
         demanderReservation.demanderReservationSalle(evenement,demandeReservationSalles);
         assertTrue(memory.getReservations().size()==1);
         assertTrue(memory.getReservations().get(0).getStatut().equals(Statut.VALIDE));
-    }
-
-    @Test
-    public void reserverPlusieursSalleMemeHoraire(){
-        DemandeReservationSalle demandeReservationSalle1 = new DemandeReservationSalle(new Date(2018, 4, 1, 10, 0), new Date(2018, 4, 2, 12, 0),
-                TypeSalle.SALLE );
-        DemandeReservationSalle demandeReservationSalle2 = new DemandeReservationSalle(new Date(2018, 4, 1, 10, 0), new Date(2018, 4, 2, 12, 0),
-                TypeSalle.SALLE );
-        demandeReservationSalles.add(demandeReservationSalle1);
-        demandeReservationSalles.add(demandeReservationSalle2);
-
-        demanderReservation.demanderReservationSalle(evenement,demandeReservationSalles);
-        assertTrue(memory.getReservations().size()==2);
-        assertTrue(memory.getReservations().get(0).getStatut().equals(Statut.VALIDE));
-        assertTrue(memory.getReservations().get(1).getStatut().equals(Statut.VALIDE));
-        List<Salle> salles = new ArrayList<>();
-
-        for (Reservation reservation:memory.getReservations()) {
-            if(!salles.contains(reservation.getSalle())){
-                salles.add(reservation.getSalle());
-            }
-        }
-
-        assertTrue(salles.size()==2);
-
     }
 
     public void flushDatabase() { memory.flush(); }

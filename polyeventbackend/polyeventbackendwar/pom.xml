@@ -54,7 +54,7 @@
                     <configuration>
                         <!-- From TomEE to TomEE+ to support the web services stack -->
                         <tomeeClassifier>plus</tomeeClassifier>
-                        <args>-Xmx512m -XX:PermSize=256m</args>
+                        <args>-Xmx100144M -XX:PermSize=100024m</args>
                         <deployOpenEjbApplication>true</deployOpenEjbApplication>
                     </configuration>
                 </plugin>

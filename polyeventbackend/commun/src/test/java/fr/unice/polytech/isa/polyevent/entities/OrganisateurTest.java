@@ -1,12 +1,18 @@
 package fr.unice.polytech.isa.polyevent.entities;
 
 import fr.unice.polytech.isa.polyevent.entities.exceptions.MailInvalideException;
+import fr.unice.polytech.isa.polyevent.entities.outils.Mail;
 import org.junit.Ignore;
 import org.junit.Test;
+
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
+import javax.persistence.*;
 
 import static org.junit.Assert.*;
 
 public class OrganisateurTest {
+
 
     @Test
     public void ShouldBeSameOrganisateur() {
@@ -21,5 +27,7 @@ public class OrganisateurTest {
         Organisateur b = new Organisateur("toto@unice.fr");
         assertNotEquals(a,b);
     }
+
+
 
 }

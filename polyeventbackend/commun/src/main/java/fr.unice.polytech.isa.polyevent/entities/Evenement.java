@@ -1,15 +1,34 @@
 package fr.unice.polytech.isa.polyevent.entities;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
+@Entity
 public class Evenement {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+
+    @NotNull
     private String nom;
+
+    @NotNull
     private Date debut;
+
+    @NotNull
     private Date fin;
+
+    @ManyToOne
     private Organisateur organisateur;
+
+    @ElementCollection
     private List<Reservation> reservations;
+
+    @NotNull
     private StatusHistorique statusHistorique;
 
 
@@ -25,6 +44,14 @@ public class Evenement {
         this.organisateur = organisateur;
         this.reservations = reservations;
         this.statusHistorique = statusHistorique;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Organisateur getOrganisateur() {
@@ -73,5 +100,24 @@ public class Evenement {
 
     public void setStatusHistorique(StatusHistorique statusHistorique) {
         this.statusHistorique = statusHistorique;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Evenement evenement = (Evenement) o;
+        return  Objects.equals(nom, evenement.nom) &&
+                Objects.equals(debut, evenement.debut) &&
+                Objects.equals(fin, evenement.fin) &&
+                Objects.equals(organisateur, evenement.organisateur) &&
+                Objects.equals(reservations, evenement.reservations) &&
+                Objects.equals(statusHistorique, evenement.statusHistorique);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(nom, debut, fin, organisateur, reservations, statusHistorique);
     }
 }

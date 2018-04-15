@@ -1,15 +1,34 @@
 package fr.unice.polytech.isa.polyevent.entities;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlTransient;
 import java.util.Date;
+import java.util.Objects;
 
+@Entity
 public class Reservation {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+
+    @NotNull
     private Date dateDebut;
+
+    @NotNull
     private Date dateFin;
+
+    @Enumerated(EnumType.STRING)
     private TypeSalle typeSalle;
+
     private Salle salle;
+
+    @NotNull
     private Evenement evenement;
+
+    @NotNull
+    @Enumerated(EnumType.STRING)
     private Statut statut;
 
     public Reservation() {
@@ -28,26 +47,26 @@ public class Reservation {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Reservation that = (Reservation) o;
-
-        if (dateDebut != null ? !dateDebut.equals(that.dateDebut) : that.dateDebut != null) return false;
-        if (dateFin != null ? !dateFin.equals(that.dateFin) : that.dateFin != null) return false;
-        if (typeSalle != that.typeSalle) return false;
-        if (salle != null ? !salle.equals(that.salle) : that.salle != null) return false;
-        if (evenement != null ? !evenement.equals(that.evenement) : that.evenement != null) return false;
-        return statut == that.statut;
+        return Objects.equals(dateDebut, that.dateDebut) &&
+                Objects.equals(dateFin, that.dateFin) &&
+                typeSalle == that.typeSalle &&
+                Objects.equals(salle, that.salle) &&
+                Objects.equals(evenement, that.evenement) &&
+                statut == that.statut;
     }
 
     @Override
     public int hashCode() {
-        int result = dateDebut != null ? dateDebut.hashCode() : 0;
-        result = 31 * result + (dateFin != null ? dateFin.hashCode() : 0);
-        result = 31 * result + (typeSalle != null ? typeSalle.hashCode() : 0);
-        result = 31 * result + (salle != null ? salle.hashCode() : 0);
-        result = 31 * result + (evenement != null ? evenement.hashCode() : 0);
-        result = 31 * result + (statut != null ? statut.hashCode() : 0);
-        return result;
+        return Objects.hash(dateDebut, dateFin, typeSalle, salle, evenement.getNom(), statut);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Statut getStatut() {

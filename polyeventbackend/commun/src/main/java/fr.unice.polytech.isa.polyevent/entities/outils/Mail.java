@@ -2,11 +2,18 @@ package fr.unice.polytech.isa.polyevent.entities.outils;
 
 import fr.unice.polytech.isa.polyevent.entities.exceptions.MailInvalideException;
 
+import javax.persistence.Embeddable;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
+@Embeddable
 public class Mail {
 
+    @NotNull
     private String mail;
 
     public Mail() {
@@ -46,7 +53,6 @@ public class Mail {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(mail);
     }
 }

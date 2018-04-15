@@ -2,15 +2,27 @@ package fr.unice.polytech.isa.polyevent.entities;
 
 import fr.unice.polytech.isa.polyevent.entities.outils.Mail;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlTransient;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Organisateur {
+@Entity
+public class Organisateur implements Serializable {
 
+
+    @Id
+    @GeneratedValue
+    private int id;
+
+    @NotNull
     private Mail mail;
-    private List<Evenement> evenements = new ArrayList<>();;
+
+    @OneToMany(mappedBy = "organisateur")
+    private List<Evenement> evenements = new ArrayList<>();
 
     public Organisateur() {
     }
@@ -47,6 +59,14 @@ public class Organisateur {
     @Override
     public int hashCode() {
 
-        return Objects.hash(mail, evenements);
+        return Objects.hash(mail);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

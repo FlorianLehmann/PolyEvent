@@ -8,6 +8,8 @@ import fr.unice.polytech.isa.polyevent.utils.Database;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.jws.WebService;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -17,12 +19,13 @@ import java.util.List;
 public class DemandeEvenement implements DemanderEvenement {
 
     @EJB private DemanderReservation demandeReservation;
-    @EJB private Database memoire;
     @EJB private DemanderPrestation demanderPrestation;
+    @PersistenceContext
+    private EntityManager entityManager;
 
     @Override
     public void demanderCreationEvenement(Organisateur organisateur, String nom, Date dateDebut, Date dateFin, List<DemandeReservationSalle> demandeReservationSalles, List<DemandePrestataire> demandePrestataires) {
-        Evenement evenement = new Evenement(nom, dateDebut, dateFin, organisateur, null, new StatusHistorique());
+        Evenement evenement = new Evenement(nom, dateDebut, dateFin, organisateur, new ArrayList<>(), new StatusHistorique());
         organisateur.getEvenements().add(evenement);
         if (demandeReservationSalles == null)
             demandeReservationSalles = new ArrayList<>();
@@ -35,19 +38,12 @@ public class DemandeEvenement implements DemanderEvenement {
 
         demanderPrestation.ajouterService(evenement, demandePrestataires);
 
-        memoire.getEvenements().add(evenement);
+        entityManager.persist(evenement);
 
     }
 
     @Override
     public List<Evenement> getEvenements(Organisateur organisateur) {
-        List<Evenement> evenements = new ArrayList<>();
-        for (Evenement evenement :
-                memoire.getEvenements()) {
-            if (evenement.getOrganisateur().equals(organisateur)) {
-                evenements.add(evenement);
-            }
-        }
-        return evenements;
+        return organisateur.getEvenements();
     }
 }
