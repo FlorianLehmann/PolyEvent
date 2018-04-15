@@ -24,7 +24,6 @@ import org.junit.runner.RunWith;
 import org.jboss.arquillian.transaction.api.annotation.Transactional;
 import javax.ejb.EJB;
 import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -34,7 +33,6 @@ import javax.persistence.criteria.Root;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
@@ -98,6 +96,7 @@ public class DemandeEvenementTest {
         Evenement stored = query.getSingleResult();
 
         assertEquals(stored.getOrganisateur(), organisateur);
+
     }
 
     @Transactional(TransactionMode.COMMIT)
