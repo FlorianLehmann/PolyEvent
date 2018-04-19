@@ -4,10 +4,7 @@ import fr.unice.polytech.isa.polyevent.cli.framework.Command;
 import fr.unice.polytech.isa.polyevent.cli.framework.CommandBuilder;
 import fr.unice.polytech.isa.polyevent.cli.framework.Context;
 import fr.unice.polytech.isa.polyevent.cli.framework.Shell;
-import fr.unice.polytech.isa.polyevent.stubs.DemandeReservationSalle;
-import fr.unice.polytech.isa.polyevent.stubs.DemanderEvenement;
-import fr.unice.polytech.isa.polyevent.stubs.Mail;
-import fr.unice.polytech.isa.polyevent.stubs.Organisateur;
+import fr.unice.polytech.isa.polyevent.stubs.*;
 
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -27,6 +24,7 @@ public class SubmitEvent implements Command
     private XMLGregorianCalendar dateDebut;
     private XMLGregorianCalendar dateFin;
     private List<DemandeReservationSalle> demandeReservations;
+    private List<DemandePrestataire> demandePrestataires;
 
     public SubmitEvent(Shell shell, Context context, DemanderEvenement demandeEvenement)
     {
@@ -61,6 +59,7 @@ public class SubmitEvent implements Command
         }
 
         demandeReservations = new ArrayList<>();
+        demandePrestataires = new ArrayList<>();
     }
 
     @Override
@@ -70,7 +69,8 @@ public class SubmitEvent implements Command
         subShell.register(
                 new Help.Builder(subShell),
                 new AddReservation.Builder(demandeReservations),
-                new ValidateEvent.Builder(demandeEvenement, organisateur, nom, dateDebut, dateFin, demandeReservations),
+                new AddService.Builder(demandePrestataires),
+                new ValidateEvent.Builder(demandeEvenement, organisateur, nom, dateDebut, dateFin, demandeReservations, demandePrestataires),
                 new CancelEvent.Builder()
         );
         context.out.format("Add reservations to the event \"%s\". Type ? for help.%n", nom);

@@ -58,13 +58,14 @@ public class SubmitEventTest
             }
 
             @Override
-            public void demanderCreationEvenement(Organisateur organisateur, String nom, XMLGregorianCalendar dateDebut, XMLGregorianCalendar dateFin, List<DemandeReservationSalle> demandeReservations)
+            public void demanderCreationEvenement(Organisateur organisateur, String nom, XMLGregorianCalendar dateDebut, XMLGregorianCalendar dateFin, List<DemandeReservationSalle> demandeReservations, List<DemandePrestataire> demandePrestataire)
             {
                 assertEquals("XXX", organisateur.getMail().getMail());
                 assertEquals("YYY", nom);
                 assertEquals(SubmitEventTest.this.dateDebut, dateDebut);
                 assertEquals(SubmitEventTest.this.dateFin, dateFin);
                 assertEquals(new ArrayList<>(), demandeReservations);
+                assertEquals(new ArrayList<>(), demandePrestataire);
             }
         });
         submitEvent.process(Arrays.asList(mail.getMail(), nom, dateDebut.toString(), dateFin.toString()));
