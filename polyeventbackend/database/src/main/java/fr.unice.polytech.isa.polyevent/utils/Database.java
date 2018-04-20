@@ -13,6 +13,8 @@ public class Database {
 
     private List<Evenement> evenements = new ArrayList<>();
     private List<Reservation> reservations = new ArrayList<>();
+
+    private List<Organisateur> organisateurs = new ArrayList<>();
     private List<Salle> salles = Arrays.asList(new Salle("O+310"),
             new Salle("O+311"),new Salle("O+228"));
     private List<Prestataire> prestataires = Arrays.asList(new Prestataire(new Mail("café@gmail.com"), new TypeService("café")));
@@ -28,6 +30,10 @@ public class Database {
         return prestataires;
     }
 
+    public List<Organisateur> getOrganisateurs() {
+        return organisateurs;
+    }
+
     public List<Prestation> getPrestations() {
         return prestations;
     }
@@ -41,6 +47,7 @@ public class Database {
         prestataires.add(new Prestataire(new Mail("café@gmail.com"), new TypeService("café")));
         prestataires.add(new Prestataire(new Mail("bus@gmail.com"), new TypeService("bus")));
         prestations = new ArrayList<>();
+        organisateurs = new ArrayList<>();
     }
 
 }

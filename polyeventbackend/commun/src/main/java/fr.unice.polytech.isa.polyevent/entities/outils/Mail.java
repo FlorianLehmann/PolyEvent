@@ -47,12 +47,14 @@ public class Mail {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         Mail mail1 = (Mail) o;
-        return Objects.equals(mail, mail1.mail);
+
+        return mail.equals(mail1.mail);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(mail);
+        return mail.hashCode();
     }
 }
