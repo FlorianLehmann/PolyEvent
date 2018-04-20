@@ -6,6 +6,7 @@ public enum Identifier
     BYE("bye", "Exit Poly'Event (bye)"),
     SUBMIT_EVENT("event", "Submit an event to the system (? event for more info)"),
     ADD_RESERVATION("reservation", "Add a reservation to the event (? reservation for more info)"),
+    ADD_SERVICE("service", "Add a service to the event (? service for more info)"),
     VALIDATE("validate", "validate the event submission (validate)"),
     CANCEL("cancel", "Exit the reservation shell and cancel the current event creation (cancel)"),
     LIST_EVENT("list", "List the event of the user (list MAIL)"),

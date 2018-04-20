@@ -1,0 +1,4 @@
+event marcel@etu.unice.com "La nuit de l'info" 2018-12-03T16:00:00 2018-12-04T08:00:00
+service
+validate
+list marcel@etu.unice.com
