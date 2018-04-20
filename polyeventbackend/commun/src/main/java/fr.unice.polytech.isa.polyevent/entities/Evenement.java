@@ -110,14 +110,12 @@ public class Evenement {
         return  Objects.equals(nom, evenement.nom) &&
                 Objects.equals(debut, evenement.debut) &&
                 Objects.equals(fin, evenement.fin) &&
-                Objects.equals(organisateur, evenement.organisateur) &&
-                Objects.equals(reservations, evenement.reservations) &&
-                Objects.equals(statusHistorique, evenement.statusHistorique);
+                Objects.equals(organisateur, evenement.organisateur);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(nom, debut, fin, organisateur, reservations, statusHistorique);
+        return Objects.hash(nom, debut, fin, organisateur);
     }
 }
