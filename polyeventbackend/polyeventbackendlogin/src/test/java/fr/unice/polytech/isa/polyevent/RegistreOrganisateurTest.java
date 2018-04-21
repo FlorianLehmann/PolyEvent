@@ -3,7 +3,6 @@ package fr.unice.polytech.isa.polyevent;
 import fr.unice.polytech.isa.polyevent.entities.Organisateur;
 import fr.unice.polytech.isa.polyevent.entities.exceptions.ClientDejaCreeException;
 import fr.unice.polytech.isa.polyevent.entities.outils.Mail;
-import fr.unice.polytech.isa.polyevent.utils.Database;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.transaction.api.annotation.TransactionMode;
@@ -17,7 +16,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import javax.ejb.EJB;
-
 import java.util.Optional;
 
 import static org.junit.Assert.*;
@@ -61,11 +59,11 @@ public class RegistreOrganisateurTest{
     @Test
     @Transactional(TransactionMode.COMMIT)
     public void registerCustomer() throws Exception {
-        enregistrerOrganisateur.enregistrer(bob.getMail().getMail());
-        Optional<Organisateur> organisateur = trouverOrganisateur.connexion(bob.getMail().getMail());
+        enregistrerOrganisateur.enregistrer(bob.getMail());
+        Optional<Organisateur> organisateur = trouverOrganisateur.connexion(bob.getMail());
         assertTrue(organisateur.isPresent());
         Organisateur retrieved = organisateur.get();
-        assertEquals(bob.getMail().getMail(), retrieved.getMail().getMail());
+        assertEquals(bob.getMail(), retrieved.getMail());
     }
 
 }

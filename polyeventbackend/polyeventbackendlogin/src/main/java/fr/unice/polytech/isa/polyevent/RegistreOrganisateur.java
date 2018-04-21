@@ -3,7 +3,6 @@ package fr.unice.polytech.isa.polyevent;
 
 import fr.unice.polytech.isa.polyevent.entities.Organisateur;
 import fr.unice.polytech.isa.polyevent.entities.exceptions.ClientDejaCreeException;
-import fr.unice.polytech.isa.polyevent.entities.outils.Mail;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -29,7 +28,7 @@ public class RegistreOrganisateur implements TrouverOrganisateur, EnregistrerOrg
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
         CriteriaQuery<Organisateur> criteria = builder.createQuery(Organisateur.class);
         Root<Organisateur> root =  criteria.from(Organisateur.class);
-        criteria.select(root).where(builder.equal(root.get("mail").get("mail"), mail));
+        criteria.select(root).where(builder.equal(root.get("mail"), mail));
         TypedQuery<Organisateur> query = entityManager.createQuery(criteria);
         try {
             return Optional.of(query.getSingleResult());

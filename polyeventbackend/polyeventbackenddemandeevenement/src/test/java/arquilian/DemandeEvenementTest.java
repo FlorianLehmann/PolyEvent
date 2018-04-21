@@ -6,22 +6,21 @@ import fr.unice.polytech.isa.polyevent.HyperPlanningAPI;
 import fr.unice.polytech.isa.polyevent.ValiderReservation;
 import fr.unice.polytech.isa.polyevent.component.DemandeReservation;
 import fr.unice.polytech.isa.polyevent.entities.*;
-import fr.unice.polytech.isa.polyevent.entities.outils.Mail;
 import fr.unice.polytech.isa.polyevent.utils.Database;
 import fr.unice.polytech.isa.polyevent.webservice.DemandeEvenement;
 import fr.unice.polytech.isa.polyevent.webservice.DemanderEvenement;
-import org.jboss.arquillian.transaction.api.annotation.TransactionMode;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
+import org.jboss.arquillian.transaction.api.annotation.TransactionMode;
+import org.jboss.arquillian.transaction.api.annotation.Transactional;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.ClassLoaderAsset;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.jboss.arquillian.transaction.api.annotation.Transactional;
+
 import javax.ejb.EJB;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -29,7 +28,6 @@ import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -131,7 +129,7 @@ public class DemandeEvenementTest {
     @Transactional(TransactionMode.COMMIT)
     public void testOrganisateurStorage() throws Exception {
         Organisateur organisateur = new Organisateur();			// create an empty customer
-        organisateur.setMail(new Mail("alice@unice.fr"));		// setting up details
+        organisateur.setMail("alice@unice.fr");		// setting up details
         organisateur.setId(0);
         entityManager.persist(organisateur);				// making the entity persistent
         int id = organisateur.getId();
@@ -145,7 +143,7 @@ public class DemandeEvenementTest {
     public void testEvenementStorage() throws Exception {
 
         Organisateur organisateur = new Organisateur();			// create an empty customer
-        organisateur.setMail(new Mail("alicccce@unice.fr"));		// setting up details
+        organisateur.setMail("alicccce@unice.fr");		// setting up details
         organisateur.setId(0);
         entityManager.persist(organisateur);				// making the entity persistent
         int id_organisateur = organisateur.getId();
@@ -177,7 +175,7 @@ public class DemandeEvenementTest {
     public void testReservationStorage() throws Exception {
 
         Organisateur organisateur = new Organisateur();			// create an empty customer
-        organisateur.setMail(new Mail("alicccce@unice.fr"));		// setting up details
+        organisateur.setMail("alicccce@unice.fr");		// setting up details
         organisateur.setId(0);
         entityManager.persist(organisateur);				// making the entity persistent
         int id_organisateur = organisateur.getId();
