@@ -16,6 +16,7 @@
         <module>frontendreservation</module>
         <module>caissier</module>
         <module>polyeventbackendlogin</module>
+        <module>polyeventbackendprofil</module>
     </modules>
 
     <properties>
