@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <title>.:: PolyEvent ::.</title>
+</h:head>
+
+<h:body>
+
+    <h1>PolyEvent Web Interface</h1>
+
+
+    <h2>Mail : #{evenementBean.organisateur.mail.mail}</h2>
+    <ui:repeat var="item" value="#{evenementBean.evenements}" varStatus="status"> <h1>#{item}</h1> </ui:repeat>
+
+</h:body>
+</html>
