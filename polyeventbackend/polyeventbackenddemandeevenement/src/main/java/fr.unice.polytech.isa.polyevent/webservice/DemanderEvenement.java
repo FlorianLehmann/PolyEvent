@@ -4,7 +4,9 @@ import fr.unice.polytech.isa.polyevent.entities.DemandePrestataire;
 import fr.unice.polytech.isa.polyevent.entities.DemandeReservationSalle;
 import fr.unice.polytech.isa.polyevent.entities.Evenement;
 import fr.unice.polytech.isa.polyevent.entities.Organisateur;
+import fr.unice.polytech.isa.polyevent.entities.interceptors.VerifierToken;
 
+import javax.interceptor.Interceptors;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
@@ -18,6 +20,7 @@ public interface DemanderEvenement {
 
 
     @WebMethod
+    @Interceptors({VerifierToken.class})
     void demanderCreationEvenement(@WebParam(name = "organisateur") Organisateur organisateur,
                                    @WebParam(name = "nom") String nom,
                                    @WebParam(name = "date_debut") Date dateDebut,
