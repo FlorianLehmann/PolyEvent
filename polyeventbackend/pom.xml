@@ -17,6 +17,8 @@
         <module>caissier</module>
         <module>polyeventbackendlogin</module>
         <module>polyeventbackendprofil</module>
+        <module>polyeventbackendprofilclientwebservice</module>
+
     </modules>
 
     <properties>

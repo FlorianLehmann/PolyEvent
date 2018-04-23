@@ -21,7 +21,7 @@ public class ProfilClient implements ObtenirProfilOrganisateur {
     private EntityManager entityManager;
 
     @Override
-    public Optional<List<Evenement>> obtenirEvenementOrganisateur(Organisateur organisateur) {
+    public List<Evenement> obtenirEvenementOrganisateur(Organisateur organisateur) {
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
 
         CriteriaQuery<Evenement> criteria = builder.createQuery(Evenement.class);
@@ -30,11 +30,8 @@ public class ProfilClient implements ObtenirProfilOrganisateur {
         criteria.select(root).where(builder.equal(root.get("organisateur"), organisateur));
         TypedQuery<Evenement> query = entityManager.createQuery(criteria);
 
-        try {
-            //query.getSingleResult();
-            return Optional.of(query.getResultList());
-        } catch (NoResultException nre){
-            return Optional.empty();
-        }
+
+        return query.getResultList();
+
     }
 }

@@ -41,7 +41,6 @@ public class EvenementBean implements Serializable {
     }
 
     @PostConstruct private void loadOrganisateurEtEvenement() {
-        Optional<List<Evenement>> optionalEvenements = profilOrganisateur.obtenirEvenementOrganisateur(organisateur);
-        evenements = optionalEvenements.orElseGet(LinkedList::new);
+        evenements = profilOrganisateur.obtenirEvenementOrganisateur(organisateur);
     }
 }

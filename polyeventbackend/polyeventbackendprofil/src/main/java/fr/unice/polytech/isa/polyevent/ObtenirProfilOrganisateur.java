@@ -10,6 +10,6 @@ import java.util.Optional;
 @Local
 public interface ObtenirProfilOrganisateur {
 
-    Optional<List<Evenement>> obtenirEvenementOrganisateur (Organisateur organisateur);
+    List<Evenement> obtenirEvenementOrganisateur (Organisateur organisateur);
 
 }

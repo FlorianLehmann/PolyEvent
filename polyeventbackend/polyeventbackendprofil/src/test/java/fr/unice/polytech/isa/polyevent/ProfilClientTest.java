@@ -52,7 +52,7 @@ public class ProfilClientTest {
 
     @Test
     public void OrganisateurInconnue(){
-        assertEquals(obtenirProfilOrganisateur.obtenirEvenementOrganisateur(new Organisateur("patrick666@gmail.com")).get().size(),0);
+        assertEquals(obtenirProfilOrganisateur.obtenirEvenementOrganisateur(new Organisateur("patrick666@gmail.com")).size(),0);
     }
 
     @Transactional(TransactionMode.ROLLBACK)
@@ -62,13 +62,12 @@ public class ProfilClientTest {
                 bob, null, new StatusHistorique() );
         entityManager.persist(evenement);
 
-        assertTrue(obtenirProfilOrganisateur.obtenirEvenementOrganisateur(bob).isPresent());
-        assertEquals(obtenirProfilOrganisateur.obtenirEvenementOrganisateur(bob).get().size(),1);
+        assertEquals(obtenirProfilOrganisateur.obtenirEvenementOrganisateur(bob).size(),1);
 
         Evenement evenement2 = new Evenement("Evenement2", new Date(2018, 5, 1), new Date(2018, 5, 2),
                 bob, null, new StatusHistorique() );
         entityManager.persist(evenement2);
-        assertEquals(obtenirProfilOrganisateur.obtenirEvenementOrganisateur(bob).get().size(),2);
+        assertEquals(obtenirProfilOrganisateur.obtenirEvenementOrganisateur(bob).size(),2);
 
 
     }
