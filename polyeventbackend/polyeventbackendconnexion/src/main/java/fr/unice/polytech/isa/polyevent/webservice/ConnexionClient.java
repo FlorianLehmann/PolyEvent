@@ -29,6 +29,5 @@ public class ConnexionClient implements ConnecterClient{
         else {
             throw new ClientPasEnregistreException(mail);
         }
-
     }
 }
