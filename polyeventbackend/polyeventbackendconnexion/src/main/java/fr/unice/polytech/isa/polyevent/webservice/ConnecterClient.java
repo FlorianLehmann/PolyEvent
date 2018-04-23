@@ -16,5 +16,5 @@ public interface ConnecterClient {
 
     @WebMethod
     @WebResult(name="token")
-    Optional<Token> connexion(@WebParam(name = "mail")String mail) throws ClientPasEnregistreException;
+    Token connexion(@WebParam(name = "mail")String mail) throws ClientPasEnregistreException;
 }

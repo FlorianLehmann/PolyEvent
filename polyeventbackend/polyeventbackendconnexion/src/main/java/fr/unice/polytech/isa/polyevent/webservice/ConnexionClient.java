@@ -20,11 +20,11 @@ public class ConnexionClient implements ConnecterClient{
     @EJB private TrouverOrganisateur trouverOrganisateur;
 
     @Override
-    public Optional<Token> connexion(String mail) throws ClientPasEnregistreException {
+    public Token connexion(String mail) throws ClientPasEnregistreException {
         Optional<Organisateur> optionalOrganisateur = trouverOrganisateur.connexion(mail);
         if(optionalOrganisateur.isPresent()){
             Token token = new Token(optionalOrganisateur.get(), new Date(2020,1, 1));
-            return Optional.of(token);
+            return token;
         }
         else {
             throw new ClientPasEnregistreException(mail);
