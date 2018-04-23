@@ -15,7 +15,7 @@ public interface ObtenirEvenementOrganisateur {
 
     @WebMethod
     @WebResult(name = "evenements")
-     List<Evenement> obtenirEvenementOrganisateur (@WebParam(name = "organisateur")Organisateur organisateur);
+    List<Evenement> obtenirEvenementOrganisateur (@WebParam(name = "organisateur")Organisateur organisateur);
 
 
 }

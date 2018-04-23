@@ -40,8 +40,10 @@ public class RegistreOrganisateur implements TrouverOrganisateur, EnregistrerOrg
 
     @Override
     public void enregistrer(String mail) throws ClientDejaCreeException {
-        if(connexion(mail).isPresent())
+        if(connexion(mail).isPresent()) {
             throw new ClientDejaCreeException(mail);
+
+        }
 
         Organisateur organisateur = new Organisateur(mail);
         entityManager.persist(organisateur);

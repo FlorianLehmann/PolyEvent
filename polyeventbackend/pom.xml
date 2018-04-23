@@ -18,6 +18,8 @@
         <module>polyeventbackendlogin</module>
         <module>polyeventbackendprofil</module>
         <module>polyeventbackendprofilclientwebservice</module>
+        <module>polyeventbackendenregistrement</module>
+        <module>polyeventbackendconnexion</module>
 
     </modules>
 
