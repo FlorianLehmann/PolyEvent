@@ -26,11 +26,6 @@
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>database</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>fr.unice.polytech.isa.polyevent</groupId>
             <artifactId>polyevent-backend-demande-evenement</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>

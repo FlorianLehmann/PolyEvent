@@ -8,7 +8,6 @@
     <modules>
         <module>polyeventbackenddemandeevenement</module>
         <module>polyeventbackenddemandereservation</module>
-        <module>database</module>
         <module>commun</module>
         <module>envoiemailprestataire</module>
         <module>demandeprestation</module>

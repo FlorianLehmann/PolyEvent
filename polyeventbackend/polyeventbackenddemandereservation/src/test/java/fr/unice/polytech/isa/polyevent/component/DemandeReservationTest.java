@@ -4,7 +4,7 @@ import fr.unice.polytech.isa.polyevent.DemanderReservation;
 import fr.unice.polytech.isa.polyevent.HyperPlanningAPI;
 import fr.unice.polytech.isa.polyevent.ValiderReservation;
 import fr.unice.polytech.isa.polyevent.entities.*;
-import fr.unice.polytech.isa.polyevent.utils.Database;
+
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.transaction.api.annotation.TransactionMode;
@@ -38,14 +38,13 @@ public class DemandeReservationTest {
                 .addClass(DemandeReservation.class)
                 .addClass(ValiderReservation.class)
                 .addClass(DemanderReservation.class)
-                .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml").addPackage(Database.class.getPackage())
+                .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml")
                 .addAsManifestResource(new ClassLoaderAsset("META-INF/persistence.xml"), "persistence.xml");
 
     }
 
     @EJB private DemanderReservation demanderReservation;
     @EJB private ValiderReservation validerReservation;
-    @EJB private Database memory;
 
     @PersistenceContext private EntityManager entityManager;
 

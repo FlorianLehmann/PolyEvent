@@ -3,7 +3,7 @@ package fr.unice.polytech.isa.polyevent.webservice;
 import fr.unice.polytech.isa.polyevent.DemanderPrestation;
 import fr.unice.polytech.isa.polyevent.DemanderReservation;
 import fr.unice.polytech.isa.polyevent.entities.*;
-import fr.unice.polytech.isa.polyevent.utils.Database;
+
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;

@@ -6,7 +6,7 @@ import fr.unice.polytech.isa.polyevent.DemanderReservation;
 import fr.unice.polytech.isa.polyevent.HyperPlanningAPI;
 import fr.unice.polytech.isa.polyevent.entities.DemandeReservationSalle;
 import fr.unice.polytech.isa.polyevent.entities.*;
-import fr.unice.polytech.isa.polyevent.utils.Database;
+
 import fr.unice.polytech.isa.polyevent.ValiderReservation;
 
 import javax.ejb.EJB;
@@ -24,8 +24,7 @@ import java.util.List;
 @Stateless
 public class DemandeReservation implements DemanderReservation, ValiderReservation {
 
-    @EJB
-    private Database memoire;
+
     @PersistenceContext
     private EntityManager entityManager;
 

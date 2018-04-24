@@ -6,7 +6,7 @@ import fr.unice.polytech.isa.polyevent.HyperPlanningAPI;
 import fr.unice.polytech.isa.polyevent.ValiderReservation;
 import fr.unice.polytech.isa.polyevent.component.DemandeReservation;
 import fr.unice.polytech.isa.polyevent.entities.*;
-import fr.unice.polytech.isa.polyevent.utils.Database;
+
 import fr.unice.polytech.isa.polyevent.webservice.DemandeEvenement;
 import fr.unice.polytech.isa.polyevent.webservice.DemanderEvenement;
 import org.jboss.arquillian.container.test.api.Deployment;
@@ -46,7 +46,7 @@ public class DemandeEvenementTest {
         return ShrinkWrap.create(WebArchive.class)
                 .addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml")
                 // Business Objects
-                .addPackage(Database.class.getPackage())
+
 //                .addPackage(Organisateur.class.getPackage())
                 .addPackage(DemanderReservation.class.getPackage())
                 .addPackage(ValiderReservation.class.getPackage())

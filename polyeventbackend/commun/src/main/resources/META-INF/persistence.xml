@@ -8,6 +8,8 @@
         <jta-data-source>PEDataSource</jta-data-source>
 
         <class>fr.unice.polytech.isa.polyevent.entities.Organisateur</class>
+        <class>fr.unice.polytech.isa.polyevent.entities.Prestataire</class>
+        <class>fr.unice.polytech.isa.polyevent.entities.Prestation</class>
         <class>fr.unice.polytech.isa.polyevent.entities.outils.Mail</class>
         <class>fr.unice.polytech.isa.polyevent.entities.Evenement</class>
         <class>fr.unice.polytech.isa.polyevent.entities.Reservation</class>
