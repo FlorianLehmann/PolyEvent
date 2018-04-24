@@ -2,21 +2,29 @@ package fr.unice.polytech.isa.polyevent.component;
 
 import fr.unice.polytech.isa.polyevent.DemanderReservation;
 import fr.unice.polytech.isa.polyevent.HyperPlanningAPI;
+import fr.unice.polytech.isa.polyevent.ValiderReservation;
 import fr.unice.polytech.isa.polyevent.entities.*;
-import fr.unice.polytech.isa.polyevent.utils.Database;
+
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
+import org.jboss.arquillian.transaction.api.annotation.TransactionMode;
+import org.jboss.arquillian.transaction.api.annotation.Transactional;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
+import org.jboss.shrinkwrap.api.asset.ClassLoaderAsset;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import javax.ejb.EJB;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -28,12 +36,17 @@ public class DemandeReservationTest {
     public static JavaArchive createDeployment() {
         return ShrinkWrap.create(JavaArchive.class)
                 .addClass(DemandeReservation.class)
-                .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml").addPackage(Database.class.getPackage());
+                .addClass(ValiderReservation.class)
+                .addClass(DemanderReservation.class)
+                .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml")
+                .addAsManifestResource(new ClassLoaderAsset("META-INF/persistence.xml"), "persistence.xml");
+
     }
 
     @EJB private DemanderReservation demanderReservation;
+    @EJB private ValiderReservation validerReservation;
 
-    @EJB private Database memory;
+    @PersistenceContext private EntityManager entityManager;
 
     private Evenement evenement;
     private List<DemandeReservationSalle> demandeReservationSalles;
@@ -41,64 +54,53 @@ public class DemandeReservationTest {
 
     @Before
     public void init() {
-        memory.flush();
+        entityManager.createQuery("DELETE FROM Reservation").executeUpdate();
         initData();
         iniMock();
-        flushDatabase();
     }
 
     @Test
+    @Transactional(TransactionMode.COMMIT)
     public void reserverAmphi(){
         DemandeReservationSalle demandeReservationAmphi = new DemandeReservationSalle(new Date(2018, 4, 1, 10, 0), new Date(2018, 4, 2, 12, 0),
                 TypeSalle.AMPHI );
         demandeReservationSalles.add(demandeReservationAmphi);
 
         demanderReservation.demanderReservationSalle(evenement,demandeReservationSalles);
-        assertTrue(memory.getReservations().size()==1);
-        assertTrue(memory.getReservations().get(0).getStatut().equals(Statut.VALIDE));
+
+        List<Reservation> reservations = validerReservation.getReservations();
+        Reservation reservation = reservations.get(0);
+        assertEquals(reservation.getDateDebut(), demandeReservationAmphi.getDateDebut());
+        assertEquals(reservation.getDateFin(), demandeReservationAmphi.getDateFin());
+        assertEquals(reservation.getEvenement(), evenement);
+        assertEquals(reservation.getTypeSalle(), demandeReservationAmphi.getTypeSalle());
     }
 
     @Test
-    public void pasAssezAmphie(){
-        DemandeReservationSalle demandeReservationAmphi1 = new DemandeReservationSalle(new Date(2018, 4, 1, 10, 0), new Date(2018, 4, 2, 12, 0),
-                TypeSalle.AMPHI );
-        DemandeReservationSalle demandeReservationAmphi2 = new DemandeReservationSalle(new Date(2018, 4, 1, 10, 0), new Date(2018, 4, 2, 12, 0),
-                TypeSalle.AMPHI );
-        demandeReservationSalles.add(demandeReservationAmphi1);
-        demandeReservationSalles.add(demandeReservationAmphi2);
+    @Transactional(TransactionMode.COMMIT)
+    public void shouldValidReservation() {
+        Reservation reservation = new Reservation(new Date(2018, 4, 1, 10, 0), new Date(2018, 4, 2, 12, 0),
+                TypeSalle.AMPHI, null, evenement, Statut.EN_ATTENTE_DE_VALIDATION);
+        entityManager.persist(reservation);
 
-        demanderReservation.demanderReservationSalle(evenement,demandeReservationSalles);
-        assertTrue(memory.getReservations().size()==2);
-        assertTrue(memory.getReservations().get(0).getStatut().equals(Statut.VALIDE));
-        assertTrue(memory.getReservations().get(1).getStatut().equals(Statut.REFUSE));
+        validerReservation.accepterReservation(reservation,new Salle("O+311"));
+
+        assertEquals(validerReservation.getReservations().get(0).getStatut(), Statut.VALIDE);
     }
 
     @Test
-    public void reserverPlusieursSalleMemeHoraire(){
-        DemandeReservationSalle demandeReservationSalle1 = new DemandeReservationSalle(new Date(2018, 4, 1, 10, 0), new Date(2018, 4, 2, 12, 0),
-                TypeSalle.SALLE );
-        DemandeReservationSalle demandeReservationSalle2 = new DemandeReservationSalle(new Date(2018, 4, 1, 10, 0), new Date(2018, 4, 2, 12, 0),
-                TypeSalle.SALLE );
-        demandeReservationSalles.add(demandeReservationSalle1);
-        demandeReservationSalles.add(demandeReservationSalle2);
+    @Transactional(TransactionMode.COMMIT)
+    public void shouldRefuseReservation() {
+        Reservation reservation = new Reservation(new Date(2018, 4, 1, 10, 0), new Date(2018, 4, 2, 12, 0),
+                TypeSalle.AMPHI, null, evenement, Statut.EN_ATTENTE_DE_VALIDATION);
+        entityManager.persist(reservation);
 
-        demanderReservation.demanderReservationSalle(evenement,demandeReservationSalles);
-        assertTrue(memory.getReservations().size()==2);
-        assertTrue(memory.getReservations().get(0).getStatut().equals(Statut.VALIDE));
-        assertTrue(memory.getReservations().get(1).getStatut().equals(Statut.VALIDE));
-        List<Salle> salles = new ArrayList<>();
+        validerReservation.refuserReservation(reservation, "plus de salles dispo");
 
-        for (Reservation reservation:memory.getReservations()) {
-            if(!salles.contains(reservation.getSalle())){
-                salles.add(reservation.getSalle());
-            }
-        }
-
-        assertTrue(salles.size()==2);
-
+        assertEquals(validerReservation.getReservations().get(0).getStatut(), Statut.REFUSE);
     }
 
-    public void flushDatabase() { memory.flush(); }
+
 
     private void initData(){
         Organisateur organisateur = new Organisateur("organisateur@gmail.com");
@@ -107,10 +109,17 @@ public class DemandeReservationTest {
                 organisateur, null, new StatusHistorique() );
     }
 
-    private void iniMock(){
+    private void iniMock() {
         HyperPlanningAPI mocked = mock(HyperPlanningAPI.class);
         demanderReservation.setHyperPlanningAPI(mocked);
-        when(mocked.reserverSalle(any(), any())).thenReturn(true);
+        List<String> strings = new LinkedList<>();
+        strings.add("0+300");
+        when(mocked.reserverSalle(any(), any())).thenReturn("Succès");
+        try {
+            when(mocked.DemandeSallesDisponible(any())).thenReturn(strings);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
 }

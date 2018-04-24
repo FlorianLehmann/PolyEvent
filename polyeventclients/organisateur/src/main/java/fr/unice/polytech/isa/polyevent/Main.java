@@ -1,9 +1,8 @@
 package fr.unice.polytech.isa.polyevent;
 
 import fr.unice.polytech.isa.polyevent.api.PolyEventAPI;
-import fr.unice.polytech.isa.polyevent.cli.commands.Bye;
-import fr.unice.polytech.isa.polyevent.cli.commands.Help;
-import fr.unice.polytech.isa.polyevent.cli.commands.SubmitEvent;
+import fr.unice.polytech.isa.polyevent.cli.commands.*;
+import fr.unice.polytech.isa.polyevent.cli.framework.Context;
 import fr.unice.polytech.isa.polyevent.cli.framework.Shell;
 import net.sourceforge.argparse4j.ArgumentParsers;
 import net.sourceforge.argparse4j.inf.ArgumentParser;
@@ -12,6 +11,7 @@ import net.sourceforge.argparse4j.inf.Namespace;
 
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.util.Scanner;
 
 public class Main
 {
@@ -28,7 +28,7 @@ public class Main
         try
         {
             Namespace ns = parser.parseArgs(args);
-            runCLI(ns, System.in, System.out);
+            runCLI(ns.getString("hostname"), ns.getString("port"), System.in, System.out);
         }
         catch (ArgumentParserException e)
         {
@@ -36,11 +36,8 @@ public class Main
         }
     }
 
-    private static void runCLI(Namespace namespace, InputStream in, PrintStream out)
+    public static void runCLI(String host, String port, InputStream in, PrintStream out)
     {
-        String host = namespace.getString("hostname");
-        String port = namespace.getString("port");
-
         out.println("Starting Poly'Event by Team H");
         out.println("   - Remote server: " + host);
         out.println("   - Port number: " + port);
@@ -48,13 +45,17 @@ public class Main
         PolyEventAPI api = new PolyEventAPI(host, port);
         Shell shell = new Shell();
         shell.register(
-                new Help.Builder(shell, out),
-                new Bye.Builder(out),
-                new SubmitEvent.Builder(shell, in, out, api.demandeEvenement)
+                new Help.Builder(shell),
+                new Bye.Builder(),
+                new SubmitEvent.Builder(shell, api.demandeEvenement),
+                new ListEvent.Builder(api.demandeEvenement),
+                new Pay.Builder(api.payerEvenement),
+                new Play.Builder(shell)
         );
+        Context context = new Context(new Scanner(in), out, false);
 
         out.println("Submit your event. Type ? for help.");
-        shell.run(in, out);
+        shell.run(context);
         out.println("Exiting Poly'Event by Team H");
     }
 }

@@ -2,6 +2,8 @@ package fr.unice.polytech.isa.polyevent.cli.commands;
 
 import fr.unice.polytech.isa.polyevent.cli.framework.Command;
 import fr.unice.polytech.isa.polyevent.cli.framework.CommandBuilder;
+import fr.unice.polytech.isa.polyevent.cli.framework.Context;
+import fr.unice.polytech.isa.polyevent.stubs.DemandePrestataire;
 import fr.unice.polytech.isa.polyevent.stubs.DemandeReservationSalle;
 import fr.unice.polytech.isa.polyevent.stubs.DemanderEvenement;
 import fr.unice.polytech.isa.polyevent.stubs.Organisateur;
@@ -14,18 +16,20 @@ import java.util.List;
 
 public class ValidateEvent implements Command
 {
-    private static final String IDENTIFIER = "validate";
+    private static final Identifier IDENTIFIER = Identifier.VALIDATE;
     private final DemanderEvenement demandeEvenement;
     private final Organisateur organisateur;
     private final String nom;
     private final XMLGregorianCalendar dateDebut;
     private final XMLGregorianCalendar dateFin;
     private final List<DemandeReservationSalle> demandeReservations;
+    private final List<DemandePrestataire> demandePrestataires;
     private final PrintStream out;
 
-    private ValidateEvent(DemanderEvenement demandeEvenement, Organisateur organisateur, String nom,
-                          XMLGregorianCalendar dateDebut, XMLGregorianCalendar dateFin,
-                          List<DemandeReservationSalle> demandeReservations, PrintStream out)
+    public ValidateEvent(DemanderEvenement demandeEvenement, Organisateur organisateur, String nom,
+                         XMLGregorianCalendar dateDebut, XMLGregorianCalendar dateFin,
+                         List<DemandeReservationSalle> demandeReservations, List<DemandePrestataire> demandePrestataires,
+                         PrintStream out)
     {
         this.demandeEvenement = demandeEvenement;
         this.organisateur = organisateur;
@@ -33,6 +37,7 @@ public class ValidateEvent implements Command
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
         this.demandeReservations = demandeReservations;
+        this.demandePrestataires = demandePrestataires;
         this.out = out;
     }
 
@@ -49,11 +54,11 @@ public class ValidateEvent implements Command
 
         try
         {
-            demandeEvenement.demanderCreationEvenement(organisateur, nom, dateDebut, dateFin, demandeReservations);
+            demandeEvenement.demanderCreationEvenement(organisateur, nom, dateDebut, dateFin, demandeReservations, demandePrestataires);
         }
         catch (WebServiceException e)
         {
-            throw new ConnectException("Could not connect to the server. Check your internet connection and retry");
+            throw new ConnectException(String.format("Could not connect to the server. Check your internet connection and retry:%n%s", e.getMessage()));
         }
     }
 
@@ -71,11 +76,11 @@ public class ValidateEvent implements Command
         private final XMLGregorianCalendar dateDebut;
         private final XMLGregorianCalendar dateFin;
         private final List<DemandeReservationSalle> demandeReservations;
-        private final PrintStream out;
+        private final List<DemandePrestataire> demandePrestataires;
 
         Builder(DemanderEvenement demandeEvenement, Organisateur organisateur, String nom,
                 XMLGregorianCalendar dateDebut, XMLGregorianCalendar dateFin,
-                List<DemandeReservationSalle> demandeReservations, PrintStream out)
+                List<DemandeReservationSalle> demandeReservations, List<DemandePrestataire> demandePrestataires)
         {
             this.demandeEvenement = demandeEvenement;
             this.organisateur = organisateur;
@@ -83,25 +88,25 @@ public class ValidateEvent implements Command
             this.dateDebut = dateDebut;
             this.dateFin = dateFin;
             this.demandeReservations = demandeReservations;
-            this.out = out;
+            this.demandePrestataires = demandePrestataires;
         }
 
         @Override
         public String identifier()
         {
-            return IDENTIFIER;
+            return IDENTIFIER.keyword;
         }
 
         @Override
         public String describe()
         {
-            return "validate the event submission";
+            return IDENTIFIER.description;
         }
 
         @Override
-        public ValidateEvent build()
+        public ValidateEvent build(Context context)
         {
-            return new ValidateEvent(demandeEvenement, organisateur, nom, dateDebut, dateFin, demandeReservations, out);
+            return new ValidateEvent(demandeEvenement, organisateur, nom, dateDebut, dateFin, demandeReservations, demandePrestataires, context.out);
         }
     }
 }

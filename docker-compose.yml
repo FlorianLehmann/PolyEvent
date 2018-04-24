@@ -1,0 +1,17 @@
+version: "3.5"
+
+services:
+  polyeventbackend:
+    build: ./polyeventbackend/polyeventbackendwar
+    container_name: polyeventbackend
+    ports:
+      - 8080:8080
+    depends_on:
+      - hyperplanning
+
+  hyperplanning:
+      build: ./dotnet
+      container_name: hyperplanning
+      ports:
+        - 9090:9090
+

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.polytech.unice.fr/si/4a/isa/polyevent/payerEvenement" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="PayerService" targetNamespace="http://www.polytech.unice.fr/si/4a/isa/polyevent/payerEvenement">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.polytech.unice.fr/si/4a/isa/polyevent/payerEvenement" elementFormDefault="unqualified" targetNamespace="http://www.polytech.unice.fr/si/4a/isa/polyevent/payerEvenement" version="1.0">
+
+  <xs:element name="payerEvenement" type="tns:payerEvenement"/>
+
+  <xs:element name="payerEvenementResponse" type="tns:payerEvenementResponse"/>
+
+  <xs:complexType name="payerEvenement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="organisateur" type="tns:organisateur"/>
+      <xs:element minOccurs="0" name="nom" type="xs:string"/>
+      <xs:element minOccurs="0" name="date_debut" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="date_fin" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="creditCard" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="organisateur">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mail" type="tns:mail"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="mail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mail" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="payerEvenementResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="status" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="payerEvenementResponse">
+    <wsdl:part element="tns:payerEvenementResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="payerEvenement">
+    <wsdl:part element="tns:payerEvenement" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="PayerEvenement">
+    <wsdl:operation name="payerEvenement">
+      <wsdl:input message="tns:payerEvenement" name="payerEvenement">
+    </wsdl:input>
+      <wsdl:output message="tns:payerEvenementResponse" name="payerEvenementResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PayerServiceSoapBinding" type="tns:PayerEvenement">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="payerEvenement">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="payerEvenement">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="payerEvenementResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PayerService">
+    <wsdl:port binding="tns:PayerServiceSoapBinding" name="PayerPort">
+      <soap:address location="http://localhost:8080/polyeventbackend-war/webservices/PayerEvenementWS"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

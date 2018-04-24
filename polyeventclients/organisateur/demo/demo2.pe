@@ -1,0 +1,7 @@
+event bob@mail.com "Week End Startup" 2018-06-23T16:00:00 2018-06-25T08:00:00
+reservation AMPHI 2018-06-23T16:00:00 2018-06-23T18:00:00
+reservation SALLE 2018-06-23T18:00:00 2018-06-25T08:00:00
+reservation SALLE 2018-06-23T18:00:00 2018-06-25T08:00:00
+reservation AMPHI 2018-06-25T08:00:00 2018-06-25T10:00:00
+validate
+list bob@mail.com

@@ -1,8 +1,8 @@
 package fr.unice.polytech.isa.polyevent.cli.framework;
 
-import java.io.InputStream;
-import java.io.PrintStream;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -28,53 +28,59 @@ public class Shell
         this.builders.addAll(Arrays.asList(builders));
     }
 
-    public void run(InputStream in, PrintStream out)
+    public void run(Context context)
     {
-        Scanner scanner = new Scanner(in);
         boolean shouldContinue = true;
 
         while (shouldContinue)
         {
-            out.format(String.format("%%%ds ", 3 * indent), ">>>");
-            out.flush();
-            shouldContinue = processScanner(scanner, out);
+            context.out.format(String.format("%%%ds ", 3 * indent), ">>>");
+            context.out.flush();
+            shouldContinue = processScanner(context);
         }
     }
 
-    private boolean processScanner(Scanner scanner, PrintStream out)
+    private boolean processScanner(Context context)
     {
-        if (!scanner.hasNextLine())
+        if (!context.scanner.hasNextLine())
         {
+            context.out.println("End of file. Returning to root shell...");
             return false;
         }
 
-        String command = scanner.nextLine();
+        String command = context.scanner.nextLine();
+
+        if (context.echo)
+        {
+            context.out.println(command);
+        }
+
         Matcher matcher = COMMAND.matcher(command);
 
         if (!matcher.matches())
         {
-            out.println("The command is empty");
+            context.out.println("The command is empty");
             return true;
         }
-        return processInput(matcher, out);
+        return processInput(matcher, context);
     }
 
-    private boolean processInput(Matcher matcher, PrintStream out)
+    private boolean processInput(Matcher matcher, Context context)
     {
         String keyword = parseKeyword(matcher);
         List<String> arguments = parseArguments(matcher);
 
         try
         {
-            return processCommand(keyword, arguments);
+            return processCommand(context, keyword, arguments);
         }
         catch (IllegalArgumentException e)
         {
-            out.println(e.getMessage());
+            context.out.println(e.getMessage());
         }
         catch (Exception e)
         {
-            out.format("Exception caught while processing command:%n%-10s%n", e.getMessage());
+            context.out.format("Exception caught while processing command:%n%-10s%n", e.getMessage());
         }
         return true;
     }
@@ -90,7 +96,7 @@ public class Shell
         List<String> arguments = new ArrayList<>();
         while (args.find())
         {
-            arguments.add(args.group(1) != null ? args.group(1): args.group(2));
+            arguments.add(args.group(1) != null ? args.group(1) : args.group(2));
         }
         return arguments;
     }
@@ -103,10 +109,10 @@ public class Shell
                 .orElseThrow(() -> new IllegalArgumentException("Unknown Command"));
     }
 
-    private boolean processCommand(String keyword, List<String> arguments) throws Exception
+    private boolean processCommand(Context context, String keyword, List<String> arguments) throws Exception
     {
         CommandBuilder builder = findBuilder(keyword);
-        Command command = builder.build();
+        Command command = builder.build(context);
         return command.process(arguments);
     }
 

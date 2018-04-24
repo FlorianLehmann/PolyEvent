@@ -2,41 +2,41 @@ package fr.unice.polytech.isa.polyevent.cli.commands;
 
 import fr.unice.polytech.isa.polyevent.cli.framework.Command;
 import fr.unice.polytech.isa.polyevent.cli.framework.CommandBuilder;
+import fr.unice.polytech.isa.polyevent.cli.framework.Context;
 import fr.unice.polytech.isa.polyevent.cli.framework.Shell;
 import fr.unice.polytech.isa.polyevent.stubs.*;
 
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
-import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class SubmitEvent implements Command
 {
-    private static final String IDENTIFIER = "event";
+    private static final Identifier IDENTIFIER = Identifier.SUBMIT_EVENT;
     private final Shell shell;
-    private final InputStream in;
-    private final PrintStream out;
+    private final Context context;
     private final DemanderEvenement demandeEvenement;
     private Organisateur organisateur;
     private String nom;
     private XMLGregorianCalendar dateDebut;
     private XMLGregorianCalendar dateFin;
     private List<DemandeReservationSalle> demandeReservations;
+    private List<DemandePrestataire> demandePrestataires;
 
-    SubmitEvent(Shell shell, InputStream in, PrintStream out, DemanderEvenement demandeEvenement)
+    public SubmitEvent(Shell shell, Context context, DemanderEvenement demandeEvenement)
     {
         this.shell = shell;
-        this.in = in;
-        this.out = out;
+        this.context = context;
         this.demandeEvenement = demandeEvenement;
     }
 
     @Override
     public void load(List<String> args) throws Exception
     {
-        if (args.size() < 4)
+        if (args.size() != 4)
         {
             String message = String.format("%s expects 4 arguments: %s MAIL NOM START_DATE END_DATE", IDENTIFIER, IDENTIFIER);
             throw new IllegalArgumentException(message);
@@ -59,6 +59,7 @@ public class SubmitEvent implements Command
         }
 
         demandeReservations = new ArrayList<>();
+        demandePrestataires = new ArrayList<>();
     }
 
     @Override
@@ -66,40 +67,37 @@ public class SubmitEvent implements Command
     {
         Shell subShell = shell.subShell();
         subShell.register(
-                new Help.Builder(subShell, out),
+                new Help.Builder(subShell),
                 new AddReservation.Builder(demandeReservations),
-                new ValidateEvent.Builder(demandeEvenement, organisateur, nom, dateDebut, dateFin, demandeReservations, out),
+                new AddService.Builder(demandePrestataires),
+                new ValidateEvent.Builder(demandeEvenement, organisateur, nom, dateDebut, dateFin, demandeReservations, demandePrestataires),
                 new CancelEvent.Builder()
         );
-        out.format("Add reservations to the event \"%s\". Type ? for help.%n", nom);
-        subShell.run(in, out);
+        context.out.format("Add reservations to the event \"%s\". Type ? for help.%n", nom);
+        subShell.run(context);
     }
 
     public static class Builder implements CommandBuilder<SubmitEvent>
     {
         private final Shell shell;
-        private final InputStream in;
-        private final PrintStream out;
         private final DemanderEvenement demandeEvenement;
 
-        public Builder(Shell shell, InputStream in, PrintStream out, DemanderEvenement demandeEvenement)
+        public Builder(Shell shell, DemanderEvenement demandeEvenement)
         {
             this.shell = shell;
-            this.in = in;
-            this.out = out;
             this.demandeEvenement = demandeEvenement;
         }
 
         @Override
         public String identifier()
         {
-            return IDENTIFIER;
+            return IDENTIFIER.keyword;
         }
 
         @Override
         public String describe()
         {
-            return "Submit an event to the system";
+            return IDENTIFIER.description;
         }
 
         @Override
@@ -111,9 +109,9 @@ public class SubmitEvent implements Command
         }
 
         @Override
-        public SubmitEvent build()
+        public SubmitEvent build(Context context)
         {
-            return new SubmitEvent(shell, in, out, demandeEvenement);
+            return new SubmitEvent(shell, context, demandeEvenement);
         }
     }
 }

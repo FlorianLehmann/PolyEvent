@@ -1,174 +1,27 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
+    <parent>
+        <artifactId>polyevent-backend</artifactId>
+        <groupId>fr.unice.polytech.isa.polyevent</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>fr.unice.polytech.isa.polyevent</groupId>
     <artifactId>polyevent-backend-demande-reservation</artifactId>
     <packaging>jar</packaging>
     <name>polyevent-backend-demande-reservation</name>
     <version>1.0-SNAPSHOT</version>
     <url>http://maven.apache.org</url>
 
-    <repositories>
-        <repository>
-            <id>central</id>
-            <url>http://192.168.43.212:8081/artifactory/libs-snapshot-local</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>snapshots</id>
-            <url>http://192.168.43.212:8081/artifactory/libs-snapshot-local</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-        </repository>
-    </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>central</id>
-            <url>http://192.168.43.212:8081/artifactory/libs-snapshot-local</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </pluginRepository>
-        <pluginRepository>
-            <id>snapshots</id>
-            <url>http://192.168.43.212:8081/artifactory/libs-snapshot-local</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-        </pluginRepository>
-    </pluginRepositories>
-
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <name>1f3523b4024a-snapshots</name>
-            <url>http://192.168.43.212:8081/artifactory/libs-snapshot-local</url>
-        </snapshotRepository>
-    </distributionManagement>
-
-    <properties>
-        <!-- General Properties -->
-        <dir.agent>agent</dir.agent>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <versions.maven.compiler>3.6.1</versions.maven.compiler>
-        <versions.java>1.8</versions.java>
-        <versions.json>20180130</versions.json>
-        <!-- J2E 7.x technological stack -->
-        <versions.javaee>7.0-1</versions.javaee>
-        <versions.maven.surefire>2.19.1</versions.maven.surefire>
-        <versions.openejb>7.0.2</versions.openejb>
-        <versions.tomee>7.0.2</versions.tomee>
-        <versions.openjpa>2.4.1</versions.openjpa>
-        <versions.myface>2.2.10</versions.myface>
-
-        <versions.mockito>1.10.19</versions.mockito>
-        <versions.arquillian.junit>1.1.12.Final</versions.arquillian.junit>
-        <versions.arquilian.jta>1.0.3.Final</versions.arquilian.jta>
-        <versions.cukespace>1.6.5</versions.cukespace>
-        <versions.shrinkwrap>2.2.6</versions.shrinkwrap>
-    </properties>
-
-    <build>
-        <finalName>polyevent-backend-demande-reservation</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>make-a-war</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>war</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${versions.maven.compiler}</version>
-                <configuration>
-                    <source>${versions.java}</source>
-                    <target>${versions.java}</target>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>copy</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>org.apache.openejb</groupId>
-                                    <artifactId>openejb-javaagent</artifactId>
-                                    <version>4.7.4</version>
-                                    <outputDirectory>${dir.agent}</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>${versions.maven.surefire}</version>
-                <configuration>
-                    <forkMode>always</forkMode>
-                    <reuseForks>false</reuseForks>
-                    <excludes>
-                        <exclude>**/PaymentIntegrationTest.java</exclude>
-                        <exclude>features/*</exclude>
-                    </excludes>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>integration-test</id>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                        <phase>integration-test</phase>
-                        <configuration>
-                            <excludes>
-                                <exclude>**/*Test.java</exclude>
-                            </excludes>
-                            <includes>
-                                <include>**/PaymentIntegrationTest.java</include>
-                            </includes>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
 
     <dependencies>
-
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
             <artifactId>commun</artifactId>
             <version>LATEST</version>
         </dependency>
 
-        <dependency>
-            <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>database</artifactId>
-            <version>LATEST</version>
-        </dependency>
 
         <dependency>
             <groupId>org.apache.tomee</groupId>

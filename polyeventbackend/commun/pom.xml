@@ -1,104 +1,54 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <parent>
+        <artifactId>polyevent-backend</artifactId>
+        <groupId>fr.unice.polytech.isa.polyevent</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>fr.unice.polytech.isa.polyevent</groupId>
     <artifactId>commun</artifactId>
     <packaging>jar</packaging>
-    <version>1.3-SNAPSHOT</version>
-    <name>commun</name>
-    <url>http://maven.apache.org</url>
-
-    <repositories>
-        <repository>
-            <id>central</id>
-            <url>http://192.168.43.212:8081/artifactory/libs-snapshot-local</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>snapshots</id>
-            <url>http://192.168.43.212:8081/artifactory/libs-snapshot-local</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-        </repository>
-    </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>central</id>
-            <url>http://192.168.43.212:8081/artifactory/libs-snapshot-local</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </pluginRepository>
-        <pluginRepository>
-            <id>snapshots</id>
-            <url>http://192.168.43.212:8081/artifactory/libs-snapshot-local</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-        </pluginRepository>
-    </pluginRepositories>
+    <version>1.0-SNAPSHOT</version>
 
 
-    <distributionManagement>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <name>1f3523b4024a-snapshots</name>
-            <url>http://192.168.43.212:8081/artifactory/libs-snapshot-local</url>
-        </snapshotRepository>
-    </distributionManagement>
-
-    <properties>
-        <!-- General Properties -->
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <versions.maven.compiler>3.6.1</versions.maven.compiler>
-        <versions.java>1.8</versions.java>
-
-        <!-- J2E 7.x technological stack -->
-        <versions.javaee>7.0-1</versions.javaee>
-    </properties>
-
-    <dependencies>
-
-        <dependency>
-            <groupId>org.apache.tomee</groupId>
-            <artifactId>javaee-api</artifactId>
-            <version>${versions.javaee}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
-
-
-    </dependencies>
     <build>
-        <finalName>commun</finalName>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${versions.maven.compiler}</version>
+                <groupId>org.apache.openjpa</groupId>
+                <artifactId>openjpa-maven-plugin</artifactId>
+                <version>2.4.1</version>
                 <configuration>
-                    <source>${versions.java}</source>
-                    <target>${versions.java}</target>
+                    <includes>**/entities/*.class</includes>
+                    <addDefaultConstructor>true</addDefaultConstructor>
+                    <enforcePropertyRestrictions>true</enforcePropertyRestrictions>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>make-a-war</id>
-                        <phase>compile</phase>
+                        <id>enhancer</id>
+                        <phase>process-classes</phase>
                         <goals>
-                            <goal>war</goal>
+                            <goal>enhance</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.openjpa</groupId>
+                <artifactId>openjpa-maven-plugin</artifactId>
+                <version>2.4.1</version>
+                <configuration>
+                    <includes>**/entities/*.class</includes>
+                    <addDefaultConstructor>true</addDefaultConstructor>
+                    <enforcePropertyRestrictions>true</enforcePropertyRestrictions>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>enhancer</id>
+                        <phase>process-classes</phase>
+                        <goals>
+                            <goal>enhance</goal>
                         </goals>
                     </execution>
                 </executions>

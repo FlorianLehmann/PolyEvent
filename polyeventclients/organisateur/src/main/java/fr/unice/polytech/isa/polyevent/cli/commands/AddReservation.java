@@ -2,6 +2,7 @@ package fr.unice.polytech.isa.polyevent.cli.commands;
 
 import fr.unice.polytech.isa.polyevent.cli.framework.Command;
 import fr.unice.polytech.isa.polyevent.cli.framework.CommandBuilder;
+import fr.unice.polytech.isa.polyevent.cli.framework.Context;
 import fr.unice.polytech.isa.polyevent.stubs.DemandeReservationSalle;
 import fr.unice.polytech.isa.polyevent.stubs.TypeSalle;
 
@@ -13,7 +14,7 @@ import java.util.stream.Collectors;
 
 public class AddReservation implements Command
 {
-    private static final String IDENTIFIER = "reservation";
+    private static final Identifier IDENTIFIER = Identifier.ADD_RESERVATION;
     private final List<DemandeReservationSalle> demandeReservations;
     private TypeSalle typeSalle;
     private XMLGregorianCalendar dateDebut;
@@ -82,13 +83,13 @@ public class AddReservation implements Command
         @Override
         public String identifier()
         {
-            return IDENTIFIER;
+            return IDENTIFIER.keyword;
         }
 
         @Override
         public String describe()
         {
-            return "Add a reservation to the event";
+            return IDENTIFIER.description;
         }
 
         @Override
@@ -101,7 +102,7 @@ public class AddReservation implements Command
         }
 
         @Override
-        public AddReservation build()
+        public AddReservation build(Context context)
         {
             return new AddReservation(demandeReservations);
         }

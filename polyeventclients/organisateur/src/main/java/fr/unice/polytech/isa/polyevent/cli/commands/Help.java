@@ -2,6 +2,7 @@ package fr.unice.polytech.isa.polyevent.cli.commands;
 
 import fr.unice.polytech.isa.polyevent.cli.framework.Command;
 import fr.unice.polytech.isa.polyevent.cli.framework.CommandBuilder;
+import fr.unice.polytech.isa.polyevent.cli.framework.Context;
 import fr.unice.polytech.isa.polyevent.cli.framework.Shell;
 
 import java.io.PrintStream;
@@ -9,9 +10,9 @@ import java.util.List;
 
 public class Help implements Command
 {
-    private static final String FULL_IDENTIFIER = "help";
+    private static final Identifier IDENTIFIER = Identifier.HELP;
     private static final String SHORTCUT = "?";
-    private static final String IDENTIFIER = String.format("%s or %s", FULL_IDENTIFIER, SHORTCUT);
+    private static final String FULL_IDENTIFIER = String.format("%s or %s", IDENTIFIER.keyword, SHORTCUT);
     private final Shell shell;
     private final PrintStream out;
     private CommandBuilder builder;
@@ -63,36 +64,34 @@ public class Help implements Command
     public static class Builder implements CommandBuilder<Help>
     {
         private final Shell shell;
-        private final PrintStream out;
 
-        public Builder(Shell shell, PrintStream out)
+        public Builder(Shell shell)
         {
             this.shell = shell;
-            this.out = out;
         }
 
         @Override
         public String identifier()
         {
-            return IDENTIFIER;
+            return FULL_IDENTIFIER;
         }
 
         @Override
         public boolean match(String keyword)
         {
-            return FULL_IDENTIFIER.equals(keyword) || SHORTCUT.equals(keyword);
+            return IDENTIFIER.keyword.equals(keyword) || SHORTCUT.equals(keyword);
         }
 
         @Override
         public String describe()
         {
-            return "Print the help";
+            return IDENTIFIER.description;
         }
 
         @Override
-        public Help build()
+        public Help build(Context context)
         {
-            return new Help(shell, out);
+            return new Help(shell, context.out);
         }
     }
 }
