@@ -22,16 +22,6 @@ public class ProfilClient implements ObtenirProfilOrganisateur {
 
     @Override
     public List<Evenement> obtenirEvenementOrganisateur(Organisateur organisateur) {
-        CriteriaBuilder builder = entityManager.getCriteriaBuilder();
-
-        CriteriaQuery<Evenement> criteria = builder.createQuery(Evenement.class);
-        Root<Evenement> root =  criteria.from(Evenement.class);
-
-        criteria.select(root).where(builder.equal(root.get("organisateur"), organisateur));
-        TypedQuery<Evenement> query = entityManager.createQuery(criteria);
-
-
-        return query.getResultList();
-
+        return organisateur.getEvenements();
     }
 }

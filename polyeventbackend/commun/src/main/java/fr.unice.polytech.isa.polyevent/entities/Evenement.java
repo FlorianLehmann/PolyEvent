@@ -44,6 +44,7 @@ public class Evenement {
         this.organisateur = organisateur;
         this.reservations = reservations;
         this.statusHistorique = statusHistorique;
+        this.organisateur.getEvenements().add(this);
     }
 
     public int getId() {

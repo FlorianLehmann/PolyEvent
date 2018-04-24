@@ -46,16 +46,17 @@ public class ProfilClientTest {
 
     @Before
     public void ini(){
+        entityManager.createQuery("DELETE FROM Organisateur").executeUpdate();
         bob = new Organisateur("bob@gmail.com");
         entityManager.persist(bob);
     }
 
     @Test
     public void OrganisateurInconnue(){
-        assertEquals(obtenirProfilOrganisateur.obtenirEvenementOrganisateur(new Organisateur("patrick666@gmail.com")).size(),0);
+        assertEquals(obtenirProfilOrganisateur.obtenirEvenementOrganisateur(bob).size(),0);
     }
 
-    @Transactional(TransactionMode.ROLLBACK)
+    @Transactional(TransactionMode.COMMIT)
     @Test
     public void OrganisateurAvecEvenement(){
         Evenement evenement = new Evenement("Evenement", new Date(2018, 4, 1), new Date(2018, 4, 2),
