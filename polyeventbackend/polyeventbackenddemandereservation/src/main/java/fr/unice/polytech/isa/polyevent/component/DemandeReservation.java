@@ -11,6 +11,12 @@ import fr.unice.polytech.isa.polyevent.ValiderReservation;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -20,57 +26,56 @@ public class DemandeReservation implements DemanderReservation, ValiderReservati
 
     @EJB
     private Database memoire;
+    @PersistenceContext
+    private EntityManager entityManager;
 
     private HyperPlanningAPI hyperPlanningAPI = new HyperPlanningAPI();
 
 
     @Override
     public void demanderReservationSalle(Evenement evenement, List<DemandeReservationSalle> demandeReservationSalles) {
+        evenement = entityManager.merge(evenement);
         for (DemandeReservationSalle demandeReservationSalle: demandeReservationSalles) {
             Reservation reservation = new Reservation(demandeReservationSalle.getDateDebut(), demandeReservationSalle.getDateFin(),
                     demandeReservationSalle.getTypeSalle(), null, evenement, Statut.EN_ATTENTE_DE_VALIDATION);
-            memoire.getReservations().add(reservation);
+            //persistence
+            entityManager.persist(reservation);
             validationAutomatique(reservation);
         }
     }
 
     @Override
     public boolean accepterReservation(Reservation reservation, Salle salle) {
-        for (Reservation r: memoire.getReservations()) {
-            if(r.equals(reservation)){
-                String reponse = hyperPlanningAPI.reserverSalle(r, salle);
-                if (reponse.equals("Succès")) {
-                    r.setSalle(salle);
-                    r.setStatut(Statut.VALIDE);
-                    if (reservation.getEvenement().getReservations() == null){
-                        reservation.getEvenement().setReservations(new ArrayList<>());
-                    }
-                    reservation.getEvenement().getReservations().add(r);
+        reservation = entityManager.merge(reservation);
+        String reponse = hyperPlanningAPI.reserverSalle(reservation, salle);
 
-                    return true;
-                }
+        if (reponse.equals("Succès")) {
+            reservation.setSalle(salle);
+            reservation.setStatut(Statut.VALIDE);
+            if (reservation.getEvenement().getReservations() == null){
+                reservation.getEvenement().setReservations(new ArrayList<>());
             }
+            reservation.getEvenement().getReservations().add(reservation);
+            return true;
         }
+
         return false;
 
     }
 
     @Override
     public void refuserReservation(Reservation reservation, String raison) {
-        for (Reservation r: memoire.getReservations()) {
-            if(r.equals(reservation)){
-                r.setStatut(Statut.REFUSE);
-                if (reservation.getEvenement().getReservations() == null){
-                    reservation.getEvenement().setReservations(new ArrayList<>());
-                }
-                reservation.getEvenement().getReservations().add(r);
-            }
+        reservation = entityManager.merge(reservation);
+        reservation.setStatut(Statut.REFUSE);
+        if (reservation.getEvenement().getReservations() == null){
+            reservation.getEvenement().setReservations(new ArrayList<>());
         }
+        reservation.getEvenement().getReservations().add(reservation);
     }
 
-
-
     private void validationAutomatique(Reservation reservation){
+        reservation = entityManager.merge(reservation);
+
         List<Reservation> reservations = new LinkedList<>();
         reservations.add(reservation);
         List<String> strings = new LinkedList<>();
@@ -89,5 +94,18 @@ public class DemandeReservation implements DemanderReservation, ValiderReservati
 
     public void setHyperPlanningAPI(HyperPlanningAPI hyperPlanningAPI) {
         this.hyperPlanningAPI = hyperPlanningAPI;
+    }
+
+    @Override
+    public List<Reservation> getReservations() {
+        CriteriaBuilder builder = entityManager.getCriteriaBuilder();
+
+        CriteriaQuery<Reservation> criteria = builder.createQuery(Reservation.class);
+        Root<Reservation> root =  criteria.from(Reservation.class);
+
+        criteria.select(root);
+        TypedQuery<Reservation> query = entityManager.createQuery(criteria);
+
+        return query.getResultList();
     }
 }

@@ -26,6 +26,7 @@ public class DemandeEvenement implements DemanderEvenement {
     @Override
     public void demanderCreationEvenement(Organisateur organisateur, String nom, Date dateDebut, Date dateFin, List<DemandeReservationSalle> demandeReservationSalles, List<DemandePrestataire> demandePrestataires) {
         Evenement evenement = new Evenement(nom, dateDebut, dateFin, organisateur, new ArrayList<>(), new StatusHistorique());
+        entityManager.persist(evenement);
         organisateur.getEvenements().add(evenement);
         if (demandeReservationSalles == null)
             demandeReservationSalles = new ArrayList<>();
@@ -38,7 +39,7 @@ public class DemandeEvenement implements DemanderEvenement {
 
         demanderPrestation.ajouterService(evenement, demandePrestataires);
 
-        entityManager.persist(evenement);
+
 
     }
 

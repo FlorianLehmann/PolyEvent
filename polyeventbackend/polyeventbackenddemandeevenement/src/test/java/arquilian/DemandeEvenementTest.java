@@ -18,6 +18,7 @@ import org.jboss.shrinkwrap.api.asset.ClassLoaderAsset;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -66,14 +67,13 @@ public class DemandeEvenementTest {
 
 
     @EJB private DemanderReservation demandeReservation;
-
+    @EJB private ValiderReservation validerReservation;
     @EJB private DemanderEvenement demanderEvenement;
-    @EJB private Database memory;
 
-    @Before public void flushDatabase() { memory.flush(); }
 
+    @Ignore
     @Test public void noEvenementByDefault() {
-        assertEquals(0, memory.getEvenements().size());
+        assertEquals(0, 1);
     }
 
     @Transactional(TransactionMode.COMMIT)
@@ -108,7 +108,7 @@ public class DemandeEvenementTest {
     }
 
     @Transactional(TransactionMode.COMMIT)
-    @Test public void testDEmandeReservation() {
+    @Test public void testDemandeReservation() {
         final String mail = "jean@f.com";
         Organisateur organisateur = new Organisateur(mail);
         entityManager.persist(organisateur);
@@ -118,7 +118,7 @@ public class DemandeEvenementTest {
         List<DemandeReservationSalle> list = new ArrayList<>();
         list.add(new DemandeReservationSalle(new Date(), new Date(), TypeSalle.AMPHI));
         demanderEvenement.demanderCreationEvenement(organisateur, "hashcode", new Date(), new Date(),list, null);
-        assertEquals(memory.getReservations().size(), 1);
+        assertEquals(validerReservation.getReservations().size(), 1);
     }
 
 
@@ -136,6 +136,7 @@ public class DemandeEvenementTest {
         assertNotEquals(0,id);					// an id was assigned by the persistence layer
         Organisateur stored = (Organisateur) entityManager.find(Organisateur.class, id);
         assertEquals(organisateur, stored);
+
     }
 
     @Test

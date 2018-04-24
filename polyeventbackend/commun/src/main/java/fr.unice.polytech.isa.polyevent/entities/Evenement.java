@@ -22,7 +22,7 @@ public class Evenement {
     @NotNull
     private Date fin;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.MERGE)
     private Organisateur organisateur;
 
     @ElementCollection
