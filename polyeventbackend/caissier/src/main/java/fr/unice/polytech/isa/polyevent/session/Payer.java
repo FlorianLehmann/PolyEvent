@@ -1,7 +1,6 @@
 package fr.unice.polytech.isa.polyevent.session;
 
-import fr.unice.polytech.isa.polyevent.entities.Evenement;
-import fr.unice.polytech.isa.polyevent.entities.Organisateur;
+import fr.unice.polytech.isa.polyevent.entities.Token;
 
 import javax.ejb.Stateless;
 import javax.jws.WebService;
@@ -14,7 +13,7 @@ public class Payer implements PayerEvenement
     private static final String OK = "OK";
 
     @Override
-    public String payerEvenement(Organisateur organisateur, String nom, Date dateDebut, Date dateFin, String creditCard)
+    public String payerEvenement(Token token, String nom, Date dateDebut, Date dateFin, String creditCard)
     {
         return OK;
     }

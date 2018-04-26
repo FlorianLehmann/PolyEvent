@@ -1,8 +1,10 @@
 package fr.unice.polytech.isa.polyevent.session;
 
 
-import fr.unice.polytech.isa.polyevent.entities.Organisateur;
+import fr.unice.polytech.isa.polyevent.entities.Token;
+import fr.unice.polytech.isa.polyevent.entities.interceptors.VerifierToken;
 
+import javax.interceptor.Interceptors;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
@@ -13,8 +15,9 @@ import java.util.Date;
 public interface PayerEvenement
 {
     @WebMethod
+    @Interceptors({VerifierToken.class})
     @WebResult(name = "status")
-    String payerEvenement(@WebParam(name = "organisateur") Organisateur organisateur,
+    String payerEvenement(@WebParam(name = "token") Token token,
                           @WebParam(name = "nom") String nom,
                           @WebParam(name = "date_debut") Date dateDebut,
                           @WebParam(name = "date_fin") Date dateFin,

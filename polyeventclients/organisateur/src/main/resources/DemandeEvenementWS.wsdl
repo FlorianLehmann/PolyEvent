@@ -13,7 +13,7 @@
 
   <xs:complexType name="demanderCreationEvenement">
     <xs:sequence>
-      <xs:element minOccurs="0" name="organisateur" type="tns:organisateur"/>
+      <xs:element minOccurs="0" name="token" type="tns:token"/>
       <xs:element minOccurs="0" name="nom" type="xs:string"/>
       <xs:element minOccurs="0" name="date_debut" type="xs:dateTime"/>
       <xs:element minOccurs="0" name="date_fin" type="xs:dateTime"/>
@@ -22,15 +22,16 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="organisateur">
+  <xs:complexType name="token">
     <xs:sequence>
-      <xs:element name="id" type="xs:int"/>
-      <xs:element minOccurs="0" name="mail" type="tns:mail"/>
+      <xs:element minOccurs="0" name="dateDeValidite" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="organisateur" type="tns:organisateur"/>
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="mail">
+  <xs:complexType name="organisateur">
     <xs:sequence>
+      <xs:element name="id" type="xs:int"/>
       <xs:element minOccurs="0" name="mail" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
@@ -53,7 +54,7 @@
 
   <xs:complexType name="getEvenements">
     <xs:sequence>
-      <xs:element minOccurs="0" name="organisateur" type="tns:organisateur"/>
+      <xs:element minOccurs="0" name="token" type="tns:token"/>
     </xs:sequence>
   </xs:complexType>
 

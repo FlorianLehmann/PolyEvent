@@ -1,7 +1,10 @@
-event marcel@etu.unice.com "La nuit de l'info" 2018-12-03T16:00:00 2018-12-04T08:00:00
+register marcel@mail.com
+login marcel@mail.com
+event "La nuit de l'info" 2018-12-03T16:00:00 2018-12-04T08:00:00
 reservation AMPHI 2018-12-03T16:00:00 2018-12-03T18:00:00
 reservation SALLE 2018-12-03T18:00:00 2018-12-04T08:00:00
 reservation SALLE 2018-12-03T18:00:00 2018-12-04T08:00:00
 reservation SALLE 2018-12-03T18:00:00 2018-12-04T08:00:00
 validate
-list marcel@etu.unice.com
+list
+logout

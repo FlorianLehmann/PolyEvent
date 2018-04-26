@@ -1,8 +1,10 @@
 package fr.unice.polytech.isa.polyevent.webservice;
 
 import fr.unice.polytech.isa.polyevent.entities.Evenement;
-import fr.unice.polytech.isa.polyevent.entities.Organisateur;
+import fr.unice.polytech.isa.polyevent.entities.Token;
+import fr.unice.polytech.isa.polyevent.entities.interceptors.VerifierToken;
 
+import javax.interceptor.Interceptors;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
@@ -11,11 +13,10 @@ import java.util.List;
 
 
 @WebService(targetNamespace = "http://www.polytech.unice.fr/si/4a/isa/polyevent/obtenirEvenementOrganisateur")
-public interface ObtenirEvenementOrganisateur {
-
+public interface ObtenirEvenementOrganisateur
+{
     @WebMethod
+    @Interceptors({VerifierToken.class})
     @WebResult(name = "evenements")
-    List<Evenement> obtenirEvenementOrganisateur (@WebParam(name = "organisateur")Organisateur organisateur);
-
-
+    List<Evenement> obtenirEvenementOrganisateur(@WebParam(name = "token") Token token);
 }

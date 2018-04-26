@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.polytech.unice.fr/si/4a/isa/polyevent/enregistrerClient" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="EnregistrementClientService" targetNamespace="http://www.polytech.unice.fr/si/4a/isa/polyevent/enregistrerClient">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.polytech.unice.fr/si/4a/isa/polyevent/enregistrerClient" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.polytech.unice.fr/si/4a/isa/polyevent/enregistrerClient">
+  <xs:element name="enregistrerClient" type="tns:enregistrerClient"/>
+  <xs:element name="enregistrerClientResponse" type="tns:enregistrerClientResponse"/>
+  <xs:complexType name="enregistrerClient">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mail" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="enregistrerClientResponse">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:element name="ClientDejaCreeException" type="tns:ClientDejaCreeException"/>
+  <xs:complexType name="ClientDejaCreeException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mail" type="xs:string"/>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="enregistrerClientResponse">
+    <wsdl:part element="tns:enregistrerClientResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ClientDejaCreeException">
+    <wsdl:part element="tns:ClientDejaCreeException" name="ClientDejaCreeException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="enregistrerClient">
+    <wsdl:part element="tns:enregistrerClient" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="EnregistrerClient">
+    <wsdl:operation name="enregistrerClient">
+      <wsdl:input message="tns:enregistrerClient" name="enregistrerClient">
+    </wsdl:input>
+      <wsdl:output message="tns:enregistrerClientResponse" name="enregistrerClientResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:ClientDejaCreeException" name="ClientDejaCreeException">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EnregistrementClientServiceSoapBinding" type="tns:EnregistrerClient">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="enregistrerClient">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="enregistrerClient">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="enregistrerClientResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ClientDejaCreeException">
+        <soap:fault name="ClientDejaCreeException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EnregistrementClientService">
+    <wsdl:port binding="tns:EnregistrementClientServiceSoapBinding" name="EnregistrementClientPort">
+      <soap:address location="http://localhost:8080/polyeventbackend-war/webservices/enregistrementClientWS"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

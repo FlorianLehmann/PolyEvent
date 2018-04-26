@@ -1,9 +1,6 @@
 package fr.unice.polytech.isa.polyevent.webservice;
 
-import fr.unice.polytech.isa.polyevent.entities.DemandePrestataire;
-import fr.unice.polytech.isa.polyevent.entities.DemandeReservationSalle;
-import fr.unice.polytech.isa.polyevent.entities.Evenement;
-import fr.unice.polytech.isa.polyevent.entities.Organisateur;
+import fr.unice.polytech.isa.polyevent.entities.*;
 import fr.unice.polytech.isa.polyevent.entities.interceptors.VerifierToken;
 
 import javax.interceptor.Interceptors;
@@ -21,7 +18,7 @@ public interface DemanderEvenement {
 
     @WebMethod
     @Interceptors({VerifierToken.class})
-    void demanderCreationEvenement(@WebParam(name = "organisateur") Organisateur organisateur,
+    void demanderCreationEvenement(@WebParam(name = "token") Token token,
                                    @WebParam(name = "nom") String nom,
                                    @WebParam(name = "date_debut") Date dateDebut,
                                    @WebParam(name = "date_fin") Date dateFin,
@@ -29,8 +26,9 @@ public interface DemanderEvenement {
                                    @WebParam(name = "demande_prestataire") List<DemandePrestataire> demandePrestataires);
 
     @WebMethod
+    @Interceptors({VerifierToken.class})
     @WebResult(name = "evenements")
-    List<Evenement> getEvenements(@WebParam(name = "organisateur") Organisateur organisateur);
+    List<Evenement> getEvenements(@WebParam(name = "token") Token token);
 
 
 }

@@ -10,7 +10,9 @@ import fr.unice.polytech.isa.polyevent.entities.exceptions.ClientPasEnregistreEx
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.jws.WebService;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Optional;
 
 @WebService(targetNamespace = "http://www.polytech.unice.fr/si/4a/isa/polyevent/connecterClient")
@@ -22,9 +24,12 @@ public class ConnexionClient implements ConnecterClient{
     @Override
     public Token connexion(String mail) throws ClientPasEnregistreException {
         Optional<Organisateur> optionalOrganisateur = trouverOrganisateur.connexion(mail);
-        if(optionalOrganisateur.isPresent()){
-            Token token = new Token(optionalOrganisateur.get(), new Date(2020,1, 1));
-            return token;
+        if(optionalOrganisateur.isPresent())
+        {
+            GregorianCalendar now = new GregorianCalendar();
+            now.add(Calendar.DAY_OF_YEAR, 1);
+            Date date = new Date(now.getTimeInMillis());
+            return new Token(optionalOrganisateur.get(), date);
         }
         else {
             throw new ClientPasEnregistreException(mail);

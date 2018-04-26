@@ -4,30 +4,32 @@ import fr.unice.polytech.isa.polyevent.cli.framework.Command;
 import fr.unice.polytech.isa.polyevent.cli.framework.CommandBuilder;
 import fr.unice.polytech.isa.polyevent.cli.framework.Context;
 import fr.unice.polytech.isa.polyevent.cli.framework.Shell;
-import fr.unice.polytech.isa.polyevent.stubs.*;
+import fr.unice.polytech.isa.polyevent.stubs.DemandePrestataire;
+import fr.unice.polytech.isa.polyevent.stubs.DemandeReservationSalle;
+import fr.unice.polytech.isa.polyevent.stubs.DemanderEvenement;
+import fr.unice.polytech.isa.polyevent.stubs.Token;
 
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
-import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class SubmitEvent implements Command
 {
     private static final Identifier IDENTIFIER = Identifier.SUBMIT_EVENT;
+    private final Token token;
     private final Shell shell;
     private final Context context;
     private final DemanderEvenement demandeEvenement;
-    private Organisateur organisateur;
-    private String nom;
+    private String name;
     private XMLGregorianCalendar dateDebut;
     private XMLGregorianCalendar dateFin;
     private List<DemandeReservationSalle> demandeReservations;
     private List<DemandePrestataire> demandePrestataires;
 
-    public SubmitEvent(Shell shell, Context context, DemanderEvenement demandeEvenement)
+    SubmitEvent(Token token, Shell shell, Context context, DemanderEvenement demandeEvenement)
     {
+        this.token = token;
         this.shell = shell;
         this.context = context;
         this.demandeEvenement = demandeEvenement;
@@ -36,22 +38,19 @@ public class SubmitEvent implements Command
     @Override
     public void load(List<String> args) throws Exception
     {
-        if (args.size() != 4)
+        if (args.size() != 3)
         {
-            String message = String.format("%s expects 4 arguments: %s MAIL NOM START_DATE END_DATE", IDENTIFIER, IDENTIFIER);
+            String message = String.format("%s expects 4 arguments: %s NOM START_DATE END_DATE", IDENTIFIER, IDENTIFIER);
             throw new IllegalArgumentException(message);
         }
-        organisateur = new Organisateur();
-        Mail mail = new Mail();
-        mail.setMail(args.get(0));
-        organisateur.setMail(mail);
-        nom = args.get(1);
+
+        name = args.get(0);
 
         try
         {
             DatatypeFactory datatypeFactory = DatatypeFactory.newInstance();
-            dateDebut = datatypeFactory.newXMLGregorianCalendar(args.get(2));
-            dateFin = datatypeFactory.newXMLGregorianCalendar(args.get(3));
+            dateDebut = datatypeFactory.newXMLGregorianCalendar(args.get(1));
+            dateFin = datatypeFactory.newXMLGregorianCalendar(args.get(2));
         }
         catch (IllegalArgumentException e)
         {
@@ -70,20 +69,22 @@ public class SubmitEvent implements Command
                 new Help.Builder(subShell),
                 new AddReservation.Builder(demandeReservations),
                 new AddService.Builder(demandePrestataires),
-                new ValidateEvent.Builder(demandeEvenement, organisateur, nom, dateDebut, dateFin, demandeReservations, demandePrestataires),
+                new ValidateEvent.Builder(demandeEvenement, token, name, dateDebut, dateFin, demandeReservations, demandePrestataires),
                 new CancelEvent.Builder()
         );
-        context.out.format("Add reservations to the event \"%s\". Type ? for help.%n", nom);
+        context.out.format("Add reservations to the event \"%s\". Type ? for help.%n", name);
         subShell.run(context);
     }
 
     public static class Builder implements CommandBuilder<SubmitEvent>
     {
+        private final Token token;
         private final Shell shell;
         private final DemanderEvenement demandeEvenement;
 
-        public Builder(Shell shell, DemanderEvenement demandeEvenement)
+        public Builder(Token token, Shell shell, DemanderEvenement demandeEvenement)
         {
+            this.token = token;
             this.shell = shell;
             this.demandeEvenement = demandeEvenement;
         }
@@ -111,7 +112,7 @@ public class SubmitEvent implements Command
         @Override
         public SubmitEvent build(Context context)
         {
-            return new SubmitEvent(shell, context, demandeEvenement);
+            return new SubmitEvent(token, shell, context, demandeEvenement);
         }
     }
 }

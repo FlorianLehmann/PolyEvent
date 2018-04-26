@@ -22,8 +22,18 @@ public class Token
         return organisateur;
     }
 
+    public void setOrganisateur(Organisateur organisateur)
+    {
+        this.organisateur = organisateur;
+    }
+
     public Date getDateDeValidite()
     {
         return dateDeValidite;
+    }
+
+    public void setDateDeValidite(Date dateDeValidite)
+    {
+        this.dateDeValidite = dateDeValidite;
     }
 }

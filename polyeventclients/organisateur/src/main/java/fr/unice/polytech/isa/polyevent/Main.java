@@ -47,9 +47,8 @@ public class Main
         shell.register(
                 new Help.Builder(shell),
                 new Bye.Builder(),
-                new SubmitEvent.Builder(shell, api.demandeEvenement),
-                new ListEvent.Builder(api.demandeEvenement),
-                new Pay.Builder(api.payerEvenement),
+                new Login.Builder(shell, api),
+                new Register.Builder(api.enregistrerClient),
                 new Play.Builder(shell)
         );
         Context context = new Context(new Scanner(in), out, false);

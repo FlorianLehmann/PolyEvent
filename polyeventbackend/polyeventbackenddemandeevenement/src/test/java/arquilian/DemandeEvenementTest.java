@@ -29,9 +29,7 @@ import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
@@ -80,8 +78,12 @@ public class DemandeEvenementTest {
     @Test public void shouldCreateAnEvent() {
         final String mail = "jean@f.com";
         Organisateur organisateur = new Organisateur(mail);
+        GregorianCalendar now = new GregorianCalendar();
+        now.add(Calendar.DAY_OF_YEAR, 1);
+        Date dateDeValidite = new Date(now.getTimeInMillis());
+        Token token = new Token(organisateur, dateDeValidite);
         entityManager.persist(organisateur);
-        demanderEvenement.demanderCreationEvenement(organisateur, "hashcode", new Date(), new Date(), new ArrayList<>(), null);
+        demanderEvenement.demanderCreationEvenement(token, "hashcode", new Date(), new Date(), new ArrayList<>(), null);
 
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
 
@@ -101,9 +103,13 @@ public class DemandeEvenementTest {
     @Test public void shouldGetEventsFromOrganisateur() {
         final String mail = "jean@f.com";
         Organisateur organisateur = new Organisateur(mail);
+        GregorianCalendar now = new GregorianCalendar();
+        now.add(Calendar.DAY_OF_YEAR, 1);
+        Date dateDeValidite = new Date(now.getTimeInMillis());
+        Token token = new Token(organisateur, dateDeValidite);
         entityManager.persist(organisateur);
-        demanderEvenement.demanderCreationEvenement(organisateur, "hashcode", new Date(), new Date(), new ArrayList<>(), null);
-        assertEquals(demanderEvenement.getEvenements(organisateur).get(0), organisateur.getEvenements().get(0));
+        demanderEvenement.demanderCreationEvenement(token, "hashcode", new Date(), new Date(), new ArrayList<>(), null);
+        assertEquals(demanderEvenement.getEvenements(token).get(0), organisateur.getEvenements().get(0));
 
     }
 
@@ -111,13 +117,17 @@ public class DemandeEvenementTest {
     @Test public void testDemandeReservation() {
         final String mail = "jean@f.com";
         Organisateur organisateur = new Organisateur(mail);
+        GregorianCalendar now = new GregorianCalendar();
+        now.add(Calendar.DAY_OF_YEAR, 1);
+        Date dateDeValidite = new Date(now.getTimeInMillis());
+        Token token = new Token(organisateur, dateDeValidite);
         entityManager.persist(organisateur);
         HyperPlanningAPI mocked = mock(HyperPlanningAPI.class);
         demandeReservation.setHyperPlanningAPI(mocked);
         when(mocked.reserverSalle(any(), any())).thenReturn("Succès");
         List<DemandeReservationSalle> list = new ArrayList<>();
         list.add(new DemandeReservationSalle(new Date(), new Date(), TypeSalle.AMPHI));
-        demanderEvenement.demanderCreationEvenement(organisateur, "hashcode", new Date(), new Date(),list, null);
+        demanderEvenement.demanderCreationEvenement(token, "hashcode", new Date(), new Date(),list, null);
         assertEquals(validerReservation.getReservations().size(), 1);
     }
 
