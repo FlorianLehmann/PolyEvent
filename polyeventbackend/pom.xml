@@ -42,12 +42,12 @@
     <distributionManagement>
         <repository>
             <id>central</id>
-            <name>90953333d5a5-releases</name>
+            <name>fdccfb6697f4-releases</name>
             <url>http://localhost:8081/artifactory/polyeventbackend</url>
         </repository>
         <snapshotRepository>
             <id>snapshots</id>
-            <name>90953333d5a5-snapshots</name>
+            <name>fdccfb6697f4-snapshots</name>
             <url>http://localhost:8081/artifactory/polyeventbackend</url>
         </snapshotRepository>
     </distributionManagement>
