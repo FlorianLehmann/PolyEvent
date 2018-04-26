@@ -83,7 +83,7 @@ public class DemandeEvenementTest {
         Date dateDeValidite = new Date(now.getTimeInMillis());
         Token token = new Token(organisateur, dateDeValidite);
         entityManager.persist(organisateur);
-        demanderEvenement.demanderCreationEvenement(token, "hashcode", new Date(), new Date(), new ArrayList<>(), null);
+        demanderEvenement.demanderCreationEvenement(token, "hashcode", new Date(2018, 4, 1), new Date(2018, 4, 2), new ArrayList<>(), null);
 
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
 
@@ -108,7 +108,7 @@ public class DemandeEvenementTest {
         Date dateDeValidite = new Date(now.getTimeInMillis());
         Token token = new Token(organisateur, dateDeValidite);
         entityManager.persist(organisateur);
-        demanderEvenement.demanderCreationEvenement(token, "hashcode", new Date(), new Date(), new ArrayList<>(), null);
+        demanderEvenement.demanderCreationEvenement(token, "hashcode", new Date(2018, 4, 1), new Date(2018, 4, 2), new ArrayList<>(), null);
         assertEquals(demanderEvenement.getEvenements(token).get(0), organisateur.getEvenements().get(0));
 
     }
@@ -126,8 +126,8 @@ public class DemandeEvenementTest {
         demandeReservation.setHyperPlanningAPI(mocked);
         when(mocked.reserverSalle(any(), any())).thenReturn("Succès");
         List<DemandeReservationSalle> list = new ArrayList<>();
-        list.add(new DemandeReservationSalle(new Date(), new Date(), TypeSalle.AMPHI));
-        demanderEvenement.demanderCreationEvenement(token, "hashcode", new Date(), new Date(),list, null);
+        list.add(new DemandeReservationSalle(new Date(2018, 4, 1), new Date(2018, 4, 2), TypeSalle.AMPHI));
+        demanderEvenement.demanderCreationEvenement(token, "hashcode", new Date(2018, 4, 1), new Date(2018, 4, 2),list, null);
         assertEquals(validerReservation.getReservations().size(), 1);
     }
 
@@ -201,7 +201,7 @@ public class DemandeEvenementTest {
         evenement.setNom("nuit info");
         evenement.setOrganisateur(stored);
         List<Reservation> reservations = new ArrayList<>();
-        reservations.add(new Reservation(new Date(), new Date(), TypeSalle.AMPHI, new Salle("0310"), evenement, Statut.VALIDE ));
+        reservations.add(new Reservation(new Date(2018, 4, 1), new Date(2018, 4, 2), TypeSalle.AMPHI, new Salle("0310"), evenement, Statut.VALIDE ));
         evenement.setReservations(reservations);
         evenement.setStatusHistorique(new StatusHistorique());
         evenement.setId(0);
@@ -211,7 +211,7 @@ public class DemandeEvenementTest {
         Evenement evenement_stored = (Evenement) entityManager.find(Evenement.class, id);
         assertEquals(evenement, evenement_stored);
 
-        Reservation reservation = new Reservation(new Date(), new Date(), TypeSalle.AMPHI, new Salle(), evenement_stored, Statut.EN_ATTENTE_DE_VALIDATION );			// create an empty customer
+        Reservation reservation = new Reservation(new Date(2018, 4, 1), new Date(2018, 4, 2), TypeSalle.AMPHI, new Salle(), evenement_stored, Statut.EN_ATTENTE_DE_VALIDATION );			// create an empty customer
         entityManager.persist(reservation);				// making the entity persistent
         int reservationId = reservation.getId();
         assertNotEquals(0,id);					// an id was assigned by the persistence layer

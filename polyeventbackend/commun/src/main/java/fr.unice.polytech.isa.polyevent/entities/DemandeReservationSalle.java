@@ -2,8 +2,8 @@ package fr.unice.polytech.isa.polyevent.entities;
 
 import java.util.Date;
 
-public class DemandeReservationSalle {
-
+public class DemandeReservationSalle implements PlageHorraire
+{
     private Date dateDebut;
     private Date dateFin;
     private TypeSalle typeSalle;
