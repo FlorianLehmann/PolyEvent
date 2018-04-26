@@ -22,6 +22,36 @@
 
     </modules>
 
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>http://localhost:8081/artifactory/polyeventbackend</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>snapshots</id>
+            <url>http://localhost:8081/artifactory/polyeventbackend</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>central</id>
+            <name>90953333d5a5-releases</name>
+            <url>http://localhost:8081/artifactory/polyeventbackend</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>90953333d5a5-snapshots</name>
+            <url>http://localhost:8081/artifactory/polyeventbackend</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <properties>
         <!-- General Properties -->
         <dir.agent>agent</dir.agent>
