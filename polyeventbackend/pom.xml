@@ -25,14 +25,14 @@
     <repositories>
         <repository>
             <id>central</id>
-            <url>http://artifactory:8081/artifactory/polyeventbackend</url>
+            <url>http://localhost:8081/artifactory/polyeventbackend</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
         </repository>
         <repository>
             <id>snapshots</id>
-            <url>http://artifactory:8081/artifactory/polyeventbackend</url>
+            <url>http://localhost:8081/artifactory/polyeventbackend</url>
             <releases>
                 <enabled>false</enabled>
             </releases>
