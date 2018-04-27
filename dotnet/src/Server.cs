@@ -48,8 +48,8 @@ public class Server
    * Stop the already started web server
    */
   private void stop() {
-    Host.Close ();
-    Console.WriteLine("Server shutdown complete!");
+    //Host.Close ();
+    //Console.WriteLine("Server shutdown complete!");
   }
 
   /**
