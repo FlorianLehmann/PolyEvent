@@ -53,7 +53,7 @@ public class DemandePrestationTest {
                 organisateur, null, new StatusHistorique() );
         entityManager.persist(evenement);
         TypeService typeService = TypeService.CAFE;
-        DemandePrestataire demandePrestataire = new DemandePrestataire(typeService, new Date(), new Date());
+        DemandePrestataire demandePrestataire = new DemandePrestataire(typeService, new Date(2018, 4, 1), new Date(2018, 4, 2));
         List<DemandePrestataire> demandePrestataires = new ArrayList<DemandePrestataire>();
         demandePrestataires.add(demandePrestataire);
         demanderPrestation.ajouterService(evenement, demandePrestataires);

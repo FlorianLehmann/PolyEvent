@@ -19,6 +19,8 @@
         <module>polyeventbackendprofilclientwebservice</module>
         <module>polyeventbackendenregistrement</module>
         <module>polyeventbackendconnexion</module>
+        <module>polyeventbackendobtenirevenement</module>
+        <module>polyeventbackendobtenirevenementwebservice</module>
 
     </modules>
 

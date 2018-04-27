@@ -2,8 +2,8 @@ package fr.unice.polytech.isa.polyevent.entities;
 
 import java.util.Date;
 
-public class DemandePrestataire {
-
+public class DemandePrestataire implements PlageHorraire
+{
     private TypeService typeService;
     private Date dateDebut;
     private Date dateFin;

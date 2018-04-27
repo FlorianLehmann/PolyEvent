@@ -24,7 +24,8 @@ public class DemandeEvenement implements DemanderEvenement {
     private EntityManager entityManager;
 
     @Override
-    public void demanderCreationEvenement(Organisateur organisateur, String nom, Date dateDebut, Date dateFin, List<DemandeReservationSalle> demandeReservationSalles, List<DemandePrestataire> demandePrestataires) {
+    public void demanderCreationEvenement(Token token, String nom, Date dateDebut, Date dateFin, List<DemandeReservationSalle> demandeReservationSalles, List<DemandePrestataire> demandePrestataires) {
+        Organisateur organisateur = token.getOrganisateur();
         Evenement evenement = new Evenement(nom, dateDebut, dateFin, organisateur, new ArrayList<>(), new StatusHistorique());
         entityManager.persist(evenement);
         organisateur.getEvenements().add(evenement);
@@ -44,7 +45,7 @@ public class DemandeEvenement implements DemanderEvenement {
     }
 
     @Override
-    public List<Evenement> getEvenements(Organisateur organisateur) {
-        return organisateur.getEvenements();
+    public List<Evenement> getEvenements(Token token) {
+        return token.getOrganisateur().getEvenements();
     }
 }

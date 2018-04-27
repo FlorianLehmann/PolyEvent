@@ -1,8 +1,5 @@
 package fr.unice.polytech.isa.polyevent.cli.framework;
 
-import java.io.PrintStream;
-import java.util.Scanner;
-
 public interface CommandBuilder<T extends Command>
 {
     String identifier();

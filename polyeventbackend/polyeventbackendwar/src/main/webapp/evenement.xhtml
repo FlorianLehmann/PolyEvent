@@ -14,8 +14,9 @@
     <h1>PolyEvent Web Interface</h1>
 
 
-    <h2>Mail : #{evenementBean.organisateur.mail.mail}</h2>
-    <ui:repeat var="item" value="#{evenementBean.evenements}" varStatus="status"> <h1>#{item}</h1> </ui:repeat>
+    <h2>Mail : #{evenementBean.organisateur.mail}</h2>
+    <h2>Evenements :</h2>
+    <ui:repeat var="item" value="#{evenementBean.evenements}" varStatus="status"> <h3>#{item.nom}</h3> </ui:repeat>
 
 </h:body>
 </html>
