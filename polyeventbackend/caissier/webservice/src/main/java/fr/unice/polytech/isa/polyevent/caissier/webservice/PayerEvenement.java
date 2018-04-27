@@ -1,7 +1,8 @@
-package fr.unice.polytech.isa.polyevent.session;
+package fr.unice.polytech.isa.polyevent.caissier.webservice;
 
 
 import fr.unice.polytech.isa.polyevent.entities.Token;
+import fr.unice.polytech.isa.polyevent.entities.exceptions.EvenementInconnuException;
 import fr.unice.polytech.isa.polyevent.entities.interceptors.VerifierToken;
 
 import javax.interceptor.Interceptors;
