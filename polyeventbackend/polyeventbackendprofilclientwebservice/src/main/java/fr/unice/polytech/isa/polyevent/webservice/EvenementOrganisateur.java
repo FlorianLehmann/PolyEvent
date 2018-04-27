@@ -19,6 +19,6 @@ public class EvenementOrganisateur implements ObtenirEvenementOrganisateur
     @Override
     public List<Evenement> obtenirEvenementOrganisateur(Token token)
     {
-        return obtenirProfilOrganisateur.obtenirEvenementOrganisateur(token.getOrganisateur());
+        return obtenirProfilOrganisateur.obtenirEvenementsOrganisateur(token.getOrganisateur());
     }
 }
