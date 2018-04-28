@@ -47,6 +47,7 @@ public class Login implements Command
                     new Help.Builder(subShell),
                     new SubmitEvent.Builder(token, subShell, api.demandeEvenement),
                     new ListEvent.Builder(token, api.obtenirEvenementOrganisateur),
+                    new Invoice.Builder(token, api.demanderFacture),
                     new Pay.Builder(token, api.payerEvenement),
                     new Logout.Builder()
             );

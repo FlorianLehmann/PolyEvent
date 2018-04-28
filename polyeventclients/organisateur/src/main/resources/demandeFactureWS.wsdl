@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.polytech.unice.fr/si/4a/isa/polyevent/demanderFacture" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="DemandeFactureService" targetNamespace="http://www.polytech.unice.fr/si/4a/isa/polyevent/demanderFacture">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.polytech.unice.fr/si/4a/isa/polyevent/demanderFacture" elementFormDefault="unqualified" targetNamespace="http://www.polytech.unice.fr/si/4a/isa/polyevent/demanderFacture" version="1.0">
+
+  <xs:element name="obtenirFacture" type="tns:obtenirFacture"/>
+
+  <xs:element name="obtenirFactureResponse" type="tns:obtenirFactureResponse"/>
+
+  <xs:complexType name="obtenirFacture">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="token" type="tns:token"/>
+      <xs:element minOccurs="0" name="nom" type="xs:string"/>
+      <xs:element minOccurs="0" name="date_debut" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="date_fin" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="token">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dateDeValidite" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="organisateur" type="tns:organisateur"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="organisateur">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element minOccurs="0" name="mail" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="obtenirFactureResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="obtenirFacture">
+    <wsdl:part element="tns:obtenirFacture" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="obtenirFactureResponse">
+    <wsdl:part element="tns:obtenirFactureResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="DemanderFacture">
+    <wsdl:operation name="obtenirFacture">
+      <wsdl:input message="tns:obtenirFacture" name="obtenirFacture">
+    </wsdl:input>
+      <wsdl:output message="tns:obtenirFactureResponse" name="obtenirFactureResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DemandeFactureServiceSoapBinding" type="tns:DemanderFacture">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="obtenirFacture">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="obtenirFacture">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="obtenirFactureResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DemandeFactureService">
+    <wsdl:port binding="tns:DemandeFactureServiceSoapBinding" name="DemandeFacturePort">
+      <soap:address location="http://localhost:8080/polyeventbackend-war/webservices/demandeFactureWS"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

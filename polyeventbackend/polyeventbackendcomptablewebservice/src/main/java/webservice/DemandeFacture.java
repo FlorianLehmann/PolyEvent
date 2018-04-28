@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.Optional;
 
 @WebService(targetNamespace = "http://www.polytech.unice.fr/si/4a/isa/polyevent/demanderFacture")
-@Stateless(name = "demandeEvenementWS")
+@Stateless(name = "demandeFactureWS")
 public class DemandeFacture implements DemanderFacture
 {
     @EJB
@@ -21,9 +21,11 @@ public class DemandeFacture implements DemanderFacture
     private ProfilClient profilClient;
 
     @Override
-    public String obtenirEvenementOrganisateur(Token token, String nom, Date dateDebut, Date dateFin) {
-        Optional<Evenement> evenement = profilClient.obtenirEvenementOrganisateur(token.getOrganisateur(),nom,dateDebut,dateFin);
-        if (evenement.isPresent()) {
+    public String obtenirFacture(Token token, String nom, Date dateDebut, Date dateFin)
+    {
+        Optional<Evenement> evenement = profilClient.obtenirEvenementOrganisateur(token.getOrganisateur(), nom, dateDebut, dateFin);
+        if (evenement.isPresent())
+        {
             comptable.envoyerFacture(token.getOrganisateur(), evenement.get());
             return "OK";
         }

@@ -13,6 +13,7 @@ public class PolyEventAPI
     public final ConnecterClient connecterClient;
     public final EnregistrerClient enregistrerClient;
     public final ObtenirEvenementOrganisateur obtenirEvenementOrganisateur;
+    public final DemanderFacture demanderFacture;
     private final String host;
     private final String port;
 
@@ -25,6 +26,7 @@ public class PolyEventAPI
         this.connecterClient = initConnecterClient();
         this.enregistrerClient = initEnregistrerClient();
         this.obtenirEvenementOrganisateur = initListEvenements();
+        this.demanderFacture = initDemandeFacture();
     }
 
     private PayerEvenement initPayerEvenement()
@@ -35,6 +37,16 @@ public class PolyEventAPI
         String address = String.format("http://%s:%s/polyeventbackend-war/webservices/PayerEvenementWS", host, port);
         ((BindingProvider) payEvent).getRequestContext().put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, address);
         return payEvent;
+    }
+
+    private DemanderFacture initDemandeFacture()
+    {
+        URL wsdlLocation = PolyEventAPI.class.getResource("/demandeFactureWS.wsdl");
+        DemandeFactureService factory = new DemandeFactureService(wsdlLocation);
+        DemanderFacture demandeFacture = factory.getDemandeFacturePort();
+        String address = String.format("http://%s:%s/polyeventbackend-war/webservices/demandeFactureWS", host, port);
+        ((BindingProvider) demandeFacture).getRequestContext().put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, address);
+        return demandeFacture;
     }
 
     private ObtenirEvenementOrganisateur initListEvenements()

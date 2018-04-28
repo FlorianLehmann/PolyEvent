@@ -15,8 +15,8 @@ public interface DemanderFacture
 {
     @WebMethod
     @Interceptors({VerifierToken.class})
-    String obtenirEvenementOrganisateur(@WebParam(name = "token") Token token,
-                                      @WebParam(name = "nom") String nom,
-                                      @WebParam(name = "date_debut") Date dateDebut,
-                                      @WebParam(name = "date_fin") Date dateFin);
+    String obtenirFacture(@WebParam(name = "token") Token token,
+                          @WebParam(name = "nom") String nom,
+                          @WebParam(name = "date_debut") Date dateDebut,
+                          @WebParam(name = "date_fin") Date dateFin);
 }

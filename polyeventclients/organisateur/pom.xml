@@ -102,6 +102,13 @@
                                         <extraarg>http://www.polytech.unice.fr/si/4a/isa/polyevent/obtenirEvenementOrganisateur=fr.unice.polytech.isa.polyevent.stubs</extraarg>
                                     </extraargs>
                                 </wsdlOption>
+                                <wsdlOption>
+                                    <wsdl>${basedir}/src/main/resources/demandeFactureWS.wsdl</wsdl>
+                                    <extraargs>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://www.polytech.unice.fr/si/4a/isa/polyevent/demanderFacture=fr.unice.polytech.isa.polyevent.stubs</extraarg>
+                                    </extraargs>
+                                </wsdlOption>
                             </wsdlOptions>
                         </configuration>
                         <goals>

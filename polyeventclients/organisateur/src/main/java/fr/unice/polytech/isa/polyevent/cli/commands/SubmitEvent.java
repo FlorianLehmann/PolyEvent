@@ -40,7 +40,7 @@ public class SubmitEvent implements Command
     {
         if (args.size() != 3)
         {
-            String message = String.format("%s expects 4 arguments: %s NOM START_DATE END_DATE", IDENTIFIER, IDENTIFIER);
+            String message = String.format("%s expects 3 arguments: %s NOM START_DATE END_DATE", IDENTIFIER, IDENTIFIER);
             throw new IllegalArgumentException(message);
         }
 

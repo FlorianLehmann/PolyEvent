@@ -13,6 +13,7 @@ public enum Identifier
     VALIDATE("validate", "validate the event submission (validate)"),
     CANCEL("cancel", "Exit the reservation shell and cancel the current event creation (cancel)"),
     LIST_EVENT("list", "List your events (list)"),
+    INVOICE("invoice", "Invoice an event (? invoice for more info)"),
     PAY("pay", "Pay an event (? pay for more info)"),
     PLAY("play", "Play commands stored in given file (play FILENAME)");
 
