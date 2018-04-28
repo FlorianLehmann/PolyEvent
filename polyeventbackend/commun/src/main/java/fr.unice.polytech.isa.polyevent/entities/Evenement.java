@@ -1,5 +1,7 @@
 package fr.unice.polytech.isa.polyevent.entities;
 
+import com.google.gson.annotations.Expose;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
@@ -14,21 +16,26 @@ public class Evenement {
     private int id;
 
     @NotNull
+    @Expose
     private String nom;
 
     @NotNull
+    @Expose
     private Date debut;
 
     @NotNull
+    @Expose
     private Date fin;
 
     @ManyToOne(cascade = CascadeType.ALL)
     private Organisateur organisateur;
 
     @ElementCollection
+    @Expose
     private List<Reservation> reservations;
 
     @NotNull
+    @Expose
     private StatusHistorique statusHistorique;
 
 

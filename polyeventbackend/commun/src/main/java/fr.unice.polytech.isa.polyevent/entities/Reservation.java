@@ -1,5 +1,7 @@
 package fr.unice.polytech.isa.polyevent.entities;
 
+import com.google.gson.annotations.Expose;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlTransient;
@@ -14,20 +16,25 @@ public class Reservation {
     private int id;
 
     @NotNull
+    @Expose
     private Date dateDebut;
 
     @NotNull
+    @Expose
     private Date dateFin;
 
     @Enumerated(EnumType.STRING)
+    @Expose
     private TypeSalle typeSalle;
 
+    @Expose
     private Salle salle;
 
     @NotNull
     private Evenement evenement;
 
     @NotNull
+    @Expose
     @Enumerated(EnumType.STRING)
     private Statut statut;
 
