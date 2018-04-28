@@ -59,9 +59,6 @@ public class FactureMoM implements MessageListener {
      * @param data
      */
     private void handle(DemandeEnvoieFacture data) {
-        data.setEvenement(entityManager.merge(data.getEvenement()));
-        data.setOrganisateur(entityManager.merge(data.getOrganisateur()));
-
         log.info("FactureMoM:\n tentative #" + data.getCptEssai() + "\nFacturation demander pour #" + data.getOrganisateur().getMail());
         //Thread.sleep(4000); // it takes time ... 4 seconds actually
         webServiceComptabilite.DemanderFactureServeurComptabilite(data);

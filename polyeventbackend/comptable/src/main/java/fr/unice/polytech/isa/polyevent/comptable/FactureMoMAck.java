@@ -4,10 +4,7 @@ package fr.unice.polytech.isa.polyevent.comptable;
 import org.apache.openejb.util.LogCategory;
 
 import javax.ejb.MessageDriven;
-import javax.jms.JMSException;
-import javax.jms.Message;
-import javax.jms.MessageListener;
-import javax.jms.TextMessage;
+import javax.jms.*;
 
 @MessageDriven
 public class FactureMoMAck implements MessageListener {
@@ -18,7 +15,7 @@ public class FactureMoMAck implements MessageListener {
 	@Override
 	public void onMessage(Message message) {
 		try {
-			String data = ((TextMessage) message).getText();
+			String data = (String) ((ObjectMessage) message).getObject();
 			log.info("\n\n****\n** ACK: " + data + "\n****\n");
 		} catch (JMSException e) {
 			log.error(e.getMessage(),e);

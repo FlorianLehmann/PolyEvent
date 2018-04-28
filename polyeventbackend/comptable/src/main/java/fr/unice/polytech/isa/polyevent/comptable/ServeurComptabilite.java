@@ -62,6 +62,7 @@ public class ServeurComptabilite implements WebServiceComptabilite {
             Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
             MessageProducer facturation = session.createProducer(printerQueue);
             facturation.setDeliveryMode(DeliveryMode.NON_PERSISTENT);
+            demandeEnvoieFacture.setCptEssai(demandeEnvoieFacture.getCptEssai() + 1);
             Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
             String s = gson.toJson(demandeEnvoieFacture);
             facturation.send(session.createObjectMessage(s));
