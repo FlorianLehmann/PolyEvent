@@ -30,12 +30,10 @@ public class DemandeFacture implements DemanderFacture
         Optional<Evenement> evenement = profilClient.obtenirEvenementOrganisateur(token.getOrganisateur(), nom, dateDebut, dateFin);
         if (evenement.isPresent())
         {
-            System.out.println("LLGDknfifnibijvbeuveoicnqijqidqidqidnqdnqidnqsidn\n\n\n\n");
             comptable.envoyerFacture(token.getOrganisateur(), evenement.get());
             return "OK";
         }
         else {
-            System.out.println("LLaa\n\n\n\n");
             return "Evenement Inconnu";
         }
 

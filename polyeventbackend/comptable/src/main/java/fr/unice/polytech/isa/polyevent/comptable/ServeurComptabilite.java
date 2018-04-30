@@ -27,12 +27,13 @@ public class ServeurComptabilite implements WebServiceComptabilite {
     @Override
     public void DemanderFactureServeurComptabilite(DemandeEnvoieFacture demandeEnvoieFacture) {
         if (demandeEnvoieFacture.getCptEssai() < 3) {
+            Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+            String s = gson.toJson(demandeEnvoieFacture);
             JSONObject requete = new JSONObject()
-                    .put("mail", demandeEnvoieFacture.getOrganisateur().getMail())
-                    .put("nom", demandeEnvoieFacture.getEvenement().getNom());
+                    .put("facture", s);
 
             try {
-                int status = WebClient.create("http://localhost:9090/salle").accept(MediaType.APPLICATION_JSON_TYPE)
+                int status = WebClient.create("http://localhost:9095/facture").accept(MediaType.APPLICATION_JSON_TYPE)
                         .header("Content-Type", MediaType.APPLICATION_JSON).post(requete.toString()).getStatus();
                 if (status != 200) {
                     reenvoyerFacture(demandeEnvoieFacture);
@@ -48,10 +49,12 @@ public class ServeurComptabilite implements WebServiceComptabilite {
                 e.printStackTrace();
             }
         }
-        try {
-            envoyerFactureACK(demandeEnvoieFacture,"Echec");
-        } catch (JMSException e) {
-            e.printStackTrace();
+        else {
+            try {
+                envoyerFactureACK(demandeEnvoieFacture, "Echec");
+            } catch (JMSException e) {
+                e.printStackTrace();
+            }
         }
     }
 
