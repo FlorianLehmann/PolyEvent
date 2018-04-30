@@ -2,7 +2,7 @@ package fr.unice.polytech.isa.polyevent;
 
 import fr.unice.polytech.isa.polyevent.entities.Evenement;
 import fr.unice.polytech.isa.polyevent.entities.Organisateur;
-import fr.unice.polytech.isa.polyevent.entities.StatusHistorique;
+import fr.unice.polytech.isa.polyevent.entities.Statut;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.transaction.api.annotation.TransactionMode;
@@ -63,7 +63,7 @@ public class ChercheurEvenementTest {
 
     @Test
     public void evenementConnu(){
-        Evenement evenement = new Evenement(nom, debut, fin, bob, null, new StatusHistorique());
+        Evenement evenement = new Evenement(nom, debut, fin, bob, null, Statut.EN_ATTENTE_DE_VALIDATION);
         entityManager.persist(evenement);
         Optional<Evenement> evenementOptional = chercherEvenement.chercherEvenement(nom, debut, fin, bob);
         assertTrue(evenementOptional.isPresent());

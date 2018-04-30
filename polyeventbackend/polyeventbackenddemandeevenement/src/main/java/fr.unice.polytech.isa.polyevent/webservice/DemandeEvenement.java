@@ -26,7 +26,7 @@ public class DemandeEvenement implements DemanderEvenement {
     @Override
     public void demanderCreationEvenement(Token token, String nom, Date dateDebut, Date dateFin, List<DemandeReservationSalle> demandeReservationSalles, List<DemandePrestataire> demandePrestataires) {
         Organisateur organisateur = token.getOrganisateur();
-        Evenement evenement = new Evenement(nom, dateDebut, dateFin, organisateur, new ArrayList<>(), new StatusHistorique());
+        Evenement evenement = new Evenement(nom, dateDebut, dateFin, organisateur, new ArrayList<>(), Statut.EN_ATTENTE_DE_VALIDATION);
         entityManager.persist(evenement);
         organisateur.getEvenements().add(evenement);
         if (demandeReservationSalles == null)

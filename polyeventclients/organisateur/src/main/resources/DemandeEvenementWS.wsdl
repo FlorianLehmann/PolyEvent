@@ -72,7 +72,7 @@
       <xs:element minOccurs="0" name="nom" type="xs:string"/>
       <xs:element minOccurs="0" name="organisateur" type="tns:organisateur"/>
       <xs:element maxOccurs="unbounded" minOccurs="0" name="reservations" nillable="true" type="tns:reservation"/>
-      <xs:element minOccurs="0" name="statusHistorique" type="tns:statusHistorique"/>
+      <xs:element minOccurs="0" name="statut" type="tns:statut"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -93,7 +93,7 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="statusHistorique">
+  <xs:complexType name="statut">
     <xs:sequence/>
   </xs:complexType>
 

@@ -1,7 +1,7 @@
 package fr.unice.polytech.isa.polyevent.entities;
 
-import com.google.gson.annotations.Expose;
 
+import com.google.gson.annotations.Expose;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -27,6 +27,8 @@ public class Organisateur implements Serializable {
     @Expose
     private String mail;
 
+
+
     @OneToMany(mappedBy = "organisateur")
     private List<Evenement> evenements = new ArrayList<>();
 
@@ -37,13 +39,7 @@ public class Organisateur implements Serializable {
         this.mail = mail;
     }
 
-    public String getMail() {
-        return mail;
-    }
 
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
 
     @XmlTransient
     public List<Evenement> getEvenements() {
@@ -74,5 +70,13 @@ public class Organisateur implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 }

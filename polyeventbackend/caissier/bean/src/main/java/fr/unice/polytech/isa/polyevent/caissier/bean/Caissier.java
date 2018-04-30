@@ -5,6 +5,7 @@ import fr.unice.polytech.isa.polyevent.comptable.Facturer;
 import fr.unice.polytech.isa.polyevent.comptable.StatusPayement;
 import fr.unice.polytech.isa.polyevent.entities.Evenement;
 import fr.unice.polytech.isa.polyevent.entities.Organisateur;
+import fr.unice.polytech.isa.polyevent.entities.Statut;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -31,6 +32,7 @@ public class Caissier implements Caisse
             switch (this.facturer.facturer(evenement))
             {
                 case PAYEMENT_EFFECTUER:
+                    evenement.setStatut(Statut.PAYER);
                     return StatusCaisse.OK;
                 default:
                     return StatusCaisse.ERREUR;

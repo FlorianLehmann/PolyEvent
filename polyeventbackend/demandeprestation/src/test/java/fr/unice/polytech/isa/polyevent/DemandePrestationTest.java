@@ -50,7 +50,7 @@ public class DemandePrestationTest {
         Organisateur organisateur = new Organisateur("organisateur@gmail.com");
         entityManager.persist(organisateur);
         Evenement evenement = new Evenement("Evenement", new Date(2018, 4, 1), new Date(2018, 4, 2),
-                organisateur, null, new StatusHistorique() );
+                organisateur, null, Statut.EN_ATTENTE_DE_VALIDATION );
         entityManager.persist(evenement);
         TypeService typeService = TypeService.CAFE;
         DemandePrestataire demandePrestataire = new DemandePrestataire(typeService, new Date(2018, 4, 1), new Date(2018, 4, 2));

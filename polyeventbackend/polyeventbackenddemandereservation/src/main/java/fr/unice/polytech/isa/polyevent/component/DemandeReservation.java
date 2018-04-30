@@ -36,6 +36,7 @@ public class DemandeReservation implements DemanderReservation, ValiderReservati
             //persistence
             entityManager.persist(reservation);
             validationAutomatique(reservation);
+            evenement.setStatut(Statut.En_ATTENTE_DE_PAIEMENT);
         }
     }
 

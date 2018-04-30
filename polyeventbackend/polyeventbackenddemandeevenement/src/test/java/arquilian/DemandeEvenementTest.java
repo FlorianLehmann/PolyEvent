@@ -17,7 +17,6 @@ import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.ClassLoaderAsset;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
-import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -171,7 +170,7 @@ public class DemandeEvenementTest {
         List<Reservation> reservations = new ArrayList<>();
         reservations.add(new Reservation(new Date(), new Date(), TypeSalle.AMPHI, new Salle("0310"), evenement, Statut.VALIDE ));
         evenement.setReservations(reservations);
-        evenement.setStatusHistorique(new StatusHistorique());
+        evenement.setStatut(Statut.EN_ATTENTE_DE_VALIDATION);
         evenement.setId(0);
         entityManager.persist(evenement);				// making the entity persistent
         int id = evenement.getId();
@@ -203,7 +202,7 @@ public class DemandeEvenementTest {
         List<Reservation> reservations = new ArrayList<>();
         reservations.add(new Reservation(new Date(2018, 4, 1), new Date(2018, 4, 2), TypeSalle.AMPHI, new Salle("0310"), evenement, Statut.VALIDE ));
         evenement.setReservations(reservations);
-        evenement.setStatusHistorique(new StatusHistorique());
+        evenement.setStatut(Statut.EN_ATTENTE_DE_VALIDATION);
         evenement.setId(0);
         entityManager.persist(evenement);				// making the entity persistent
         int id = evenement.getId();
