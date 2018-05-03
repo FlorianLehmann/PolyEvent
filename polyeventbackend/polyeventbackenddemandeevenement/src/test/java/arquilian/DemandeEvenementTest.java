@@ -68,7 +68,6 @@ public class DemandeEvenementTest {
     @EJB private ValiderReservation validerReservation;
     @EJB private DemanderEvenement demanderEvenement;
 
-
     @Ignore
     @Test public void noEvenementByDefault() {
         assertEquals(0, 1);
