@@ -38,7 +38,7 @@ public class ServeurComptabilite implements WebServiceComptabilite {
                 e.printStackTrace();
             }
             try {
-                int status = WebClient.create("http://localhost:9095/facture").accept(MediaType.APPLICATION_JSON_TYPE)
+                int status = WebClient.create("http://comptabilite:9095/facture").accept(MediaType.APPLICATION_JSON_TYPE)
                         .header("Content-Type", MediaType.APPLICATION_JSON).post(requete.toString()).getStatus();
                 if (status != 200) {
                     reenvoyerFacture(demandeEnvoieFacture);
