@@ -19,8 +19,8 @@ public class DemandeEvenement implements DemanderEvenement
     private CreateurEvenement createurEvenement;
 
     @Override
-    public void demanderCreationEvenement(Token token, String nom, Date dateDebut, Date dateFin, List<DemandeReservationSalle> demandeReservationSalles, List<DemandePrestataire> demandePrestataires)
+    public String demanderCreationEvenement(Token token, String nom, Date dateDebut, Date dateFin, List<DemandeReservationSalle> demandeReservationSalles, List<DemandePrestataire> demandePrestataires)
     {
-        createurEvenement.demanderCreationEvenement(token, nom, dateDebut, dateFin, demandeReservationSalles, demandePrestataires);
+       return createurEvenement.demanderCreationEvenement(token, nom, dateDebut, dateFin, demandeReservationSalles, demandePrestataires);
     }
 }

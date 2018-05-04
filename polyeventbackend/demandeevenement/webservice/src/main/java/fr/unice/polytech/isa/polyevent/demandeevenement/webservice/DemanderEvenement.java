@@ -18,7 +18,7 @@ public interface DemanderEvenement
 {
     @WebMethod
     @Interceptors({VerifierToken.class, VerifierPlageHorraire.class})
-    void demanderCreationEvenement(@WebParam(name = "token") Token token,
+    String demanderCreationEvenement(@WebParam(name = "token") Token token,
                                    @WebParam(name = "nom") String nom,
                                    @WebParam(name = "date_debut") Date dateDebut,
                                    @WebParam(name = "date_fin") Date dateFin,
