@@ -27,14 +27,6 @@
 
     <repositories>
         <repository>
-            <id>central</id>
-            <url>http://192.168.43.80:8081/artifactory/libs-snapshot-local</url>
-            <snapshots>
-                <enabled>false</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
-        <repository>
             <id>snapshots</id>
             <url>http://192.168.43.80:8081/artifactory/libs-snapshot-local</url>
             <releases>
@@ -45,11 +37,6 @@
     </repositories>
 
     <distributionManagement>
-        <repository>
-            <id>central</id>
-            <name>bc90f02a99c9-snapshots</name>
-            <url>http://192.168.43.80:8081/artifactory/libs-snapshot-local</url>
-        </repository>
         <snapshotRepository>
             <id>snapshots</id>
             <name>bc90f02a99c9-snapshots</name>
