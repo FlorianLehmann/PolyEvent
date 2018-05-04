@@ -11,7 +11,7 @@ import java.util.List;
 @Local
 public interface CreerEvenement
 {
-    void demanderCreationEvenement(Token token, String nom,
+    String demanderCreationEvenement(Token token, String nom,
                                    Date dateDebut, Date dateFin,
                                    List<DemandeReservationSalle> demandeReservationSalles,
                                    List<DemandePrestataire> demandePrestataires);
