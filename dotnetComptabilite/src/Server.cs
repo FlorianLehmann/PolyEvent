@@ -66,9 +66,9 @@ public class Server
    * Start the server in interactive mode, waiting for Return to
    */
   private void interactive() {
-    Console.WriteLine("Hit Return to shutdown the server.");
+    /*Console.WriteLine("Hit Return to shutdown the server.");
     Console.ReadLine();
-    stop();
+    stop();*/
   }
 
   /**
