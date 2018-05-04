@@ -5,6 +5,7 @@ import fr.unice.polytech.isa.polyevent.cli.framework.CommandBuilder;
 import fr.unice.polytech.isa.polyevent.cli.framework.Context;
 import fr.unice.polytech.isa.polyevent.stubs.EnregistrerClient;
 
+import javax.xml.ws.soap.SOAPFaultException;
 import java.util.List;
 
 public class Register implements Command
@@ -34,9 +35,16 @@ public class Register implements Command
     @Override
     public void execute() throws Exception
     {
-        enregistrerClient.enregistrerClient(mail);
-        context.out.format("The account %s has been created.%n" +
-                "You can now login into your account with the following command: login %s%n", mail, mail);
+        try
+        {
+            enregistrerClient.enregistrerClient(mail);
+            context.out.format("The account %s has been created.%n" +
+                    "You can now login into your account with the following command: login %s%n", mail, mail);
+        }
+        catch (SOAPFaultException e)
+        {
+            context.out.println("This account already exists. Please enter another mail or login into it.");
+        }
     }
 
     public static class Builder implements CommandBuilder<Register>

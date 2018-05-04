@@ -33,6 +33,11 @@ public class ServeurComptabilite implements WebServiceComptabilite {
                     .put("facture", s);
 
             try {
+                Thread.sleep(4000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            try {
                 int status = WebClient.create("http://localhost:9095/facture").accept(MediaType.APPLICATION_JSON_TYPE)
                         .header("Content-Type", MediaType.APPLICATION_JSON).post(requete.toString()).getStatus();
                 if (status != 200) {

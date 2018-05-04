@@ -54,8 +54,7 @@ public class Invoice implements Command
     public void execute() throws Exception
     {
         String invoice = demanderFacture.obtenirFacture(token, name, dateDebut, dateFin);
-        context.out.println("You will find the invoice for your event below");
-        context.out.println(invoice);
+        context.out.format("Response from the server: %s%n", invoice);
     }
 
     public static class Builder implements CommandBuilder<Invoice>
