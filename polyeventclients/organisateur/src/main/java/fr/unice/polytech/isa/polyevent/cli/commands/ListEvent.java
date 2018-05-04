@@ -3,7 +3,10 @@ package fr.unice.polytech.isa.polyevent.cli.commands;
 import fr.unice.polytech.isa.polyevent.cli.framework.Command;
 import fr.unice.polytech.isa.polyevent.cli.framework.CommandBuilder;
 import fr.unice.polytech.isa.polyevent.cli.framework.Context;
-import fr.unice.polytech.isa.polyevent.stubs.*;
+import fr.unice.polytech.isa.polyevent.stubs.Evenement;
+import fr.unice.polytech.isa.polyevent.stubs.ObtenirEvenementOrganisateur;
+import fr.unice.polytech.isa.polyevent.stubs.Reservation;
+import fr.unice.polytech.isa.polyevent.stubs.Token;
 
 import java.io.PrintStream;
 import java.util.List;
@@ -11,36 +14,21 @@ import java.util.List;
 public class ListEvent implements Command
 {
     private static final Identifier IDENTIFIER = Identifier.LIST_EVENT;
+    private final Token token;
     private final PrintStream out;
-    private final DemanderEvenement demandeEvenement;
-    private Organisateur organisateur;
+    private final ObtenirEvenementOrganisateur obtenirEvenementOrganisateur;
 
-    ListEvent(PrintStream out, DemanderEvenement demandeEvenement)
+    ListEvent(Token token, PrintStream out, ObtenirEvenementOrganisateur obtenirEvenementOrganisateur)
     {
+        this.token = token;
         this.out = out;
-        this.demandeEvenement = demandeEvenement;
-    }
-
-    @Override
-    public void load(List<String> args)
-    {
-        if (args.size() != 1)
-        {
-            String message = String.format("%s expects 1 argument: %s MAIL",
-                    IDENTIFIER.keyword, IDENTIFIER.keyword);
-            throw new IllegalArgumentException(message);
-        }
-        Mail mail = new Mail();
-        mail.setMail(args.get(0));
-        organisateur = new Organisateur();
-        organisateur.setMail(mail);
+        this.obtenirEvenementOrganisateur = obtenirEvenementOrganisateur;
     }
 
     @Override
     public void execute()
     {
-        List<Evenement> events = demandeEvenement.getEvenements(organisateur);
-        out.format("Listing events of %s:%n", organisateur.getMail().getMail());
+        List<Evenement> events = obtenirEvenementOrganisateur.obtenirEvenementOrganisateur(token);
         for (Evenement event : events)
         {
             out.format("  - Event \"%s\" between %tc and %tc%n", event.getNom(),
@@ -80,11 +68,13 @@ public class ListEvent implements Command
 
     public static class Builder implements CommandBuilder<ListEvent>
     {
-        private final DemanderEvenement demandeEvenement;
+        private final Token token;
+        private final ObtenirEvenementOrganisateur obtenirEvenementOrganisateur;
 
-        public Builder(DemanderEvenement demandeEvenement)
+        public Builder(Token token, ObtenirEvenementOrganisateur obtenirEvenementOrganisateur)
         {
-            this.demandeEvenement = demandeEvenement;
+            this.token = token;
+            this.obtenirEvenementOrganisateur = obtenirEvenementOrganisateur;
         }
 
         @Override
@@ -108,7 +98,7 @@ public class ListEvent implements Command
         @Override
         public ListEvent build(Context context)
         {
-            return new ListEvent(context.out, demandeEvenement);
+            return new ListEvent(token, context.out, obtenirEvenementOrganisateur);
         }
     }
 }

@@ -1,5 +1,7 @@
 package fr.unice.polytech.isa.polyevent.entities;
 
+import com.google.gson.annotations.Expose;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
@@ -14,22 +16,27 @@ public class Evenement {
     private int id;
 
     @NotNull
+    @Expose
     private String nom;
 
     @NotNull
+    @Expose
     private Date debut;
 
     @NotNull
+    @Expose
     private Date fin;
 
     @ManyToOne(cascade = CascadeType.ALL)
     private Organisateur organisateur;
 
     @ElementCollection
+    @Expose
     private List<Reservation> reservations;
 
     @NotNull
-    private StatusHistorique statusHistorique;
+    @Expose
+    private Statut statut;
 
 
     public Evenement() {
@@ -37,13 +44,13 @@ public class Evenement {
     }
 
 
-    public Evenement(String nom, Date debut, Date fin, Organisateur organisateur, List<Reservation> reservations, StatusHistorique statusHistorique) {
+    public Evenement(String nom, Date debut, Date fin, Organisateur organisateur, List<Reservation> reservations, Statut statut) {
         this.nom = nom;
         this.debut = debut;
         this.fin = fin;
         this.organisateur = organisateur;
         this.reservations = reservations;
-        this.statusHistorique = statusHistorique;
+        this.statut = statut;
         this.organisateur.getEvenements().add(this);
     }
 
@@ -95,12 +102,12 @@ public class Evenement {
         this.organisateur = organisateur;
     }
 
-    public StatusHistorique getStatusHistorique() {
-        return statusHistorique;
+    public Statut getStatut() {
+        return statut;
     }
 
-    public void setStatusHistorique(StatusHistorique statusHistorique) {
-        this.statusHistorique = statusHistorique;
+    public void setStatut(Statut statut) {
+        this.statut = statut;
     }
 
     @Override

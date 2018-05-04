@@ -81,6 +81,34 @@
                                         <extraarg>http://www.polytech.unice.fr/si/4a/isa/polyevent/payerEvenement=fr.unice.polytech.isa.polyevent.stubs</extraarg>
                                     </extraargs>
                                 </wsdlOption>
+                                <wsdlOption>
+                                    <wsdl>${basedir}/src/main/resources/connexionClientWS.wsdl</wsdl>
+                                    <extraargs>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://www.polytech.unice.fr/si/4a/isa/polyevent/connecterClient=fr.unice.polytech.isa.polyevent.stubs</extraarg>
+                                    </extraargs>
+                                </wsdlOption>
+                                <wsdlOption>
+                                    <wsdl>${basedir}/src/main/resources/enregistrementClientWS.wsdl</wsdl>
+                                    <extraargs>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://www.polytech.unice.fr/si/4a/isa/polyevent/enregistrerClient=fr.unice.polytech.isa.polyevent.stubs</extraarg>
+                                    </extraargs>
+                                </wsdlOption>
+                                <wsdlOption>
+                                    <wsdl>${basedir}/src/main/resources/evenementOrganisateurWS.wsdl</wsdl>
+                                    <extraargs>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://www.polytech.unice.fr/si/4a/isa/polyevent/obtenirEvenementOrganisateur=fr.unice.polytech.isa.polyevent.stubs</extraarg>
+                                    </extraargs>
+                                </wsdlOption>
+                                <wsdlOption>
+                                    <wsdl>${basedir}/src/main/resources/demandeFactureWS.wsdl</wsdl>
+                                    <extraargs>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://www.polytech.unice.fr/si/4a/isa/polyevent/demanderFacture=fr.unice.polytech.isa.polyevent.stubs</extraarg>
+                                    </extraargs>
+                                </wsdlOption>
                             </wsdlOptions>
                         </configuration>
                         <goals>

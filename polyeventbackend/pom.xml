@@ -6,7 +6,7 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>polyeventbackenddemandeevenement</module>
+        <module>demandeevenement</module>
         <module>polyeventbackenddemandereservation</module>
         <module>commun</module>
         <module>envoiemailprestataire</module>
@@ -19,7 +19,10 @@
         <module>polyeventbackendprofilclientwebservice</module>
         <module>polyeventbackendenregistrement</module>
         <module>polyeventbackendconnexion</module>
-
+        <module>polyeventbackendobtenirevenement</module>
+        <module>polyeventbackendobtenirevenementwebservice</module>
+        <module>comptable</module>
+        <module>polyeventbackendcomptablewebservice</module>
     </modules>
 
     <repositories>
@@ -93,6 +96,11 @@
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
             <version>${versions.json}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.9.5</version>
         </dependency>
 
         <!-- Dependencies for the OpenEJB framework (provided at runtime by the app server) -->

@@ -1,5 +1,6 @@
 package fr.unice.polytech.isa.polyevent.cli.framework;
 
+import java.net.ConnectException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -77,6 +78,10 @@ public class Shell
         catch (IllegalArgumentException e)
         {
             context.out.println(e.getMessage());
+        }
+        catch (ConnectException e)
+        {
+            context.out.println("Could not connect to the server. Check your internet connection and retry");
         }
         catch (Exception e)
         {

@@ -1,10 +1,7 @@
 package fr.unice.polytech.isa.polyevent.cli.commands;
 
 import fr.unice.polytech.isa.polyevent.Main;
-import fr.unice.polytech.isa.polyevent.api.PolyEventAPI;
 import fr.unice.polytech.isa.polyevent.cli.framework.Shell;
-import fr.unice.polytech.isa.polyevent.stubs.DemanderEvenement;
-import fr.unice.polytech.isa.polyevent.stubs.Mail;
 import fr.unice.polytech.isa.polyevent.stubs.Organisateur;
 import org.junit.Before;
 import org.junit.Ignore;
@@ -15,14 +12,10 @@ import javax.xml.datatype.XMLGregorianCalendar;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
 
 public class BookEvent
 {
     private Organisateur organisateur;
-    private Mail mail;
     private PrintStream printStream;
     private ByteArrayInputStream inputStream;
     private Shell shell;
@@ -38,10 +31,8 @@ public class BookEvent
         inputStream = new ByteArrayInputStream("play demo/demo1.pe".getBytes());
         output = new ByteArrayOutputStream();
         printStream = new PrintStream(output);
-        mail = new Mail();
-        mail.setMail("XXX");
         organisateur = new Organisateur();
-        organisateur.setMail(mail);
+        organisateur.setMail("XXX");
         nom = "YYY";
         DatatypeFactory datatypeFactory = DatatypeFactory.newInstance();
         dateDebut = datatypeFactory.newXMLGregorianCalendar("2018");

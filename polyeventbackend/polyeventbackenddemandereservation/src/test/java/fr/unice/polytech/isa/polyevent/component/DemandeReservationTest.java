@@ -106,7 +106,7 @@ public class DemandeReservationTest {
         Organisateur organisateur = new Organisateur("organisateur@gmail.com");
         demandeReservationSalles = new ArrayList<>();
         evenement = new Evenement("Evenement", new Date(2018, 4, 1), new Date(2018, 4, 2),
-                organisateur, null, new StatusHistorique() );
+                organisateur, null, Statut.EN_ATTENTE_DE_VALIDATION );
     }
 
     private void iniMock() {

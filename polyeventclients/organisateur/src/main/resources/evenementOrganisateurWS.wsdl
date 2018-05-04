@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.polytech.unice.fr/si/4a/isa/polyevent/obtenirEvenementOrganisateur" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="EvenementOrganisateurService" targetNamespace="http://www.polytech.unice.fr/si/4a/isa/polyevent/obtenirEvenementOrganisateur">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.polytech.unice.fr/si/4a/isa/polyevent/obtenirEvenementOrganisateur" elementFormDefault="unqualified" targetNamespace="http://www.polytech.unice.fr/si/4a/isa/polyevent/obtenirEvenementOrganisateur" version="1.0">
+
+  <xs:element name="obtenirEvenementOrganisateur" type="tns:obtenirEvenementOrganisateur"/>
+
+  <xs:element name="obtenirEvenementOrganisateurResponse" type="tns:obtenirEvenementOrganisateurResponse"/>
+
+  <xs:complexType name="obtenirEvenementOrganisateur">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="token" type="tns:token"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="token">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dateDeValidite" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="organisateur" type="tns:organisateur"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="organisateur">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element minOccurs="0" name="mail" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="obtenirEvenementOrganisateurResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="evenements" type="tns:evenement"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="evenement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="debut" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="fin" type="xs:dateTime"/>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element minOccurs="0" name="nom" type="xs:string"/>
+      <xs:element minOccurs="0" name="organisateur" type="tns:organisateur"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="reservations" nillable="true" type="tns:reservation"/>
+      <xs:element minOccurs="0" name="statut" type="tns:statut"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="reservation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dateDebut" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="dateFin" type="xs:dateTime"/>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element minOccurs="0" name="salle" type="tns:salle"/>
+      <xs:element minOccurs="0" name="statut" type="tns:statut"/>
+      <xs:element minOccurs="0" name="typeSalle" type="tns:typeSalle"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="salle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nom" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="statut">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:simpleType name="statut">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EN_ATTENTE_DE_VALIDATION"/>
+      <xs:enumeration value="VALIDE"/>
+      <xs:enumeration value="REFUSE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeSalle">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SALLE"/>
+      <xs:enumeration value="AMPHI"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="obtenirEvenementOrganisateur">
+    <wsdl:part element="tns:obtenirEvenementOrganisateur" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="obtenirEvenementOrganisateurResponse">
+    <wsdl:part element="tns:obtenirEvenementOrganisateurResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ObtenirEvenementOrganisateur">
+    <wsdl:operation name="obtenirEvenementOrganisateur">
+      <wsdl:input message="tns:obtenirEvenementOrganisateur" name="obtenirEvenementOrganisateur">
+    </wsdl:input>
+      <wsdl:output message="tns:obtenirEvenementOrganisateurResponse" name="obtenirEvenementOrganisateurResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EvenementOrganisateurServiceSoapBinding" type="tns:ObtenirEvenementOrganisateur">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="obtenirEvenementOrganisateur">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="obtenirEvenementOrganisateur">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="obtenirEvenementOrganisateurResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EvenementOrganisateurService">
+    <wsdl:port binding="tns:EvenementOrganisateurServiceSoapBinding" name="EvenementOrganisateurPort">
+      <soap:address location="http://localhost:8080/polyeventbackend-war/webservices/evenementOrganisateurWS"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

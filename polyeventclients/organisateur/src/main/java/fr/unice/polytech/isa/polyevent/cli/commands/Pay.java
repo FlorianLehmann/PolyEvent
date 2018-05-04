@@ -3,10 +3,8 @@ package fr.unice.polytech.isa.polyevent.cli.commands;
 import fr.unice.polytech.isa.polyevent.cli.framework.Command;
 import fr.unice.polytech.isa.polyevent.cli.framework.CommandBuilder;
 import fr.unice.polytech.isa.polyevent.cli.framework.Context;
-import fr.unice.polytech.isa.polyevent.stubs.DemandeReservationSalle;
-import fr.unice.polytech.isa.polyevent.stubs.Mail;
-import fr.unice.polytech.isa.polyevent.stubs.Organisateur;
 import fr.unice.polytech.isa.polyevent.stubs.PayerEvenement;
+import fr.unice.polytech.isa.polyevent.stubs.Token;
 
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -15,17 +13,17 @@ import java.util.List;
 public class Pay implements Command
 {
     private static final Identifier IDENTIFIER = Identifier.PAY;
+    private final Token token;
     private final Context context;
     private final PayerEvenement payerEvenement;
-    private Organisateur organisateur;
     private String nom;
     private XMLGregorianCalendar dateDebut;
     private XMLGregorianCalendar dateFin;
-    private List<DemandeReservationSalle> demandeReservations;
     private String creditCard;
 
-    public Pay(Context context, PayerEvenement payerEvenement)
+    public Pay(Token token, Context context, PayerEvenement payerEvenement)
     {
+        this.token = token;
         this.context = context;
         this.payerEvenement = payerEvenement;
     }
@@ -33,23 +31,19 @@ public class Pay implements Command
     @Override
     public void load(List<String> args) throws Exception
     {
-        if (args.size() != 5)
+        if (args.size() != 4)
         {
-            String message = String.format("%s expects 5 arguments: %s  CREDIT_CARD MAIL NOM START_DATE END_DATE", IDENTIFIER, IDENTIFIER);
+            String message = String.format("%s expects 4 arguments: %s CREDIT_CARD NOM START_DATE END_DATE", IDENTIFIER, IDENTIFIER);
             throw new IllegalArgumentException(message);
         }
         creditCard = args.get(0);
-        organisateur = new Organisateur();
-        Mail mail = new Mail();
-        mail.setMail(args.get(1));
-        organisateur.setMail(mail);
-        nom = args.get(2);
+        nom = args.get(1);
 
         try
         {
             DatatypeFactory datatypeFactory = DatatypeFactory.newInstance();
-            dateDebut = datatypeFactory.newXMLGregorianCalendar(args.get(3));
-            dateFin = datatypeFactory.newXMLGregorianCalendar(args.get(4));
+            dateDebut = datatypeFactory.newXMLGregorianCalendar(args.get(2));
+            dateFin = datatypeFactory.newXMLGregorianCalendar(args.get(3));
         }
         catch (IllegalArgumentException e)
         {
@@ -58,9 +52,9 @@ public class Pay implements Command
     }
 
     @Override
-    public void execute() throws Exception
+    public void execute()
     {
-        String status = payerEvenement.payerEvenement(organisateur, nom, dateDebut, dateFin, creditCard);
+        String status = payerEvenement.payerEvenement(token, nom, dateDebut, dateFin, creditCard);
 
         switch (status)
         {
@@ -74,10 +68,12 @@ public class Pay implements Command
 
     public static class Builder implements CommandBuilder<Pay>
     {
+        private final Token token;
         private final PayerEvenement payerEvenement;
 
-        public Builder(PayerEvenement payerEvenement)
+        public Builder(Token token, PayerEvenement payerEvenement)
         {
+            this.token = token;
             this.payerEvenement = payerEvenement;
         }
 
@@ -96,7 +92,7 @@ public class Pay implements Command
         @Override
         public Pay build(Context context)
         {
-            return new Pay(context, payerEvenement);
+            return new Pay(token, context, payerEvenement);
         }
     }
 }

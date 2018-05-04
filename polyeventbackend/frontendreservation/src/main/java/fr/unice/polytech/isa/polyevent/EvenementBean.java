@@ -9,9 +9,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import java.io.Serializable;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Optional;
 
 @ManagedBean
 @SessionScoped
@@ -41,6 +39,6 @@ public class EvenementBean implements Serializable {
     }
 
     @PostConstruct private void loadOrganisateurEtEvenement() {
-        evenements = profilOrganisateur.obtenirEvenementOrganisateur(organisateur);
+        evenements = profilOrganisateur.obtenirEvenementsOrganisateur(organisateur);
     }
 }

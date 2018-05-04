@@ -2,7 +2,7 @@ package fr.unice.polytech.isa.polyevent;
 
 import fr.unice.polytech.isa.polyevent.entities.Evenement;
 import fr.unice.polytech.isa.polyevent.entities.Organisateur;
-import fr.unice.polytech.isa.polyevent.entities.StatusHistorique;
+import fr.unice.polytech.isa.polyevent.entities.Statut;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.transaction.api.annotation.TransactionMode;
@@ -53,24 +53,41 @@ public class ProfilClientTest {
 
     @Test
     public void OrganisateurInconnue(){
-        assertEquals(obtenirProfilOrganisateur.obtenirEvenementOrganisateur(bob).size(),0);
+        assertEquals(obtenirProfilOrganisateur.obtenirEvenementsOrganisateur(bob).size(),0);
     }
 
     @Transactional(TransactionMode.COMMIT)
     @Test
     public void OrganisateurAvecEvenement(){
         Evenement evenement = new Evenement("Evenement", new Date(2018, 4, 1), new Date(2018, 4, 2),
-                bob, null, new StatusHistorique() );
+                bob, null, Statut.EN_ATTENTE_DE_VALIDATION );
         entityManager.persist(evenement);
 
-        assertEquals(obtenirProfilOrganisateur.obtenirEvenementOrganisateur(bob).size(),1);
+        assertEquals(obtenirProfilOrganisateur.obtenirEvenementsOrganisateur(bob).size(),1);
 
         Evenement evenement2 = new Evenement("Evenement2", new Date(2018, 5, 1), new Date(2018, 5, 2),
-                bob, null, new StatusHistorique() );
+                bob, null, Statut.EN_ATTENTE_DE_VALIDATION );
         entityManager.persist(evenement2);
-        assertEquals(obtenirProfilOrganisateur.obtenirEvenementOrganisateur(bob).size(),2);
+        assertEquals(obtenirProfilOrganisateur.obtenirEvenementsOrganisateur(bob).size(),2);
 
 
+    }
+
+    @Transactional(TransactionMode.COMMIT)
+    @Test
+    public void RecupererUniqueEvenement(){
+        Evenement evenement = new Evenement("Evenement", new Date(2018, 4, 1), new Date(2018, 4, 2),
+                bob, null, Statut.EN_ATTENTE_DE_VALIDATION );
+        entityManager.persist(evenement);
+        assertTrue(obtenirProfilOrganisateur.obtenirEvenementOrganisateur(bob,
+                "Evenement",new Date(2018, 4, 1),new Date(2018, 4, 2)).isPresent());
+
+        assertFalse(obtenirProfilOrganisateur.obtenirEvenementOrganisateur(bob,
+                "Evenement3344444",new Date(2018, 4, 1),new Date(2018, 4, 2)).isPresent());
+        assertFalse(obtenirProfilOrganisateur.obtenirEvenementOrganisateur(bob,
+                "Evenement",new Date(2019, 4, 1),new Date(2018, 4, 2)).isPresent());
+        assertFalse(obtenirProfilOrganisateur.obtenirEvenementOrganisateur(bob,
+                "Evenement",new Date(2018, 4, 1),new Date(2019, 4, 2)).isPresent());
     }
 
 }

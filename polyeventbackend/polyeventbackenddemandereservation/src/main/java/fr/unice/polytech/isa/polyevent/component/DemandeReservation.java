@@ -1,15 +1,11 @@
 package fr.unice.polytech.isa.polyevent.component;
 
 
-
 import fr.unice.polytech.isa.polyevent.DemanderReservation;
 import fr.unice.polytech.isa.polyevent.HyperPlanningAPI;
-import fr.unice.polytech.isa.polyevent.entities.DemandeReservationSalle;
+import fr.unice.polytech.isa.polyevent.ValiderReservation;
 import fr.unice.polytech.isa.polyevent.entities.*;
 
-import fr.unice.polytech.isa.polyevent.ValiderReservation;
-
-import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -40,6 +36,7 @@ public class DemandeReservation implements DemanderReservation, ValiderReservati
             //persistence
             entityManager.persist(reservation);
             validationAutomatique(reservation);
+            evenement.setStatut(Statut.En_ATTENTE_DE_PAIEMENT);
         }
     }
 
