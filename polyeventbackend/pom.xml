@@ -28,14 +28,14 @@
     <repositories>
         <repository>
             <id>central</id>
-            <url>http://artifactory-16:8081/artifactory/polyeventbackend</url>
+            <url>http://artifactory-16:8081/artifactory/polyevent</url>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
         </repository>
         <repository>
             <id>snapshots</id>
-            <url>http://artifactory-16:8081/artifactory/polyeventbackend</url>
+            <url>http://artifactory-16:8081/artifactory/polyevent</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -46,12 +46,12 @@
         <repository>
             <id>central</id>
             <name>92a67d65f5bb-releases</name>
-            <url>http://artifactory-16:8081/artifactory/polyeventbackend</url>
+            <url>http://artifactory-16:8081/artifactory/polyevent</url>
         </repository>
         <snapshotRepository>
             <id>snapshots</id>
             <name>92a67d65f5bb-snapshots</name>
-            <url>http://artifactory-16:8081/artifactory/polyeventbackend</url>
+            <url>http://artifactory-16:8081/artifactory/polyevent</url>
         </snapshotRepository>
     </distributionManagement>
 
