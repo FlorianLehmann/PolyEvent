@@ -16,6 +16,21 @@ public class DemandePrestataire implements PlageHorraire
         this.dateFin = dateFin;
     }
 
+    public void setTypeService(TypeService typeService)
+    {
+        this.typeService = typeService;
+    }
+
+    public void setDateDebut(Date dateDebut)
+    {
+        this.dateDebut = dateDebut;
+    }
+
+    public void setDateFin(Date dateFin)
+    {
+        this.dateFin = dateFin;
+    }
+
     public TypeService getTypeService() {
         return typeService;
     }

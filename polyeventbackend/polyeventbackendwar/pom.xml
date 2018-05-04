@@ -29,17 +29,17 @@
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>polyevent-backend-demande-evenement</artifactId>
+            <artifactId>demandeevenement.bean</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>fr.unice.polytech.isa.polyevent</groupId>
+            <artifactId>demandeevenement.webservice</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
             <artifactId>frontendreservation</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>caissier</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -74,6 +74,11 @@
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
+            <artifactId>caissier.bean</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>fr.unice.polytech.isa.polyevent</groupId>
             <artifactId>caissier.webservice</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
@@ -86,6 +91,12 @@
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
             <artifactId>polyevent-backend-comptable-web-service</artifactId>
             <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>fr.unice.polytech.isa.polyevent</groupId>
+            <artifactId>polyevent-backend-demande-prestation</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

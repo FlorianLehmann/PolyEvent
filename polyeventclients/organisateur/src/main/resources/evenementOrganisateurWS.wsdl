@@ -62,13 +62,11 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="statut">
-    <xs:sequence/>
-  </xs:complexType>
-
   <xs:simpleType name="statut">
     <xs:restriction base="xs:string">
       <xs:enumeration value="EN_ATTENTE_DE_VALIDATION"/>
+      <xs:enumeration value="En_ATTENTE_DE_PAIEMENT"/>
+      <xs:enumeration value="PAYER"/>
       <xs:enumeration value="VALIDE"/>
       <xs:enumeration value="REFUSE"/>
     </xs:restriction>
