@@ -31,9 +31,10 @@ public class ListEvent implements Command
         List<Evenement> events = obtenirEvenementOrganisateur.obtenirEvenementOrganisateur(token);
         for (Evenement event : events)
         {
-            out.format("  - Event \"%s\" between %tc and %tc%n", event.getNom(),
+            out.format("  - Event \"%s\" between %tc and %tc with status %s%n", event.getNom(),
                     event.getDebut().toGregorianCalendar(),
-                    event.getFin().toGregorianCalendar());
+                    event.getFin().toGregorianCalendar(),
+                    event.getStatut().value());
 
             for (Reservation reservation : event.getReservations())
             {

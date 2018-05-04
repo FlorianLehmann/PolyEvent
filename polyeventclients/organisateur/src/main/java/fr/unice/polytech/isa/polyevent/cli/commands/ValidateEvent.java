@@ -49,8 +49,14 @@ public class ValidateEvent implements Command
                         reservation.getTypeSalle(), reservation.getDateDebut().toGregorianCalendar(), reservation.getDateFin().toGregorianCalendar()))
                 .reduce(String::concat)
                 .orElse("\n"));
+        out.print(demandePrestataires.stream()
+                .map(reservation -> String.format("  - %s between %tc and %tc%n",
+                        reservation.getTypeService(), reservation.getDateDebut().toGregorianCalendar(), reservation.getDateFin().toGregorianCalendar()))
+                .reduce(String::concat)
+                .orElse("\n"));
 
-        demandeEvenement.demanderCreationEvenement(token, nom, dateDebut, dateFin, demandeReservations, demandePrestataires);
+        String result = demandeEvenement.demanderCreationEvenement(token, nom, dateDebut, dateFin, demandeReservations, demandePrestataires);
+        out.format("Response from server: %s%n", result);
     }
 
     @Override
