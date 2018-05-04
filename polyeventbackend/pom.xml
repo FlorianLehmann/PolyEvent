@@ -28,7 +28,7 @@
     <repositories>
         <repository>
             <id>snapshots</id>
-            <url>http://192.168.43.80:8081/artifactory/libs-snapshot-local</url>
+            <url>http://artifactory:8081/artifactory/polyeventbackend</url>
             <releases>
                 <enabled>false</enabled>
                 <updatePolicy>always</updatePolicy>
@@ -39,8 +39,8 @@
     <distributionManagement>
         <snapshotRepository>
             <id>snapshots</id>
-            <name>bc90f02a99c9-snapshots</name>
-            <url>http://192.168.43.80:8081/artifactory/libs-snapshot-local</url>
+            <name>5c3c6f24472b-snapshots</name>
+            <url>http://artifactory:8081/artifactory/polyeventbackend</url>
         </snapshotRepository>
     </distributionManagement>
 
