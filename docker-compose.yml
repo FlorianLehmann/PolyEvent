@@ -2,7 +2,7 @@ version: "3.5"
 
 services:
   polyeventbackend:
-    image: polyeventbackend:latest
+    image: polyeventbackend
     container_name: polyeventbackend
     ports:
       - 8080:8080
@@ -10,8 +10,7 @@ services:
       - hyperplanning
 
   hyperplanning:
-      image: hyperplanning:latest
-      build: ./dotnet
+      image: hyperplanning
       container_name: hyperplanning
       ports:
         - 9090:9090
