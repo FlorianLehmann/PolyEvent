@@ -8,6 +8,7 @@ import fr.unice.polytech.isa.polyevent.entities.Token;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.jws.WebService;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -21,6 +22,14 @@ public class DemandeEvenement implements DemanderEvenement
     @Override
     public String demanderCreationEvenement(Token token, String nom, Date dateDebut, Date dateFin, List<DemandeReservationSalle> demandeReservationSalles, List<DemandePrestataire> demandePrestataires)
     {
-       return createurEvenement.demanderCreationEvenement(token, nom, dateDebut, dateFin, demandeReservationSalles, demandePrestataires);
+        if (demandeReservationSalles == null)
+        {
+            demandeReservationSalles = new ArrayList<>();
+        }
+        if (demandePrestataires == null)
+        {
+            demandePrestataires = new ArrayList<>();
+        }
+        return createurEvenement.demanderCreationEvenement(token, nom, dateDebut, dateFin, demandeReservationSalles, demandePrestataires);
     }
 }

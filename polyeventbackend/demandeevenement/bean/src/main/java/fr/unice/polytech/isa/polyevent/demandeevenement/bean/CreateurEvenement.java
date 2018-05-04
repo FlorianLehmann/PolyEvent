@@ -29,6 +29,14 @@ public class CreateurEvenement implements CreerEvenement
     @Override
     public String demanderCreationEvenement(Token token, String nom, Date dateDebut, Date dateFin, List<DemandeReservationSalle> demandeReservationSalles, List<DemandePrestataire> demandePrestataires)
     {
+        if (demandeReservationSalles == null)
+        {
+            demandeReservationSalles = new ArrayList<>();
+        }
+        if (demandePrestataires == null)
+        {
+            demandePrestataires = new ArrayList<>();
+        }
         Organisateur organisateur = token.getOrganisateur();
         if(chercherEvenement.chercherEvenement(nom, dateDebut, dateFin, organisateur).isPresent()) {
             return "Evenement déjà créé";
@@ -37,18 +45,7 @@ public class CreateurEvenement implements CreerEvenement
         Evenement evenement = new Evenement(nom, dateDebut, dateFin, organisateur, new ArrayList<>(), Statut.EN_ATTENTE_DE_VALIDATION);
         entityManager.persist(evenement);
         organisateur.getEvenements().add(evenement);
-        if (demandeReservationSalles == null)
-        {
-            demandeReservationSalles = new ArrayList<>();
-        }
-
         demandeReservation.demanderReservationSalle(evenement, demandeReservationSalles);
-
-        if (demandePrestataires == null)
-        {
-            demandePrestataires = new ArrayList<>();
-        }
-
         demanderPrestation.ajouterService(evenement, demandePrestataires);
         return "Succés";
     }

@@ -34,6 +34,10 @@ public class VerifierPlageHorraire
 
     private boolean verifierPlageHorraire(PlageHorraire plageHorraire)
     {
+        if (plageHorraire.getDateDebut() == null || plageHorraire.getDateFin() == null)
+        {
+            return false;
+        }
         return plageHorraire.getDateFin().after(plageHorraire.getDateDebut());
     }
 
