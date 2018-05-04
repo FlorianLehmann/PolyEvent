@@ -1,6 +1,6 @@
 package fr.unice.polytech.isa.polyevent.demandeevenement.webservice;
 
-import fr.unice.polytech.isa.polyevent.demandeevenement.bean.CreateurEvenement;
+import fr.unice.polytech.isa.polyevent.demandeevenement.bean.CreerEvenement;
 import fr.unice.polytech.isa.polyevent.entities.DemandePrestataire;
 import fr.unice.polytech.isa.polyevent.entities.DemandeReservationSalle;
 import fr.unice.polytech.isa.polyevent.entities.Token;
@@ -17,7 +17,7 @@ import java.util.List;
 public class DemandeEvenement implements DemanderEvenement
 {
     @EJB
-    private CreateurEvenement createurEvenement;
+    private CreerEvenement createurEvenement;
 
     @Override
     public String demanderCreationEvenement(Token token, String nom, Date dateDebut, Date dateFin, List<DemandeReservationSalle> demandeReservationSalles, List<DemandePrestataire> demandePrestataires)
