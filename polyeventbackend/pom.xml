@@ -6,19 +6,17 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
+        <module>demandereservation</module>
         <module>demande-evenement</module>
-        <module>polyeventbackenddemandereservation</module>
         <module>commun</module>
         <module>envoiemailprestataire</module>
         <module>demandeprestation</module>
         <module>polyeventbackendwar</module>
         <module>frontendreservation</module>
         <module>caissier</module>
-        <module>polyeventbackendlogin</module>
+        <module>login</module>
         <module>polyeventbackendprofil</module>
         <module>polyeventbackendprofilclientwebservice</module>
-        <module>polyeventbackendenregistrement</module>
-        <module>polyeventbackendconnexion</module>
         <module>comptable</module>
         <module>obtenir-evenement</module>
     </modules>

@@ -26,7 +26,7 @@
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>polyevent-backend-login</artifactId>
+            <artifactId>login.bean</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>

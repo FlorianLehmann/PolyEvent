@@ -24,7 +24,7 @@
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>polyevent-backend-demande-reservation</artifactId>
+            <artifactId>demande-reservation</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -44,17 +44,17 @@
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>polyevent-backend-enregistrement</artifactId>
+            <artifactId>login.bean</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>polyevent-backend-login</artifactId>
+            <artifactId>login.webserviceConnexion</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>polyevent-backend-connexion</artifactId>
+            <artifactId>login.webserviceEnregistrement</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
