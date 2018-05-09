@@ -29,12 +29,12 @@
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>demandeevenement.bean</artifactId>
+            <artifactId>demande-evenement.bean</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>demandeevenement.webservice</artifactId>
+            <artifactId>demande-evenement.webservice</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -59,12 +59,12 @@
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>polyevent-backend-obtenir-evenement</artifactId>
+            <artifactId>obtenir-evenement.bean</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>polyevent-backend-obtenir-evenement-web-service</artifactId>
+            <artifactId>obtenir-evenement.webservice</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>

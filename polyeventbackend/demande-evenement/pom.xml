@@ -9,9 +9,9 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>polyevent-backend-demande-evenement</artifactId>
+    <artifactId>demande-evenement</artifactId>
     <packaging>pom</packaging>
-    <name>polyevent-backend-demande-evenement</name>
+    <name>demande-evenement</name>
     <version>1.0-SNAPSHOT</version>
     <url>http://maven.apache.org</url>
     <modules>

@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>polyevent-backend-demande-evenement</artifactId>
+        <artifactId>polyevent-backend</artifactId>
         <groupId>fr.unice.polytech.isa.polyevent</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
 
-    <artifactId>demandeevenement.webservice</artifactId>
+    <artifactId>obtenir-evenement</artifactId>
+
+    <modules>
+        <module>webservice</module>
+        <module>bean</module>
+    </modules>
+
     <dependencies>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>demandeevenement.bean</artifactId>
+            <artifactId>commun</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
