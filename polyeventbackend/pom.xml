@@ -10,7 +10,7 @@
         <module>demande-evenement</module>
         <module>commun</module>
         <module>envoiemailprestataire</module>
-        <module>demandeprestation</module>
+        <module>demande-prestation</module>
         <module>polyeventbackendwar</module>
         <module>frontendreservation</module>
         <module>caissier</module>

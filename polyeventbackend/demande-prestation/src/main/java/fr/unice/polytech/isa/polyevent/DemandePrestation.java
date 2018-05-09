@@ -1,6 +1,9 @@
 package fr.unice.polytech.isa.polyevent;
 
-import fr.unice.polytech.isa.polyevent.entities.*;
+import fr.unice.polytech.isa.polyevent.entities.DemandePrestataire;
+import fr.unice.polytech.isa.polyevent.entities.Evenement;
+import fr.unice.polytech.isa.polyevent.entities.Prestataire;
+import fr.unice.polytech.isa.polyevent.entities.Prestation;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -10,7 +13,6 @@ import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import java.util.Date;
 import java.util.List;
 
 @Stateless
