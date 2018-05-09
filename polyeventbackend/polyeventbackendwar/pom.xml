@@ -69,7 +69,12 @@
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>polyevent-backend-profil-client-web-service</artifactId>
+            <artifactId>profil.bean</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>fr.unice.polytech.isa.polyevent</groupId>
+            <artifactId>profil.webservice</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>

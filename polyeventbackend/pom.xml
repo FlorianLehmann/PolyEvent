@@ -15,8 +15,7 @@
         <module>frontendreservation</module>
         <module>caissier</module>
         <module>login</module>
-        <module>polyeventbackendprofil</module>
-        <module>polyeventbackendprofilclientwebservice</module>
+        <module>profil</module>
         <module>comptable</module>
         <module>obtenir-evenement</module>
     </modules>
