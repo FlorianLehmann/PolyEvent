@@ -22,7 +22,7 @@
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>polyevent-backend-envoie-mail-prestataire</artifactId>
+            <artifactId>envoie-mail-prestataire</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
