@@ -1,7 +1,7 @@
-package webservice;
+package fr.unice.polytech.isa.polyevent.comptable.webservice;
 
 import fr.unice.polytech.isa.polyevent.ObtenirProfilOrganisateur;
-import fr.unice.polytech.isa.polyevent.comptable.EnvoyerFacture;
+import fr.unice.polytech.isa.polyevent.comptable.bean.EnvoyerFacture;
 import fr.unice.polytech.isa.polyevent.entities.Evenement;
 import fr.unice.polytech.isa.polyevent.entities.Token;
 

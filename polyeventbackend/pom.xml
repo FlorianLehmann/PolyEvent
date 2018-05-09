@@ -20,7 +20,6 @@
         <module>polyeventbackendenregistrement</module>
         <module>polyeventbackendconnexion</module>
         <module>comptable</module>
-        <module>polyeventbackendcomptablewebservice</module>
         <module>obtenir-evenement</module>
     </modules>
 

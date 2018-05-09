@@ -1,10 +1,13 @@
-package fr.unice.polytech.isa.polyevent.comptable;
+package fr.unice.polytech.isa.polyevent.comptable.bean;
 
 
 import org.apache.openejb.util.LogCategory;
 
 import javax.ejb.MessageDriven;
-import javax.jms.*;
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.MessageListener;
+import javax.jms.ObjectMessage;
 
 @MessageDriven
 public class FactureMoMAck implements MessageListener {

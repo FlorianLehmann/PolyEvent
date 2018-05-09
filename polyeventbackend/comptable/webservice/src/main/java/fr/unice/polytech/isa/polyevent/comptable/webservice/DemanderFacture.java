@@ -1,4 +1,4 @@
-package webservice;
+package fr.unice.polytech.isa.polyevent.comptable.webservice;
 
 import fr.unice.polytech.isa.polyevent.entities.Token;
 import fr.unice.polytech.isa.polyevent.entities.interceptors.VerifierToken;

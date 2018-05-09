@@ -4,7 +4,7 @@ import fr.unice.polytech.isa.polyevent.ChercherEvenement;
 import fr.unice.polytech.isa.polyevent.caissier.bean.Caisse;
 import fr.unice.polytech.isa.polyevent.caissier.bean.Caissier;
 import fr.unice.polytech.isa.polyevent.caissier.bean.StatusCaisse;
-import fr.unice.polytech.isa.polyevent.comptable.Facturer;
+import fr.unice.polytech.isa.polyevent.comptable.bean.Facturer;
 import fr.unice.polytech.isa.polyevent.entities.Evenement;
 import fr.unice.polytech.isa.polyevent.entities.Organisateur;
 import fr.unice.polytech.isa.polyevent.entities.Statut;

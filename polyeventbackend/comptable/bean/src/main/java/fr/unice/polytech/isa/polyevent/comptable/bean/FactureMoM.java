@@ -1,4 +1,4 @@
-package fr.unice.polytech.isa.polyevent.comptable;
+package fr.unice.polytech.isa.polyevent.comptable.bean;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -10,7 +10,10 @@ import javax.ejb.ActivationConfigProperty;
 import javax.ejb.EJB;
 import javax.ejb.MessageDriven;
 import javax.ejb.MessageDrivenContext;
-import javax.jms.*;
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.MessageListener;
+import javax.jms.ObjectMessage;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 

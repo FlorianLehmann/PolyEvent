@@ -1,4 +1,4 @@
-package fr.unice.polytech.isa.polyevent.comptable;
+package fr.unice.polytech.isa.polyevent.comptable.bean;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

@@ -1,8 +1,7 @@
 package fr.unice.polytech.isa.polyevent.caissier.bean;
 
 import fr.unice.polytech.isa.polyevent.ChercherEvenement;
-import fr.unice.polytech.isa.polyevent.comptable.Facturer;
-import fr.unice.polytech.isa.polyevent.comptable.StatusPayement;
+import fr.unice.polytech.isa.polyevent.comptable.bean.Facturer;
 import fr.unice.polytech.isa.polyevent.entities.Evenement;
 import fr.unice.polytech.isa.polyevent.entities.Organisateur;
 import fr.unice.polytech.isa.polyevent.entities.Statut;
