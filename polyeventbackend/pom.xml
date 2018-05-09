@@ -6,7 +6,7 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>demandereservation</module>
+        <module>demande-reservation</module>
         <module>demande-evenement</module>
         <module>commun</module>
         <module>envoiemailprestataire</module>
