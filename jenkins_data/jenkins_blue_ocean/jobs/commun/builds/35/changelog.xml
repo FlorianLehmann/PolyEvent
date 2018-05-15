@@ -1,0 +1,11 @@
+commit 824480ffbdb01b8168e472ea33cb43c802217f7f
+tree 2879dfa6d2e0bae23bba3a598e5d5ca877b7d90d
+parent 4752a8192474d043062e6609c481732f59f5db46
+author FlorianLehmann <Lehmann.florian@yandex.com> 2018-05-04 10:31:10 +0200
+committer FlorianLehmann <Lehmann.florian@yandex.com> 2018-05-04 10:31:10 +0200
+
+    change token for artifactory
+
+
+
+:100644 100644 ade3586db4975bffb06ad72837ec8ce033a0f462 5fa74b2721e2adad2e9ab4cfe3a86d8ffd6a5c8a M	polyeventbackend/pom.xml

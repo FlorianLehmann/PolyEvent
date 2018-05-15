@@ -1,0 +1,82 @@
+Started by user [8mha:////4LWRKVM/RLrsh5ZZtu96AvWW3T3LEjJKChClVcZTORbQAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL9tJz8oszEPADJzGJ3wgAAAA==[0mFlorian
+Building in workspace /var/jenkins_home/workspace/DevOps2
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git # timeout=10
+Fetching upstream changes from https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/test/artifactory^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/test/artifactory^{commit} # timeout=10
+Checking out Revision ea549b5a41ef01eeb427b3e950174f289f3f7751 (refs/remotes/origin/test/artifactory)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f ea549b5a41ef01eeb427b3e950174f289f3f7751
+Commit message: "Merge branch 'feature/development' into test/artifactory"
+ > git rev-list --no-walk ea549b5a41ef01eeb427b3e950174f289f3f7751 # timeout=10
+[DevOps2] $ /bin/sh -xe /tmp/jenkins3200822731907874054.sh
++ cd polyeventbackend
++ export PATH=/usr/lib/jvm/java-1.8-openjdk//bin:/usr/lib/jvm/java-1.8-openjdk//bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-1.8-openjdk/jre/bin:/usr/lib/jvm/java-1.8-openjdk/bin:/usr/lib/jvm/java-1.8-openjdk/bin
+[DevOps2] $ /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/maven/bin/mvn -f polyeventbackend mvn clean install
+[INFO] Scanning for projects...
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] 
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] Some problems were encountered while building the effective model for fr.unice.polytech.isa.polyevent:commun:jar:1.0-SNAPSHOT
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.openjpa:openjpa-maven-plugin @ line 37, column 21
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] 
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] 
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] polyevent-backend                                                  [pom]
+[INFO] commun                                                             [jar]
+[INFO] polyevent-backend-envoie-mail-prestataire                          [jar]
+[INFO] polyevent-backend-demande-prestation                               [jar]
+[INFO] polyevent-backend-demande-reservation                              [jar]
+[INFO] polyevent-backend-demande-evenement                                [jar]
+[INFO] polyevent-backend-login                                            [jar]
+[INFO] polyevent-backend-profil                                           [jar]
+[INFO] frontendreservation                                                [jar]
+[INFO] caissier                                                           [jar]
+[INFO] polyevent-backend-profil-enregistrement                            [jar]
+[INFO] polyevent-backend-profil-connexion                                 [jar]
+[INFO] polyeventbackend-war Maven Webapp                                  [war]
+[INFO] polyevent-backend-profil-client-web-service                        [jar]
+[INFO] 
+[INFO] ---------< fr.unice.polytech.isa.polyevent:polyevent-backend >----------
+[INFO] Building polyevent-backend 1.0-SNAPSHOT                           [1/14]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] polyevent-backend 1.0-SNAPSHOT ..................... FAILURE [  0.005 s]
+[INFO] commun ............................................. SKIPPED
+[INFO] polyevent-backend-envoie-mail-prestataire .......... SKIPPED
+[INFO] polyevent-backend-demande-prestation ............... SKIPPED
+[INFO] polyevent-backend-demande-reservation .............. SKIPPED
+[INFO] polyevent-backend-demande-evenement ................ SKIPPED
+[INFO] polyevent-backend-login ............................ SKIPPED
+[INFO] polyevent-backend-profil ........................... SKIPPED
+[INFO] frontendreservation ................................ SKIPPED
+[INFO] caissier ........................................... SKIPPED
+[INFO] polyevent-backend-profil-enregistrement ............ SKIPPED
+[INFO] polyevent-backend-profil-connexion ................. SKIPPED
+[INFO] polyeventbackend-war Maven Webapp .................. SKIPPED
+[INFO] polyevent-backend-profil-client-web-service 1.0-SNAPSHOT SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 0.386 s
+[INFO] Finished at: 2018-04-25T07:31:35Z
+[INFO] ------------------------------------------------------------------------
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] Unknown lifecycle phase "mvn". You must specify a valid lifecycle phase or a goal in the format <plugin-prefix>:<goal> or <plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>. Available lifecycle phases are: validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy, pre-clean, clean, post-clean, pre-site, site, post-site, site-deploy. -> [Help 1]
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] 
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] 
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/LifecyclePhaseNotFoundException
+Build step 'Invoke top-level Maven targets' marked build as failure
+Finished: FAILURE

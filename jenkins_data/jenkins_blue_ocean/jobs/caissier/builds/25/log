@@ -1,0 +1,23 @@
+Started by user [8mha:////4LWRKVM/RLrsh5ZZtu96AvWW3T3LEjJKChClVcZTORbQAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL9tJz8oszEPADJzGJ3wgAAAA==[0mFlorian
+Building in workspace /var/jenkins_home/workspace/DevOps2
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git # timeout=10
+Fetching upstream changes from https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/test/artifactory^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/test/artifactory^{commit} # timeout=10
+Checking out Revision ea549b5a41ef01eeb427b3e950174f289f3f7751 (refs/remotes/origin/test/artifactory)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f ea549b5a41ef01eeb427b3e950174f289f3f7751
+Commit message: "Merge branch 'feature/development' into test/artifactory"
+ > git rev-list --no-walk ea549b5a41ef01eeb427b3e950174f289f3f7751 # timeout=10
+[DevOps2] $ /bin/sh -xe /tmp/jenkins4637320256626903883.sh
++ cd polyeventbackend
++ export PATH=/usr/lib/jvm/java-1.8-openjdk//bin:/usr/lib/jvm/java-1.8-openjdk//bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-1.8-openjdk/jre/bin:/usr/lib/jvm/java-1.8-openjdk/bin:/usr/lib/jvm/java-1.8-openjdk/bin
++ docker ps
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

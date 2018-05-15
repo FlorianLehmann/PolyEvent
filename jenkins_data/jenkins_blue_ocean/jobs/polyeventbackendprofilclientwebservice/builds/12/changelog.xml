@@ -1,0 +1,40 @@
+commit f7a8a82f10c342c94bb0d6c0cd164323ed66b63f
+tree 9db4f176a9e19feb8393628507704ee6f6b2716f
+parent 247e6810a83ae1e723c7637c6b862fac3439dac6
+author Florian Bourniquel <florian.bourniquel@etu.unice.fr> 2018-05-04 14:16:00 +0200
+committer Florian Bourniquel <florian.bourniquel@etu.unice.fr> 2018-05-04 14:16:00 +0200
+
+    Ajout sleep dans comptable
+
+
+
+:100644 100644 4f56543fa0609b16fd879be30e976bf06bf76343 ad1e3d97555aa25ac00914f76d0a2baa246ac5eb M	polyeventbackend/commun/src/main/java/fr.unice.polytech.isa.polyevent/entities/Prestation.java
+:100644 100644 c7e0a54eb168b929179707c185a61800bffb8f0b 16666ce85b4f24b1acd6d6ccaf1707aa91c76e7d M	polyeventbackend/comptable/src/main/java/fr/unice/polytech/isa/polyevent/comptable/ServeurComptabilite.java
+commit 247e6810a83ae1e723c7637c6b862fac3439dac6
+tree ecfc1818c7e23953d7e4e430e1034de6d35e5eac
+parent 2c4fcc99485483725fb654865e91d7e145153792
+author Alexandre Clement <alexandre.clement@etu.unice.fr> 2018-05-04 13:34:38 +0200
+committer Alexandre Clement <alexandre.clement@etu.unice.fr> 2018-05-04 13:34:38 +0200
+
+    Test des différent cas lors du payement.
+
+
+
+:000000 100644 0000000000000000000000000000000000000000 0143bf009250c21cc01f288deb583dc820512563 A	polyeventbackend/caissier/bean/src/test/java/arquillian/CaisseTest.java
+:100644 000000 ada5743ee3efdbbb42cba16b27bf4829b600c9fa 0000000000000000000000000000000000000000 D	polyeventclients/organisateur/src/test/java/fr/unice/polytech/isa/polyevent/MainTest.java
+commit 2c4fcc99485483725fb654865e91d7e145153792
+tree f2dfd13af64d55c7fc66a0f2171e6f8de9ac3fd3
+parent da3dce1fd5878112e0d44fac5b65e453baeba0be
+author Alexandre Clement <alexandre.clement@etu.unice.fr> 2018-05-04 12:28:02 +0200
+committer Alexandre Clement <alexandre.clement@etu.unice.fr> 2018-05-04 12:28:02 +0200
+
+    Affichage des reponses serveur dans le client.
+
+
+
+:100644 100644 4f219dc514d5d8a15b787239f7e7277040e02cfb fc7141777360b673b946b1065bd4fa3360c361f9 M	polyeventclients/organisateur/demo/demo1.pe
+:100644 100644 c4556bb5f9af4bce6b070597650dda373b2cad4e b394fa20ac09b9117621130cb599268ae773547a M	polyeventclients/organisateur/src/main/java/fr/unice/polytech/isa/polyevent/cli/commands/AddService.java
+:100644 100644 a6cd66aeae09ae77aca9fc8100ae653d3349e8ba 7292fb91a7ef1cafb815d38c7c0d6739c2842efc M	polyeventclients/organisateur/src/main/java/fr/unice/polytech/isa/polyevent/cli/commands/Invoice.java
+:100644 100644 5d18593e3deffd5cb51fab8e7d558ce381d22565 0650aa6a3fa270e3f40cd07e0ab37f67e410b21d M	polyeventclients/organisateur/src/main/java/fr/unice/polytech/isa/polyevent/cli/commands/ListEvent.java
+:100644 100644 7bfe59270546022dcd0af52fdb1e2805976d9c27 6218a0b9405665488edaf889d04890987ebc9496 M	polyeventclients/organisateur/src/main/java/fr/unice/polytech/isa/polyevent/cli/commands/Register.java
+:100644 100644 4fd2a850d1c62474d36bf587c7f73ef2c134e7ec 1c23b74780e3cf746f12d8cbc10f3b23ecd148c6 M	polyeventclients/organisateur/src/main/java/fr/unice/polytech/isa/polyevent/cli/commands/ValidateEvent.java

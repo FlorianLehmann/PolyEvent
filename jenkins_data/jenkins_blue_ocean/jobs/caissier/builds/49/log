@@ -1,0 +1,152 @@
+Started by upstream project "[8mha:////4MSajOzXBeBcvj29qkrLZh2aJmMlJzr1RctIgqZVTAFBAAAAmB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAy2EgYe/az8JP3k/Nzc0jx9AMP+EVvBAAAA[0mcommun" build number [8mha:////4BmHv9hY4JQwENrBp38+SMqEN5YvK0vlcgEGakHZdh8dAAAAmh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgY+/az8JP3k/Nzc0jx9Y1MA/NX9+sMAAAA=[0m35
+originally caused by:
+ Started by user [8mha:////4LWRKVM/RLrsh5ZZtu96AvWW3T3LEjJKChClVcZTORbQAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL9tJz8oszEPADJzGJ3wgAAAA==[0mFlorian
+Building in workspace /var/jenkins_home/workspace/caissier
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git # timeout=10
+Fetching upstream changes from https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/test/artifactory^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/test/artifactory^{commit} # timeout=10
+Checking out Revision 3a866d04ecbc3086caf1709ea49cfdc4b6a6ad63 (refs/remotes/origin/test/artifactory)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 3a866d04ecbc3086caf1709ea49cfdc4b6a6ad63
+Commit message: "change token for artifactory"
+ > git rev-list --no-walk 16ff36de2ce421080ce07a837dcffb4d39a5f536 # timeout=10
+[caissier] $ /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/maven/bin/mvn -f polyeventbackend/caissier clean deploy
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] caissier                                                           [pom]
+[INFO] caissier.bean                                                      [jar]
+[INFO] caissier.webservice                                                [jar]
+[INFO] 
+[INFO] --------------< fr.unice.polytech.isa.polyevent:caissier >--------------
+[INFO] Building caissier 1.0-SNAPSHOT                                     [1/3]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ caissier ---
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-install-plugin:2.4:install (default-install) @ caissier ---
+[INFO] Installing /var/jenkins_home/workspace/caissier/polyeventbackend/caissier/pom.xml to /var/jenkins_home/.m2/repository/fr/unice/polytech/isa/polyevent/caissier/1.0-SNAPSHOT/caissier-1.0-SNAPSHOT.pom
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-deploy-plugin:2.7:deploy (default-deploy) @ caissier ---
+Downloading from snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier/1.0-SNAPSHOT/maven-metadata.xml
+Progress (1): 612 B                   Downloaded from snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier/1.0-SNAPSHOT/maven-metadata.xml (612 B at 1.0 kB/s)
+Uploading to snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier/1.0-SNAPSHOT/caissier-1.0-20180504.083322-2.pom
+Progress (1): 972 B                   Uploaded to snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier/1.0-SNAPSHOT/caissier-1.0-20180504.083322-2.pom (972 B at 4.1 kB/s)
+Downloading from snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier/maven-metadata.xml
+Progress (1): 386 B                   Downloaded from snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier/maven-metadata.xml (386 B at 4.4 kB/s)
+Uploading to snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier/1.0-SNAPSHOT/maven-metadata.xml
+Progress (1): 612 B                   Uploaded to snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier/1.0-SNAPSHOT/maven-metadata.xml (612 B at 11 kB/s)
+Uploading to snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier/maven-metadata.xml
+Progress (1): 331 B                   Uploaded to snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier/maven-metadata.xml (331 B at 4.3 kB/s)
+[INFO] 
+[INFO] -----------< fr.unice.polytech.isa.polyevent:caissier.bean >------------
+[INFO] Building caissier.bean 1.0-SNAPSHOT                                [2/3]
+[INFO] --------------------------------[ jar ]---------------------------------
+Downloading from snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/comptable/1.0-SNAPSHOT/comptable-1.0-20180504.083305-1.pom
+Progress (1): 762 B                   Downloaded from snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/comptable/1.0-SNAPSHOT/comptable-1.0-20180504.083305-1.pom (762 B at 4.2 kB/s)
+Downloading from snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/comptable/1.0-SNAPSHOT/comptable-1.0-20180504.083305-1.jar
+Progress (1): 0.7/12 kBProgress (1): 4.8/12 kBProgress (1): 8.9/12 kBProgress (1): 12 kB                       Downloaded from snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/comptable/1.0-SNAPSHOT/comptable-1.0-20180504.083305-1.jar (12 kB at 151 kB/s)
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ caissier.bean ---
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ caissier.bean ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/caissier/polyeventbackend/caissier/bean/src/main/resources
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ caissier.bean ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /var/jenkins_home/workspace/caissier/polyeventbackend/caissier/bean/target/classes
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ caissier.bean ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/caissier/polyeventbackend/caissier/bean/src/test/resources
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.6.1:testCompile (default-testCompile) @ caissier.bean ---
+[INFO] No sources to compile
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ caissier.bean ---
+[INFO] No tests to run.
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ caissier.bean ---
+[INFO] Building jar: /var/jenkins_home/workspace/caissier/polyeventbackend/caissier/bean/target/caissier.bean-1.0-SNAPSHOT.jar
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-install-plugin:2.4:install (default-install) @ caissier.bean ---
+[INFO] Installing /var/jenkins_home/workspace/caissier/polyeventbackend/caissier/bean/target/caissier.bean-1.0-SNAPSHOT.jar to /var/jenkins_home/.m2/repository/fr/unice/polytech/isa/polyevent/caissier.bean/1.0-SNAPSHOT/caissier.bean-1.0-SNAPSHOT.jar
+[INFO] Installing /var/jenkins_home/workspace/caissier/polyeventbackend/caissier/bean/pom.xml to /var/jenkins_home/.m2/repository/fr/unice/polytech/isa/polyevent/caissier.bean/1.0-SNAPSHOT/caissier.bean-1.0-SNAPSHOT.pom
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-deploy-plugin:2.7:deploy (default-deploy) @ caissier.bean ---
+Downloading from snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier.bean/1.0-SNAPSHOT/maven-metadata.xml
+Uploading to snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier.bean/1.0-SNAPSHOT/caissier.bean-1.0-20180504.083352-1.jar
+Progress (1): 2.0/5.7 kBProgress (1): 4.1/5.7 kBProgress (1): 5.7 kB                        Uploaded to snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier.bean/1.0-SNAPSHOT/caissier.bean-1.0-20180504.083352-1.jar (5.7 kB at 58 kB/s)
+Uploading to snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier.bean/1.0-SNAPSHOT/caissier.bean-1.0-20180504.083352-1.pom
+Progress (1): 1.1 kB                    Uploaded to snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier.bean/1.0-SNAPSHOT/caissier.bean-1.0-20180504.083352-1.pom (1.1 kB at 9.2 kB/s)
+Downloading from snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier.bean/maven-metadata.xml
+Progress (1): 391 B                   Downloaded from snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier.bean/maven-metadata.xml (391 B at 5.8 kB/s)
+Uploading to snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier.bean/1.0-SNAPSHOT/maven-metadata.xml
+Progress (1): 788 B                   Uploaded to snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier.bean/1.0-SNAPSHOT/maven-metadata.xml (788 B at 11 kB/s)
+Uploading to snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier.bean/maven-metadata.xml
+Progress (1): 336 B                   Uploaded to snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier.bean/maven-metadata.xml (336 B at 3.7 kB/s)
+[INFO] 
+[INFO] --------< fr.unice.polytech.isa.polyevent:caissier.webservice >---------
+[INFO] Building caissier.webservice 1.0-SNAPSHOT                          [3/3]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ caissier.webservice ---
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ caissier.webservice ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/caissier/polyeventbackend/caissier/webservice/src/main/resources
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ caissier.webservice ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /var/jenkins_home/workspace/caissier/polyeventbackend/caissier/webservice/target/classes
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ caissier.webservice ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/caissier/polyeventbackend/caissier/webservice/src/test/resources
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.6.1:testCompile (default-testCompile) @ caissier.webservice ---
+[INFO] No sources to compile
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ caissier.webservice ---
+[INFO] No tests to run.
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ caissier.webservice ---
+[INFO] Building jar: /var/jenkins_home/workspace/caissier/polyeventbackend/caissier/webservice/target/caissier.webservice-1.0-SNAPSHOT.jar
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-install-plugin:2.4:install (default-install) @ caissier.webservice ---
+[INFO] Installing /var/jenkins_home/workspace/caissier/polyeventbackend/caissier/webservice/target/caissier.webservice-1.0-SNAPSHOT.jar to /var/jenkins_home/.m2/repository/fr/unice/polytech/isa/polyevent/caissier.webservice/1.0-SNAPSHOT/caissier.webservice-1.0-SNAPSHOT.jar
+[INFO] Installing /var/jenkins_home/workspace/caissier/polyeventbackend/caissier/webservice/pom.xml to /var/jenkins_home/.m2/repository/fr/unice/polytech/isa/polyevent/caissier.webservice/1.0-SNAPSHOT/caissier.webservice-1.0-SNAPSHOT.pom
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-deploy-plugin:2.7:deploy (default-deploy) @ caissier.webservice ---
+Downloading from snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier.webservice/1.0-SNAPSHOT/maven-metadata.xml
+Uploading to snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier.webservice/1.0-SNAPSHOT/caissier.webservice-1.0-20180504.083402-1.jar
+Progress (1): 2.0/4.2 kBProgress (1): 4.1/4.2 kBProgress (1): 4.2 kB                        Uploaded to snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier.webservice/1.0-SNAPSHOT/caissier.webservice-1.0-20180504.083402-1.jar (4.2 kB at 40 kB/s)
+Uploading to snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier.webservice/1.0-SNAPSHOT/caissier.webservice-1.0-20180504.083402-1.pom
+Progress (1): 770 B                   Uploaded to snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier.webservice/1.0-SNAPSHOT/caissier.webservice-1.0-20180504.083402-1.pom (770 B at 7.9 kB/s)
+Downloading from snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier.webservice/maven-metadata.xml
+Progress (1): 397 B                   Downloaded from snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier.webservice/maven-metadata.xml (397 B at 4.9 kB/s)
+Uploading to snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier.webservice/1.0-SNAPSHOT/maven-metadata.xml
+Progress (1): 794 B                   Uploaded to snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier.webservice/1.0-SNAPSHOT/maven-metadata.xml (794 B at 13 kB/s)
+Uploading to snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier.webservice/maven-metadata.xml
+Progress (1): 342 B                   Uploaded to snapshots: http://192.168.43.80:8081/artifactory/libs-snapshot-local/fr/unice/polytech/isa/polyevent/caissier.webservice/maven-metadata.xml (342 B at 5.5 kB/s)
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] caissier 1.0-SNAPSHOT .............................. SUCCESS [  6.105 s]
+[INFO] caissier.bean ...................................... SUCCESS [ 30.140 s]
+[INFO] caissier.webservice 1.0-SNAPSHOT ................... SUCCESS [  9.958 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 46.995 s
+[INFO] Finished at: 2018-05-04T08:34:03Z
+[INFO] ------------------------------------------------------------------------
+Finished: SUCCESS

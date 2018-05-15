@@ -1,0 +1,11 @@
+commit 2a5b37f41901060d72823997f56f65b606707a1d
+tree 9b808ce23cf221a7977fdb9d0449d77d0a993c39
+parent ea549b5a41ef01eeb427b3e950174f289f3f7751
+author FlorianLehmann <Lehmann.florian@yandex.com> 2018-04-26 11:05:23 +0200
+committer FlorianLehmann <Lehmann.florian@yandex.com> 2018-04-26 11:05:23 +0200
+
+    add repository to pom.xml
+
+
+
+:100644 100644 0d7fc7792737014d63f8f6f21a9a69a301013b60 0d42be623a7e1559b432f51b32d1cb7ce109b100 M	polyeventbackend/pom.xml

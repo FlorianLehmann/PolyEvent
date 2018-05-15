@@ -2,7 +2,7 @@ version: "3.5"
 
 services:
   polyeventbackend:
-    image: polyeventbackend
+    image: polyeventbackend:latest
     container_name: polyeventbackend
     ports:
       - 8080:8080
@@ -10,13 +10,13 @@ services:
       - hyperplanning
 
   hyperplanning:
-      image: hyperplanning
+      image: hyperplanning:latest
       container_name: hyperplanning
       ports:
         - 9090:9090
 
   comptabilite:
-        image: comptabilite
+        image: comptabilite:latest
         container_name: comptabilite
         ports:
           - 9095:9095

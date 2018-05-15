@@ -1,0 +1,38 @@
+Started by user [8mha:////4LWRKVM/RLrsh5ZZtu96AvWW3T3LEjJKChClVcZTORbQAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL9tJz8oszEPADJzGJ3wgAAAA==[0mFlorian
+Building in workspace /var/jenkins_home/workspace/comptabilite
+Cloning the remote Git repository
+Cloning repository https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git
+ > git init /var/jenkins_home/workspace/comptabilite # timeout=10
+Fetching upstream changes from https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git # timeout=10
+Fetching upstream changes from https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/test/artifactory^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/test/artifactory^{commit} # timeout=10
+Checking out Revision 1ae9fdb15c3d37db25b9ee8441e805ef8354765c (refs/remotes/origin/test/artifactory)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 1ae9fdb15c3d37db25b9ee8441e805ef8354765c
+Commit message: "Merge branch 'feature/development' into test/artifactory"
+First time build. Skipping changelog.
+[comptabilite] $ /bin/sh -xe /tmp/jenkins7477905544683918573.sh
++ cd dotnetComptabilite
++ /bin/bash compile.sh
++ docker build . --tag=comptabilite:latest
+Sending build context to Docker daemon  17.92kB
+Step 1/3 : FROM mono:4.8.0.524
+ ---> e21395e53944
+Step 2/3 : ADD server.exe /
+ ---> f1de126a3fa9
+Step 3/3 : CMD [ "mono",  "./server.exe" ]
+ ---> Running in 818500fa479c
+Removing intermediate container 818500fa479c
+ ---> 74e571719f99
+Successfully built 74e571719f99
+Successfully tagged comptabilite:latest
+Finished: SUCCESS

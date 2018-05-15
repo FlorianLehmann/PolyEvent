@@ -1,0 +1,88 @@
+commit 7da3578a57a0e24d5acf44c104a121931f389f22
+tree fa9fab3a98a795bd35d12296df97c7eadb391b12
+parent a60df22c25ddaf01575d64182526058e4b28d93f
+author FlorianLehmann <Lehmann.florian@yandex.com> 2018-05-03 09:45:45 +0200
+committer FlorianLehmann <Lehmann.florian@yandex.com> 2018-05-03 09:45:45 +0200
+
+    change artifactory token
+
+
+
+:100644 100644 255b5739cb3d9ef1b29d2e7f1692e1cbaa55b81e 98a1a1c9f0407e1986c7ad21586d91bf4e6f3246 M	polyeventbackend/pom.xml
+commit a60df22c25ddaf01575d64182526058e4b28d93f
+tree 6fccacf7901a41ab4b377dddeeb9fef3f783a9d3
+parent 2d7efa1f098e9f88d53106de521f860ad8f53c5b
+author FlorianLehmann <Lehmann.florian@yandex.com> 2018-04-27 12:56:41 +0200
+committer FlorianLehmann <Lehmann.florian@yandex.com> 2018-04-27 12:56:41 +0200
+
+    fix hyperplanning shutdown
+
+
+
+:100644 100644 7c13bd187a669641ac45c4744ed8de7188bdc3c2 b71058d161f3691ce569cbee1939020fd3c8a44c M	dotnet/src/Server.cs
+commit 2d7efa1f098e9f88d53106de521f860ad8f53c5b
+tree bcb289e58620c39b3281624ae3ae0e9ce5d58c93
+parent 765c333b3e0d62bf797188b76df7ad0f9f25a888
+author FlorianLehmann <Lehmann.florian@yandex.com> 2018-04-26 21:58:54 +0200
+committer FlorianLehmann <Lehmann.florian@yandex.com> 2018-04-26 21:58:54 +0200
+
+    change repositories
+
+
+
+:100644 100644 84d1fabba692d11aaeb094a055e28ebd11758d7d 255b5739cb3d9ef1b29d2e7f1692e1cbaa55b81e M	polyeventbackend/pom.xml
+commit 765c333b3e0d62bf797188b76df7ad0f9f25a888
+tree aba24dbc6c41316539fdc7173d61d4fa18713bca
+parent 74644d79b7df15f2e8f0186ce979f9e4184638c6
+author FlorianLehmann <Lehmann.florian@yandex.com> 2018-04-26 21:29:00 +0200
+committer FlorianLehmann <Lehmann.florian@yandex.com> 2018-04-26 21:29:00 +0200
+
+    change repositories
+
+
+
+:100644 100644 a1573a2dc89c30d0776e584af7933ecd422b40bc 84d1fabba692d11aaeb094a055e28ebd11758d7d M	polyeventbackend/pom.xml
+commit 74644d79b7df15f2e8f0186ce979f9e4184638c6
+tree a653d1ffa6ac02d1983387aefb2e8100f811f9b8
+parent 8f5c188936c6eb190d7f6cf9dd596001ee44ef8c
+author FlorianLehmann <Lehmann.florian@yandex.com> 2018-04-26 21:26:50 +0200
+committer FlorianLehmann <Lehmann.florian@yandex.com> 2018-04-26 21:26:50 +0200
+
+    change repositories
+
+
+
+:100644 100644 4c860c1e723378f0a60d653758dec7ed4314dbcc a1573a2dc89c30d0776e584af7933ecd422b40bc M	polyeventbackend/pom.xml
+commit 8f5c188936c6eb190d7f6cf9dd596001ee44ef8c
+tree e861793f8597d65925026d46042f6b94445b2402
+parent f08a4fe3b3e95d6e888185020634337f78ad7535
+author FlorianLehmann <Lehmann.florian@yandex.com> 2018-04-26 21:24:47 +0200
+committer FlorianLehmann <Lehmann.florian@yandex.com> 2018-04-26 21:24:47 +0200
+
+    change repositories
+
+
+
+:100644 100644 e61c59cd81659d34cac182bc669241ca778aa624 4c860c1e723378f0a60d653758dec7ed4314dbcc M	polyeventbackend/pom.xml
+commit f08a4fe3b3e95d6e888185020634337f78ad7535
+tree b5e8c852afefcfa0b7e27a0d341a66c39869a557
+parent d54ad1c6ab2de5c4c26717eab186e487aada39d3
+author FlorianLehmann <Lehmann.florian@yandex.com> 2018-04-26 21:20:28 +0200
+committer FlorianLehmann <Lehmann.florian@yandex.com> 2018-04-26 21:20:28 +0200
+
+    change repositories
+
+
+
+:100644 100644 85fd62375e48452317c842040b1779023900857b e61c59cd81659d34cac182bc669241ca778aa624 M	polyeventbackend/pom.xml
+commit d54ad1c6ab2de5c4c26717eab186e487aada39d3
+tree 9764e079f71fb0eafa762d1c6ac53322614738b6
+parent f7669f9259c3d288e5e51e736153d76b0c0c1d0c
+author FlorianLehmann <Lehmann.florian@yandex.com> 2018-04-26 20:18:08 +0200
+committer FlorianLehmann <Lehmann.florian@yandex.com> 2018-04-26 20:18:08 +0200
+
+    change images
+
+
+
+:100644 100644 4ca4a0f344a26df8aeef6a36552e4adf0044814a ce620f87694cb28b7ac7fb3f09e8f865f8a557ce M	docker-compose.yml

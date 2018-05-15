@@ -1,0 +1,60 @@
+Started by user [8mha:////4LWRKVM/RLrsh5ZZtu96AvWW3T3LEjJKChClVcZTORbQAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL9tJz8oszEPADJzGJ3wgAAAA==[0mFlorian
+Building in workspace /var/jenkins_home/workspace/polyeventbackendwar
+Cloning the remote Git repository
+Cloning repository https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git
+ > git init /var/jenkins_home/workspace/polyeventbackendwar # timeout=10
+Fetching upstream changes from https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git # timeout=10
+Fetching upstream changes from https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/test/artifactory^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/test/artifactory^{commit} # timeout=10
+Checking out Revision ea549b5a41ef01eeb427b3e950174f289f3f7751 (refs/remotes/origin/test/artifactory)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f ea549b5a41ef01eeb427b3e950174f289f3f7751
+Commit message: "Merge branch 'feature/development' into test/artifactory"
+First time build. Skipping changelog.
+[polyeventbackendwar] $ /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/maven/bin/mvn -f polyeventbackend/polyeventbackendwar clean deploy
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------< fr.unice.polytech.isa.polyevent:polyeventbackend-war >--------
+[INFO] Building polyeventbackend-war Maven Webapp 1.0-SNAPSHOT
+[INFO] --------------------------------[ war ]---------------------------------
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-dependency-plugin/2.8/maven-dependency-plugin-2.8.pom
+Progress (1): 2.2/11 kBProgress (1): 5.0/11 kBProgress (1): 7.8/11 kBProgress (1): 11/11 kB Progress (1): 11 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-dependency-plugin/2.8/maven-dependency-plugin-2.8.pom (11 kB at 16 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/24/maven-plugins-24.pom
+Progress (1): 2.2/11 kBProgress (1): 5.0/11 kBProgress (1): 7.8/11 kBProgress (1): 11/11 kB Progress (1): 11 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/24/maven-plugins-24.pom (11 kB at 102 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-dependency-plugin/2.8/maven-dependency-plugin-2.8.jar
+Progress (1): 2.2/153 kBProgress (1): 5.0/153 kBProgress (1): 7.7/153 kBProgress (1): 10/153 kB Progress (1): 13/153 kBProgress (1): 16/153 kBProgress (1): 19/153 kBProgress (1): 21/153 kBProgress (1): 24/153 kBProgress (1): 27/153 kBProgress (1): 30/153 kBProgress (1): 32/153 kBProgress (1): 36/153 kBProgress (1): 40/153 kBProgress (1): 45/153 kBProgress (1): 49/153 kBProgress (1): 53/153 kBProgress (1): 57/153 kBProgress (1): 61/153 kBProgress (1): 65/153 kBProgress (1): 69/153 kBProgress (1): 73/153 kBProgress (1): 77/153 kBProgress (1): 81/153 kBProgress (1): 85/153 kBProgress (1): 90/153 kBProgress (1): 94/153 kBProgress (1): 98/153 kBProgress (1): 102/153 kBProgress (1): 106/153 kBProgress (1): 110/153 kBProgress (1): 114/153 kBProgress (1): 118/153 kBProgress (1): 122/153 kBProgress (1): 126/153 kBProgress (1): 131/153 kBProgress (1): 135/153 kBProgress (1): 139/153 kBProgress (1): 143/153 kBProgress (1): 147/153 kBProgress (1): 151/153 kBProgress (1): 153 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-dependency-plugin/2.8/maven-dependency-plugin-2.8.jar (153 kB at 663 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-war-plugin/2.2/maven-war-plugin-2.2.pom
+Progress (1): 2.2/6.5 kBProgress (1): 5.0/6.5 kBProgress (1): 6.5 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-war-plugin/2.2/maven-war-plugin-2.2.pom (6.5 kB at 57 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-war-plugin/2.2/maven-war-plugin-2.2.jar
+Progress (1): 2.2/79 kBProgress (1): 5.0/79 kBProgress (1): 7.7/79 kBProgress (1): 10/79 kB Progress (1): 13/79 kBProgress (1): 16/79 kBProgress (1): 19/79 kBProgress (1): 21/79 kBProgress (1): 24/79 kBProgress (1): 27/79 kBProgress (1): 30/79 kBProgress (1): 32/79 kBProgress (1): 36/79 kBProgress (1): 40/79 kBProgress (1): 45/79 kBProgress (1): 49/79 kBProgress (1): 53/79 kBProgress (1): 57/79 kBProgress (1): 61/79 kBProgress (1): 65/79 kBProgress (1): 69/79 kBProgress (1): 73/79 kBProgress (1): 77/79 kBProgress (1): 79 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-war-plugin/2.2/maven-war-plugin-2.2.jar (79 kB at 554 kB/s)
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for fr.unice.polytech.isa.polyevent:polyevent-backend-demande-reservation:jar:1.0-SNAPSHOT is missing, no dependency information available
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for fr.unice.polytech.isa.polyevent:polyevent-backend-demande-evenement:jar:1.0-SNAPSHOT is missing, no dependency information available
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for fr.unice.polytech.isa.polyevent:frontendreservation:jar:1.0-SNAPSHOT is missing, no dependency information available
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for fr.unice.polytech.isa.polyevent:caissier:jar:1.0-SNAPSHOT is missing, no dependency information available
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for fr.unice.polytech.isa.polyevent:polyevent-backend-enregistrement:jar:1.0-SNAPSHOT is missing, no dependency information available
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for fr.unice.polytech.isa.polyevent:polyevent-backend-login:jar:1.0-SNAPSHOT is missing, no dependency information available
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for fr.unice.polytech.isa.polyevent:polyevent-backend-connexion:jar:1.0-SNAPSHOT is missing, no dependency information available
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 3.906 s
+[INFO] Finished at: 2018-04-26T09:01:51Z
+[INFO] ------------------------------------------------------------------------
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] Failed to execute goal on project polyeventbackend-war: Could not resolve dependencies for project fr.unice.polytech.isa.polyevent:polyeventbackend-war:war:1.0-SNAPSHOT: Failed to collect dependencies at fr.unice.polytech.isa.polyevent:commun:jar:1.0-SNAPSHOT: Failed to read artifact descriptor for fr.unice.polytech.isa.polyevent:commun:jar:1.0-SNAPSHOT: Could not find artifact fr.unice.polytech.isa.polyevent:polyevent-backend:pom:1.0-SNAPSHOT -> [Help 1]
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] 
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] 
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+Build step 'Invoke top-level Maven targets' marked build as failure
+Finished: FAILURE

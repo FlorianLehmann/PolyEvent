@@ -1,0 +1,42 @@
+Started by upstream project "[8mha:////4MSajOzXBeBcvj29qkrLZh2aJmMlJzr1RctIgqZVTAFBAAAAmB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAy2EgYe/az8JP3k/Nzc0jx9AMP+EVvBAAAA[0mcommun" build number [8mha:////4AsoCncG2MNkDkPAONJyBB/8oWQLxP/6eVvgWBI5t5TaAAAAmh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgY+/az8JP3k/Nzc0jx9I3MAkYXoDcMAAAA=[0m27
+originally caused by:
+ Started by user [8mha:////4LWRKVM/RLrsh5ZZtu96AvWW3T3LEjJKChClVcZTORbQAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL9tJz8oszEPADJzGJ3wgAAAA==[0mFlorian
+Building in workspace /var/jenkins_home/workspace/frontendreservation
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git # timeout=10
+Fetching upstream changes from https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/test/artifactory^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/test/artifactory^{commit} # timeout=10
+Checking out Revision aa30cd8e65554f4402c273c2acfe9a27adf877da (refs/remotes/origin/test/artifactory)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f aa30cd8e65554f4402c273c2acfe9a27adf877da
+Commit message: "change token for artifactory"
+ > git rev-list --no-walk aa30cd8e65554f4402c273c2acfe9a27adf877da # timeout=10
+[frontendreservation] $ /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/maven/bin/mvn -f polyeventbackend/frontendreservation clean deploy
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------< fr.unice.polytech.isa.polyevent:frontendreservation >---------
+[INFO] Building frontendreservation 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for com.fasterxml.jackson.core:jackson-core:jar:2.9.5 is missing, no dependency information available
+Downloading from central: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-demande-evenement/1.0-SNAPSHOT/polyevent-backend-demande-evenement-1.0-20180504.075931-5.pom
+Progress (1): 806 B                   Downloaded from central: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-demande-evenement/1.0-SNAPSHOT/polyevent-backend-demande-evenement-1.0-20180504.075931-5.pom (806 B at 1.3 kB/s)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 16.995 s
+[INFO] Finished at: 2018-05-04T08:00:19Z
+[INFO] ------------------------------------------------------------------------
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] Failed to execute goal on project frontendreservation: Could not resolve dependencies for project fr.unice.polytech.isa.polyevent:frontendreservation:jar:1.0-SNAPSHOT: Failure to find com.fasterxml.jackson.core:jackson-core:jar:2.9.5 in http://artifactory:8081/artifactory/polyeventbackend was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced -> [Help 1]
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] 
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] 
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+Build step 'Invoke top-level Maven targets' marked build as failure
+Finished: FAILURE

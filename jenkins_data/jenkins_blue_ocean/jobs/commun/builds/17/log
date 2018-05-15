@@ -1,0 +1,176 @@
+Started by user [8mha:////4LWRKVM/RLrsh5ZZtu96AvWW3T3LEjJKChClVcZTORbQAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL9tJz8oszEPADJzGJ3wgAAAA==[0mFlorian
+Building in workspace /var/jenkins_home/workspace/commun
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git # timeout=10
+Fetching upstream changes from https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/test/artifactory^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/test/artifactory^{commit} # timeout=10
+Checking out Revision 98f0b3f570527008bda6b9920fd89e90302ae014 (refs/remotes/origin/test/artifactory)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 98f0b3f570527008bda6b9920fd89e90302ae014
+Commit message: "change token for artifactory"
+ > git rev-list --no-walk 8c68cf0b51f1b326b2fb715b419899ea9be150d4 # timeout=10
+[commun] $ /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/maven/bin/mvn -f polyeventbackend/commun clean deploy
+[INFO] Scanning for projects...
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] 
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] Some problems were encountered while building the effective model for fr.unice.polytech.isa.polyevent:commun:jar:1.0-SNAPSHOT
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.openjpa:openjpa-maven-plugin @ line 44, column 21
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] 
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] 
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] 
+[INFO] 
+[INFO] ---------------< fr.unice.polytech.isa.polyevent:commun >---------------
+[INFO] Building commun 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/2.5/maven-clean-plugin-2.5.pom
+Progress (1): 2.2/3.9 kBProgress (1): 3.9 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/2.5/maven-clean-plugin-2.5.pom (3.9 kB at 5.3 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/22/maven-plugins-22.pom
+Progress (1): 2.2/13 kBProgress (1): 5.0/13 kBProgress (1): 7.8/13 kBProgress (1): 11/13 kB Progress (1): 13 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/22/maven-plugins-22.pom (13 kB at 176 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/21/maven-parent-21.pom
+Progress (1): 2.2/26 kBProgress (1): 5.0/26 kBProgress (1): 7.8/26 kBProgress (1): 11/26 kB Progress (1): 13/26 kBProgress (1): 16/26 kBProgress (1): 19/26 kBProgress (1): 21/26 kBProgress (1): 24/26 kBProgress (1): 26 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/21/maven-parent-21.pom (26 kB at 366 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/10/apache-10.pom
+Progress (1): 2.2/15 kBProgress (1): 5.0/15 kBProgress (1): 7.7/15 kBProgress (1): 11/15 kB Progress (1): 13/15 kBProgress (1): 15 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/10/apache-10.pom (15 kB at 218 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/2.5/maven-clean-plugin-2.5.jar
+Progress (1): 2.2/25 kBProgress (1): 5.0/25 kBProgress (1): 7.7/25 kBProgress (1): 10/25 kB Progress (1): 13/25 kBProgress (1): 16/25 kBProgress (1): 19/25 kBProgress (1): 21/25 kBProgress (1): 24/25 kBProgress (1): 25 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/2.5/maven-clean-plugin-2.5.jar (25 kB at 300 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.pom
+Progress (1): 2.2/8.1 kBProgress (1): 5.0/8.1 kBProgress (1): 7.8/8.1 kBProgress (1): 8.1 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.pom (8.1 kB at 100 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/23/maven-plugins-23.pom
+Progress (1): 2.2/9.2 kBProgress (1): 5.0/9.2 kBProgress (1): 7.8/9.2 kBProgress (1): 9.2 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/23/maven-plugins-23.pom (9.2 kB at 131 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/22/maven-parent-22.pom
+Progress (1): 2.2/30 kBProgress (1): 5.0/30 kBProgress (1): 7.7/30 kBProgress (1): 11/30 kB Progress (1): 13/30 kBProgress (1): 16/30 kBProgress (1): 19/30 kBProgress (1): 21/30 kBProgress (1): 24/30 kBProgress (1): 27/30 kBProgress (1): 30/30 kBProgress (1): 30 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/22/maven-parent-22.pom (30 kB at 431 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/11/apache-11.pom
+Progress (1): 2.2/15 kBProgress (1): 5.0/15 kBProgress (1): 7.8/15 kBProgress (1): 11/15 kB Progress (1): 13/15 kBProgress (1): 15 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/11/apache-11.pom (15 kB at 195 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.jar
+Progress (1): 2.2/30 kBProgress (1): 5.0/30 kBProgress (1): 7.7/30 kBProgress (1): 10/30 kB Progress (1): 13/30 kBProgress (1): 16/30 kBProgress (1): 19/30 kBProgress (1): 21/30 kBProgress (1): 24/30 kBProgress (1): 27/30 kBProgress (1): 30 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.jar (30 kB at 339 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.6.1/maven-compiler-plugin-3.6.1.pom
+Progress (1): 2.2/11 kBProgress (1): 5.0/11 kBProgress (1): 7.8/11 kBProgress (1): 11/11 kB Progress (1): 11 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.6.1/maven-compiler-plugin-3.6.1.pom (11 kB at 160 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/30/maven-plugins-30.pom
+Progress (1): 2.2/10 kBProgress (1): 5.0/10 kBProgress (1): 7.8/10 kBProgress (1): 10 kB                       Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/30/maven-plugins-30.pom (10 kB at 152 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/30/maven-parent-30.pom
+Progress (1): 2.2/41 kBProgress (1): 5.0/41 kBProgress (1): 7.8/41 kBProgress (1): 11/41 kB Progress (1): 13/41 kBProgress (1): 16/41 kBProgress (1): 19/41 kBProgress (1): 21/41 kBProgress (1): 24/41 kBProgress (1): 27/41 kBProgress (1): 30/41 kBProgress (1): 32/41 kBProgress (1): 36/41 kBProgress (1): 40/41 kBProgress (1): 41 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/30/maven-parent-30.pom (41 kB at 574 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/18/apache-18.pom
+Progress (1): 4.1/16 kBProgress (1): 7.7/16 kBProgress (1): 12/16 kB Progress (1): 16 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/18/apache-18.pom (16 kB at 218 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.6.1/maven-compiler-plugin-3.6.1.jar
+Progress (1): 4.1/59 kBProgress (1): 7.7/59 kBProgress (1): 12/59 kB Progress (1): 16/59 kBProgress (1): 20/59 kBProgress (1): 24/59 kBProgress (1): 28/59 kBProgress (1): 32/59 kBProgress (1): 36/59 kBProgress (1): 40/59 kBProgress (1): 45/59 kBProgress (1): 49/59 kBProgress (1): 53/59 kBProgress (1): 57/59 kBProgress (1): 59 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.6.1/maven-compiler-plugin-3.6.1.jar (59 kB at 611 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/openjpa/openjpa-maven-plugin/2.4.1/openjpa-maven-plugin-2.4.1.pom
+Progress (1): 4.1/7.7 kBProgress (1): 7.7/7.7 kBProgress (1): 7.7 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/openjpa/openjpa-maven-plugin/2.4.1/openjpa-maven-plugin-2.4.1.pom (7.7 kB at 48 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/openjpa/openjpa-tools/2.4.1/openjpa-tools-2.4.1.pom
+Progress (1): 2.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/openjpa/openjpa-tools/2.4.1/openjpa-tools-2.4.1.pom (2.2 kB at 37 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/openjpa/openjpa-parent/2.4.1/openjpa-parent-2.4.1.pom
+Progress (1): 2.2/55 kBProgress (1): 5.0/55 kBProgress (1): 7.8/55 kBProgress (1): 11/55 kB Progress (1): 13/55 kBProgress (1): 16/55 kBProgress (1): 19/55 kBProgress (1): 21/55 kBProgress (1): 24/55 kBProgress (1): 27/55 kBProgress (1): 30/55 kBProgress (1): 32/55 kBProgress (1): 36/55 kBProgress (1): 40/55 kBProgress (1): 45/55 kBProgress (1): 49/55 kBProgress (1): 53/55 kBProgress (1): 55 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/openjpa/openjpa-parent/2.4.1/openjpa-parent-2.4.1.pom (55 kB at 726 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/17/apache-17.pom
+Progress (1): 4.1/16 kBProgress (1): 7.7/16 kBProgress (1): 12/16 kB Progress (1): 16/16 kBProgress (1): 16 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/17/apache-17.pom (16 kB at 272 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/openjpa/openjpa-maven-plugin/2.4.1/openjpa-maven-plugin-2.4.1.jar
+Progress (1): 4.1/36 kBProgress (1): 7.7/36 kBProgress (1): 12/36 kB Progress (1): 16/36 kBProgress (1): 20/36 kBProgress (1): 24/36 kBProgress (1): 28/36 kBProgress (1): 32/36 kBProgress (1): 36 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/openjpa/openjpa-maven-plugin/2.4.1/openjpa-maven-plugin-2.4.1.jar (36 kB at 390 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.12.4/maven-surefire-plugin-2.12.4.pom
+Progress (1): 4.1/10 kBProgress (1): 7.7/10 kBProgress (1): 10 kB                       Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.12.4/maven-surefire-plugin-2.12.4.pom (10 kB at 150 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire/2.12.4/surefire-2.12.4.pom
+Progress (1): 4.1/14 kBProgress (1): 7.7/14 kBProgress (1): 12/14 kB Progress (1): 14 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire/2.12.4/surefire-2.12.4.pom (14 kB at 212 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.12.4/maven-surefire-plugin-2.12.4.jar
+Progress (1): 4.1/30 kBProgress (1): 7.7/30 kBProgress (1): 12/30 kB Progress (1): 16/30 kBProgress (1): 20/30 kBProgress (1): 24/30 kBProgress (1): 28/30 kBProgress (1): 30 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.12.4/maven-surefire-plugin-2.12.4.jar (30 kB at 386 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.4/maven-jar-plugin-2.4.pom
+Progress (1): 4.1/5.8 kBProgress (1): 5.8 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.4/maven-jar-plugin-2.4.pom (5.8 kB at 76 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.4/maven-jar-plugin-2.4.jar
+Progress (1): 2.2/34 kBProgress (1): 5.0/34 kBProgress (1): 7.7/34 kBProgress (1): 10/34 kB Progress (1): 13/34 kBProgress (1): 16/34 kBProgress (1): 19/34 kBProgress (1): 21/34 kBProgress (1): 24/34 kBProgress (1): 27/34 kBProgress (1): 30/34 kBProgress (1): 32/34 kBProgress (1): 34 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.4/maven-jar-plugin-2.4.jar (34 kB at 460 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/2.4/maven-install-plugin-2.4.pom
+Progress (1): 2.2/6.4 kBProgress (1): 5.0/6.4 kBProgress (1): 6.4 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/2.4/maven-install-plugin-2.4.pom (6.4 kB at 106 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/2.4/maven-install-plugin-2.4.jar
+Progress (1): 2.2/27 kBProgress (1): 5.0/27 kBProgress (1): 7.7/27 kBProgress (1): 10/27 kB Progress (1): 13/27 kBProgress (1): 16/27 kBProgress (1): 19/27 kBProgress (1): 21/27 kBProgress (1): 24/27 kBProgress (1): 27/27 kBProgress (1): 27 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/2.4/maven-install-plugin-2.4.jar (27 kB at 337 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/2.7/maven-deploy-plugin-2.7.pom
+Progress (1): 2.2/5.6 kBProgress (1): 5.0/5.6 kBProgress (1): 5.6 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/2.7/maven-deploy-plugin-2.7.pom (5.6 kB at 74 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/2.7/maven-deploy-plugin-2.7.jar
+Progress (1): 2.2/27 kBProgress (1): 5.0/27 kBProgress (1): 7.7/27 kBProgress (1): 10/27 kB Progress (1): 13/27 kBProgress (1): 16/27 kBProgress (1): 19/27 kBProgress (1): 21/27 kBProgress (1): 24/27 kBProgress (1): 27 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/2.7/maven-deploy-plugin-2.7.jar (27 kB at 389 kB/s)
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/com/fasterxml/jackson/core/jackson-core/2.9.5/jackson-core-2.9.5.pom
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/com/fasterxml/jackson/core/jackson-core/2.9.5/jackson-core-2.9.5.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for com.fasterxml.jackson.core:jackson-core:jar:2.9.5 is missing, no dependency information available
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/org/apache/tomee/javaee-api/7.0-1/javaee-api-7.0-1.pom
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/org/apache/tomee/javaee-api/7.0-1/javaee-api-7.0-1.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for org.apache.tomee:javaee-api:jar:7.0-1 is missing, no dependency information available
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/com/google/code/gson/gson/2.8.2/gson-2.8.2.pom
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/com/google/code/gson/gson/2.8.2/gson-2.8.2.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for com.google.code.gson:gson:jar:2.8.2 is missing, no dependency information available
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/org/json/json/20180130/json-20180130.pom
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/org/json/json/20180130/json-20180130.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for org.json:json:jar:20180130 is missing, no dependency information available
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/org/apache/tomee/openejb-core/7.0.2/openejb-core-7.0.2.pom
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/org/apache/tomee/openejb-core/7.0.2/openejb-core-7.0.2.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for org.apache.tomee:openejb-core:jar:7.0.2 is missing, no dependency information available
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/org/apache/tomee/tomee-embedded/7.0.2/tomee-embedded-7.0.2.pom
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/org/apache/tomee/tomee-embedded/7.0.2/tomee-embedded-7.0.2.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for org.apache.tomee:tomee-embedded:jar:7.0.2 is missing, no dependency information available
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/org/apache/tomee/openejb-cxf/7.0.2/openejb-cxf-7.0.2.pom
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/org/apache/tomee/openejb-cxf/7.0.2/openejb-cxf-7.0.2.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for org.apache.tomee:openejb-cxf:jar:7.0.2 is missing, no dependency information available
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/org/apache/tomee/openejb-cxf-rs/7.0.2/openejb-cxf-rs-7.0.2.pom
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/org/apache/tomee/openejb-cxf-rs/7.0.2/openejb-cxf-rs-7.0.2.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for org.apache.tomee:openejb-cxf-rs:jar:7.0.2 is missing, no dependency information available
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/org/apache/myfaces/core/myfaces-api/2.2.10/myfaces-api-2.2.10.pom
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/org/apache/myfaces/core/myfaces-api/2.2.10/myfaces-api-2.2.10.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for org.apache.myfaces.core:myfaces-api:jar:2.2.10 is missing, no dependency information available
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/junit/junit/4.12/junit-4.12.pom
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/junit/junit/4.12/junit-4.12.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for junit:junit:jar:4.12 is missing, no dependency information available
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/org/mockito/mockito-core/1.10.19/mockito-core-1.10.19.pom
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/org/mockito/mockito-core/1.10.19/mockito-core-1.10.19.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for org.mockito:mockito-core:jar:1.10.19 is missing, no dependency information available
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/com/github/cukespace/cukespace-core/1.6.5/cukespace-core-1.6.5.pom
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/com/github/cukespace/cukespace-core/1.6.5/cukespace-core-1.6.5.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for com.github.cukespace:cukespace-core:jar:1.6.5 is missing, no dependency information available
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/org/jboss/arquillian/junit/arquillian-junit-container/1.1.12.Final/arquillian-junit-container-1.1.12.Final.pom
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/org/jboss/arquillian/junit/arquillian-junit-container/1.1.12.Final/arquillian-junit-container-1.1.12.Final.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for org.jboss.arquillian.junit:arquillian-junit-container:jar:1.1.12.Final is missing, no dependency information available
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-depchain/2.2.6/shrinkwrap-resolver-depchain-2.2.6.pom
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-depchain/2.2.6/shrinkwrap-resolver-depchain-2.2.6.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-depchain:pom:2.2.6 is missing, no dependency information available
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/org/apache/tomee/arquillian-tomee-embedded/7.0.2/arquillian-tomee-embedded-7.0.2.pom
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/org/apache/tomee/arquillian-tomee-embedded/7.0.2/arquillian-tomee-embedded-7.0.2.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for org.apache.tomee:arquillian-tomee-embedded:jar:7.0.2 is missing, no dependency information available
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/com/fasterxml/jackson/core/jackson-core/2.9.5/jackson-core-2.9.5.jar
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/org/apache/tomee/javaee-api/7.0-1/javaee-api-7.0-1.jar
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/com/google/code/gson/gson/2.8.2/gson-2.8.2.jar
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/org/json/json/20180130/json-20180130.jar
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/org/apache/tomee/tomee-embedded/7.0.2/tomee-embedded-7.0.2.jar
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/org/apache/tomee/openejb-cxf/7.0.2/openejb-cxf-7.0.2.jar
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/org/apache/tomee/openejb-cxf-rs/7.0.2/openejb-cxf-rs-7.0.2.jar
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/org/apache/myfaces/core/myfaces-api/2.2.10/myfaces-api-2.2.10.jar
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/org/apache/tomee/openejb-core/7.0.2/openejb-core-7.0.2.jar
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/junit/junit/4.12/junit-4.12.jar
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/org/mockito/mockito-core/1.10.19/mockito-core-1.10.19.jar
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/com/github/cukespace/cukespace-core/1.6.5/cukespace-core-1.6.5.jar
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/org/jboss/arquillian/junit/arquillian-junit-container/1.1.12.Final/arquillian-junit-container-1.1.12.Final.jar
+Downloading from central: http://artifactory-16:8081/artifactory/polyeventbackend/org/apache/tomee/arquillian-tomee-embedded/7.0.2/arquillian-tomee-embedded-7.0.2.jar
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/com/fasterxml/jackson/core/jackson-core/2.9.5/jackson-core-2.9.5.jar
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/org/apache/tomee/javaee-api/7.0-1/javaee-api-7.0-1.jar
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/com/google/code/gson/gson/2.8.2/gson-2.8.2.jar
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/org/json/json/20180130/json-20180130.jar
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/org/apache/tomee/tomee-embedded/7.0.2/tomee-embedded-7.0.2.jar
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/org/apache/tomee/openejb-cxf/7.0.2/openejb-cxf-7.0.2.jar
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/org/apache/tomee/openejb-cxf-rs/7.0.2/openejb-cxf-rs-7.0.2.jar
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/org/apache/myfaces/core/myfaces-api/2.2.10/myfaces-api-2.2.10.jar
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/junit/junit/4.12/junit-4.12.jar
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/org/mockito/mockito-core/1.10.19/mockito-core-1.10.19.jar
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/com/github/cukespace/cukespace-core/1.6.5/cukespace-core-1.6.5.jar
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/org/jboss/arquillian/junit/arquillian-junit-container/1.1.12.Final/arquillian-junit-container-1.1.12.Final.jar
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/org/apache/tomee/arquillian-tomee-embedded/7.0.2/arquillian-tomee-embedded-7.0.2.jar
+Downloading from snapshots: http://artifactory-16:8081/artifactory/polyeventbackend/org/apache/tomee/openejb-core/7.0.2/openejb-core-7.0.2.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 4.986 s
+[INFO] Finished at: 2018-05-04T06:25:23Z
+[INFO] ------------------------------------------------------------------------
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] Failed to execute goal on project commun: Could not resolve dependencies for project fr.unice.polytech.isa.polyevent:commun:jar:1.0-SNAPSHOT: The following artifacts could not be resolved: com.fasterxml.jackson.core:jackson-core:jar:2.9.5, org.apache.tomee:javaee-api:jar:7.0-1, com.google.code.gson:gson:jar:2.8.2, org.json:json:jar:20180130, org.apache.tomee:openejb-core:jar:7.0.2, org.apache.tomee:tomee-embedded:jar:7.0.2, org.apache.tomee:openejb-cxf:jar:7.0.2, org.apache.tomee:openejb-cxf-rs:jar:7.0.2, org.apache.myfaces.core:myfaces-api:jar:2.2.10, junit:junit:jar:4.12, org.mockito:mockito-core:jar:1.10.19, com.github.cukespace:cukespace-core:jar:1.6.5, org.jboss.arquillian.junit:arquillian-junit-container:jar:1.1.12.Final, org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-depchain:pom:2.2.6, org.apache.tomee:arquillian-tomee-embedded:jar:7.0.2: Could not find artifact com.fasterxml.jackson.core:jackson-core:jar:2.9.5 in central (http://artifactory-16:8081/artifactory/polyeventbackend) -> [Help 1]
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] 
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] 
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+Build step 'Invoke top-level Maven targets' marked build as failure
+Finished: FAILURE

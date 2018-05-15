@@ -1,0 +1,78 @@
+Started by upstream project "[8mha:////4MSajOzXBeBcvj29qkrLZh2aJmMlJzr1RctIgqZVTAFBAAAAmB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAy2EgYe/az8JP3k/Nzc0jx9AMP+EVvBAAAA[0mcommun" build number [8mha:////4MBnUyF8YvhG7AvdBg9EFE93xUsYsEdWVW1W6OjEyHJWAAAAmh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgY+/az8JP3k/Nzc0jx9E2MADubfXMMAAAA=[0m43
+originally caused by:
+ Started by user [8mha:////4LWRKVM/RLrsh5ZZtu96AvWW3T3LEjJKChClVcZTORbQAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL9tJz8oszEPADJzGJ3wgAAAA==[0mFlorian
+Building in workspace /var/jenkins_home/workspace/comptable
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git # timeout=10
+Fetching upstream changes from https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/test/artifactory^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/test/artifactory^{commit} # timeout=10
+Checking out Revision a76e5f9ef013c70f495a9c3a31283d789fc7b847 (refs/remotes/origin/test/artifactory)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f a76e5f9ef013c70f495a9c3a31283d789fc7b847
+Commit message: "Merge branch 'feature/development' into test/artifactory"
+ > git rev-list --no-walk 698b05ed0a924829713a748f9f4bff9f736b9aa0 # timeout=10
+[comptable] $ /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/maven/bin/mvn -f polyeventbackend/comptable clean deploy
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------< fr.unice.polytech.isa.polyevent:comptable >--------------
+[INFO] Building comptable 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+Downloading from snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/commun/1.0-SNAPSHOT/commun-1.0-20180504.121923-6.pom
+Progress (1): 2.3 kB                    Downloaded from snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/commun/1.0-SNAPSHOT/commun-1.0-20180504.121923-6.pom (2.3 kB at 5.4 kB/s)
+Downloading from snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/commun/1.0-SNAPSHOT/commun-1.0-20180504.121923-6.jar
+Progress (1): 4.1/43 kBProgress (1): 7.5/43 kBProgress (1): 12/43 kB Progress (1): 16/43 kBProgress (1): 20/43 kBProgress (1): 24/43 kBProgress (1): 28/43 kBProgress (1): 32/43 kBProgress (1): 36/43 kBProgress (1): 40/43 kBProgress (1): 43 kB                      Downloaded from snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/commun/1.0-SNAPSHOT/commun-1.0-20180504.121923-6.jar (43 kB at 361 kB/s)
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ comptable ---
+[INFO] Deleting /var/jenkins_home/workspace/comptable/polyeventbackend/comptable/target
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ comptable ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/comptable/polyeventbackend/comptable/src/main/resources
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ comptable ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 8 source files to /var/jenkins_home/workspace/comptable/polyeventbackend/comptable/target/classes
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ comptable ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/comptable/polyeventbackend/comptable/src/test/resources
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.6.1:testCompile (default-testCompile) @ comptable ---
+[INFO] No sources to compile
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ comptable ---
+[INFO] No tests to run.
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ comptable ---
+[INFO] Building jar: /var/jenkins_home/workspace/comptable/polyeventbackend/comptable/target/comptable-1.0-SNAPSHOT.jar
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-install-plugin:2.4:install (default-install) @ comptable ---
+[INFO] Installing /var/jenkins_home/workspace/comptable/polyeventbackend/comptable/target/comptable-1.0-SNAPSHOT.jar to /var/jenkins_home/.m2/repository/fr/unice/polytech/isa/polyevent/comptable/1.0-SNAPSHOT/comptable-1.0-SNAPSHOT.jar
+[INFO] Installing /var/jenkins_home/workspace/comptable/polyeventbackend/comptable/pom.xml to /var/jenkins_home/.m2/repository/fr/unice/polytech/isa/polyevent/comptable/1.0-SNAPSHOT/comptable-1.0-SNAPSHOT.pom
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-deploy-plugin:2.7:deploy (default-deploy) @ comptable ---
+Downloading from snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable/1.0-SNAPSHOT/maven-metadata.xml
+Progress (1): 784 B                   Downloaded from snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable/1.0-SNAPSHOT/maven-metadata.xml (784 B at 11 kB/s)
+Uploading to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable/1.0-SNAPSHOT/comptable-1.0-20180504.122013-4.jar
+Progress (1): 2.0/12 kBProgress (1): 4.1/12 kBProgress (1): 6.1/12 kBProgress (1): 8.2/12 kBProgress (1): 10/12 kB Progress (1): 12 kB                      Uploaded to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable/1.0-SNAPSHOT/comptable-1.0-20180504.122013-4.jar (12 kB at 149 kB/s)
+Uploading to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable/1.0-SNAPSHOT/comptable-1.0-20180504.122013-4.pom
+Progress (1): 762 B                   Uploaded to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable/1.0-SNAPSHOT/comptable-1.0-20180504.122013-4.pom (762 B at 9.3 kB/s)
+Downloading from snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable/maven-metadata.xml
+Progress (1): 387 B                   Downloaded from snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable/maven-metadata.xml (387 B at 5.6 kB/s)
+Uploading to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable/1.0-SNAPSHOT/maven-metadata.xml
+Progress (1): 784 B                   Uploaded to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable/1.0-SNAPSHOT/maven-metadata.xml (784 B at 29 kB/s)
+Uploading to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable/maven-metadata.xml
+Progress (1): 332 B                   Uploaded to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable/maven-metadata.xml (332 B at 6.1 kB/s)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 34.415 s
+[INFO] Finished at: 2018-05-04T12:20:13Z
+[INFO] ------------------------------------------------------------------------
+Triggering a new build of [8mha:////4OkQd1YL5FaDa/YXRh4Uvh2QpuVMzhEiDrhoAsYVX0R/AAAAtR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzlEgZN/az8JP2C/JzK1LLUvJKkxOTs1LyU5PzcgpLEpJzU8tSk4tSisszkVH0AcpyHRd4AAAA=[0mpolyeventbackendcomptablewebservice
+Finished: SUCCESS

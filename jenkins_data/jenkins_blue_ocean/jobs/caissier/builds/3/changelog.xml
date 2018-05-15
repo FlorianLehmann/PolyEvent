@@ -1,0 +1,18 @@
+commit ea549b5a41ef01eeb427b3e950174f289f3f7751
+tree 4cd3d3c49b71452935256db84f920f8976b10a6c
+parent 65d6060d1ddfa1d590014d5a51dd692c880a51d6
+author FlorianLehmann <Lehmann.florian@yandex.com> 2018-04-24 21:39:02 +0200
+committer FlorianLehmann <Lehmann.florian@yandex.com> 2018-04-24 21:39:02 +0200
+
+    Merge branch 'feature/development' into test/artifactory
+
+    # Conflicts:
+    #	polyeventbackend/commun/pom.xml
+    #	polyeventbackend/database/pom.xml
+    #	polyeventbackend/polyeventbackenddemandeevenement/pom.xml
+    #
+    polyeventbackend/polyeventbackenddemandeevenement/src/test/java/arquilian/DemandeEvenementTest.java
+    #	polyeventbackend/polyeventbackenddemandereservation/pom.xml
+
+
+:100644 100644 9949fd2edf1b42fa650b4fa7ab2ea6cc5e0f13fc 5079a8ef915ac4f9f21b8fe3dde3f99deb9ba041 M	polyeventbackend/polyeventbackenddemandereservation/pom.xml

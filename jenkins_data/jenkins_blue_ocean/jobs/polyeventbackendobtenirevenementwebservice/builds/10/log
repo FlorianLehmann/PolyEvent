@@ -1,0 +1,75 @@
+Started by upstream project "[8mha:////4Gi7OvSELYzRnUu9hjqpli36EtX995KO5liQAhKpBgrGAAAArx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyFEgY1/az8JP2C/JzK1LLUvJKkxOTs1LyU/KSS1LzMIpBQai5QWB8ADExjJtsAAAA=[0mpolyeventbackendobtenirevenement" build number [8mha:////4GpH5KINof1FB2Ib7vivhTOo9/S6CC/kn79UUdCPeNQpAAAAsR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgYN/az8JP2C/JzK1LLUvJKkxOTs1LyU/KSS1LzMIpBQai5QWN/QCABTuha93QAAAA==[0m12
+originally caused by:
+ Started by upstream project "[8mha:////4MSajOzXBeBcvj29qkrLZh2aJmMlJzr1RctIgqZVTAFBAAAAmB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAy2EgYe/az8JP3k/Nzc0jx9AMP+EVvBAAAA[0mcommun" build number [8mha:////4MBnUyF8YvhG7AvdBg9EFE93xUsYsEdWVW1W6OjEyHJWAAAAmh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgY+/az8JP3k/Nzc0jx9E2MADubfXMMAAAA=[0m43
+ originally caused by:
+  Started by user [8mha:////4LWRKVM/RLrsh5ZZtu96AvWW3T3LEjJKChClVcZTORbQAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL9tJz8oszEPADJzGJ3wgAAAA==[0mFlorian
+Building in workspace /var/jenkins_home/workspace/polyeventbackendobtenirevenementwebservice
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git # timeout=10
+Fetching upstream changes from https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/test/artifactory^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/test/artifactory^{commit} # timeout=10
+Checking out Revision a76e5f9ef013c70f495a9c3a31283d789fc7b847 (refs/remotes/origin/test/artifactory)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f a76e5f9ef013c70f495a9c3a31283d789fc7b847
+Commit message: "Merge branch 'feature/development' into test/artifactory"
+ > git rev-list --no-walk 698b05ed0a924829713a748f9f4bff9f736b9aa0 # timeout=10
+[polyeventbackendobtenirevenementwebservice] $ /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/maven/bin/mvn -f polyeventbackend/polyeventbackendobtenirevenementwebservice clean deploy
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --< fr.unice.polytech.isa.polyevent:polyevent-backend-obtenir-evenement-web-service >--
+[INFO] Building polyevent-backend-obtenir-evenement-web-service 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ polyevent-backend-obtenir-evenement-web-service ---
+[INFO] Deleting /var/jenkins_home/workspace/polyeventbackendobtenirevenementwebservice/polyeventbackend/polyeventbackendobtenirevenementwebservice/target
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ polyevent-backend-obtenir-evenement-web-service ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/polyeventbackendobtenirevenementwebservice/polyeventbackend/polyeventbackendobtenirevenementwebservice/src/main/resources
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ polyevent-backend-obtenir-evenement-web-service ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /var/jenkins_home/workspace/polyeventbackendobtenirevenementwebservice/polyeventbackend/polyeventbackendobtenirevenementwebservice/target/classes
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ polyevent-backend-obtenir-evenement-web-service ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/polyeventbackendobtenirevenementwebservice/polyeventbackend/polyeventbackendobtenirevenementwebservice/src/test/resources
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.6.1:testCompile (default-testCompile) @ polyevent-backend-obtenir-evenement-web-service ---
+[INFO] No sources to compile
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ polyevent-backend-obtenir-evenement-web-service ---
+[INFO] No tests to run.
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ polyevent-backend-obtenir-evenement-web-service ---
+[INFO] Building jar: /var/jenkins_home/workspace/polyeventbackendobtenirevenementwebservice/polyeventbackend/polyeventbackendobtenirevenementwebservice/target/polyevent-backend-obtenir-evenement-web-service-1.0-SNAPSHOT.jar
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-install-plugin:2.4:install (default-install) @ polyevent-backend-obtenir-evenement-web-service ---
+[INFO] Installing /var/jenkins_home/workspace/polyeventbackendobtenirevenementwebservice/polyeventbackend/polyeventbackendobtenirevenementwebservice/target/polyevent-backend-obtenir-evenement-web-service-1.0-SNAPSHOT.jar to /var/jenkins_home/.m2/repository/fr/unice/polytech/isa/polyevent/polyevent-backend-obtenir-evenement-web-service/1.0-SNAPSHOT/polyevent-backend-obtenir-evenement-web-service-1.0-SNAPSHOT.jar
+[INFO] Installing /var/jenkins_home/workspace/polyeventbackendobtenirevenementwebservice/polyeventbackend/polyeventbackendobtenirevenementwebservice/pom.xml to /var/jenkins_home/.m2/repository/fr/unice/polytech/isa/polyevent/polyevent-backend-obtenir-evenement-web-service/1.0-SNAPSHOT/polyevent-backend-obtenir-evenement-web-service-1.0-SNAPSHOT.pom
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-deploy-plugin:2.7:deploy (default-deploy) @ polyevent-backend-obtenir-evenement-web-service ---
+Downloading from snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-obtenir-evenement-web-service/1.0-SNAPSHOT/maven-metadata.xml
+Progress (1): 822 B                   Downloaded from snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-obtenir-evenement-web-service/1.0-SNAPSHOT/maven-metadata.xml (822 B at 1.6 kB/s)
+Uploading to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-obtenir-evenement-web-service/1.0-SNAPSHOT/polyevent-backend-obtenir-evenement-web-service-1.0-20180504.122735-4.jar
+Progress (1): 2.0/4.3 kBProgress (1): 4.1/4.3 kBProgress (1): 4.3 kB                        Uploaded to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-obtenir-evenement-web-service/1.0-SNAPSHOT/polyevent-backend-obtenir-evenement-web-service-1.0-20180504.122735-4.jar (4.3 kB at 27 kB/s)
+Uploading to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-obtenir-evenement-web-service/1.0-SNAPSHOT/polyevent-backend-obtenir-evenement-web-service-1.0-20180504.122735-4.pom
+Progress (1): 1.2 kB                    Uploaded to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-obtenir-evenement-web-service/1.0-SNAPSHOT/polyevent-backend-obtenir-evenement-web-service-1.0-20180504.122735-4.pom (1.2 kB at 7.1 kB/s)
+Downloading from snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-obtenir-evenement-web-service/maven-metadata.xml
+Progress (1): 425 B                   Downloaded from snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-obtenir-evenement-web-service/maven-metadata.xml (425 B at 1.9 kB/s)
+Uploading to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-obtenir-evenement-web-service/1.0-SNAPSHOT/maven-metadata.xml
+Progress (1): 822 B                   Uploaded to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-obtenir-evenement-web-service/1.0-SNAPSHOT/maven-metadata.xml (822 B at 9.4 kB/s)
+Uploading to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-obtenir-evenement-web-service/maven-metadata.xml
+Progress (1): 370 B                   Uploaded to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-obtenir-evenement-web-service/maven-metadata.xml (370 B at 3.6 kB/s)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 29.186 s
+[INFO] Finished at: 2018-05-04T12:27:36Z
+[INFO] ------------------------------------------------------------------------
+Finished: SUCCESS

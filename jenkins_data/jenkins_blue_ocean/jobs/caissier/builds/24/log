@@ -1,0 +1,100 @@
+Started by user [8mha:////4LWRKVM/RLrsh5ZZtu96AvWW3T3LEjJKChClVcZTORbQAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL9tJz8oszEPADJzGJ3wgAAAA==[0mFlorian
+Building in workspace /var/jenkins_home/workspace/DevOps2
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git # timeout=10
+Fetching upstream changes from https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/test/artifactory^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/test/artifactory^{commit} # timeout=10
+Checking out Revision ea549b5a41ef01eeb427b3e950174f289f3f7751 (refs/remotes/origin/test/artifactory)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f ea549b5a41ef01eeb427b3e950174f289f3f7751
+Commit message: "Merge branch 'feature/development' into test/artifactory"
+ > git rev-list --no-walk ea549b5a41ef01eeb427b3e950174f289f3f7751 # timeout=10
+[DevOps2] $ /bin/sh -xe /tmp/jenkins8410668193389080380.sh
++ cd polyeventbackend
++ export PATH=/usr/lib/jvm/java-1.8-openjdk//bin:/usr/lib/jvm/java-1.8-openjdk//bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-1.8-openjdk/jre/bin:/usr/lib/jvm/java-1.8-openjdk/bin:/usr/lib/jvm/java-1.8-openjdk/bin
+[DevOps2] $ /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/maven/bin/mvn -f polyeventbackend clean install
+[INFO] Scanning for projects...
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] 
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] Some problems were encountered while building the effective model for fr.unice.polytech.isa.polyevent:commun:jar:1.0-SNAPSHOT
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.openjpa:openjpa-maven-plugin @ line 37, column 21
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] 
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] 
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] polyevent-backend                                                  [pom]
+[INFO] commun                                                             [jar]
+[INFO] polyevent-backend-envoie-mail-prestataire                          [jar]
+[INFO] polyevent-backend-demande-prestation                               [jar]
+[INFO] polyevent-backend-demande-reservation                              [jar]
+[INFO] polyevent-backend-demande-evenement                                [jar]
+[INFO] polyevent-backend-login                                            [jar]
+[INFO] polyevent-backend-profil                                           [jar]
+[INFO] frontendreservation                                                [jar]
+[INFO] caissier                                                           [jar]
+[INFO] polyevent-backend-profil-enregistrement                            [jar]
+[INFO] polyevent-backend-profil-connexion                                 [jar]
+[INFO] polyeventbackend-war Maven Webapp                                  [war]
+[INFO] polyevent-backend-profil-client-web-service                        [jar]
+[INFO] 
+[INFO] ---------< fr.unice.polytech.isa.polyevent:polyevent-backend >----------
+[INFO] Building polyevent-backend 1.0-SNAPSHOT                           [1/14]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ polyevent-backend ---
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-install-plugin:2.4:install (default-install) @ polyevent-backend ---
+[INFO] Installing /var/jenkins_home/workspace/DevOps2/polyeventbackend/pom.xml to /var/jenkins_home/.m2/repository/fr/unice/polytech/isa/polyevent/polyevent-backend/1.0-SNAPSHOT/polyevent-backend-1.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ---------------< fr.unice.polytech.isa.polyevent:commun >---------------
+[INFO] Building commun 1.0-SNAPSHOT                                      [2/14]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ commun ---
+[INFO] Deleting /var/jenkins_home/workspace/DevOps2/polyeventbackend/commun/target
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ commun ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ commun ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 20 source files to /var/jenkins_home/workspace/DevOps2/polyeventbackend/commun/target/classes
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- openjpa-maven-plugin:2.4.1:enhance (enhancer) @ commun ---
+209  tcf_persistence_unit  INFO   [main] openjpa.Tool - Enhancer running on type "class fr.unice.polytech.isa.polyevent.entities.Token".
+315  tcf_persistence_unit  INFO   [main] openjpa.Tool - Enhancer running on type "class fr.unice.polytech.isa.polyevent.entities.Evenement".
+361  tcf_persistence_unit  WARN   [main] openjpa.Runtime - Fields "fr.unice.polytech.isa.polyevent.entities.Evenement.statusHistorique" are not a default persistent type, and do not have any annotations indicating their persistence strategy. They will be treated as non-persistent. If you intended for these fields to be persistent, be sure to annotate them appropriately. Otherwise annotate them with @Transient.
+377  tcf_persistence_unit  WARN   [main] openjpa.Runtime - Fields "fr.unice.polytech.isa.polyevent.entities.Reservation.salle" are not a default persistent type, and do not have any annotations indicating their persistence strategy. They will be treated as non-persistent. If you intended for these fields to be persistent, be sure to annotate them appropriately. Otherwise annotate them with @Transient.
+378  tcf_persistence_unit  WARN   [main] openjpa.Runtime - Fields "fr.unice.polytech.isa.polyevent.entities.Reservation.evenement" are not a default persistent type, and do not have any annotations indicating their persistence strategy. They will be treated as non-persistent. If you intended for these fields to be persistent, be sure to annotate them appropriately. Otherwise annotate them with @Transient.
+405  tcf_persistence_unit  WARN   [main] openjpa.Runtime - Fields "fr.unice.polytech.isa.polyevent.entities.Reservation.salle" are not a default persistent type, and do not have any annotations indicating their persistence strategy. They will be treated as non-persistent. If you intended for these fields to be persistent, be sure to annotate them appropriately. Otherwise annotate them with @Transient.
+406  tcf_persistence_unit  WARN   [main] openjpa.Runtime - Fields "fr.unice.polytech.isa.polyevent.entities.Reservation.evenement" are not a default persistent type, and do not have any annotations indicating their persistence strategy. They will be treated as non-persistent. If you intended for these fields to be persistent, be sure to annotate them appropriately. Otherwise annotate them with @Transient.
+457  tcf_persistence_unit  INFO   [main] openjpa.Tool - Enhancer running on type "class fr.unice.polytech.isa.polyevent.entities.Statut".
+472  tcf_persistence_unit  INFO   [main] openjpa.Tool - Enhancer running on type "class fr.unice.polytech.isa.polyevent.entities.Prestataire".
+484  tcf_persistence_unit  WARN   [main] openjpa.Runtime - Fields "fr.unice.polytech.isa.polyevent.entities.Prestataire.prestations" are not a default persistent type, and do not have any annotations indicating their persistence strategy. They will be treated as non-persistent. If you intended for these fields to be persistent, be sure to annotate them appropriately. Otherwise annotate them with @Transient.
+532  tcf_persistence_unit  INFO   [main] openjpa.Tool - Enhancer running on type "class fr.unice.polytech.isa.polyevent.entities.DemandeReservationSalle".
+552  tcf_persistence_unit  INFO   [main] openjpa.Tool - Enhancer running on type "class fr.unice.polytech.isa.polyevent.entities.Prestation".
+564  tcf_persistence_unit  WARN   [main] openjpa.Runtime - Fields "fr.unice.polytech.isa.polyevent.entities.Prestation.prestataire" are not a default persistent type, and do not have any annotations indicating their persistence strategy. They will be treated as non-persistent. If you intended for these fields to be persistent, be sure to annotate them appropriately. Otherwise annotate them with @Transient.
+570  tcf_persistence_unit  WARN   [main] openjpa.Runtime - Fields "fr.unice.polytech.isa.polyevent.entities.Prestation.evenement" are not a default persistent type, and do not have any annotations indicating their persistence strategy. They will be treated as non-persistent. If you intended for these fields to be persistent, be sure to annotate them appropriately. Otherwise annotate them with @Transient.
+627  tcf_persistence_unit  INFO   [main] openjpa.Tool - Enhancer running on type "class fr.unice.polytech.isa.polyevent.entities.Organisateur".
+693  tcf_persistence_unit  INFO   [main] openjpa.Tool - Enhancer running on type "class fr.unice.polytech.isa.polyevent.entities.TypeService".
+716  tcf_persistence_unit  INFO   [main] openjpa.Tool - Enhancer running on type "class fr.unice.polytech.isa.polyevent.entities.DemandePrestataire".
+733  tcf_persistence_unit  INFO   [main] openjpa.Tool - Enhancer running on type "class fr.unice.polytech.isa.polyevent.entities.StatusHistorique".
+748  tcf_persistence_unit  INFO   [main] openjpa.Tool - Enhancer running on type "class fr.unice.polytech.isa.polyevent.entities.TypeSalle".
+766  tcf_persistence_unit  INFO   [main] openjpa.Tool - Enhancer running on type "class fr.unice.polytech.isa.polyevent.entities.Salle".
+823  tcf_persistence_unit  INFO   [main] openjpa.Tool - Enhancer running on type "class fr.unice.polytech.isa.polyevent.entities.Reservation".
+874  tcf_persistence_unit  INFO   [main] openjpa.Tool - No metadata was found for 7 classes; they have been enhanced as persistence-aware. If you intended for any of these classes to be persistence-capable, then this means that OpenJPA could not find any metadata for those classes. This can happen if the directory containing your metadata is not in your CLASSPATH, or if your metadata files are not named properly. See the documentation on metadata placement for more information. Persistence-aware classes: [class fr.unice.polytech.isa.polyevent.entities.Token, class fr.unice.polytech.isa.polyevent.entities.TypeService, class fr.unice.polytech.isa.polyevent.entities.Statut, class fr.unice.polytech.isa.polyevent.entities.DemandePrestataire, class fr.unice.polytech.isa.polyevent.entities.StatusHistorique, class fr.unice.polytech.isa.polyevent.entities.DemandeReservationSalle, class fr.unice.polytech.isa.polyevent.entities.TypeSalle]
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ commun ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+Build was aborted
+Aborted by [8mha:////4LWRKVM/RLrsh5ZZtu96AvWW3T3LEjJKChClVcZTORbQAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL9tJz8oszEPADJzGJ3wgAAAA==[0mFlorian
+Finished: ABORTED

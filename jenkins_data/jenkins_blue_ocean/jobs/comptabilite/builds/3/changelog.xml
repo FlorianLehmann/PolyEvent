@@ -1,0 +1,13 @@
+commit 02b293624252e9346cc7b35c1406601dc5affe15
+tree 106768202308f15541f7039779f62398bcf8aa2c
+parent 1ae9fdb15c3d37db25b9ee8441e805ef8354765c
+author FlorianLehmann <Lehmann.florian@yandex.com> 2018-05-04 15:21:03 +0200
+committer FlorianLehmann <Lehmann.florian@yandex.com> 2018-05-04 15:21:03 +0200
+
+    change docker parameters
+
+
+
+:100644 100644 ead805eec827d4bbdb313e18b0cf70de836d1fe7 0fadbc07ee5bd99033beb8148d9518a5eb126a9a M	docker-compose.yml
+:100644 100644 f45e70d1ad184934c1074b24f2c5bdebea835296 44ae28612636165c6154aef003efdda12eaad3a2 M	dotnetComptabilite/Dockerfile
+:100644 100644 d0325f9ea9b938cd9003ecfeb8d34c60ea68e102 400cfb585b4e7b71514b8c002730e035e9061065 M	dotnetComptabilite/src/Server.cs

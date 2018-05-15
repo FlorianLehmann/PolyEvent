@@ -1,0 +1,11 @@
+commit a60df22c25ddaf01575d64182526058e4b28d93f
+tree 6fccacf7901a41ab4b377dddeeb9fef3f783a9d3
+parent 2d7efa1f098e9f88d53106de521f860ad8f53c5b
+author FlorianLehmann <Lehmann.florian@yandex.com> 2018-04-27 12:56:41 +0200
+committer FlorianLehmann <Lehmann.florian@yandex.com> 2018-04-27 12:56:41 +0200
+
+    fix hyperplanning shutdown
+
+
+
+:100644 100644 7c13bd187a669641ac45c4744ed8de7188bdc3c2 b71058d161f3691ce569cbee1939020fd3c8a44c M	dotnet/src/Server.cs

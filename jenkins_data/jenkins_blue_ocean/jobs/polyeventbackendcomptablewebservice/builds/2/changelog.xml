@@ -1,0 +1,78 @@
+commit da3dce1fd5878112e0d44fac5b65e453baeba0be
+tree 33c718f0ffa1082d8af34dd14d59c8a448b1eeb7
+parent 1989906450dcd63cb84cca68c17dde17672734b3
+author Florian Bourniquel <florian.bourniquel@etu.unice.fr> 2018-05-04 11:34:33 +0200
+committer Florian Bourniquel <florian.bourniquel@etu.unice.fr> 2018-05-04 11:34:33 +0200
+
+    Fix DemandeEvenement
+
+
+
+:100644 100644 8f1a74b499cf97c42b3ff730ebc96cfa10f21ef1 cb65d6b4680c81705e9c5d756faf1b4a04e96aad M	polyeventbackend/demandeevenement/pom.xml
+:100644 100644 659dd880b769d0a7607604064490bd3fa3c41742 a014bd3ee956f9e6b02e8cd0758c03a7bee04e1b M	polyeventbackend/demandeevenement/webservice/src/main/java/fr/unice/polytech/isa/polyevent/demandeevenement/webservice/DemandeEvenement.java
+commit 1989906450dcd63cb84cca68c17dde17672734b3
+tree 95239ca9c362e73745d6ba0f192f6ba10c9d4dbf
+parent b709284bc2019d453ae1fff6fbb8e8ecb2206cca
+author Alexandre Clement <alexandre.clement@etu.unice.fr> 2018-05-04 11:24:23 +0200
+committer Alexandre Clement <alexandre.clement@etu.unice.fr> 2018-05-04 11:24:23 +0200
+
+    Ajout de la dépendance a demande evenement dans le war.
+
+
+
+:100644 100644 88acc62110573fd372b48688876bc9542d48f150 e94279d49003eda529bf9208a128bd6cc641d8be M	polyeventbackend/caissier/bean/pom.xml
+:100644 100644 9a69389fa11996109a453329681eb1cd6cb7b91c dbf1e64d0bf95135f50ea416da5a048e08f5f7ee M	polyeventbackend/caissier/webservice/pom.xml
+:100644 100644 59303f73f6a031aee8553562dd3c6d9b230a88ee 4ce4134a4cd0c6288d59c06658f66d14d5d5ce30 M	polyeventbackend/commun/src/main/java/fr.unice.polytech.isa.polyevent/entities/interceptors/VerifierPlageHorraire.java
+:100644 100644 de398418b294a1acc8e1a64e1b1d97dababc3346 f173edbeeb5aa4ecb3bf739bee6a5a50908f5a21 M	polyeventbackend/demandeevenement/bean/pom.xml
+:100644 100644 5686919e2f4286e15e7876acb02d8f07022b2377 7dc387261d1ca6c7fef297b4109ddb5e9ce991a0 M	polyeventbackend/demandeevenement/bean/src/main/java/fr/unice/polytech/isa/polyevent/demandeevenement/bean/CreateurEvenement.java
+:100644 100644 724cf553ada9f50b14ce657eb8a62c1282e3f2f9 0f3f027dff2ed186ae1de05b3bcd51f3c9c5dfd5 M	polyeventbackend/demandeevenement/webservice/pom.xml
+:100644 100644 bd4f83121f2481bb27ce1418d7ab360fcd0d7467 659dd880b769d0a7607604064490bd3fa3c41742 M	polyeventbackend/demandeevenement/webservice/src/main/java/fr/unice/polytech/isa/polyevent/demandeevenement/webservice/DemandeEvenement.java
+:100644 100644 c45da7300c123457a42f9954a29e1d9a3c9442cc 88b84e30aaffbc1bf77f05700e3421f2c8aff902 M	polyeventbackend/frontendreservation/pom.xml
+:100644 100644 0018840d9c006bdded8ac4511b50e9480bde23b8 988638feacf48a679955031a6e9566dfb8089e77 M	polyeventbackend/polyeventbackendwar/pom.xml
+:100644 100644 816a7f35bfccc896eda1ac7e1f535c73cc3e0abb 5d9e432484f06ac7b87b3d66bc1e399e6b5bb56e M	polyeventclients/organisateur/src/main/resources/DemandeEvenementWS.wsdl
+:100644 100644 fbd74e21f3a09b05855c1ba78d233962b1d5c7e5 b86df8e35fcc8e54cc5eb03129ebb4bcb78df04b M	polyeventclients/organisateur/src/main/resources/evenementOrganisateurWS.wsdl
+commit b709284bc2019d453ae1fff6fbb8e8ecb2206cca
+tree 304c7480d2464d97ae9cd6463cfe264761854731
+parent 065f42a99bfc63a310299e06baf52d40bd4184f6
+author dq610272 <quentin.duret@etu.unice.fr> 2018-05-04 10:59:11 +0200
+committer dq610272 <quentin.duret@etu.unice.fr> 2018-05-04 10:59:11 +0200
+
+    impossible de créer de événement identique
+
+
+
+:100644 100644 99f757a843105d5c1e6750cf7a5ced7962756dd9 bd4f83121f2481bb27ce1418d7ab360fcd0d7467 M	polyeventbackend/demandeevenement/webservice/src/main/java/fr/unice/polytech/isa/polyevent/demandeevenement/webservice/DemandeEvenement.java
+:100644 100644 e55358f57fa568ef7de52b468976241eb799696b 080d1f2db9828c5fa8e346346b410dff773e5d6f M	polyeventbackend/demandeevenement/webservice/src/main/java/fr/unice/polytech/isa/polyevent/demandeevenement/webservice/DemanderEvenement.java
+commit 065f42a99bfc63a310299e06baf52d40bd4184f6
+tree 7686562f7f2a1d5adfc5e4a749ed0c1c9bd2553c
+parent 629b52a95f25eaee891cf0d6c8fcaab0542a24c7
+author dq610272 <quentin.duret@etu.unice.fr> 2018-05-04 10:03:23 +0200
+committer dq610272 <quentin.duret@etu.unice.fr> 2018-05-04 10:03:23 +0200
+
+    impossible de créer de événement identique
+
+
+
+:100644 100644 0c35872d159f2c7451915b6257f6bd0c7cb8365c de398418b294a1acc8e1a64e1b1d97dababc3346 M	polyeventbackend/demandeevenement/bean/pom.xml
+:100644 100644 b5f85b7842f2a1d6eb852436dff8ecf9e268a9e5 5686919e2f4286e15e7876acb02d8f07022b2377 M	polyeventbackend/demandeevenement/bean/src/main/java/fr/unice/polytech/isa/polyevent/demandeevenement/bean/CreateurEvenement.java
+:100644 100644 f80014e8d9586d2df89c9f512364646a43d17168 e7de3f23d1ccad4c684874006714e40d630d8955 M	polyeventbackend/demandeevenement/bean/src/main/java/fr/unice/polytech/isa/polyevent/demandeevenement/bean/CreerEvenement.java
+commit 629b52a95f25eaee891cf0d6c8fcaab0542a24c7
+tree 8a9cbe1e83841fd650d86c37d8d0fdd11f5fe829
+parent 55d6785d396f9f7102808290bf222bd7e3efeaa4
+author Alexandre Clement <alexandre.clement@etu.unice.fr> 2018-05-04 09:49:50 +0200
+committer Alexandre Clement <alexandre.clement@etu.unice.fr> 2018-05-04 09:49:50 +0200
+
+    Ajout de la dépendance a demande prestataire dans le war.
+
+
+
+:100644 100644 b9c4256677698bf74ec8065ebe46c3dbea9299b6 88acc62110573fd372b48688876bc9542d48f150 M	polyeventbackend/caissier/bean/pom.xml
+:100644 100644 dbf1e64d0bf95135f50ea416da5a048e08f5f7ee 9a69389fa11996109a453329681eb1cd6cb7b91c M	polyeventbackend/caissier/webservice/pom.xml
+:100644 100644 4a0ab2ee49ac7263013a873b1f8477c2903c779e ea74a586ef9fd674d538f55da47fc905a68d2631 M	polyeventbackend/commun/src/main/java/fr.unice.polytech.isa.polyevent/entities/DemandePrestataire.java
+:100644 100644 1614b0cd2f6022e48ced0625b9f2a449c5e172ec 0c35872d159f2c7451915b6257f6bd0c7cb8365c M	polyeventbackend/demandeevenement/bean/pom.xml
+:100644 100644 bfac424d2a787542493d5bad4b4cf61d23328599 8f1a74b499cf97c42b3ff730ebc96cfa10f21ef1 M	polyeventbackend/demandeevenement/pom.xml
+:100644 100644 8c92ce82f37a0e0d6eb1b34f640ee8e4fceed99f 724cf553ada9f50b14ce657eb8a62c1282e3f2f9 M	polyeventbackend/demandeevenement/webservice/pom.xml
+:100644 000000 21529eba9d03cc5ec9388def0e1bcc7ca23a3c71 0000000000000000000000000000000000000000 D	polyeventbackend/polyeventbackenddemandeevenement/src/main/java/fr.unice.polytech.isa.polyevent/webservice/DemandeEvenement.java
+:100644 000000 57591aad226d53afd9a844162ddcd8bf76f3d734 0000000000000000000000000000000000000000 D	polyeventbackend/polyeventbackenddemandeevenement/src/main/java/fr.unice.polytech.isa.polyevent/webservice/DemanderEvenement.java
+:100644 000000 72a0e5f2065f6bed32fb085736c1f49732b3ad23 0000000000000000000000000000000000000000 D	polyeventbackend/polyeventbackenddemandeevenement/src/test/java/arquilian/DemandeEvenementTest.java
+:100644 100644 6a2a372ec5f925bfaa71f230c0b11edfcfb00be9 0018840d9c006bdded8ac4511b50e9480bde23b8 M	polyeventbackend/polyeventbackendwar/pom.xml

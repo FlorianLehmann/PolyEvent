@@ -1,0 +1,110 @@
+Started by user [8mha:////4LWRKVM/RLrsh5ZZtu96AvWW3T3LEjJKChClVcZTORbQAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL9tJz8oszEPADJzGJ3wgAAAA==[0mFlorian
+Building in workspace /var/jenkins_home/workspace/polyeventbackendwar
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git # timeout=10
+Fetching upstream changes from https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/test/artifactory^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/test/artifactory^{commit} # timeout=10
+Checking out Revision 765c333b3e0d62bf797188b76df7ad0f9f25a888 (refs/remotes/origin/test/artifactory)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 765c333b3e0d62bf797188b76df7ad0f9f25a888
+Commit message: "change repositories"
+ > git rev-list --no-walk 74644d79b7df15f2e8f0186ce979f9e4184638c6 # timeout=10
+[polyeventbackendwar] $ /bin/sh -xe /tmp/jenkins108471485733809983.sh
++ cd polyeventbackend/polyeventbackendwar
++ docker build . -t polyeventbackend:latest
+Sending build context to Docker daemon  105.5MB
+Step 1/2 : FROM tomee:8-jre-7.0.2-plus
+ ---> 8311f7a68f5b
+Step 2/2 : ADD target/polyeventbackend-war.war /usr/local/tomee/webapps
+ ---> Using cache
+ ---> 4b09066bef6b
+Successfully built 4b09066bef6b
+Successfully tagged polyeventbackend:latest
+[polyeventbackendwar] $ /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/maven/bin/mvn -f polyeventbackend/polyeventbackendwar clean deploy
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------< fr.unice.polytech.isa.polyevent:polyeventbackend-war >--------
+[INFO] Building polyeventbackend-war Maven Webapp 1.0-SNAPSHOT
+[INFO] --------------------------------[ war ]---------------------------------
+Downloading from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/commun/1.0-SNAPSHOT/maven-metadata.xml
+Progress (1): 781 B                   Downloaded from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/commun/1.0-SNAPSHOT/maven-metadata.xml (781 B at 673 B/s)
+Downloading from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/commun/1.0-SNAPSHOT/commun-1.0-20180426.110002-3.pom
+Progress (1): 2.3 kB                    Downloaded from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/commun/1.0-SNAPSHOT/commun-1.0-20180426.110002-3.pom (2.3 kB at 16 kB/s)
+Downloading from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend/1.0-SNAPSHOT/maven-metadata.xml
+Downloading from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend/1.0-SNAPSHOT/polyevent-backend-1.0-SNAPSHOT.pom
+Downloading from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-demande-reservation/1.0-SNAPSHOT/maven-metadata.xml
+Progress (1): 812 B                   Downloaded from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-demande-reservation/1.0-SNAPSHOT/maven-metadata.xml (812 B at 20 kB/s)
+Downloading from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-demande-reservation/1.0-SNAPSHOT/polyevent-backend-demande-reservation-1.0-20180426.111235-1.pom
+Progress (1): 951 B                   Downloaded from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-demande-reservation/1.0-SNAPSHOT/polyevent-backend-demande-reservation-1.0-20180426.111235-1.pom (951 B at 17 kB/s)
+Downloading from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-demande-evenement/1.0-SNAPSHOT/maven-metadata.xml
+Progress (1): 810 B                   Downloaded from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-demande-evenement/1.0-SNAPSHOT/maven-metadata.xml (810 B at 14 kB/s)
+Downloading from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-demande-evenement/1.0-SNAPSHOT/polyevent-backend-demande-evenement-1.0-20180426.110447-1.pom
+Progress (1): 1.4 kB                    Downloaded from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-demande-evenement/1.0-SNAPSHOT/polyevent-backend-demande-evenement-1.0-20180426.110447-1.pom (1.4 kB at 36 kB/s)
+Downloading from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/frontendreservation/1.0-SNAPSHOT/maven-metadata.xml
+Progress (1): 794 B                   Downloaded from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/frontendreservation/1.0-SNAPSHOT/maven-metadata.xml (794 B at 22 kB/s)
+Downloading from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/frontendreservation/1.0-SNAPSHOT/frontendreservation-1.0-20180426.110255-1.pom
+Progress (1): 1.8 kB                    Downloaded from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/frontendreservation/1.0-SNAPSHOT/frontendreservation-1.0-20180426.110255-1.pom (1.8 kB at 49 kB/s)
+Downloading from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/caissier/1.0-SNAPSHOT/maven-metadata.xml
+Progress (1): 783 B                   Downloaded from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/caissier/1.0-SNAPSHOT/maven-metadata.xml (783 B at 27 kB/s)
+Downloading from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/caissier/1.0-SNAPSHOT/caissier-1.0-20180426.110117-2.pom
+Progress (1): 877 B                   Downloaded from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/caissier/1.0-SNAPSHOT/caissier-1.0-20180426.110117-2.pom (877 B at 37 kB/s)
+Downloading from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-enregistrement/1.0-SNAPSHOT/maven-metadata.xml
+Progress (1): 807 B                   Downloaded from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-enregistrement/1.0-SNAPSHOT/maven-metadata.xml (807 B at 24 kB/s)
+Downloading from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-enregistrement/1.0-SNAPSHOT/polyevent-backend-enregistrement-1.0-20180426.110400-1.pom
+Progress (1): 1.2 kB                    Downloaded from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-enregistrement/1.0-SNAPSHOT/polyevent-backend-enregistrement-1.0-20180426.110400-1.pom (1.2 kB at 45 kB/s)
+Downloading from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-login/1.0-SNAPSHOT/maven-metadata.xml
+Progress (1): 798 B                   Downloaded from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-login/1.0-SNAPSHOT/maven-metadata.xml (798 B at 38 kB/s)
+Downloading from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-login/1.0-SNAPSHOT/polyevent-backend-login-1.0-20180426.110707-1.pom
+Progress (1): 922 B                   Downloaded from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-login/1.0-SNAPSHOT/polyevent-backend-login-1.0-20180426.110707-1.pom (922 B at 34 kB/s)
+Downloading from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-connexion/1.0-SNAPSHOT/maven-metadata.xml
+Progress (1): 802 B                   Downloaded from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-connexion/1.0-SNAPSHOT/maven-metadata.xml (802 B at 36 kB/s)
+Downloading from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-connexion/1.0-SNAPSHOT/polyevent-backend-connexion-1.0-20180426.110305-1.pom
+Progress (1): 1.1 kB                    Downloaded from snapshots: http://artifactory-23:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/polyevent-backend-connexion/1.0-SNAPSHOT/polyevent-backend-connexion-1.0-20180426.110305-1.pom (1.1 kB at 26 kB/s)
+Downloading from central: http://artifactory-23:8081/artifactory/polyeventbackend/org/apache/tomee/javaee-api/7.0-1/javaee-api-7.0-1.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for org.apache.tomee:javaee-api:jar:7.0-1 is missing, no dependency information available
+Downloading from central: http://artifactory-23:8081/artifactory/polyeventbackend/com/google/code/gson/gson/2.8.2/gson-2.8.2.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for com.google.code.gson:gson:jar:2.8.2 is missing, no dependency information available
+Downloading from central: http://artifactory-23:8081/artifactory/polyeventbackend/org/json/json/20180130/json-20180130.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for org.json:json:jar:20180130 is missing, no dependency information available
+Downloading from central: http://artifactory-23:8081/artifactory/polyeventbackend/org/apache/tomee/openejb-core/7.0.2/openejb-core-7.0.2.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for org.apache.tomee:openejb-core:jar:7.0.2 is missing, no dependency information available
+Downloading from central: http://artifactory-23:8081/artifactory/polyeventbackend/org/apache/tomee/tomee-embedded/7.0.2/tomee-embedded-7.0.2.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for org.apache.tomee:tomee-embedded:jar:7.0.2 is missing, no dependency information available
+Downloading from central: http://artifactory-23:8081/artifactory/polyeventbackend/org/apache/tomee/openejb-cxf/7.0.2/openejb-cxf-7.0.2.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for org.apache.tomee:openejb-cxf:jar:7.0.2 is missing, no dependency information available
+Downloading from central: http://artifactory-23:8081/artifactory/polyeventbackend/org/apache/tomee/openejb-cxf-rs/7.0.2/openejb-cxf-rs-7.0.2.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for org.apache.tomee:openejb-cxf-rs:jar:7.0.2 is missing, no dependency information available
+Downloading from central: http://artifactory-23:8081/artifactory/polyeventbackend/org/apache/myfaces/core/myfaces-api/2.2.10/myfaces-api-2.2.10.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for org.apache.myfaces.core:myfaces-api:jar:2.2.10 is missing, no dependency information available
+Downloading from central: http://artifactory-23:8081/artifactory/polyeventbackend/junit/junit/4.12/junit-4.12.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for junit:junit:jar:4.12 is missing, no dependency information available
+Downloading from central: http://artifactory-23:8081/artifactory/polyeventbackend/org/mockito/mockito-core/1.10.19/mockito-core-1.10.19.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for org.mockito:mockito-core:jar:1.10.19 is missing, no dependency information available
+Downloading from central: http://artifactory-23:8081/artifactory/polyeventbackend/com/github/cukespace/cukespace-core/1.6.5/cukespace-core-1.6.5.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for com.github.cukespace:cukespace-core:jar:1.6.5 is missing, no dependency information available
+Downloading from central: http://artifactory-23:8081/artifactory/polyeventbackend/org/jboss/arquillian/junit/arquillian-junit-container/1.1.12.Final/arquillian-junit-container-1.1.12.Final.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for org.jboss.arquillian.junit:arquillian-junit-container:jar:1.1.12.Final is missing, no dependency information available
+Downloading from central: http://artifactory-23:8081/artifactory/polyeventbackend/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-depchain/2.2.6/shrinkwrap-resolver-depchain-2.2.6.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-depchain:pom:2.2.6 is missing, no dependency information available
+Downloading from central: http://artifactory-23:8081/artifactory/polyeventbackend/org/apache/tomee/arquillian-tomee-embedded/7.0.2/arquillian-tomee-embedded-7.0.2.pom
+[8mha:////4BIEaX2bKlcH4dIKHD+Qg/bVl2uFtoE3H7/44o96aqNhAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] The POM for org.apache.tomee:arquillian-tomee-embedded:jar:7.0.2 is missing, no dependency information available
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 3.123 s
+[INFO] Finished at: 2018-04-26T19:29:26Z
+[INFO] ------------------------------------------------------------------------
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] Failed to execute goal on project polyeventbackend-war: Could not resolve dependencies for project fr.unice.polytech.isa.polyevent:polyeventbackend-war:war:1.0-SNAPSHOT: Failed to collect dependencies at fr.unice.polytech.isa.polyevent:commun:jar:1.0-SNAPSHOT: Failed to read artifact descriptor for fr.unice.polytech.isa.polyevent:commun:jar:1.0-SNAPSHOT: Could not find artifact fr.unice.polytech.isa.polyevent:polyevent-backend:pom:1.0-SNAPSHOT in snapshots (http://artifactory-23:8081/artifactory/polyeventbackend) -> [Help 1]
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] 
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] 
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[8mha:////4MUqphpctUrimA0GL9ShYZHNtfujh43wX2GQjkyeZkM1AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+Build step 'Invoke top-level Maven targets' marked build as failure
+Finished: FAILURE

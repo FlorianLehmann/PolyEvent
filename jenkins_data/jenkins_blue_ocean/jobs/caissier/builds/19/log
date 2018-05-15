@@ -1,0 +1,7 @@
+Started by user [8mha:////4LWRKVM/RLrsh5ZZtu96AvWW3T3LEjJKChClVcZTORbQAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL9tJz8oszEPADJzGJ3wgAAAA==[0mFlorian
+Building in workspace /var/jenkins_home/workspace/DevOps2
+Installing JDK jdk-8u152-oth-JPR
+Downloading JDK from http://download.oracle.com/otn/java/jdk/8u152-b16/aa0333dd3019491ca4f6ddbe78cdb6d0/jdk-8u152-linux-x64.tar.gz
+[8mha:////4C+PecHvPGIMRy2k7b71V8n31HgM1fX4D1edCdMMXHMxAAAAsR+LCAAAAAAAAP9djDEOgkAQRUeMHsDSeAa2syE0YiFKaDjBRiaAjrub2cHANbyGNh7C43gHMVj5m/+a9x5vmHmGVd2W3prwaI23hOGud8jUmHNuBdfx/Rnf3CuAIIU5oamkzmDaMgksspO+akXaVKoQbkwVdQzLv1wy/jcG4yYBQOcGKAQiVaI/cuPE8qbP9QXVzxdryYf77SE1XjQRskIjyAljOUCj6QO30jxSwAAAAA==[0mYour Oracle account doesn't appear valid. Please specify a valid username/password
+ERROR: Unable to install JDK unless a valid username/password is provided.
+Finished: FAILURE

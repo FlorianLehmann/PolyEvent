@@ -1,0 +1,13 @@
+commit 1edee54e6ed3aa233c2ca105f0014f6b26d0797b
+tree 6dcd48271b44bf05994ed1dd83e741fd159c6d91
+parent 6c2f2dd96aabb2e00cf80f76a59b3c377f7c8206
+author FlorianLehmann <Lehmann.florian@yandex.com> 2018-05-04 08:11:04 +0200
+committer FlorianLehmann <Lehmann.florian@yandex.com> 2018-05-04 08:11:04 +0200
+
+    Merge branch 'test/artifactory' into feature/development
+
+    # Conflicts:
+    #	polyeventbackend/pom.xml
+
+
+:100644 100644 96d426caba8eb1eed85ede49b52bf9fb0d2dc42f 837ea6164ed1bd412dd45f0eab695063419f1a1d M	polyeventbackend/commun/pom.xml
