@@ -24,17 +24,17 @@
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>polyevent-backend-demande-reservation</artifactId>
+            <artifactId>demande-reservation</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>demandeevenement.bean</artifactId>
+            <artifactId>demande-evenement.bean</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>demandeevenement.webservice</artifactId>
+            <artifactId>demande-evenement.webservice</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -44,32 +44,37 @@
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>polyevent-backend-enregistrement</artifactId>
+            <artifactId>login.bean</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>polyevent-backend-login</artifactId>
+            <artifactId>login.webserviceConnexion</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>polyevent-backend-connexion</artifactId>
+            <artifactId>login.webserviceEnregistrement</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>polyevent-backend-obtenir-evenement</artifactId>
+            <artifactId>obtenir-evenement.bean</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>polyevent-backend-obtenir-evenement-web-service</artifactId>
+            <artifactId>obtenir-evenement.webservice</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>polyevent-backend-profil-client-web-service</artifactId>
+            <artifactId>profil.bean</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>fr.unice.polytech.isa.polyevent</groupId>
+            <artifactId>profil.webservice</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -84,19 +89,24 @@
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>comptable</artifactId>
+            <artifactId>comptable.bean</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>polyevent-backend-comptable-web-service</artifactId>
+            <artifactId>comptable.webservice</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>polyevent-backend-demande-prestation</artifactId>
+            <artifactId>demande-prestation</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>fr.unice.polytech.isa.polyevent</groupId>
+            <artifactId>envoie-mail-prestataire</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

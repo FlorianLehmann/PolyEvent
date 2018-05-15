@@ -14,13 +14,13 @@
     <dependencies>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>polyevent-backend-obtenir-evenement</artifactId>
+            <artifactId>obtenir-evenement.bean</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>comptable</artifactId>
+            <artifactId>comptable.bean</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

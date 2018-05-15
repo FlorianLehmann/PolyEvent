@@ -1,32 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>polyevent-backend</artifactId>
+        <artifactId>demande-evenement</artifactId>
         <groupId>fr.unice.polytech.isa.polyevent</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>comptable</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>bean</module>
-        <module>webservice</module>
-    </modules>
+    <artifactId>demande-evenement.bean</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>commun</artifactId>
+            <artifactId>obtenir-evenement.bean</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>fr.unice.polytech.isa.polyevent</groupId>
-            <artifactId>profil.bean</artifactId>
+            <artifactId>demande-prestation</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>fr.unice.polytech.isa.polyevent</groupId>
+            <artifactId>demande-reservation</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
-
 </project>
