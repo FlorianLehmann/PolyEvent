@@ -28,7 +28,7 @@
   <triggers>
     <jenkins.triggers.ReverseBuildTrigger>
       <spec></spec>
-      <upstreamProjects>polyeventbackendobtenirevenement</upstreamProjects>
+      <upstreamProjects>obtenir-evenement</upstreamProjects>
       <threshold>
         <name>SUCCESS</name>
         <ordinal>0</ordinal>

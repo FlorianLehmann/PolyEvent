@@ -28,7 +28,7 @@
   <triggers>
     <jenkins.triggers.ReverseBuildTrigger>
       <spec></spec>
-      <upstreamProjects>polyeventbackendprofil, polyeventbackendlogin, </upstreamProjects>
+      <upstreamProjects>profil,login</upstreamProjects>
       <threshold>
         <name>SUCCESS</name>
         <ordinal>0</ordinal>
