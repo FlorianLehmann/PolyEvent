@@ -52,6 +52,6 @@ cd ../..
 cd jenkins_data
 echo "Build hyperplanning docker image"
 docker build . --tag=jenkinsci/blueocean_mod
-cd ../..
+cd ..
 
 docker-compose build
