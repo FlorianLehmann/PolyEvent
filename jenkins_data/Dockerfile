@@ -16,6 +16,7 @@ RUN echo "http://dl-4.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories
       mono \
       mono-dev \
       mono-lang \
+      maven \
       && \
     adduser -D user
 USER jenkins
