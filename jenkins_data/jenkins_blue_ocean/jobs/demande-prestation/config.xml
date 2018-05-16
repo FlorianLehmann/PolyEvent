@@ -39,15 +39,10 @@
   </triggers>
   <concurrentBuild>false</concurrentBuild>
   <builders>
-    <hudson.tasks.Maven>
-      <targets>clean deploy</targets>
-      <mavenName>maven</mavenName>
-      <pom>polyeventbackend/demande-prestation</pom>
-      <usePrivateRepository>false</usePrivateRepository>
-      <settings class="jenkins.mvn.DefaultSettingsProvider"/>
-      <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
-      <injectBuildVariables>false</injectBuildVariables>
-    </hudson.tasks.Maven>
+    <hudson.tasks.Shell>
+      <command>cd polyeventbackend/demande-prestation
+mvn clean deploy</command>
+    </hudson.tasks.Shell>
   </builders>
   <publishers/>
   <buildWrappers/>

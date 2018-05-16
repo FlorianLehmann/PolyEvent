@@ -41,17 +41,10 @@
   <builders>
     <hudson.tasks.Shell>
       <command>cd polyeventbackend/polyeventbackendwar
-docker build . -t polyeventbackend:latest</command>
+mon clean deploy
+docker build . -t polyeventbackend:latest
+</command>
     </hudson.tasks.Shell>
-    <hudson.tasks.Maven>
-      <targets>clean deploy</targets>
-      <mavenName>maven</mavenName>
-      <pom>polyeventbackend/polyeventbackendwar</pom>
-      <usePrivateRepository>false</usePrivateRepository>
-      <settings class="jenkins.mvn.DefaultSettingsProvider"/>
-      <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
-      <injectBuildVariables>false</injectBuildVariables>
-    </hudson.tasks.Maven>
   </builders>
   <publishers/>
   <buildWrappers/>
