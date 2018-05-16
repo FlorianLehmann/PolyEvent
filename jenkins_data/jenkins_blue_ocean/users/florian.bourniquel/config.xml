@@ -1,0 +1,73 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<user>
+  <fullName>florian.bourniquel</fullName>
+  <properties>
+    <jenkins.security.ApiTokenProperty>
+      <apiToken>{AQAAABAAAAAwUJRR9VuCARh5CW72ylEx+rp7+NPy9QDDc+efn8EStG32KdCx4oBErGw+1m6C7Fy4PNatGaumunqnpLGC6aEJRQ==}</apiToken>
+    </jenkins.security.ApiTokenProperty>
+    <io.jenkins.blueocean.autofavorite.user.FavoritingUserProperty plugin="blueocean-autofavorite@1.2.2">
+      <autofavoriteEnabled>true</autofavoriteEnabled>
+    </io.jenkins.blueocean.autofavorite.user.FavoritingUserProperty>
+    <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@2.1.16">
+      <domainCredentialsMap class="hudson.util.CopyOnWriteMap$Hash"/>
+    </com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty>
+    <hudson.plugins.emailext.watching.EmailExtWatchAction_-UserProperty plugin="email-ext@2.62">
+      <triggers/>
+    </hudson.plugins.emailext.watching.EmailExtWatchAction_-UserProperty>
+    <hudson.plugins.favorite.user.FavoriteUserProperty plugin="favorite@2.3.1">
+      <data class="concurrent-hash-map">
+        <entry>
+          <string>obtenir-evenement</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>polyeventbackendobtenirevenementwebservice</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>profil</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>demande-prestation</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>demande-reservation</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>login</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>demande-evenement</string>
+          <boolean>true</boolean>
+        </entry>
+      </data>
+    </hudson.plugins.favorite.user.FavoriteUserProperty>
+    <hudson.model.MyViewsProperty>
+      <views>
+        <hudson.model.AllView>
+          <owner class="hudson.model.MyViewsProperty" reference="../../.."/>
+          <name>all</name>
+          <filterExecutors>false</filterExecutors>
+          <filterQueue>false</filterQueue>
+          <properties class="hudson.model.View$PropertyList"/>
+        </hudson.model.AllView>
+      </views>
+    </hudson.model.MyViewsProperty>
+    <org.jenkinsci.plugins.displayurlapi.user.PreferredProviderUserProperty plugin="display-url-api@2.2.0">
+      <providerId>default</providerId>
+    </org.jenkinsci.plugins.displayurlapi.user.PreferredProviderUserProperty>
+    <hudson.model.PaneStatusProperties>
+      <collapsed/>
+    </hudson.model.PaneStatusProperties>
+    <hudson.search.UserSearchProperty>
+      <insensitiveSearch>true</insensitiveSearch>
+    </hudson.search.UserSearchProperty>
+    <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.21">
+      <emailAddress>florian.bourniquel@etu.unice.fr</emailAddress>
+    </hudson.tasks.Mailer_-UserProperty>
+  </properties>
+</user>

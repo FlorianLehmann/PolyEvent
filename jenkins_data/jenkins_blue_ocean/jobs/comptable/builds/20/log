@@ -1,0 +1,150 @@
+Started by upstream project "[8mha:////4MSajOzXBeBcvj29qkrLZh2aJmMlJzr1RctIgqZVTAFBAAAAmB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAy2EgYe/az8JP3k/Nzc0jx9AMP+EVvBAAAA[0mcommun" build number [8mha:////4Nm/61EHjc62tmAApuE+E+LSLJM6Je1HiXKKLedI9e4NAAAAmh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgY+/az8JP3k/Nzc0jx9EwsAhj8Ny8MAAAA=[0m48
+originally caused by:
+ Started by user [8mha:////4LWRKVM/RLrsh5ZZtu96AvWW3T3LEjJKChClVcZTORbQAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL9tJz8oszEPADJzGJ3wgAAAA==[0mFlorian
+Building in workspace /var/jenkins_home/workspace/comptable
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git # timeout=10
+Fetching upstream changes from https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/test/artifactory^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/test/artifactory^{commit} # timeout=10
+Checking out Revision 4b208e0c205e27605998ff63d204428733ff9ec1 (refs/remotes/origin/test/artifactory)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 4b208e0c205e27605998ff63d204428733ff9ec1
+Commit message: "Merge branch 'feature/development' into test/artifactory"
+ > git rev-list --no-walk 4b208e0c205e27605998ff63d204428733ff9ec1 # timeout=10
+[comptable] $ /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/maven/bin/mvn -f polyeventbackend/comptable clean deploy
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] comptable                                                          [pom]
+[INFO] comptable.bean                                                     [jar]
+[INFO] comptable.webservice                                               [jar]
+[INFO] 
+[INFO] -------------< fr.unice.polytech.isa.polyevent:comptable >--------------
+[INFO] Building comptable 1.0-SNAPSHOT                                    [1/3]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ comptable ---
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-install-plugin:2.4:install (default-install) @ comptable ---
+[INFO] Installing /var/jenkins_home/workspace/comptable/polyeventbackend/comptable/pom.xml to /var/jenkins_home/.m2/repository/fr/unice/polytech/isa/polyevent/comptable/1.0-SNAPSHOT/comptable-1.0-SNAPSHOT.pom
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-deploy-plugin:2.7:deploy (default-deploy) @ comptable ---
+Downloading from snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable/1.0-SNAPSHOT/maven-metadata.xml
+Progress (1): 784 B                   Downloaded from snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable/1.0-SNAPSHOT/maven-metadata.xml (784 B at 1.2 kB/s)
+Uploading to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable/1.0-SNAPSHOT/comptable-1.0-20180515.200144-10.pom
+Progress (1): 1.1 kB                    Uploaded to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable/1.0-SNAPSHOT/comptable-1.0-20180515.200144-10.pom (1.1 kB at 3.9 kB/s)
+Downloading from snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable/maven-metadata.xml
+Progress (1): 387 B                   Downloaded from snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable/maven-metadata.xml (387 B at 2.6 kB/s)
+Uploading to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable/1.0-SNAPSHOT/maven-metadata.xml
+Progress (1): 786 B                   Uploaded to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable/1.0-SNAPSHOT/maven-metadata.xml (786 B at 8.0 kB/s)
+Uploading to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable/maven-metadata.xml
+Progress (1): 332 B                   Uploaded to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable/maven-metadata.xml (332 B at 2.5 kB/s)
+[INFO] 
+[INFO] -----------< fr.unice.polytech.isa.polyevent:comptable.bean >-----------
+[INFO] Building comptable.bean 1.0-SNAPSHOT                               [2/3]
+[INFO] --------------------------------[ jar ]---------------------------------
+Downloading from snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/profil/1.0-SNAPSHOT/profil-1.0-20180515.195856-2.pom
+Progress (1): 971 B                   Downloaded from snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/profil/1.0-SNAPSHOT/profil-1.0-20180515.195856-2.pom (971 B at 9.9 kB/s)
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ comptable.bean ---
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ comptable.bean ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/comptable/polyeventbackend/comptable/bean/src/main/resources
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ comptable.bean ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 8 source files to /var/jenkins_home/workspace/comptable/polyeventbackend/comptable/bean/target/classes
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ comptable.bean ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/comptable/polyeventbackend/comptable/bean/src/test/resources
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.6.1:testCompile (default-testCompile) @ comptable.bean ---
+[INFO] No sources to compile
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ comptable.bean ---
+[INFO] No tests to run.
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ comptable.bean ---
+[INFO] Building jar: /var/jenkins_home/workspace/comptable/polyeventbackend/comptable/bean/target/comptable.bean-1.0-SNAPSHOT.jar
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-install-plugin:2.4:install (default-install) @ comptable.bean ---
+[INFO] Installing /var/jenkins_home/workspace/comptable/polyeventbackend/comptable/bean/target/comptable.bean-1.0-SNAPSHOT.jar to /var/jenkins_home/.m2/repository/fr/unice/polytech/isa/polyevent/comptable.bean/1.0-SNAPSHOT/comptable.bean-1.0-SNAPSHOT.jar
+[INFO] Installing /var/jenkins_home/workspace/comptable/polyeventbackend/comptable/bean/pom.xml to /var/jenkins_home/.m2/repository/fr/unice/polytech/isa/polyevent/comptable.bean/1.0-SNAPSHOT/comptable.bean-1.0-SNAPSHOT.pom
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-deploy-plugin:2.7:deploy (default-deploy) @ comptable.bean ---
+Downloading from snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable.bean/1.0-SNAPSHOT/maven-metadata.xml
+Uploading to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable.bean/1.0-SNAPSHOT/comptable.bean-1.0-20180515.200235-1.jar
+Progress (1): 2.0/12 kBProgress (1): 4.1/12 kBProgress (1): 6.1/12 kBProgress (1): 8.2/12 kBProgress (1): 10/12 kB Progress (1): 12/12 kBProgress (1): 12 kB                      Uploaded to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable.bean/1.0-SNAPSHOT/comptable.bean-1.0-20180515.200235-1.jar (12 kB at 68 kB/s)
+Uploading to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable.bean/1.0-SNAPSHOT/comptable.bean-1.0-20180515.200235-1.pom
+Progress (1): 525 B                   Uploaded to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable.bean/1.0-SNAPSHOT/comptable.bean-1.0-20180515.200235-1.pom (525 B at 2.5 kB/s)
+Downloading from snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable.bean/maven-metadata.xml
+Progress (1): 392 B                   Downloaded from snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable.bean/maven-metadata.xml (392 B at 2.8 kB/s)
+Uploading to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable.bean/1.0-SNAPSHOT/maven-metadata.xml
+Progress (1): 789 B                   Uploaded to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable.bean/1.0-SNAPSHOT/maven-metadata.xml (789 B at 17 kB/s)
+Uploading to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable.bean/maven-metadata.xml
+Progress (1): 337 B                   Uploaded to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable.bean/maven-metadata.xml (337 B at 2.3 kB/s)
+[INFO] 
+[INFO] --------< fr.unice.polytech.isa.polyevent:comptable.webservice >--------
+[INFO] Building comptable.webservice 1.0-SNAPSHOT                         [3/3]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ comptable.webservice ---
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ comptable.webservice ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/comptable/polyeventbackend/comptable/webservice/src/main/resources
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ comptable.webservice ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /var/jenkins_home/workspace/comptable/polyeventbackend/comptable/webservice/target/classes
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ comptable.webservice ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/comptable/polyeventbackend/comptable/webservice/src/test/resources
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.6.1:testCompile (default-testCompile) @ comptable.webservice ---
+[INFO] No sources to compile
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ comptable.webservice ---
+[INFO] No tests to run.
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ comptable.webservice ---
+[INFO] Building jar: /var/jenkins_home/workspace/comptable/polyeventbackend/comptable/webservice/target/comptable.webservice-1.0-SNAPSHOT.jar
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-install-plugin:2.4:install (default-install) @ comptable.webservice ---
+[INFO] Installing /var/jenkins_home/workspace/comptable/polyeventbackend/comptable/webservice/target/comptable.webservice-1.0-SNAPSHOT.jar to /var/jenkins_home/.m2/repository/fr/unice/polytech/isa/polyevent/comptable.webservice/1.0-SNAPSHOT/comptable.webservice-1.0-SNAPSHOT.jar
+[INFO] Installing /var/jenkins_home/workspace/comptable/polyeventbackend/comptable/webservice/pom.xml to /var/jenkins_home/.m2/repository/fr/unice/polytech/isa/polyevent/comptable.webservice/1.0-SNAPSHOT/comptable.webservice-1.0-SNAPSHOT.pom
+[INFO] 
+[8mha:////4NR45fkHq0XIkYVozu20bP8vkvx4Ke8xwAt5E+4mKS79AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-deploy-plugin:2.7:deploy (default-deploy) @ comptable.webservice ---
+Downloading from snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable.webservice/1.0-SNAPSHOT/maven-metadata.xml
+Uploading to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable.webservice/1.0-SNAPSHOT/comptable.webservice-1.0-20180515.200251-1.jar
+Progress (1): 2.0/4.5 kBProgress (1): 4.1/4.5 kBProgress (1): 4.5 kB                        Uploaded to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable.webservice/1.0-SNAPSHOT/comptable.webservice-1.0-20180515.200251-1.jar (4.5 kB at 27 kB/s)
+Uploading to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable.webservice/1.0-SNAPSHOT/comptable.webservice-1.0-20180515.200251-1.pom
+Progress (1): 775 B                   Uploaded to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable.webservice/1.0-SNAPSHOT/comptable.webservice-1.0-20180515.200251-1.pom (775 B at 5.1 kB/s)
+Downloading from snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable.webservice/maven-metadata.xml
+Progress (1): 398 B                   Downloaded from snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable.webservice/maven-metadata.xml (398 B at 4.9 kB/s)
+Uploading to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable.webservice/1.0-SNAPSHOT/maven-metadata.xml
+Progress (1): 795 B                   Uploaded to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable.webservice/1.0-SNAPSHOT/maven-metadata.xml (795 B at 12 kB/s)
+Uploading to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable.webservice/maven-metadata.xml
+Progress (1): 343 B                   Uploaded to snapshots: http://artifactory:8081/artifactory/polyeventbackend/fr/unice/polytech/isa/polyevent/comptable.webservice/maven-metadata.xml (343 B at 4.0 kB/s)
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] comptable 1.0-SNAPSHOT ............................. SUCCESS [  8.430 s]
+[INFO] comptable.bean ..................................... SUCCESS [ 51.248 s]
+[INFO] comptable.webservice 1.0-SNAPSHOT .................. SUCCESS [ 16.147 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:16 min
+[INFO] Finished at: 2018-05-15T20:02:52Z
+[INFO] ------------------------------------------------------------------------
+Finished: SUCCESS

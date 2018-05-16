@@ -1,0 +1,90 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<user>
+  <fullName>Florian</fullName>
+  <properties>
+    <jenkins.security.ApiTokenProperty>
+      <apiToken>{AQAAABAAAAAwXIgG2Mwq8s2yyF/9B3zlr1SS0Rm0ACVP4x2dkCLrF2RvmhviZEAl/pqHdIMbidxrCU/Jfq3VXBS+2Pel5G+qKg==}</apiToken>
+    </jenkins.security.ApiTokenProperty>
+    <io.jenkins.blueocean.autofavorite.user.FavoritingUserProperty plugin="blueocean-autofavorite@1.2.2">
+      <autofavoriteEnabled>true</autofavoriteEnabled>
+    </io.jenkins.blueocean.autofavorite.user.FavoritingUserProperty>
+    <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@2.1.16">
+      <domainCredentialsMap class="hudson.util.CopyOnWriteMap$Hash"/>
+    </com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty>
+    <hudson.plugins.emailext.watching.EmailExtWatchAction_-UserProperty plugin="email-ext@2.62">
+      <triggers/>
+    </hudson.plugins.emailext.watching.EmailExtWatchAction_-UserProperty>
+    <hudson.plugins.favorite.user.FavoriteUserProperty plugin="favorite@2.3.1">
+      <data class="concurrent-hash-map">
+        <entry>
+          <string>polyeventbackendconnexion</string>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <string>caissier</string>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <string>obtenir-evenement</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>polyeventbackendobtenirevenementwebservice</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>profil</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>demande-prestation</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>demande-reservation</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>login</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>demande-evenement</string>
+          <boolean>true</boolean>
+        </entry>
+      </data>
+    </hudson.plugins.favorite.user.FavoriteUserProperty>
+    <hudson.model.MyViewsProperty>
+      <views>
+        <hudson.model.AllView>
+          <owner class="hudson.model.MyViewsProperty" reference="../../.."/>
+          <name>all</name>
+          <filterExecutors>false</filterExecutors>
+          <filterQueue>false</filterQueue>
+          <properties class="hudson.model.View$PropertyList"/>
+        </hudson.model.AllView>
+      </views>
+    </hudson.model.MyViewsProperty>
+    <org.jenkinsci.plugins.displayurlapi.user.PreferredProviderUserProperty plugin="display-url-api@2.2.0">
+      <providerId>default</providerId>
+    </org.jenkinsci.plugins.displayurlapi.user.PreferredProviderUserProperty>
+    <hudson.model.PaneStatusProperties>
+      <collapsed/>
+    </hudson.model.PaneStatusProperties>
+    <hudson.search.UserSearchProperty>
+      <insensitiveSearch>true</insensitiveSearch>
+    </hudson.search.UserSearchProperty>
+    <hudson.security.HudsonPrivateSecurityRealm_-Details>
+      <passwordHash>#jbcrypt:$2a$10$ka/KdV8HtopFIKs08ZcOXuEZMRN6Yb.EZeSKicaID8LH3Ihxm2q7y</passwordHash>
+    </hudson.security.HudsonPrivateSecurityRealm_-Details>
+    <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.21">
+      <emailAddress>florian.lehmann@etu.unice.fr</emailAddress>
+    </hudson.tasks.Mailer_-UserProperty>
+    <jenkins.security.LastGrantedAuthoritiesProperty>
+      <roles>
+        <string>authenticated</string>
+      </roles>
+      <timestamp>1524595446502</timestamp>
+    </jenkins.security.LastGrantedAuthoritiesProperty>
+  </properties>
+</user>

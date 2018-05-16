@@ -1,0 +1,180 @@
+commit b19ad3f69ef520329d980ae373661e85ae3cd84b
+tree 57527e7497effdaf944707db2ca1d86164158181
+parent 9da3e7ee772a3f096c08e8eda3e7914fc3c8d6ca
+author Alexandre Clement <alexandre.clement@etu.unice.fr> 2018-05-09 17:54:29 +0200
+committer Alexandre Clement <alexandre.clement@etu.unice.fr> 2018-05-09 17:54:29 +0200
+
+    Refactor Profil.
+
+
+
+:100644 100644 753f2a5d3fdb6af798fda31371f7262cab96352c 479e35ae72c9ea95880d439a44d6b0c7fd237742 M	polyeventbackend/comptable/bean/pom.xml
+:100644 100644 f6adc29b32bb3887632eaf7467c90bd396d6876e 3f6fc1ac14338698f4953c0b4603fac06446c5d5 M	polyeventbackend/comptable/pom.xml
+:100644 100644 8588fd5e2ba7f83fe83146ac480e079b5723e07a eaad395a3bffe43380e90db84004e2ec9e055571 M	polyeventbackend/comptable/webservice/pom.xml
+:100644 100644 a6418ca71f939d7f38f155510b93a7756f72d1dc 901fe0e0e5daf38985a21ffb1a07977facdae020 M	polyeventbackend/frontendreservation/pom.xml
+:100644 100644 70bbb538a750aa4588f73b2b41d6c7b1142e026b e6241c85e2b7d2ad384c825bd9373fdc524c4ab0 M	polyeventbackend/polyeventbackendwar/pom.xml
+:100644 100644 3c4da24d917a99221dd931699a465feb1929054f 706ac31264efa876129eac734d47ce9233e51018 M	polyeventbackend/pom.xml
+:000000 100644 0000000000000000000000000000000000000000 c47357f31fafead4a38ae6f1e8bb78d435e55585 A	polyeventbackend/profil/bean/pom.xml
+:100644 100644 b21885a5843d0fc04db04176dd66061911f297d2 b21885a5843d0fc04db04176dd66061911f297d2 R100	polyeventbackend/polyeventbackendprofil/src/main/java/fr/unice/polytech/isa/polyevent/ObtenirProfilOrganisateur.java	polyeventbackend/profil/bean/src/main/java/fr/unice/polytech/isa/polyevent/ObtenirProfilOrganisateur.java
+:100644 100644 5b54b4ddc4c211301c507d6b7ea8bb509966759e 5b54b4ddc4c211301c507d6b7ea8bb509966759e R100	polyeventbackend/polyeventbackendprofil/src/main/java/fr/unice/polytech/isa/polyevent/ProfilClient.java	polyeventbackend/profil/bean/src/main/java/fr/unice/polytech/isa/polyevent/ProfilClient.java
+:100644 100644 9729cc634e6fc0de131f18671cd5bcdea512f180 9729cc634e6fc0de131f18671cd5bcdea512f180 R100	polyeventbackend/polyeventbackendprofil/src/test/java/fr/unice/polytech/isa/polyevent/ProfilClientTest.java	polyeventbackend/profil/bean/src/test/java/fr/unice/polytech/isa/polyevent/ProfilClientTest.java
+:100644 100644 504167bde1cea643837083e703c2af02c2e8811d e697fbd927283f31ca345210f2c30004732c555e R051	polyeventbackend/polyeventbackendprofilclientwebservice/pom.xml	polyeventbackend/profil/pom.xml
+:100644 100644 10c2c8a63f94da05e9f0942f3f6bf91e07baed80 f72687132e7503e547bc054d717d55036815bdfc R074	polyeventbackend/polyeventbackendprofil/pom.xml	polyeventbackend/profil/webservice/pom.xml
+:100644 100644 a454c284e5547c5169d67ef56afb2029d3b70be4 a454c284e5547c5169d67ef56afb2029d3b70be4 R100	polyeventbackend/polyeventbackendprofilclientwebservice/src/main/java/fr/unice/polytech/isa/polyevent/webservice/EvenementOrganisateur.java	polyeventbackend/profil/webservice/src/main/java/fr/unice/polytech/isa/polyevent/webservice/EvenementOrganisateur.java
+:100644 100644 4f42aa4476c42122e59dbe9bd929ce1b8a3727db 4f42aa4476c42122e59dbe9bd929ce1b8a3727db R100	polyeventbackend/polyeventbackendprofilclientwebservice/src/main/java/fr/unice/polytech/isa/polyevent/webservice/ObtenirEvenementOrganisateur.java	polyeventbackend/profil/webservice/src/main/java/fr/unice/polytech/isa/polyevent/webservice/ObtenirEvenementOrganisateur.java
+commit 9da3e7ee772a3f096c08e8eda3e7914fc3c8d6ca
+tree c50d89aeab0144ff468a96f3ded52ff88f6dfa83
+parent fb0f9596df85e501bb85f7085cc04eee85059067
+author Florian Bourniquel <florian.bourniquel@etu.unice.fr> 2018-05-09 16:48:59 +0200
+committer Florian Bourniquel <florian.bourniquel@etu.unice.fr> 2018-05-09 16:48:59 +0200
+
+    Renomage DemandePrestation
+
+
+
+:100644 100644 f5e965b3dadbc047f6bae3c57fd6684b4280c707 f5e965b3dadbc047f6bae3c57fd6684b4280c707 R100	polyeventbackend/demandeprestation/pom.xml	polyeventbackend/demande-prestation/pom.xml
+:100644 100644 97dc84e9b4f1d9881125939f533a70495acd331c 7e2df473fb96c14867a6bbd3fbef94e487e0e651 R088	polyeventbackend/demandeprestation/src/main/java/fr/unice/polytech/isa/polyevent/DemandePrestation.java	polyeventbackend/demande-prestation/src/main/java/fr/unice/polytech/isa/polyevent/DemandePrestation.java
+:100644 100644 08338ad34a89e1c0b4f91360aab468f53e14f02a 08338ad34a89e1c0b4f91360aab468f53e14f02a R100	polyeventbackend/demandeprestation/src/main/java/fr/unice/polytech/isa/polyevent/DemanderPrestation.java	polyeventbackend/demande-prestation/src/main/java/fr/unice/polytech/isa/polyevent/DemanderPrestation.java
+:100644 100644 7a04b224b10ee43c27594678e22c164b606107ab 7a04b224b10ee43c27594678e22c164b606107ab R100	polyeventbackend/demandeprestation/src/test/java/fr/unice/polytech/isa/polyevent/DemandePrestationTest.java	polyeventbackend/demande-prestation/src/test/java/fr/unice/polytech/isa/polyevent/DemandePrestationTest.java
+:100644 100644 7d319c45312ad05a726af7d3251e0ed721ff1f6c 3c4da24d917a99221dd931699a465feb1929054f M	polyeventbackend/pom.xml
+commit fb0f9596df85e501bb85f7085cc04eee85059067
+tree 219c7e81cc79032f2175bf20f16e1dc43c61aec0
+parent b75c6d02c9d7cb1991307fd55dc8626d970a6703
+author dq610272 <quentin.duret@etu.unice.fr> 2018-05-09 16:44:34 +0200
+committer dq610272 <quentin.duret@etu.unice.fr> 2018-05-09 16:44:34 +0200
+
+    refactor
+
+
+
+:100644 100644 606cebc72db166a9ba10cdd611e944863e7a7c28 606cebc72db166a9ba10cdd611e944863e7a7c28 R100	polyeventbackend/demandereservation/pom.xml	polyeventbackend/demande-reservation/pom.xml
+:100644 100644 6222a8293d6e7b14c0e9c57a300e4054b8dede34 6222a8293d6e7b14c0e9c57a300e4054b8dede34 R100	polyeventbackend/demandereservation/src/main/java/fr/unice/polytech/isa/polyevent/DemanderReservation.java	polyeventbackend/demande-reservation/src/main/java/fr/unice/polytech/isa/polyevent/DemanderReservation.java
+:100644 100644 5d9170af84e25c4903c23905e80fccd90449e1c8 5d9170af84e25c4903c23905e80fccd90449e1c8 R100	polyeventbackend/demandereservation/src/main/java/fr/unice/polytech/isa/polyevent/HyperPlanningAPI.java	polyeventbackend/demande-reservation/src/main/java/fr/unice/polytech/isa/polyevent/HyperPlanningAPI.java
+:100644 100644 8f5776f0dd288f0cb3c602b30d0b957f78d111a7 8f5776f0dd288f0cb3c602b30d0b957f78d111a7 R100	polyeventbackend/demandereservation/src/main/java/fr/unice/polytech/isa/polyevent/ValiderReservation.java	polyeventbackend/demande-reservation/src/main/java/fr/unice/polytech/isa/polyevent/ValiderReservation.java
+:100644 100644 6f5970f5594b9062c58c86579a7f76b09c039ec1 6f5970f5594b9062c58c86579a7f76b09c039ec1 R100	polyeventbackend/demandereservation/src/main/java/fr/unice/polytech/isa/polyevent/component/DemandeReservation.java	polyeventbackend/demande-reservation/src/main/java/fr/unice/polytech/isa/polyevent/component/DemandeReservation.java
+:100644 100644 f0205af090d50bcdf654feb4182264ecd229890b f0205af090d50bcdf654feb4182264ecd229890b R100	polyeventbackend/demandereservation/src/test/java/fr/unice/polytech/isa/polyevent/component/DemandeReservationTest.java	polyeventbackend/demande-reservation/src/test/java/fr/unice/polytech/isa/polyevent/component/DemandeReservationTest.java
+:100644 100644 78e31f8988a5f6d67eab3f0c243fc7c5f5336206 78e31f8988a5f6d67eab3f0c243fc7c5f5336206 R100	polyeventbackend/demandereservation/src/test/resources/arquillian.xml	polyeventbackend/demande-reservation/src/test/resources/arquillian.xml
+:100644 100644 b10932b4e58942b5c5bc372ff52025563a1ab836 7d319c45312ad05a726af7d3251e0ed721ff1f6c M	polyeventbackend/pom.xml
+commit b75c6d02c9d7cb1991307fd55dc8626d970a6703
+tree 5cb3b8cbe0f1d0c508bde550cf5ed671b9a4527e
+parent 58d25e57b603032385cb284b729d7924e0ede201
+author dq610272 <quentin.duret@etu.unice.fr> 2018-05-09 16:40:24 +0200
+committer dq610272 <quentin.duret@etu.unice.fr> 2018-05-09 16:40:24 +0200
+
+    refactor
+
+
+
+:100644 100644 851bf70243d8ac2fdadcc6024dbe3a3d5feae840 f495ebd639f7c07886c0a5316c43bed8667841f8 M	polyeventbackend/demande-evenement/bean/pom.xml
+:100644 100644 21cbd6396d1f2352d4266a8b83429cf4ae79e874 606cebc72db166a9ba10cdd611e944863e7a7c28 R089	polyeventbackend/polyeventbackendlogin/pom.xml	polyeventbackend/demandereservation/pom.xml
+:100644 100644 6222a8293d6e7b14c0e9c57a300e4054b8dede34 6222a8293d6e7b14c0e9c57a300e4054b8dede34 R100	polyeventbackend/polyeventbackenddemandereservation/src/main/java/fr/unice/polytech/isa/polyevent/DemanderReservation.java	polyeventbackend/demandereservation/src/main/java/fr/unice/polytech/isa/polyevent/DemanderReservation.java
+:100644 100644 5d9170af84e25c4903c23905e80fccd90449e1c8 5d9170af84e25c4903c23905e80fccd90449e1c8 R100	polyeventbackend/polyeventbackenddemandereservation/src/main/java/fr/unice/polytech/isa/polyevent/HyperPlanningAPI.java	polyeventbackend/demandereservation/src/main/java/fr/unice/polytech/isa/polyevent/HyperPlanningAPI.java
+:100644 100644 8f5776f0dd288f0cb3c602b30d0b957f78d111a7 8f5776f0dd288f0cb3c602b30d0b957f78d111a7 R100	polyeventbackend/polyeventbackenddemandereservation/src/main/java/fr/unice/polytech/isa/polyevent/ValiderReservation.java	polyeventbackend/demandereservation/src/main/java/fr/unice/polytech/isa/polyevent/ValiderReservation.java
+:100644 100644 6f5970f5594b9062c58c86579a7f76b09c039ec1 6f5970f5594b9062c58c86579a7f76b09c039ec1 R100	polyeventbackend/polyeventbackenddemandereservation/src/main/java/fr/unice/polytech/isa/polyevent/component/DemandeReservation.java	polyeventbackend/demandereservation/src/main/java/fr/unice/polytech/isa/polyevent/component/DemandeReservation.java
+:100644 100644 f0205af090d50bcdf654feb4182264ecd229890b f0205af090d50bcdf654feb4182264ecd229890b R100	polyeventbackend/polyeventbackenddemandereservation/src/test/java/fr/unice/polytech/isa/polyevent/component/DemandeReservationTest.java	polyeventbackend/demandereservation/src/test/java/fr/unice/polytech/isa/polyevent/component/DemandeReservationTest.java
+:100644 100644 78e31f8988a5f6d67eab3f0c243fc7c5f5336206 78e31f8988a5f6d67eab3f0c243fc7c5f5336206 R100	polyeventbackend/polyeventbackenddemandereservation/src/test/resources/arquillian.xml	polyeventbackend/demandereservation/src/test/resources/arquillian.xml
+:100644 100644 88b84e30aaffbc1bf77f05700e3421f2c8aff902 a6418ca71f939d7f38f155510b93a7756f72d1dc M	polyeventbackend/frontendreservation/pom.xml
+:000000 100644 0000000000000000000000000000000000000000 440db6d988c1b7f20659ea46cf867ce491927160 A	polyeventbackend/login/bean/pom.xml
+:100644 100644 2041d0fa3e5c6acfca39b2ff48c26218ff57f506 2041d0fa3e5c6acfca39b2ff48c26218ff57f506 R100	polyeventbackend/polyeventbackendlogin/src/main/java/fr/unice/polytech/isa/polyevent/EnregistrerOrganisateur.java	polyeventbackend/login/bean/src/main/java/fr/unice/polytech/isa/polyevent/EnregistrerOrganisateur.java
+:100644 100644 d598b2d3606d3bfcaf22cbffeccf8e74e5cca127 d598b2d3606d3bfcaf22cbffeccf8e74e5cca127 R100	polyeventbackend/polyeventbackendlogin/src/main/java/fr/unice/polytech/isa/polyevent/RegistreOrganisateur.java	polyeventbackend/login/bean/src/main/java/fr/unice/polytech/isa/polyevent/RegistreOrganisateur.java
+:100644 100644 a0fd4e2296bad9142e2093beff4e18ff0efa1b45 a0fd4e2296bad9142e2093beff4e18ff0efa1b45 R100	polyeventbackend/polyeventbackendlogin/src/main/java/fr/unice/polytech/isa/polyevent/TrouverOrganisateur.java	polyeventbackend/login/bean/src/main/java/fr/unice/polytech/isa/polyevent/TrouverOrganisateur.java
+:100644 100644 daa640d9d3c8dfb64b56d6aeae7b695bd78286be daa640d9d3c8dfb64b56d6aeae7b695bd78286be R100	polyeventbackend/polyeventbackendlogin/src/test/java/fr/unice/polytech/isa/polyevent/RegistreOrganisateurTest.java	polyeventbackend/login/bean/src/test/java/fr/unice/polytech/isa/polyevent/RegistreOrganisateurTest.java
+:100644 100644 78e31f8988a5f6d67eab3f0c243fc7c5f5336206 78e31f8988a5f6d67eab3f0c243fc7c5f5336206 R100	polyeventbackend/polyeventbackendlogin/src/test/resources/arquillian.xml	polyeventbackend/login/bean/src/test/resources/arquillian.xml
+:100644 100644 39b4d2ba3beacd8086b67066f46782ae83e4cf13 97a56967c3ce13cea7b3894bf2f2af80e90c5612 R058	polyeventbackend/polyeventbackenddemandereservation/pom.xml	polyeventbackend/login/pom.xml
+:000000 100644 0000000000000000000000000000000000000000 ef3271af9031f607c4fd9d1daf9119f7bac3f0c1 A	polyeventbackend/login/webserviceConnnexion/pom.xml
+:100644 100644 9d1f9da7ae4b6003e4a7c5004ff4d3bf455db488 9d1f9da7ae4b6003e4a7c5004ff4d3bf455db488 R100	polyeventbackend/polyeventbackendconnexion/src/main/java/fr/unice/polytech/isa/polyevent/webservice/ConnecterClient.java	polyeventbackend/login/webserviceConnnexion/src/main/java/fr/unice/polytech/isa/polyevent/webservice/ConnecterClient.java
+:100644 100644 b0c31e55ca6dc01044fcea3132286b1fc1c98543 b0c31e55ca6dc01044fcea3132286b1fc1c98543 R100	polyeventbackend/polyeventbackendconnexion/src/main/java/fr/unice/polytech/isa/polyevent/webservice/ConnexionClient.java	polyeventbackend/login/webserviceConnnexion/src/main/java/fr/unice/polytech/isa/polyevent/webservice/ConnexionClient.java
+:000000 100644 0000000000000000000000000000000000000000 f60a968b414e82aac4cbed805412ffe61bd12cb1 A	polyeventbackend/login/webserviceEnregistrement/pom.xml
+:100644 100644 6b489f550558dec5c8c71f21a7a222c05ccf1aa0 6b489f550558dec5c8c71f21a7a222c05ccf1aa0 R100	polyeventbackend/polyeventbackendenregistrement/src/main/java/fr/unice/polytech/isa/polyevent/webservice/EnregistrementClient.java	polyeventbackend/login/webserviceEnregistrement/src/main/java/fr/unice/polytech/isa/polyevent/webservice/EnregistrementClient.java
+:100644 100644 86b7f1aa37bfcc7466701f6818322f2739447565 86b7f1aa37bfcc7466701f6818322f2739447565 R100	polyeventbackend/polyeventbackendenregistrement/src/main/java/fr/unice/polytech/isa/polyevent/webservice/EnregistrerClient.java	polyeventbackend/login/webserviceEnregistrement/src/main/java/fr/unice/polytech/isa/polyevent/webservice/EnregistrerClient.java
+:100644 000000 a4544480c2be7fc593799e78c162b0b206b30dc3 0000000000000000000000000000000000000000 D	polyeventbackend/polyeventbackendconnexion/pom.xml
+:100644 000000 04625552391ef998120b3b54e424d11574159860 0000000000000000000000000000000000000000 D	polyeventbackend/polyeventbackendenregistrement/pom.xml
+:100644 100644 705b66c39ea508f7b796d4a02165e1193d778fbf 70bbb538a750aa4588f73b2b41d6c7b1142e026b M	polyeventbackend/polyeventbackendwar/pom.xml
+:100644 100644 43ffd3df1babfd68401382a3a13e6483db648ec6 b10932b4e58942b5c5bc372ff52025563a1ab836 M	polyeventbackend/pom.xml
+commit 58d25e57b603032385cb284b729d7924e0ede201
+tree 3d9a368da5f3f581bf111ef23ba3485eeb5049b1
+parent eb340d61e25851e92a8ebb482f2436e1c5b7c3cf
+author Florian Bourniquel <florian.bourniquel@etu.unice.fr> 2018-05-09 16:31:28 +0200
+committer Florian Bourniquel <florian.bourniquel@etu.unice.fr> 2018-05-09 16:31:28 +0200
+
+    Refactor Comptable
+
+
+
+:100644 100644 33cdb714e3fbe97238ff5101ffca71e0ed70f4a6 fa89d356ca134a4bca6f57d5f99d308caf8d50d7 M	polyeventbackend/caissier/bean/pom.xml
+:100644 100644 e5fed7c5bd778ab8d23748161797e6782ed3708b efeb7963f33fbce93fa5cbfa3a1ce5594ddce965 M	polyeventbackend/caissier/bean/src/main/java/fr/unice/polytech/isa/polyevent/caissier/bean/Caissier.java
+:100644 100644 0143bf009250c21cc01f288deb583dc820512563 f1e90d4da8ad5351e1965d080515357e7f6e3947 M	polyeventbackend/caissier/bean/src/test/java/arquillian/CaisseTest.java
+:100644 100644 1771cdd6b337008bd92a55569e6d76390e448fa8 3ab17c674c4749fa66fa21cc9dc35a92564acfb1 M	polyeventbackend/caissier/webservice/src/main/java/fr/unice/polytech/isa/polyevent/caissier/webservice/Payer.java
+:000000 100644 0000000000000000000000000000000000000000 753f2a5d3fdb6af798fda31371f7262cab96352c A	polyeventbackend/comptable/bean/pom.xml
+:100644 100644 c3e68c347040ef2b1de25800fe51ead0bdb0d95a 8d0c27ac1836d993227db668109b94f6bfa26514 R097	polyeventbackend/comptable/src/main/java/fr/unice/polytech/isa/polyevent/comptable/Comptable.java	polyeventbackend/comptable/bean/src/main/java/fr/unice/polytech/isa/polyevent/comptable/bean/Comptable.java
+:100644 100644 0a3592348861617ac6ffaa8de66a2218c5834924 7badd100d6f3aa22967056d506df8eb805049c32 R082	polyeventbackend/comptable/src/main/java/fr/unice/polytech/isa/polyevent/comptable/EnvoyerFacture.java	polyeventbackend/comptable/bean/src/main/java/fr/unice/polytech/isa/polyevent/comptable/bean/EnvoyerFacture.java
+:100644 100644 3c9d8e72576cf4648208d3d55a252d9f80fda776 2ffeb325de75c5518c3e796f86947df10db24dcb R093	polyeventbackend/comptable/src/main/java/fr/unice/polytech/isa/polyevent/comptable/FactureMoM.java	polyeventbackend/comptable/bean/src/main/java/fr/unice/polytech/isa/polyevent/comptable/bean/FactureMoM.java
+:100644 100644 1d95212398190df3f4e3871f3dc4388c6d64c41a aa35d883c4c7481e67c8b90b4ce59c9b5b11011a R075	polyeventbackend/comptable/src/main/java/fr/unice/polytech/isa/polyevent/comptable/FactureMoMAck.java	polyeventbackend/comptable/bean/src/main/java/fr/unice/polytech/isa/polyevent/comptable/bean/FactureMoMAck.java
+:100644 100644 13dfa6ba338a631b44e3df5cd58452872fa868f3 a40baabc34a1cd304854add33b1daafca8f82a4a R075	polyeventbackend/comptable/src/main/java/fr/unice/polytech/isa/polyevent/comptable/Facturer.java	polyeventbackend/comptable/bean/src/main/java/fr/unice/polytech/isa/polyevent/comptable/bean/Facturer.java
+:100644 100644 16666ce85b4f24b1acd6d6ccaf1707aa91c76e7d ebc12de3d64305f0783f21c9fe956e575a1f71a9 R098	polyeventbackend/comptable/src/main/java/fr/unice/polytech/isa/polyevent/comptable/ServeurComptabilite.java	polyeventbackend/comptable/bean/src/main/java/fr/unice/polytech/isa/polyevent/comptable/bean/ServeurComptabilite.java
+:000000 100644 0000000000000000000000000000000000000000 f24e110667c6c397084a63ae09375f195373ff77 A	polyeventbackend/comptable/bean/src/main/java/fr/unice/polytech/isa/polyevent/comptable/bean/StatusPayement.java
+:100644 100644 45f7b0c240625baeeee27611b111951447df1e3a 5c7985d69c5072e31702ccddab5a5ffdd6c44b08 R080	polyeventbackend/comptable/src/main/java/fr/unice/polytech/isa/polyevent/comptable/WebServiceComptabilite.java	polyeventbackend/comptable/bean/src/main/java/fr/unice/polytech/isa/polyevent/comptable/bean/WebServiceComptabilite.java
+:100644 100644 09b1c7ec314f68960be860ac5c23d1b573f4f34b f6adc29b32bb3887632eaf7467c90bd396d6876e M	polyeventbackend/comptable/pom.xml
+:100644 000000 1d3c333b50578c5cf6be2ee5c739883cac4c08e4 0000000000000000000000000000000000000000 D	polyeventbackend/comptable/src/main/java/fr/unice/polytech/isa/polyevent/comptable/StatusPayement.java
+:100644 100644 46f7d58842059ae73ddc3751ac560fb5aa056856 8588fd5e2ba7f83fe83146ac480e079b5723e07a R060	polyeventbackend/polyeventbackendcomptablewebservice/pom.xml	polyeventbackend/comptable/webservice/pom.xml
+:100644 100644 00ea48c151501e3ef094658903f34a9df0dcdda2 121af11f66251aff13adc788c259186a091207d4 R090	polyeventbackend/polyeventbackendcomptablewebservice/src/main/java/webservice/DemandeFacture.java	polyeventbackend/comptable/webservice/src/main/java/fr/unice/polytech/isa/polyevent/comptable/webservice/DemandeFacture.java
+:100644 100644 9e0e819d9ee3ac432ee7d27510610e6f1dc75368 66a82744e0ab92f6bd61d401ce87b73904bc0aaf R092	polyeventbackend/polyeventbackendcomptablewebservice/src/main/java/webservice/DemanderFacture.java	polyeventbackend/comptable/webservice/src/main/java/fr/unice/polytech/isa/polyevent/comptable/webservice/DemanderFacture.java
+:100644 100644 3f0f0725ee1cf723863b38439b423adb3446429e 705b66c39ea508f7b796d4a02165e1193d778fbf M	polyeventbackend/polyeventbackendwar/pom.xml
+:100644 100644 63742e4f4f2209feac374d76314098a789bc73df 43ffd3df1babfd68401382a3a13e6483db648ec6 M	polyeventbackend/pom.xml
+commit eb340d61e25851e92a8ebb482f2436e1c5b7c3cf
+tree 923452c478155ab4dc5d185a23084b640380b1a6
+parent ba7e96d9442bcd81a6df4165213bcfd5acf87d0e
+author Alexandre Clement <alexandre.clement@etu.unice.fr> 2018-05-09 16:25:13 +0200
+committer Alexandre Clement <alexandre.clement@etu.unice.fr> 2018-05-09 16:25:13 +0200
+
+    Refactor de obtenir-evenement et demande-evenement.
+
+
+
+:100644 100644 e94279d49003eda529bf9208a128bd6cc641d8be 33cdb714e3fbe97238ff5101ffca71e0ed70f4a6 M	polyeventbackend/caissier/bean/pom.xml
+:100644 100644 b9966bc0c13ddb7b4966d63bc7d3603bc9f5b473 851bf70243d8ac2fdadcc6024dbe3a3d5feae840 R084	polyeventbackend/demandeevenement/bean/pom.xml	polyeventbackend/demande-evenement/bean/pom.xml
+:100644 100644 7dc387261d1ca6c7fef297b4109ddb5e9ce991a0 7dc387261d1ca6c7fef297b4109ddb5e9ce991a0 R100	polyeventbackend/demandeevenement/bean/src/main/java/fr/unice/polytech/isa/polyevent/demandeevenement/bean/CreateurEvenement.java	polyeventbackend/demande-evenement/bean/src/main/java/fr/unice/polytech/isa/polyevent/demandeevenement/bean/CreateurEvenement.java
+:100644 100644 e7de3f23d1ccad4c684874006714e40d630d8955 e7de3f23d1ccad4c684874006714e40d630d8955 R100	polyeventbackend/demandeevenement/bean/src/main/java/fr/unice/polytech/isa/polyevent/demandeevenement/bean/CreerEvenement.java	polyeventbackend/demande-evenement/bean/src/main/java/fr/unice/polytech/isa/polyevent/demandeevenement/bean/CreerEvenement.java
+:100644 100644 625b68e055c79683b59ae40cada2c8c752bcbb45 625b68e055c79683b59ae40cada2c8c752bcbb45 R100	polyeventbackend/demandeevenement/bean/src/test/java/arquillian/CreateurEvenementTest.java	polyeventbackend/demande-evenement/bean/src/test/java/arquillian/CreateurEvenementTest.java
+:100644 100644 2aeb2fe4d50cf611884ec4a5c7bd6a6e8172fb9f 2aeb2fe4d50cf611884ec4a5c7bd6a6e8172fb9f R100	polyeventbackend/demandeevenement/bean/src/test/java/resources/arquillian.xml	polyeventbackend/demande-evenement/bean/src/test/java/resources/arquillian.xml
+:100644 100644 cb65d6b4680c81705e9c5d756faf1b4a04e96aad 5d13c7d17e0cdbc8925a61cc80bff767f00d66d9 R088	polyeventbackend/demandeevenement/pom.xml	polyeventbackend/demande-evenement/pom.xml
+:100644 100644 0f3f027dff2ed186ae1de05b3bcd51f3c9c5dfd5 647a549d054c8399dfb4e3028b27fa650d45078f R075	polyeventbackend/demandeevenement/webservice/pom.xml	polyeventbackend/demande-evenement/webservice/pom.xml
+:100644 100644 a014bd3ee956f9e6b02e8cd0758c03a7bee04e1b a014bd3ee956f9e6b02e8cd0758c03a7bee04e1b R100	polyeventbackend/demandeevenement/webservice/src/main/java/fr/unice/polytech/isa/polyevent/demandeevenement/webservice/DemandeEvenement.java	polyeventbackend/demande-evenement/webservice/src/main/java/fr/unice/polytech/isa/polyevent/demandeevenement/webservice/DemandeEvenement.java
+:100644 100644 080d1f2db9828c5fa8e346346b410dff773e5d6f 080d1f2db9828c5fa8e346346b410dff773e5d6f R100	polyeventbackend/demandeevenement/webservice/src/main/java/fr/unice/polytech/isa/polyevent/demandeevenement/webservice/DemanderEvenement.java	polyeventbackend/demande-evenement/webservice/src/main/java/fr/unice/polytech/isa/polyevent/demandeevenement/webservice/DemanderEvenement.java
+:000000 100644 0000000000000000000000000000000000000000 2703b5414d32e58a7f548eae0b119dfa848849f4 A	polyeventbackend/obtenir-evenement/bean/pom.xml
+:100644 100644 bfefe56c414ce1600d612bb39e743f6f94b63965 bfefe56c414ce1600d612bb39e743f6f94b63965 R100	polyeventbackend/polyeventbackendobtenirevenement/src/main/java/fr/unice/polytech/isa/polyevent/ChercherEvenement.java	polyeventbackend/obtenir-evenement/bean/src/main/java/fr/unice/polytech/isa/polyevent/ChercherEvenement.java
+:100644 100644 4c54db243e1a0ace37e4a23f06e19f0ade291138 4c54db243e1a0ace37e4a23f06e19f0ade291138 R100	polyeventbackend/polyeventbackendobtenirevenement/src/main/java/fr/unice/polytech/isa/polyevent/ChercheurEvenement.java	polyeventbackend/obtenir-evenement/bean/src/main/java/fr/unice/polytech/isa/polyevent/ChercheurEvenement.java
+:100644 100644 ddc75eb50f192d533ed520f9b698c0ea8c286400 ddc75eb50f192d533ed520f9b698c0ea8c286400 R100	polyeventbackend/polyeventbackendobtenirevenement/src/test/java/fr/unice/polytech/isa/polyevent/ChercheurEvenementTest.java	polyeventbackend/obtenir-evenement/bean/src/test/java/fr/unice/polytech/isa/polyevent/ChercheurEvenementTest.java
+:100644 100644 85c57b7506434eff45ff280d02f769401161c5f7 5daa2d5b5f05b6fd8ff97a0c662f55b272ce4e12 R053	polyeventbackend/polyevent-backend-comptable-web-service/pom.xml	polyeventbackend/obtenir-evenement/pom.xml
+:100644 100644 5df5f27797bf161a99c33fbb3d8a5d2801aa0751 4a981f55b63ae420d065bef96447c9ea489f531f R072	polyeventbackend/polyeventbackendobtenirevenement/pom.xml	polyeventbackend/obtenir-evenement/webservice/pom.xml
+:100644 100644 7df1fe12acaf15f0603df7eb0449ab138667c997 7df1fe12acaf15f0603df7eb0449ab138667c997 R100	polyeventbackend/polyeventbackendobtenirevenementwebservice/src/main/java/fr/unice/polytech/isa/polyevent/webservice/ObtenirEvenement.java	polyeventbackend/obtenir-evenement/webservice/src/main/java/fr/unice/polytech/isa/polyevent/webservice/ObtenirEvenement.java
+:100644 100644 50455cf5a9545d371901d023040e17e816490d01 50455cf5a9545d371901d023040e17e816490d01 R100	polyeventbackend/polyeventbackendobtenirevenementwebservice/src/main/java/fr/unice/polytech/isa/polyevent/webservice/TrouverEvenement.java	polyeventbackend/obtenir-evenement/webservice/src/main/java/fr/unice/polytech/isa/polyevent/webservice/TrouverEvenement.java
+:100644 000000 bee8e5f9ae8ec8f2743783a52c3c89ed6cc3f5f3 0000000000000000000000000000000000000000 D	polyeventbackend/polyeventbackendobtenirevenementwebservice/pom.xml
+:100644 100644 7e8bfd5d27a79e37acdb4acc41d838bb8e439f9a 3f0f0725ee1cf723863b38439b423adb3446429e M	polyeventbackend/polyeventbackendwar/pom.xml
+:100644 100644 1ab0385d11717a49db5695dbc680902ccfd904c8 63742e4f4f2209feac374d76314098a789bc73df M	polyeventbackend/pom.xml
+commit ba7e96d9442bcd81a6df4165213bcfd5acf87d0e
+tree fef4d86b04f96057d4678539b711525a29d0b51b
+parent 13087b4903c5636ef7912412366eb4fadfdf21f7
+author Florian Bourniquel <florian.bourniquel@etu.unice.fr> 2018-05-09 15:59:05 +0200
+committer Florian Bourniquel <florian.bourniquel@etu.unice.fr> 2018-05-09 15:59:05 +0200
+
+    Refactor EnvoieMailPrestataire
+
+
+
+:100644 100644 8924b4c223283803a0f04d455e92848c43406f69 f5e965b3dadbc047f6bae3c57fd6684b4280c707 M	polyeventbackend/demandeprestation/pom.xml
+:100644 100644 ea7e15d077e7e30361a0f5b0a820ae074a7b6969 1a6ed071ddfef3029409833166efe509847ac11a M	polyeventbackend/envoiemailprestataire/pom.xml
+:100644 100644 d887598425652942bbc085d2889f97c89668a573 7e8bfd5d27a79e37acdb4acc41d838bb8e439f9a M	polyeventbackend/polyeventbackendwar/pom.xml
+commit 13087b4903c5636ef7912412366eb4fadfdf21f7
+tree 247b5821502d74fdbb3c089104df7fc284b621a2
+parent b7842eb5e2c1ad7d567d35ae84b67449c22b681d
+author Florian Bourniquel <florian.bourniquel@etu.unice.fr> 2018-05-09 15:52:43 +0200
+committer Florian Bourniquel <florian.bourniquel@etu.unice.fr> 2018-05-09 15:52:43 +0200
+
+    Refactor DemandePrestation
+
+
+
+:100644 100644 f173edbeeb5aa4ecb3bf739bee6a5a50908f5a21 b9966bc0c13ddb7b4966d63bc7d3603bc9f5b473 M	polyeventbackend/demandeevenement/bean/pom.xml
+:100644 100644 bb4baf05a94d1cce16161efd68bb1b921d0e9212 8924b4c223283803a0f04d455e92848c43406f69 M	polyeventbackend/demandeprestation/pom.xml
+:100644 100644 988638feacf48a679955031a6e9566dfb8089e77 d887598425652942bbc085d2889f97c89668a573 M	polyeventbackend/polyeventbackendwar/pom.xml

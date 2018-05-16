@@ -1,0 +1,92 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<build>
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UpstreamCause>
+            <upstreamProject>demandeevenement</upstreamProject>
+            <upstreamUrl>job/demandeevenement/</upstreamUrl>
+            <upstreamBuild>21</upstreamBuild>
+            <upstreamCauses>
+              <hudson.model.Cause_-UpstreamCause>
+                <upstreamProject>polyeventbackenddemandereservation</upstreamProject>
+                <upstreamUrl>job/polyeventbackenddemandereservation/</upstreamUrl>
+                <upstreamBuild>16</upstreamBuild>
+                <upstreamCauses>
+                  <hudson.model.Cause_-UpstreamCause>
+                    <upstreamProject>commun</upstreamProject>
+                    <upstreamUrl>job/commun/</upstreamUrl>
+                    <upstreamBuild>45</upstreamBuild>
+                    <upstreamCauses>
+                      <hudson.model.Cause_-UserIdCause>
+                        <userId>florian</userId>
+                      </hudson.model.Cause_-UserIdCause>
+                    </upstreamCauses>
+                  </hudson.model.Cause_-UpstreamCause>
+                </upstreamCauses>
+              </hudson.model.Cause_-UpstreamCause>
+              <hudson.model.Cause_-UpstreamCause>
+                <upstreamProject>polyeventbackendobtenirevenement</upstreamProject>
+                <upstreamUrl>job/polyeventbackendobtenirevenement/</upstreamUrl>
+                <upstreamBuild>14</upstreamBuild>
+                <upstreamCauses>
+                  <hudson.model.Cause_-UpstreamCause>
+                    <upstreamProject>commun</upstreamProject>
+                    <upstreamUrl>job/commun/</upstreamUrl>
+                    <upstreamBuild>45</upstreamBuild>
+                    <upstreamCauses/>
+                  </hudson.model.Cause_-UpstreamCause>
+                </upstreamCauses>
+              </hudson.model.Cause_-UpstreamCause>
+            </upstreamCauses>
+          </hudson.model.Cause_-UpstreamCause>
+          <int>2</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <hudson.plugins.git.util.BuildData plugin="git@3.8.0">
+      <buildsByBranchName>
+        <entry>
+          <string>refs/remotes/origin/test/artifactory</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.7.1">
+              <sha1>4b208e0c205e27605998ff63d204428733ff9ec1</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/remotes/origin/test/artifactory</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision reference="../marked"/>
+            <hudsonBuildNumber>53</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+      </buildsByBranchName>
+      <lastBuild reference="../buildsByBranchName/entry/hudson.plugins.git.util.Build"/>
+      <remoteUrls>
+        <string>https://lf612146@mjollnir.unice.fr/bitbucket/scm/idh/main.git</string>
+      </remoteUrls>
+    </hudson.plugins.git.util.BuildData>
+    <jenkins.model.InterruptedBuildAction>
+      <causes class="com.google.common.collect.ImmutableList">
+        <jenkins.model.CauseOfInterruption_-UserInterruption>
+          <user>florian</user>
+        </jenkins.model.CauseOfInterruption_-UserInterruption>
+      </causes>
+    </jenkins.model.InterruptedBuildAction>
+  </actions>
+  <queueId>46</queueId>
+  <timestamp>1526412650467</timestamp>
+  <startTime>1526412650487</startTime>
+  <result>ABORTED</result>
+  <duration>18074</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <builtOn></builtOn>
+  <workspace>/var/jenkins_home/workspace/polyeventbackendwar</workspace>
+  <hudsonVersion>2.107.3</hudsonVersion>
+  <scm class="hudson.scm.NullChangeLogParser"/>
+  <culprits class="com.google.common.collect.EmptyImmutableSortedSet"/>
+</build>
