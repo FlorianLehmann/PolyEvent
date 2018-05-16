@@ -33,7 +33,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>cd dotnetComptabilite
+      <command>cd dotnet/comptabilite
 /bin/bash compile.sh
 docker build . --tag=comptabilite:latest</command>
     </hudson.tasks.Shell>
