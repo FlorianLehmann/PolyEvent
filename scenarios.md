@@ -1,6 +1,6 @@
 3 scenarios sont présent dans polyeventclients/organisateur/demo
 
-Pour lancer un des scenario présent ci-dessous utiliser la commande play demo/demoX.pe 
+Pour lancer un des scenario présent ci-dessous, utilisez la commande play demo/demoX.pe 
 ou X est le numéro du scénario.
 
 demo1:
@@ -63,3 +63,5 @@ Ce scénario réalise les actions suivantes:
 - Demande la réservation de 4 salles pour un événement
 - Demande d'une facture
 - deconnexion de l'utilisateur
+
+La commande "?" permet de lister l'ensemble des commandes disponibles.
