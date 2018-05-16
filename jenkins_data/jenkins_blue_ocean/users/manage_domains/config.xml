@@ -1,9 +1,9 @@
 <?xml version='1.1' encoding='UTF-8'?>
 <user>
-  <fullName>alexandre.clement</fullName>
+  <fullName>MANAGE_DOMAINS</fullName>
   <properties>
     <jenkins.security.ApiTokenProperty>
-      <apiToken>{AQAAABAAAAAwfmssDhMtObJIZdAkBiMGzg+z5gWhlQDDIKJo/BHnoMS0dDW4rW3Bu4AhYZcBSNxUNOa7SuqP0vtFokVJGyH/qQ==}</apiToken>
+      <apiToken>{AQAAABAAAAAwSYDyGp+Sih+iJts2EwKYdWYrRZoaxsy52W3PaUg0VoQi/lumSvI65z88WD25GKlqN1hFnB61iwW76MbDfR3EiA==}</apiToken>
     </jenkins.security.ApiTokenProperty>
     <io.jenkins.blueocean.autofavorite.user.FavoritingUserProperty plugin="blueocean-autofavorite@1.2.2">
       <autofavoriteEnabled>true</autofavoriteEnabled>
@@ -11,37 +11,14 @@
     <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@2.1.16">
       <domainCredentialsMap class="hudson.util.CopyOnWriteMap$Hash"/>
     </com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty>
+    <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.20"/>
     <hudson.plugins.emailext.watching.EmailExtWatchAction_-UserProperty plugin="email-ext@2.62">
       <triggers/>
     </hudson.plugins.emailext.watching.EmailExtWatchAction_-UserProperty>
     <hudson.plugins.favorite.user.FavoriteUserProperty plugin="favorite@2.3.1">
       <data class="concurrent-hash-map">
         <entry>
-          <string>obtenir-evenement</string>
-          <boolean>true</boolean>
-        </entry>
-        <entry>
-          <string>polyeventbackendobtenirevenementwebservice</string>
-          <boolean>true</boolean>
-        </entry>
-        <entry>
-          <string>profil</string>
-          <boolean>true</boolean>
-        </entry>
-        <entry>
-          <string>demande-prestation</string>
-          <boolean>true</boolean>
-        </entry>
-        <entry>
-          <string>demande-reservation</string>
-          <boolean>true</boolean>
-        </entry>
-        <entry>
-          <string>login</string>
-          <boolean>true</boolean>
-        </entry>
-        <entry>
-          <string>demande-evenement</string>
+          <string>PolyEventCommun</string>
           <boolean>true</boolean>
         </entry>
       </data>
@@ -66,8 +43,5 @@
     <hudson.search.UserSearchProperty>
       <insensitiveSearch>true</insensitiveSearch>
     </hudson.search.UserSearchProperty>
-    <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.21">
-      <emailAddress>alexandre.clement@etu.unice.fr</emailAddress>
-    </hudson.tasks.Mailer_-UserProperty>
   </properties>
 </user>
